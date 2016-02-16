@@ -114,14 +114,11 @@ set autoread                       " reload files when they change outside Vim
 set backspace=eol,indent,start     " backspace over anything
 set backupdir=~/.vim_backup,.      " original: backupdir=.,~/tmp,~/
 set confirm                        " start a dialog when command fails
-" set colorcolumn=0                  " highlight nth column
-" set colorcolumn=80                 " highlight nth column
 set cursorline                     " highlight current line
 set diffopt=iwhite                 " Set diff to ignore whitespace
 set directory=~/.vim_swap,.        " original: directory=.,~/tmp,/var/tmp,/tmp
 set encoding=utf8
 set formatoptions=tcroqnlj         " default: croql
-" set gdefault                       " global subs by default (no /g needed)
 set hidden                         " allow vim to leave modified buffers
 set history=10000
 set hlsearch
@@ -131,7 +128,6 @@ set laststatus=2                   " To make status line appear without needing
                                    " to create a split first:
 set linebreak
 set listchars=tab:»·,trail:·,nbsp:·,eol:¬
-" set matchpairs+=<:>                " match angle brackets with %
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
@@ -142,7 +138,6 @@ set noswapfile                     " turn off swapfile creation
 set nowrap                         " turn off word wrap
 set nrformats=                     " treat all numbers as base 10
 set number                         " show current line cumber
-" set numberwidth=5                  " use 5 columns for line numbers
 set relativenumber                 " relative line numbering
 set ruler                          " show current position
 set scrolloff=1                    " force 1 line padding when scrolling
@@ -179,7 +174,6 @@ set sessionoptions+=curdir
 " set sessionoptions+=winpos
 " set sessionoptions+=winsize
 
-" set textwidth=80
 set textwidth=0
 set title
 set titlestring=Vim:\ %F\ %y%h%r%m
@@ -201,57 +195,333 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 
 
 " ---------------------------------------------------------------------------- "
-"   Hardcoded color adjustments
+"  Abbreviations
 " ---------------------------------------------------------------------------- "
-" From :h hi -> You can see all the groups currently active with this command:
-"     :so $VIMRUNTIME/syntax/hitest.vim
-" This will open a new window containing all highlight group names, displayed
-" in their own color.
+iab cm ✓
+iab lod ಠ_ಠ
+iab 1lod ಠ_ರೃ
+iab tflip (╯°□°)╯︵ ┻━┻
+iab rockout \m/…(>.<)…\m/
 
-" for --- Solarized light or dark
-"                                        | Light | Dark |
-" background                             |    15 |    8 |
-" background highlights                  |     7 |    0 |
-" comments/secondary content             |    14 |   10 |
-" unused                                 |    12 |   11 |
-" body text/default code/primary content |    11 |   12 |
-" optional emphasized content            |    10 |   14 |
-
-" if &bg=="dark"
-"   let g:lightline = {
-"     \   'colorscheme': 'solarized_dark',
-"     \   'inactive': {
-"     \     'left': [
-"     \       [ 'mode', 'paste' ],
-"     \       [ 'readonly', 'filename', 'modified' ]
-"     \     ]
-"     \   }
-"     \ }
-"   highlight VertSplit term=NONE cterm=NONE ctermbg=8  ctermfg=0
-"   " highlight MatchParen term=NONE cterm=NONE ctermbg=1  ctermfg=14
-" else
-"   let g:lightline = {
-"     \   'colorscheme': 'solarized_light',
-"     \   'inactive': {
-"     \     'left': [
-"     \       [ 'mode', 'paste' ],
-"     \       [ 'readonly', 'filename', 'modified' ]
-"     \     ]
-"     \   },
-"     \   'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-"     \   'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-"     \ }
-"   highlight VertSplit term=NONE cterm=NONE ctermbg=15 ctermfg=7
-"   highlight IncSearch term=NONE cterm=NONE ctermbg=3 ctermfg=15
-"   " highlight NonText term=NONE cterm=NONE ctermfg=14
-" "   " highlight MatchParen ctermbg=7  ctermfg=10
-" endif
+cab Ag Ag!
+cab AgBuffer AgBuffer!
+" cab b buffers
+" cab v vsp
+" cab vn vnew
 
 
 " ---------------------------------------------------------------------------- "
-"   experimental
+"   Key Mappings
 " ---------------------------------------------------------------------------- "
 
+" --- Generic Normal Mode ---------------------------------------------------- "
+" Highlight and Search for word under the cursor without changing the cursor position
+nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+
+" Make j and k move by screen line, not file line
+" (works the way you'd expect on wrapped lines)
+nnoremap j gj
+nnoremap k gk
+
+" Move to beginning/end of line
+noremap H ^
+noremap L g_
+
+" Visually select text entered last time in insert
+nnoremap gV `[v`]
+
+nnoremap cr :so $MYVIMRC<CR>
+nnoremap cv :e $MYVIMRC<CR>
+
+" Arrow keys to resize in normal mode
+noremap <down> <C-W>+
+noremap <up> <C-W>-
+noremap <right> <C-W>>
+noremap <left> <C-W><
+
+" Open help at bottom of screen
+cnoremap help bo help
+
+" --- Unimpaired-inspired ---------------------------------------------------- "
+" 'change option...'
+" 'gutter'
+nnoremap <silent> cog :set nonumber! relativenumber!<CR>
+
+" 'page' (colorcolumn for cols greater than 79)
+nnoremap cop :call ToggleColorcolumn()<CR>
+
+function! ToggleColorcolumn()
+  if &colorcolumn==0
+    execute "set colorcolumn=" . join(range(81,335), ',')
+    echo "colorcolumn>80"
+  else
+    set colorcolumn=0
+    echo "colorcolumn=0"
+  endif
+endfunction
+
+
+" --- Leader Combos ---------------------------------------------------------- "
+" Set leader key
+let mapleader=","
+" (<SPACE> mapped this way to show up in showcmd)
+map <SPACE> <LEADER>
+
+nnoremap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
+
+" --- Experimental Spacemacs-like keybindings -------------------------------- "
+" Buffers
+nnoremap <LEADER>ba :b#<CR>
+nnoremap <LEADER>bb :CtrlPBuffer<CR>
+nnoremap <LEADER>bd :bd<CR>
+nnoremap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
+nnoremap <LEADER>bl :buffers<CR>:
+nnoremap <LEADER>bn :bn<CR>
+nnoremap <LEADER>bo :CtrlPBuffer<CR>
+nnoremap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
+nnoremap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
+nnoremap <LEADER>bw :w<CR>
+nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
+
+" Vimux Commands
+nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
+nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
+nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
+
+" Editor
+nnoremap <LEADER>ee :NERDTreeToggle<CR>
+nnoremap <LEADER>eh :call <SID>SynStack()<CR>
+nnoremap <LEADER>et :TagbarToggle<CR>
+
+" Files
+nnoremap <LEADER>ff :CtrlPMRU<CR>
+nnoremap <LEADER>fn :enew<CR>
+nnoremap <LEADER>fo :CtrlP<CR>
+nnoremap <LEADER>fp :echo expand('%:p')<CR>
+nnoremap <LEADER>fr :CtrlPMRU<CR>
+nnoremap <LEADER>fw :w<CR>
+nnoremap <LEADER>ft :NERDTreeToggle<CR>
+
+" Goto File
+nnoremap <LEADER>gv :vertical wincmd f<CR>
+nnoremap <LEADER>gs :wincmd f<CR>
+
+" Linting
+nnoremap <LEADER>lj :JSHint<CR>
+
+" Notes
+nnoremap <LEADER>ne :e ~/Dropbox/Notes/
+nnoremap <LEADER>ns :w ~/Dropbox/Notes/
+
+" Panes
+nnoremap <LEADER>pb :wincmd =<CR>
+nnoremap <LEADER>pn :vnew<CR>
+nnoremap <LEADER>pm <C-w>1\|
+nnoremap <LEADER>pq :q<CR>
+nnoremap <LEADER>ps :sp<CR>
+nnoremap <LEADER>pv :vsp<CR>
+nnoremap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
+
+" Run current buffer as Ruby script
+nnoremap <LEADER>rr :!ruby -W0 %<CR>
+nnoremap <LEADER>rc :call RunCurrentSpecFile()<CR>
+nnoremap <LEADER>rn :call RunNearestSpec()<CR>
+nnoremap <LEADER>rl :call RunLastSpec()<CR>
+nnoremap <LEADER>ra :call RunAllSpecs()<CR>
+
+" Search/Sessions
+nnoremap <LEADER>sa :Ag!<SPACE>
+" nnoremap <LEADER>sa :grep! "\b<C-R><C-W>\b":cw<CR>
+nnoremap <LEADER>sl :source ~/.vim/sessions/
+nnoremap <LEADER>ss :mksession! ~/.vim/sessions/
+
+" Tagbar
+nnoremap <LEADER>tt :TagbarToggle<CR>
+
+nnoremap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
+nnoremap <LEADER>; :Commentary<CR>
+
+vnoremap ; :'<,'>Commentary<CR>
+vnoremap <LEADER>y "*y
+
+
+" --- Ctrl Combos ------------------------------------------------------------ "
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Enable dot command over visual selection
+xnoremap . :normal .<CR>
+
+" Disable entering Ex mode
+nnoremap Q <NOP>
+
+" Disable man lookup
+" nnoremap <S-k> <nop>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+
+" --- Highlight Trailing Whitespace ------------------------------------------ "
+" The following (re: TrailingWhitespace) is from the following page:
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+
+" Match TrailingWhitespace except when typing at the end of the line
+autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+
+" Highlight TrailingWhitespace highlight group
+highlight TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
+
+
+" ---------------------------------------------------------------------------- "
+"   GitGutter
+" ---------------------------------------------------------------------------- "
+"  Don't create any mappings
+let g:gitgutter_map_keys = 0
+
+
+" ---------------------------------------------------------------------------- "
+"   The Silver Searcher
+" ---------------------------------------------------------------------------- "
+" Use ag over grep
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use Silver Searcher with CtrlP
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+endif
+
+
+" ---------------------------------------------------------------------------- "
+"   CtrlP Settings
+" ---------------------------------------------------------------------------- "
+set runtimepath^=~/.vim/bundle/ctrlp.vim  " Add CtrlP to runtime path
+
+" Run in MRU mode
+let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Number of files to remember
+let g:ctrlp_mruf_max = 500
+
+" Customize results window
+let g:ctrlp_match_window = 'bottom,order:btt,max:20,results:50'
+
+" t = in a new tab
+" h = in a new horizontal split
+" v = in a new vertical split (default)
+" r = current window
+let g:ctrlp_open_new_file = 'r'
+
+" open files with <C-z>, <C-o> in vert splits, open the first file in current
+" window and jump to it
+let g:ctrlp_open_multiple_files = 'vjr'
+
+" Set working dir to nearest ancestor of the current file (r)
+" or the dir of the current file, unless it's a subdir of cwd (a)
+let g:ctrlp_working_path_mode = 'ra'
+
+
+" ---------------------------------------------------------------------------- "
+"   Vimux
+" ---------------------------------------------------------------------------- "
+let g:VimuxHeight = "30"
+let g:VimuxUseNearest = 1
+
+
+" ---------------------------------------------------------------------------- "
+"   Functions
+" ---------------------------------------------------------------------------- "
+" Automatically rebalance panes on window resize
+" autocmd VimResized * :wincmd =
+
+" Strip whitespace (while keeping cursor pos) for the indicated filetypes
+autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
+
+" By default, vim thinks .md is Modula-2, make it markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" auto-reload .vimrc
+augroup reload_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
+
+" Set filetype to text if it is unset
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+
+" From Vimcasts Episode #25
+"   (http://vimcasts.org/episodes/creating-colorschemes-for-vim/)
+" Show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+
+" This is an iteration on the above from https://github.com/arecarn/Preserve.vim
+" I couldn't get Vundle to install it automatically, so I nicked it.
+function! Preserve(command)
+  " Preparation: save last search and cursor position
+  let winview = winsaveview()
+  " Execution: run the command
+  execute a:command
+  " Cleanup: restore previous search and cursor position
+  call winrestview(winview)
+endfunction
+
+" This is an explosion of the process above.
+" Usage:
+"   Highlight and Search for word under the cursor without changing the cursor position
+"   nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+function! PreserveSave()
+    let b:winview = winsaveview()
+endfunction
+
+function! PreserveRestore()
+  if exists('b:winview')
+    call winrestview(b:winview)
+    unlet b:winview
+  else
+    throw "Use :PreserveSave, before :PreserveRestore"
+  endif
+endfunction
+
+if !exists(":PreserveSave")
+  command! -bar -nargs=0 PreserveSave call PreserveSave()
+endif
+
+if !exists(":PreserveRestore")
+  command! -bar -nargs=0 PreserveRestore call PreserveRestore()
+endif
+
+" ---------------------------------------------------------------------------- "
+"  From Gary Bernhardt's .vimrc file
+"    RemoveFancyCharacters COMMAND
+"    Remove smart quotes, etc.
+" ---------------------------------------------------------------------------- "
+function! RemoveFancyCharacters()
+    let typo = {}
+    let typo["“"] = '"'
+    let typo["”"] = '"'
+    let typo["‘"] = "'"
+    let typo["’"] = "'"
+    let typo["–"] = '--'
+    let typo["—"] = '---'
+    let typo["…"] = '...'
+    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/gec'
+endfunction
+command! RemoveFancyCharacters :call RemoveFancyCharacters()
+
+
+" ---------------------------------------------------------------------------- "
+"   Experimental
+" ---------------------------------------------------------------------------- "
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
@@ -385,489 +655,7 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
-" ---------------------------------------------------------------------------- "
-"   END experimental
-" ---------------------------------------------------------------------------- "
 
-
-"  Jellybeans
-" highlight VertSplit  ctermbg=232 ctermfg=242
-" highlight CursorLine ctermbg=235
-" highlight MatchParen ctermbg=240
-
-" Selected mode in CtrlP mode selection bar
-" highlight CtrlPMode1 ctermbg=240 ctermfg=252
-
-" 'prt' and working dir in CtrlP mode selection bar
-" highlight CtrlPMode2 ctermbg=236 ctermfg=245
-
-" Scanning status (eg: Indexing...) in CtrlP
-" highlight CtrlPStats ctermbg=238 ctermfg=250
-
-
-" ---------------------------------------------------------------------------- "
-"  Abbreviations
-" ---------------------------------------------------------------------------- "
-iab cm ✓
-iab lod ಠ_ಠ
-iab 1lod ಠ_ರೃ
-iab tflip (╯°□°)╯︵ ┻━┻
-iab rockout \m/…(>.<)…\m/
-
-cab Ag Ag!
-cab AgBuffer AgBuffer!
-" cab b buffers
-" cab v vsp
-" cab vn vnew
-
-
-" ---------------------------------------------------------------------------- "
-"   Key Mappings
-" ---------------------------------------------------------------------------- "
-
-" --- Generic Normal Mode ---------------------------------------------------- "
-" Highlight and Search for word under the cursor without changing the cursor position
-nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
-
-" Make j and k move by screen line, not file line
-" (works the way you'd expect on wrapped lines)
-nnoremap j gj
-nnoremap k gk
-
-" Move to beginning/end of line
-noremap H ^
-noremap L g_
-
-" Visually select text entered last time in insert
-nnoremap gV `[v`]
-
-nnoremap cr :so $MYVIMRC<CR>
-nnoremap cv :e $MYVIMRC<CR>
-
-" Arrow keys to resize in normal mode
-noremap <down> <C-W>+
-noremap <up> <C-W>-
-noremap <right> <C-W>>
-noremap <left> <C-W><
-
-" Open help at bottom of screen
-cnoremap help bo help
-
-" --- Unimpaired-inspired ---------------------------------------------------- "
-" 'change option...'
-" 'gutter'
-nnoremap <silent> cog :set nonumber! relativenumber!<CR>
-
-" 'page' (colorcolumn for cols greater than 79)
-nnoremap cop :call ToggleColorcolumn()<CR>
-
-" 'textwidth'
-
-" nnoremap cot :call ToggleTextWidth()<CR>
-" function! ToggleTextWidth()
-"   if &textwidth==80
-"     set textwidth=0
-"     echo "textwidth=0"
-"   else
-"     set textwidth=80
-"     echo "textwidth=80"
-"   endif
-" endfunction
-
-function! ToggleColorcolumn()
-  if &colorcolumn==0
-    execute "set colorcolumn=" . join(range(81,335), ',')
-    echo "colorcolumn>80"
-  else
-    set colorcolumn=0
-    echo "colorcolumn=0"
-  endif
-endfunction
-
-
-" --- Leader Combos ---------------------------------------------------------- "
-" Set leader key
-let mapleader=","
-" (<SPACE> mapped this way to show up in showcmd)
-map <SPACE> <LEADER>
-
-" Depricating these. Turned them off on 2015-08-27.
-" nnoremap <SILENT><LEADER>k :set paste<CR>m`O<Esc>``:set nopaste<CR> " Insert blank line above current
-" nnoremap <SILENT><LEADER>j :set paste<CR>m`o<Esc>``:set nopaste<CR> " Insert blank line below current
-" Clean whitespace
-" nnoremap <SILENT><LEADER>T :call Preserve("%s/	/  /")<CR>:call Preserve("%s/\\s\\+$//e")<CR>
-" Load current buffer contents as args list
-" nnoremap <LEADER>a :execute "args ".join(map(getline(1, line('$')), 'fnameescape(v:val)'))<CR>
-
-
-nnoremap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
-
-" nnoremap <LEADER>a :b#<CR>
-" nnoremap <LEADER>b :buffers<CR>:b
-" nnoremap <LEADER>e :NERDTreeToggle<CR>
-" nnoremap <LEADER>f :AgBuffer!<SPACE>
-" nnoremap <LEADER>F :Ag!<SPACE>
-" nnoremap <LEADER>h :nohlsearch<BAR>:echo<CR>
-" nnoremap <LEADER>H :call <SID>SynStack()<CR>            " Show syntax groups
-" nnoremap <LEADER>i :CtrlP<CR>
-" nnoremap <LEADER>L :so ~/.vim/sessions/
-" nnoremap <LEADER>n :e ~/Dropbox/Notes/
-" nnoremap <LEADER>N :w ~/Dropbox/Notes/
-" nnoremap <LEADER>o :CtrlPBuffer<CR>
-" nnoremap <LEADER>P :echo expand('%:p')<CR>
-
-" nnoremap <LEADER>s :sp<CR>
-" nnoremap <LEADER>S :mksession! ~/.vim/sessions/
-" nnoremap <LEADER>t :TagbarToggle<CR>
-" nnoremap <LEADER>T :call Preserve("%s/\\s\\+$//e")<CR>:echo "Trimmed trailing whitespace"<CR>
-" nnoremap <LEADER>u :CtrlPMRU<CR>
-" nnoremap <LEADER>v :vsp<CR>
-" nnoremap <LEADER>y :call Preserve("normal ggVG\"*y")<CR>:echo "Yanked buffer"<CR>
-
-" Maximize (Zoom) window
-" nnoremap <LEADER>- :wincmd _<CR>:wincmd \|<CR>
-
-" Re-indent entire buffer
-" nnoremap <LEADER>= :call Preserve("normal gg=G")<CR>:echo "Re-indented Buffer"<CR>
-
-" Rebalance windows
-" nnoremap = :wincmd =<CR>
-
-" nnoremap <LEADER>[ :bp<CR>
-" nnoremap <LEADER>] :bn<CR>
-
-nnoremap <LEADER>; :Commentary<CR>
-vnoremap ; :'<,'>Commentary<CR>
-
-
-nnoremap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
-
-vnoremap <LEADER>y "*y
-
-" --- Vimux ------------------------------------------------------------------ "
-" Prompt for a command to run
-" nnoremap <LEADER>k :call VimuxPromptCommand()<CR>
-" Close all other tmux panes in current window
-" nnoremap <LEADER>k :call VimuxCloseRunner()<CR>
-" nnoremap <LEADER>k :call VimuxRunCommand()<CR>
-" nnoremap <LEADER>vr :call VimuxPromptCommand("cls; ")<CR>
-" nnoremap <LEADER>l :call VimuxRunLastCommand()<CR>
-" nnoremap <LEADER>vi :call VimuxInspectRunner()<CR>
-" nnoremap <LEADER>vi :call VimuxInterruptRunner()<CR>
-
-
-" --- Experimental Spacemacs-like keybindings -------------------------------- "
-" Spacemacs keybindings
-
-" Buffers
-nnoremap <LEADER>ba :b#<CR>
-nnoremap <LEADER>bb :CtrlPBuffer<CR>
-nnoremap <LEADER>bd :bd<CR>
-nnoremap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
-nnoremap <LEADER>bl :buffers<CR>:
-nnoremap <LEADER>bn :bn<CR>
-nnoremap <LEADER>bo :CtrlPBuffer<CR>
-nnoremap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
-nnoremap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
-nnoremap <LEADER>bw :w<CR>
-nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
-nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
-
-" CLI Commands
-nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
-nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
-nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
-
-" Editor
-nnoremap <LEADER>ee :NERDTreeToggle<CR>
-nnoremap <LEADER>eh :call <SID>SynStack()<CR>
-nnoremap <LEADER>et :TagbarToggle<CR>
-
-" Files
-nnoremap <LEADER>ff :CtrlPMRU<CR>
-nnoremap <LEADER>fn :enew<CR>
-nnoremap <LEADER>fo :CtrlP<CR>
-nnoremap <LEADER>fp :echo expand('%:p')<CR>
-nnoremap <LEADER>fr :CtrlPMRU<CR>
-nnoremap <LEADER>fw :w<CR>
-nnoremap <LEADER>ft :NERDTreeToggle<CR>
-
-" Goto File
-nnoremap <LEADER>gv :vertical wincmd f<CR>
-nnoremap <LEADER>gs :wincmd f<CR>
-
-" Linting
-nnoremap <LEADER>lj :JSHint<CR>
-
-" Notes
-nnoremap <LEADER>ne :e ~/Dropbox/Notes/
-nnoremap <LEADER>ns :w ~/Dropbox/Notes/
-
-" Panes
-nnoremap <LEADER>pb :wincmd =<CR>
-nnoremap <LEADER>pn :vnew<CR>
-nnoremap <LEADER>pm <C-w>1\|
-nnoremap <LEADER>pq :q<CR>
-nnoremap <LEADER>ps :sp<CR>
-nnoremap <LEADER>pv :vsp<CR>
-nnoremap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
-
-" Run current buffer as Ruby script
-nnoremap <LEADER>rr :!ruby -W0 %<CR>
-nnoremap <LEADER>rc :call RunCurrentSpecFile()<CR>
-nnoremap <LEADER>rn :call RunNearestSpec()<CR>
-nnoremap <LEADER>rl :call RunLastSpec()<CR>
-nnoremap <LEADER>ra :call RunAllSpecs()<CR>
-
-" Search/Sessions
-nnoremap <LEADER>sa :Ag!<SPACE>
-" nnoremap <LEADER>sa :grep! "\b<C-R><C-W>\b":cw<CR>
-nnoremap <LEADER>sl :source ~/.vim/sessions/
-nnoremap <LEADER>ss :mksession! ~/.vim/sessions/
-
-" Tagbar
-nnoremap <LEADER>tt :TagbarToggle<CR>
-
-
-" --- Ctrl Combos ------------------------------------------------------------ "
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Enable dot command over visual selection
-xnoremap . :normal .<CR>
-
-" Disable entering Ex mode
-nnoremap Q <NOP>
-
-" Disable man lookup
-" nnoremap <S-k> <nop>
-
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-
-" --- Highlight Trailing Whitespace ------------------------------------------ "
-" The following (re: TrailingWhitespace) is from the following page:
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-" Match TrailingWhitespace except when typing at the end of the line
-autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
-
-" Highlight TrailingWhitespace highlight group
-highlight TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
-
-
-" ---------------------------------------------------------------------------- "
-"   vim-rspec and tslime.vim
-" ---------------------------------------------------------------------------- "
-" let g:rspec_command = 'call Send_to_Tmux("clear; rspec {spec}\n")'
-
-
-" ---------------------------------------------------------------------------- "
-"   GitGutter
-" ---------------------------------------------------------------------------- "
-"  Don't create any mappings
-let g:gitgutter_map_keys = 0
-
-
-" ---------------------------------------------------------------------------- "
-"   The Silver Searcher
-" ---------------------------------------------------------------------------- "
-" Use ag over grep
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use Silver Searcher with CtrlP
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  " let g:ctrlp_use_caching = 0
-endif
-
-
-" ---------------------------------------------------------------------------- "
-"   CtrlP Settings
-" ---------------------------------------------------------------------------- "
-set runtimepath^=~/.vim/bundle/ctrlp.vim  " Add CtrlP to runtime path
-
-" Run in MRU mode
-let g:ctrlp_cmd = 'CtrlPMRU'
-
-" Number of files to remember
-let g:ctrlp_mruf_max = 500
-
-" Customize results window
-let g:ctrlp_match_window = 'bottom,order:btt,max:20,results:50'
-
-" Deprecated 2015-09-09: .agignore is used if using Silver Searcher
-" let g:ctrlp_custom_ignore = {
-"   \ 'dir': '*1Password*|vendor\/ruby\|db\/seeds\/imports\|public\/uploads|tmp|temp|log',
-"   \ 'file': '*.1password|tags'
-"   \}
-
-" t = in a new tab
-" h = in a new horizontal split
-" v = in a new vertical split (default)
-" r = current window
-let g:ctrlp_open_new_file = 'r'
-
-" open files with <C-z>, <C-o> in vert splits, open the first file in current
-" window and jump to it
-let g:ctrlp_open_multiple_files = 'vjr'
-
-" Set working dir to nearest ancestor of the current file (r)
-" or the dir of the current file, unless it's a subdir of cwd (a)
-let g:ctrlp_working_path_mode = 'ra'
-
-
-" ---------------------------------------------------------------------------- "
-"   Vimux
-" ---------------------------------------------------------------------------- "
-let g:VimuxHeight = "30"
-let g:VimuxUseNearest = 1
-
-
-" ---------------------------------------------------------------------------- "
-"   vim-togglecursor
-" ---------------------------------------------------------------------------- "
-" let g:togglecursor_default = "block"
-" let g:togglecursor_insert = "line"
-" let g:togglecursor_force = "xterm"
-
-
-" ---------------------------------------------------------------------------- "
-"   TagBar
-" ---------------------------------------------------------------------------- "
-" let g:tagbar_left = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_sort = 1
-" let g:tagbar_autoshoytag = 1
-" let g:tagbar_map_showproto = "s"
-
-
-" ---------------------------------------------------------------------------- "
-"   Functions
-" ---------------------------------------------------------------------------- "
-" Automatically rebalance panes on window resize
-" autocmd VimResized * :wincmd =
-
-" Strip whitespace (while keeping cursor pos) for the indicated filetypes
-autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
-
-" By default, vim thinks .md is Modula-2, make it markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-
-" auto-reload .vimrc
-augroup reload_vimrc
-  autocmd!
-  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup END
-
-" Deprecated on 2015-08-27
-" rename current file, via Gary Bernhardt
-" function! RenameFile()
-"   let old_name = expand('%')
-"   let new_name = input('New file name: ', expand('%'))
-"   if new_name != '' && new_name != old_name
-"     exec ':saveas ' . new_name
-"     exec ':silent !rm ' . old_name
-"     redraw!
-"   endif
-" endfunction
-
-
-" Set filetype to text if it is unset
-autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
-
-
-" From Vimcasts Episode #25
-"   (http://vimcasts.org/episodes/creating-colorschemes-for-vim/)
-" Show syntax highlighting groups for word under cursor
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-
-" From Doug Black (http://dougblack.io/words/a-good-vimrc.html) and
-" vimcasts episode 'Tidying Whitespace' (http://vimcasts.org/episodes/tidying-whitespace/)
-" Update to above
-" function! Preserve(command)
-"   " Preparation: save last search and cursor position
-"   let _s=@/
-"   let l = line(".")
-"   let c = col(".")
-"   " Do the business:
-"   execute a:command
-"   " Clean up: restore previous search history, and cursor position
-"   let @/=_s
-"   call cursor(l, c)
-" endfunction
-
-" This is an iteration on the above from https://github.com/arecarn/Preserve.vim
-" I couldn't get Vundle to install it automatically, so I nicked it.
-function! Preserve(command)
-  " Preparation: save last search and cursor position
-  let winview = winsaveview()
-  " Execution: run the command
-  execute a:command
-  " Cleanup: restore previous search and cursor position
-  call winrestview(winview)
-endfunction
-
-" This is an explosion of the process above.
-" Usage:
-"   Highlight and Search for word under the cursor without changing the cursor position
-"   nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
-function! PreserveSave()
-    let b:winview = winsaveview()
-endfunction
-
-function! PreserveRestore()
-  if exists('b:winview')
-    call winrestview(b:winview)
-    unlet b:winview
-  else
-    throw "Use :PreserveSave, before :PreserveRestore"
-  endif
-endfunction
-
-if !exists(":PreserveSave")
-  command! -bar -nargs=0 PreserveSave call PreserveSave()
-endif
-
-if !exists(":PreserveRestore")
-  command! -bar -nargs=0 PreserveRestore call PreserveRestore()
-endif
-
-" ---------------------------------------------------------------------------- "
-"  From Gary Bernhardt's .vimrc file
-"    RemoveFancyCharacters COMMAND
-"    Remove smart quotes, etc.
-" ---------------------------------------------------------------------------- "
-function! RemoveFancyCharacters()
-    let typo = {}
-    let typo["“"] = '"'
-    let typo["”"] = '"'
-    let typo["‘"] = "'"
-    let typo["’"] = "'"
-    let typo["–"] = '--'
-    let typo["—"] = '---'
-    let typo["…"] = '...'
-    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/gec'
-endfunction
-command! RemoveFancyCharacters :call RemoveFancyCharacters()
-
-
-" ---------------------------------------------------------------------------- "
-"   Experimental
-" ---------------------------------------------------------------------------- "
 
 " jump to last position in file
 autocmd BufReadPost *
