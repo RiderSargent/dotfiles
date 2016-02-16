@@ -1,5 +1,7 @@
 # vim:syntax=zsh
 
+unalias g
+
 function g {
   if [[ $# > 0 ]]; then
     git $@
