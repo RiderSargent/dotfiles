@@ -63,3 +63,4 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="${PAREN_COLOR})%{$reset_color%}"
 # ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 # ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 # ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+

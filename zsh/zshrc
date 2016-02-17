@@ -21,3 +21,6 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fuck)"
 
 export PATH="$PATH:/Users/ridersargent/bin"
+
+source_if_exists "${HOME}/.dotfiles/zsh/ridersargent.zsh-theme"
+
