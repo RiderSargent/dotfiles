@@ -1,11 +1,16 @@
 # vim:syntax=zsh
 
-unalias g
-
 function g {
   if [[ $# > 0 ]]; then
     git $@
   else
     git status -sb
   fi
+}
+
+source_if_exists() {
+  local file ;
+  for file ; do
+    [ -f "${file}" ] && source "${file}" ;
+  done
 }
