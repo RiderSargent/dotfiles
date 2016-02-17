@@ -1,3 +1,4 @@
+unalias g
 unalias v
 
 alias aliases='vim ~/.dotfiles/zsh/aliases'
@@ -9,6 +10,7 @@ alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias notes='vim ~/Dropbox/Notes'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases'
 alias ta='tmux a -t'
 alias tk='tmux kill-session -t'
