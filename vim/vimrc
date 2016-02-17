@@ -53,7 +53,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
 Plugin 'tomtom/tlib_vim'                       " snipmate dependancy
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-" My snippets live in ~/Dropbox/dotfiles/.vim/after/snippets
+" My snippets live in ~/.dotfiles/vim/after/snippets
 
 " Text Objects
 Plugin 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
@@ -87,23 +87,40 @@ syntax enable                      " syntax highlighting
 " Also needed by Drew Neil's Ruby text objects plugin
 runtime macros/matchit.vim
 
-" from alol's .vimrc
-" let g:solarized_termcolors=256
-" set background=light
 
+" ---------------------------------------------------------------------------- "
+"   Colors
+" ---------------------------------------------------------------------------- "
 
-" let g:lightline.colorscheme = 'jellybeans'
-" colorscheme jellybeans
-
-" let g:lightline = { 'colorscheme': 'solarized' }
+" --- Solarized Light ---
 " colorscheme solarized
-
-" colorscheme jellybeans
-colorscheme solarized
-" colorscheme github
-
-set background=dark
 " set background=light
+" let g:rws_lightline_colorscheme = 'solarized_light'
+
+" --- Solarized Dark ---
+" colorscheme solarized
+" set background=dark
+" let g:rws_lightline_colorscheme = 'solarized_dark'
+
+" --- Jellybeans ---
+colorscheme jellybeans
+set background=dark
+let g:rws_lightline_colorscheme = 'jellybeans'
+" let g:rws_lightline_colorscheme = 'seoul256'
+" let g:rws_lightline_colorscheme = 'landscape'
+" let g:rws_lightline_colorscheme = 'powerline'
+" let g:rws_lightline_colorscheme = 'Tomorrow'
+" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+
+" --- Github ---
+" colorscheme github
+" set background=light
+" " let g:rws_lightline_colorscheme = 'wombat'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" let g:rws_lightline_colorscheme = 'PaperColor'
+
+" lightline themes: can be found here:
+" https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
 
 
 " ---------------------------------------------------------------------------- "
@@ -166,13 +183,6 @@ set shiftwidth=2                   " Amount of whitespace to insert or remove
 " Defaults: blank, buffers, curdir, folds, help, options, tabpages, winsize
 set sessionoptions=buffers
 set sessionoptions+=curdir
-" set sessionoptions+=folds
-" set sessionoptions+=localoptions
-" set sessionoptions+=options
-" set sessionoptions+=resize
-" set sessionoptions+=tabpages
-" set sessionoptions+=winpos
-" set sessionoptions+=winsize
 
 set textwidth=0
 set title
@@ -205,9 +215,6 @@ iab rockout \m/…(>.<)…\m/
 
 cab Ag Ag!
 cab AgBuffer AgBuffer!
-" cab b buffers
-" cab v vsp
-" cab vn vnew
 
 
 " ---------------------------------------------------------------------------- "
@@ -523,17 +530,17 @@ command! RemoveFancyCharacters :call RemoveFancyCharacters()
 "   Experimental
 " ---------------------------------------------------------------------------- "
 " Use line cursor in insert mode, block in normal (only in tmux)
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+" if exists('$TMUX')
+"     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
 
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': rws_lightline_colorscheme,
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
