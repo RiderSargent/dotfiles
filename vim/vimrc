@@ -103,21 +103,21 @@ runtime macros/matchit.vim
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 " --- Jellybeans ---
-colorscheme jellybeans
-set background=dark
-let g:rws_lightline_colorscheme = 'jellybeans'
-" let g:rws_lightline_colorscheme = 'seoul256'
-" let g:rws_lightline_colorscheme = 'landscape'
-" let g:rws_lightline_colorscheme = 'powerline'
-" let g:rws_lightline_colorscheme = 'Tomorrow'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+" colorscheme jellybeans
+" set background=dark
+" let g:rws_lightline_colorscheme = 'jellybeans'
+" " let g:rws_lightline_colorscheme = 'seoul256'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" " let g:rws_lightline_colorscheme = 'powerline'
+" " let g:rws_lightline_colorscheme = 'Tomorrow'
+" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 " --- Github ---
-" colorscheme github
-" set background=light
-" " let g:rws_lightline_colorscheme = 'wombat'
-" " let g:rws_lightline_colorscheme = 'landscape'
-" let g:rws_lightline_colorscheme = 'PaperColor'
+colorscheme github
+set background=light
+" let g:rws_lightline_colorscheme = 'wombat'
+" let g:rws_lightline_colorscheme = 'landscape'
+let g:rws_lightline_colorscheme = 'PaperColor'
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
@@ -179,6 +179,8 @@ set softtabstop=2                  " Amount of whitespace <BS> removes
 set shiftwidth=2                   " Amount of whitespace to insert or remove
                                    " using the indentation commands in normal
                                    " mode
+set synmaxcol=800                  " don't try to highlight lines longer than
+                                   " 800 chars
 
 " Defaults: blank, buffers, curdir, folds, help, options, tabpages, winsize
 set sessionoptions=buffers
@@ -205,8 +207,39 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 
 
 " ---------------------------------------------------------------------------- "
+"  NEW - Stolen from Steve Losh
+" ---------------------------------------------------------------------------- "
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Use sane regexes.
+nnoremap / /\v
+vnoremap / /\v
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Visual Mode */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+
+" ---------------------------------------------------------------------------- "
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
+
+" Love UK keyboards for programming with the exception of pound instead of hash.
+iab £ #
+iab # £
+
 iab cm ✓
 iab lod ಠ_ಠ
 iab 1lod ಠ_ರೃ
