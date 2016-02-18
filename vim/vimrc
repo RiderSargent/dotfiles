@@ -320,14 +320,14 @@ nnoremap <LEADER>bn :bn<CR>
 nnoremap <LEADER>bo :CtrlPBuffer<CR>
 nnoremap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
 nnoremap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
-nnoremap <LEADER>bw :w<CR>
 nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+nnoremap <LEADER>bw :w<CR>
 nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
 " Vimux Commands
-nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
-nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
 nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
+nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
+nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
 
 " Editor
 nnoremap <LEADER>ee :NERDTreeToggle<CR>
@@ -340,12 +340,12 @@ nnoremap <LEADER>fn :enew<CR>
 nnoremap <LEADER>fo :CtrlP<CR>
 nnoremap <LEADER>fp :echo expand('%:p')<CR>
 nnoremap <LEADER>fr :CtrlPMRU<CR>
-nnoremap <LEADER>fw :w<CR>
 nnoremap <LEADER>ft :NERDTreeToggle<CR>
+nnoremap <LEADER>fw :w<CR>
 
 " Goto File
-nnoremap <LEADER>gv :vertical wincmd f<CR>
 nnoremap <LEADER>gs :wincmd f<CR>
+nnoremap <LEADER>gv :vertical wincmd f<CR>
 
 " Linting
 nnoremap <LEADER>lj :JSHint<CR>
@@ -356,19 +356,21 @@ nnoremap <LEADER>ns :w ~/Dropbox/Notes/
 
 " Panes
 nnoremap <LEADER>pb :wincmd =<CR>
-nnoremap <LEADER>pn :vnew<CR>
 nnoremap <LEADER>pm <C-w>1\|
+nnoremap <LEADER>pn :vnew<CR>
+nnoremap <LEADER>po :only<CR>
 nnoremap <LEADER>pq :q<CR>
 nnoremap <LEADER>ps :sp<CR>
 nnoremap <LEADER>pv :vsp<CR>
 nnoremap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
+nnoremap <LEADER>ra :call RunAllSpecs()<CR>
+nnoremap <LEADER>rc :call RunCurrentSpecFile()<CR>
+nnoremap <LEADER>rl :call RunLastSpec()<CR>
+nnoremap <LEADER>rn :call RunNearestSpec()<CR>
+
 " Run current buffer as Ruby script
 nnoremap <LEADER>rr :!ruby -W0 %<CR>
-nnoremap <LEADER>rc :call RunCurrentSpecFile()<CR>
-nnoremap <LEADER>rn :call RunNearestSpec()<CR>
-nnoremap <LEADER>rl :call RunLastSpec()<CR>
-nnoremap <LEADER>ra :call RunAllSpecs()<CR>
 
 " Search/Sessions
 nnoremap <LEADER>sa :Ag!<SPACE>
