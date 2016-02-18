@@ -29,6 +29,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'itchyny/lightline.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'christoomey/vim-tmux-runner'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'benmills/vimux'
@@ -329,6 +330,29 @@ nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to
 nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
 nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
 nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
+
+
+
+" nnoremap <LEADER>cl :VtrSendCommandToRunner<CR>
+" nnoremap <LEADER>cp :VtrFlushCommand<CR>:VtrSendCommandToRunner<CR>
+
+" nnoremap <LEADER>cc :VtrSendCommandToRunner<CR>
+" nnoremap <LEADER>co :VtrOpenRunner<CR>
+
+" nnoremap <LEADER>vrr  :VtrResizeRunner<cr>
+" nnoremap <LEADER>vror :VtrReorientRunner<cr>
+" nnoremap <LEADER>vsc  :VtrSendCommandToRunner<cr>
+" nnoremap <LEADER>vsl  :VtrSendLinesToRunner<cr>
+" nnoremap <LEADER>vor  :VtrOpenRunner<cr>
+" nnoremap <LEADER>vkr  :VtrKillRunner<cr>
+" nnoremap <LEADER>vfr  :VtrFocusRunner<cr>
+" nnoremap <LEADER>vdr  :VtrDetachRunner<cr>
+" nnoremap <LEADER>var  :VtrReattachRunner<cr>
+" nnoremap <LEADER>vcr  :VtrClearRunner<cr>
+" nnoremap <LEADER>vfc  :VtrFlushCommand<cr>
+
+
+
 
 " Editor
 nnoremap <LEADER>ee :NERDTreeToggle<CR>
