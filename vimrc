@@ -97,16 +97,19 @@ runtime macros/matchit.vim
 " --- Solarized Light ---
 " colorscheme solarized
 " set background=light
+" set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_light'
 
 " --- Solarized Dark ---
 " colorscheme solarized
 " set background=dark
+" set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 " --- Jellybeans ---
 " colorscheme jellybeans
 " set background=dark
+" set noshowmode
 " let g:rws_lightline_colorscheme = 'jellybeans'
 " " let g:rws_lightline_colorscheme = 'seoul256'
 " " let g:rws_lightline_colorscheme = 'landscape'
@@ -117,9 +120,10 @@ runtime macros/matchit.vim
 " --- Github ---
 colorscheme github
 set background=light
-" let g:rws_lightline_colorscheme = 'wombat'
+set noshowmode
+let g:rws_lightline_colorscheme = 'wombat'
 " let g:rws_lightline_colorscheme = 'landscape'
-let g:rws_lightline_colorscheme = 'PaperColor'
+" let g:rws_lightline_colorscheme = 'PaperColor'
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
