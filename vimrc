@@ -30,6 +30,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'itchyny/lightline.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'christoomey/vim-tmux-runner'
+Plugin 'rizzatti/dash.vim'
 
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'benmills/vimux'
