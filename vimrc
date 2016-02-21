@@ -29,11 +29,11 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'itchyny/lightline.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'christoomey/vim-tmux-runner'
+Plugin 'christoomey/vim-tmux-runner'
 Plugin 'rizzatti/dash.vim'
 
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'benmills/vimux'
+" Plugin 'benmills/vimux'
 " Plugin 'jgdavey/tslime.vim'
 " Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
@@ -327,31 +327,10 @@ nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR
 nnoremap <LEADER>bw :w<CR>
 nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
-" Vimux Commands
-nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
-nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
-nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
-
-
-
-" nnoremap <LEADER>cl :VtrSendCommandToRunner<CR>
-" nnoremap <LEADER>cp :VtrFlushCommand<CR>:VtrSendCommandToRunner<CR>
-
-" nnoremap <LEADER>cc :VtrSendCommandToRunner<CR>
-" nnoremap <LEADER>co :VtrOpenRunner<CR>
-
-" nnoremap <LEADER>vrr  :VtrResizeRunner<cr>
-" nnoremap <LEADER>vror :VtrReorientRunner<cr>
-" nnoremap <LEADER>vsc  :VtrSendCommandToRunner<cr>
-" nnoremap <LEADER>vsl  :VtrSendLinesToRunner<cr>
-" nnoremap <LEADER>vor  :VtrOpenRunner<cr>
-" nnoremap <LEADER>vkr  :VtrKillRunner<cr>
-" nnoremap <LEADER>vfr  :VtrFocusRunner<cr>
-" nnoremap <LEADER>vdr  :VtrDetachRunner<cr>
-" nnoremap <LEADER>var  :VtrReattachRunner<cr>
-" nnoremap <LEADER>vcr  :VtrClearRunner<cr>
-" nnoremap <LEADER>vfc  :VtrFlushCommand<cr>
-
+" " Vimux Commands
+" nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
+" nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
+" nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
 
 
 
@@ -412,6 +391,44 @@ nnoremap <LEADER>; :Commentary<CR>
 
 vnoremap ; :'<,'>Commentary<CR>
 vnoremap <LEADER>y "*y
+
+
+
+
+" --- Vim Tmux Runner -------------------------------------------------------- "
+" Vim Tmux Runner has many commands and potential modes of interaction, and I
+" recommend investigating it fully, but the following list highlights the
+" commands used in this step of the tmux course:
+
+" :VtrSendLinesToRunner - Send across the current line or visually selected
+"   range of lines to the tmux pane for evaluation.
+" :VtrAttachToPane - Prompt for the pane number to which Vim Tmux Runner
+"   should attach and send future commands.
+" :VtrSendCommand - Send a specific command, e.g. bundle exec rake.
+" :VtrSendFile - Evaluate the current file with its default executable.
+" :VtrFocusRunner - Make the tmux runner pane active and zoom it. Useful for
+"   review test failure output.
+" :VtrOpenRunner [{optional-config}] - Opens a tmux pane and attaches the
+"   plugin to it. You can optionally provide a configuration specifying the
+"   orientation, size, and initial command for the pane.
+" As an example, specific variants of :VtrOpenRunner can be mapped in Vim. The
+" following Vim key-binding for <leader>irb will open a tmux pane on the
+" right, occupying 50% of the screen, and start ruby's irb REPL.
+" nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+
+
+nnoremap <LEADER>vrr  :VtrResizeRunner<cr>
+nnoremap <LEADER>vror :VtrReorientRunner<cr>
+nnoremap <LEADER>vsc  :VtrSendCommandToRunner<cr>
+nnoremap <LEADER>vsl  :VtrSendLinesToRunner<cr>
+nnoremap <LEADER>vor  :VtrOpenRunner<cr>
+nnoremap <LEADER>vkr  :VtrKillRunner<cr>
+nnoremap <LEADER>vfr  :VtrFocusRunner<cr>
+nnoremap <LEADER>vdr  :VtrDetachRunner<cr>
+nnoremap <LEADER>var  :VtrReattachRunner<cr>
+nnoremap <LEADER>vcr  :VtrClearRunner<cr>
+nnoremap <LEADER>vfc  :VtrFlushCommand<cr>
+
 
 
 " --- Ctrl Combos ------------------------------------------------------------ "
@@ -496,8 +513,8 @@ let g:ctrlp_working_path_mode = 'ra'
 " ---------------------------------------------------------------------------- "
 "   Vimux
 " ---------------------------------------------------------------------------- "
-let g:VimuxHeight = "30"
-let g:VimuxUseNearest = 1
+" let g:VimuxHeight = "30"
+" let g:VimuxUseNearest = 1
 
 
 " ---------------------------------------------------------------------------- "
