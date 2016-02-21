@@ -243,10 +243,6 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
 
-" Love UK keyboards for programming with the exception of pound instead of hash.
-iab £ #
-iab # £
-
 iab cm ✓
 iab lod ಠ_ಠ
 iab 1lod ಠ_ರೃ
