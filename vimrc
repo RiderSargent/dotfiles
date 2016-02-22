@@ -95,6 +95,8 @@ runtime macros/matchit.vim
 "   Colors
 " ---------------------------------------------------------------------------- "
 
+let g:rws_lightline_colorscheme = 'default'
+
 " --- Solarized Light ---
 " colorscheme solarized
 " set background=light
@@ -108,6 +110,13 @@ runtime macros/matchit.vim
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 " --- Jellybeans ---
+let g:jellybeans_overrides = {
+      \  'Todo':         { 'guifg': 'dd0093' },
+      \  'Search':       { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
+      \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
+      \  'ColorColumn':  { 'guibg': '1c1c1c' }
+      \}
+
 colorscheme jellybeans
 set background=dark
 set noshowmode
