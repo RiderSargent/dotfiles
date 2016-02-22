@@ -113,6 +113,7 @@ let g:rws_lightline_colorscheme = 'default'
 let g:jellybeans_overrides = {
       \  'Todo':         { 'guifg': 'dd0093' },
       \  'Search':       { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
+      \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
       \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
       \  'ColorColumn':  { 'guibg': '1c1c1c' }
       \}
