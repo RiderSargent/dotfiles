@@ -108,23 +108,23 @@ runtime macros/matchit.vim
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 " --- Jellybeans ---
-" colorscheme jellybeans
-" set background=dark
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'jellybeans'
-" " let g:rws_lightline_colorscheme = 'seoul256'
-" " let g:rws_lightline_colorscheme = 'landscape'
-" " let g:rws_lightline_colorscheme = 'powerline'
-" " let g:rws_lightline_colorscheme = 'Tomorrow'
-" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+colorscheme jellybeans
+set background=dark
+set noshowmode
+let g:rws_lightline_colorscheme = 'jellybeans'
+" let g:rws_lightline_colorscheme = 'seoul256'
+" let g:rws_lightline_colorscheme = 'landscape'
+" let g:rws_lightline_colorscheme = 'powerline'
+" let g:rws_lightline_colorscheme = 'Tomorrow'
+" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 " --- Github ---
-colorscheme github
-set background=light
-set noshowmode
-let g:rws_lightline_colorscheme = 'wombat'
-" let g:rws_lightline_colorscheme = 'landscape'
-" let g:rws_lightline_colorscheme = 'PaperColor'
+" colorscheme github
+" set background=light
+" set noshowmode
+" let g:rws_lightline_colorscheme = 'wombat'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" " let g:rws_lightline_colorscheme = 'PaperColor'
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
