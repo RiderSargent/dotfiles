@@ -434,6 +434,7 @@ vnoremap <LEADER>y "*y
 " nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
 
 
+nnoremap <LEADER>vap  :VtrAttachToPane<cr>
 nnoremap <LEADER>vrr  :VtrResizeRunner<cr>
 nnoremap <LEADER>vror :VtrReorientRunner<cr>
 nnoremap <LEADER>vsc  :VtrSendCommandToRunner<cr>
