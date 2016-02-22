@@ -13,6 +13,15 @@ function git_prompt_info() {
 # To see color indexes run spectrum_ls
 #   use 3-digit index like this: $FG[000]
 
+# Default Background
+LOGIN_COLOR=$FG[011]
+DIR_COLOR=$FG[012]
+PAREN_COLOR=$FG[008]
+GIT_CLEAN_COLOR=$FG[002]
+GIT_DIRTY_COLOR=$FG[001]
+RIGHT_PROMPT_COLOR=$FG[008]
+ERROR_COLOR=$FG[001]
+
 # # Solarized
 # LOGIN_COLOR=$FG[011]
 # DIR_COLOR=$FG[004]
@@ -23,17 +32,17 @@ function git_prompt_info() {
 # ERROR_COLOR=$FG[001]
 
 
-# Light Background
-LOGIN_COLOR=$FG[011]
-DIR_COLOR=$FG[004]
-PAREN_COLOR=$FG[007]
-GIT_CLEAN_COLOR=$FG[002]
-GIT_DIRTY_COLOR=$FG[009]
-RIGHT_PROMPT_COLOR=$FG[007]
-ERROR_COLOR=$FG[001]
+# # Light Background
+# LOGIN_COLOR=$FG[011]
+# DIR_COLOR=$FG[004]
+# PAREN_COLOR=$FG[007]
+# GIT_CLEAN_COLOR=$FG[002]
+# GIT_DIRTY_COLOR=$FG[009]
+# RIGHT_PROMPT_COLOR=$FG[007]
+# ERROR_COLOR=$FG[001]
+
 
 NEWLINE=$'\n'
-
 
 # Prompt
 PROMPT='${NEWLINE}'
