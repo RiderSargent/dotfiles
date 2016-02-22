@@ -305,16 +305,23 @@ endfunction
 
 
 " --- Leader Combos ---------------------------------------------------------- "
-" Set leader key
+" Set leader key (<SPACE> mapped this way to show up in showcmd)
 let mapleader=","
-" (<SPACE> mapped this way to show up in showcmd)
 map <SPACE> <LEADER>
+
+
+" Convert between 1.8 and 1.9 hash syntaxes
+nnoremap <leader>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<cr>
+vnoremap <leader>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
+nnoremap <leader>18 :%s/\(\w\+\):\s/:\1 => /gc<cr>
+vnoremap <leader>18 :s/\(\w\+\):\s/:\1 => /g<cr>
 
 nnoremap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
-nnoremap <LEADER>ba :b#<CR>
+" nnoremap <LEADER>ba :b#<CR>
+nnoremap <LEADER>ba <C-^>
 nnoremap <LEADER>bb :CtrlPBuffer<CR>
 nnoremap <LEADER>bd :bd<CR>
 nnoremap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
@@ -521,7 +528,7 @@ let g:ctrlp_working_path_mode = 'ra'
 "   Functions
 " ---------------------------------------------------------------------------- "
 " Automatically rebalance panes on window resize
-" autocmd VimResized * :wincmd =
+autocmd VimResized * :wincmd =
 
 " Strip whitespace (while keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
