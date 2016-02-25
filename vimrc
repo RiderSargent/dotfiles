@@ -65,7 +65,7 @@ Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
 " Plugin 'arecarn/Preserve'
-" Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'jszakmeister/vim-togglecursor'
 " Plugin 'danro/rename.vim'
 " Plugin 'jelera/vim-javascript-syntax'
 
