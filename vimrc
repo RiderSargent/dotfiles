@@ -167,7 +167,9 @@ set incsearch                      " incremental search
 set laststatus=2                   " To make status line appear without needing
                                    " to create a split first:
 set linebreak
-set listchars=tab:»·,trail:·,nbsp:·,eol:¬
+" set listchars=tab:»·,trail:·,nbsp:·,eol:¬
+set listchars=tab:»·,trail:•
+set list                           " TODO: set this only in programming files
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
@@ -486,12 +488,12 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " The following (re: TrailingWhitespace) is from the following page:
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
-" Match TrailingWhitespace except when typing at the end of the line
-autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+" " Match TrailingWhitespace except when typing at the end of the line
+" autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 
-" Highlight TrailingWhitespace highlight group
-highlight TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
+" " Highlight TrailingWhitespace highlight group
+" highlight TrailingWhitespace ctermbg=darkgreen guibg=darkgreen
 
 
 " ---------------------------------------------------------------------------- "
