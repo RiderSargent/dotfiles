@@ -552,6 +552,11 @@ let g:ctrlp_working_path_mode = 'ra'
 " ---------------------------------------------------------------------------- "
 "   Functions
 " ---------------------------------------------------------------------------- "
+
+" Only have cursorline in active window.
+au WinEnter * setlocal cursorline
+au WinLeave * setlocal nocursorline
+
 " Automatically rebalance panes on window resize
 autocmd VimResized * :wincmd =
 
