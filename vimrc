@@ -110,23 +110,23 @@ let g:rws_lightline_colorscheme = 'default'
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 " --- Jellybeans ---
-let g:jellybeans_overrides = {
-      \  'Todo':         { 'guifg': 'dd0093' },
-      \  'Search':       { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
-      \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
-      \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
-      \  'ColorColumn':  { 'guibg': '1c1c1c' }
-      \}
+" let g:jellybeans_overrides = {
+"       \  'Todo':         { 'guifg': 'dd0093' },
+"       \  'Search':       { 'guifg': '333333', 'guibg': '8788d6', 'attr': 'bold' },
+"       \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
+"       \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
+"       \  'ColorColumn':  { 'guibg': '1c1c1c' }
+"       \}
 
-colorscheme jellybeans
-set background=dark
-set noshowmode
-let g:rws_lightline_colorscheme = 'jellybeans'
-" let g:rws_lightline_colorscheme = 'seoul256'
-" let g:rws_lightline_colorscheme = 'landscape'
-" let g:rws_lightline_colorscheme = 'powerline'
-" let g:rws_lightline_colorscheme = 'Tomorrow'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+" colorscheme jellybeans
+" set background=dark
+" set noshowmode
+" let g:rws_lightline_colorscheme = 'jellybeans'
+" " let g:rws_lightline_colorscheme = 'seoul256'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" " let g:rws_lightline_colorscheme = 'powerline'
+" " let g:rws_lightline_colorscheme = 'Tomorrow'
+" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 " --- Github ---
 " colorscheme github
@@ -135,6 +135,12 @@ let g:rws_lightline_colorscheme = 'jellybeans'
 " let g:rws_lightline_colorscheme = 'wombat'
 " " let g:rws_lightline_colorscheme = 'landscape'
 " " let g:rws_lightline_colorscheme = 'PaperColor'
+
+colorscheme mustard
+set background=dark
+set noshowmode
+let g:rws_lightline_colorscheme = 'wombat'
+
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
@@ -221,6 +227,11 @@ set visualbell
 " time out on mapping after one and a half seconds,
 " time out on key codes after a tenth of a second.
 set timeout timeoutlen=1500 ttimeoutlen=100
+
+
+if has("nvim")
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
 
 " ---------------------------------------------------------------------------- "
