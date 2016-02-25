@@ -16,6 +16,7 @@ eval "$(thefuck --alias fuck)"
 
 export MY_INITIALS="RS"
 export PATH="$PATH:/Users/ridersargent/bin"
+export EDITOR='nvim'
 
 # Dotfiles-related
 export PATH="$PATH:/Users/ridersargent/.dotfiles/bin"
