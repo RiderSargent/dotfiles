@@ -14,7 +14,7 @@ function git_prompt_info() {
 #   use 3-digit index like this: $FG[000]
 
 # Default Background
-LOGIN_COLOR=$FG[011]
+LOGIN_COLOR=$FG[008]
 DIR_COLOR=$FG[012]
 PAREN_COLOR=$FG[008]
 GIT_CLEAN_COLOR=$FG[002]
@@ -47,11 +47,11 @@ NEWLINE=$'\n'
 # Prompt
 PROMPT='${NEWLINE}'
 # PROMPT+='${LOGIN_COLOR}%n@%m %{$reset_color%}${NEWLINE}'
-PROMPT+='${DIR_COLOR}%~ %{$reset_color%}'
+PROMPT+='${LOGIN_COLOR}╭  ${DIR_COLOR}%~ %{$reset_color%}'
 PROMPT+='$(git_prompt_info)'
 PROMPT+='%(?.. ${PAREN_COLOR}[${ERROR_COLOR}%?${PAREN_COLOR}]%{$reset_color%})'
-PROMPT+='%{$reset_color%}${NEWLINE}'
-PROMPT+='%(!.▶.❯) '
+PROMPT+='${NEWLINE}'
+PROMPT+='${LOGIN_COLOR}╰ %{$reset_color%}%(!.▶.❯) '
 # PROMPT+='❯ '
 # ▶
 # ❯
@@ -61,8 +61,6 @@ PROMPT+='%(!.▶.❯) '
 PROMPT+='%{$reset_color%}'
 
 # Righthand Prompt
-# RPROMPT='%{$fg_bold[grey]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%}'
-# RPROMPT='${RIGHT_PROMPT_COLOR}%T%{$reset_color%}'
 RPROMPT='${RIGHT_PROMPT_COLOR}$(~/.rvm/bin/rvm-prompt i v g)%{$reset_color%}'
 
 # Git Prompt Info

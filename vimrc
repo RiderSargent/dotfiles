@@ -76,6 +76,7 @@ Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'croaky/vim-colors-github'
+Plugin 'geoffharcourt/one-dark.vim'
 
 call vundle#end()
 
@@ -158,6 +159,11 @@ let g:rws_lightline_colorscheme = 'jellybeans'
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'wombat'
 
+
+" --- One Dark ---
+" colorscheme onedark
+" set background=dark
+" set noshowmode
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
