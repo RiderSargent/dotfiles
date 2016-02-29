@@ -826,7 +826,7 @@ autocmd BufReadPost *
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 endif
 
 
@@ -861,7 +861,7 @@ function! TabMessage(cmd)
     echoerr "no output"
   else
     " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    tabnew
+    vnew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
   endif

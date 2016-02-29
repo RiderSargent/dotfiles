@@ -14,7 +14,7 @@ let s:gui09 = "73e4f6"
 let s:gui0A = "ec691e"
 let s:gui0B = "a1d7f2"
 let s:gui0C = "73e4f6"
-let s:gui0D = "f7c527" 
+let s:gui0D = "f7c527"
 let s:gui0E = "ec691e"
 let s:gui0F = "73e4f6"
 
@@ -34,7 +34,7 @@ if has("nvim")
   let g:terminal_color_10 = "#f8f8f2"
   let g:terminal_color_11 = "#9dd6f4"
   let g:terminal_color_12 = "#73e4f6"
-  let g:terminal_color_13 = "#ec691e" 
+  let g:terminal_color_13 = "#ec691e"
   let g:terminal_color_14 = "#ec691e"
   let g:terminal_color_15 = "#ec691e"
   let g:terminal_color_16 ="#202020"
@@ -44,7 +44,7 @@ endif
 
 " Terminal color definitions
 
-" dark theme background: 25,25,25 
+" dark theme background: 25,25,25
 let s:cterm00 = "00"
 
 " comments, inactive vim window text: 128, 167, 140
@@ -321,7 +321,7 @@ call <sid>hi("markdownHeadingDelimiter",  s:gui0D, "", s:cterm0D, "", "")
 " Git highlighting
 call <sid>hi("gitCommitOverflow",  s:gui08, "", s:cterm08, "", "")
 call <sid>hi("gitCommitSummary",   s:gui0B, "", s:cterm0B, "", "")
-  
+
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd",     s:gui0B, s:gui01, s:cterm0B, s:cterm01, "")
 call <sid>hi("GitGutterChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "")
