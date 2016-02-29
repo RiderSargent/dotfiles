@@ -31,7 +31,6 @@ ERROR_COLOR=$FG[001]
 # RIGHT_PROMPT_COLOR=$FG[010]
 # ERROR_COLOR=$FG[001]
 
-
 # # Light Background
 # LOGIN_COLOR=$FG[011]
 # DIR_COLOR=$FG[004]
@@ -47,11 +46,11 @@ NEWLINE=$'\n'
 # Prompt
 PROMPT='${NEWLINE}'
 # PROMPT+='${LOGIN_COLOR}%n@%m %{$reset_color%}${NEWLINE}'
-PROMPT+='${LOGIN_COLOR}╭  ${DIR_COLOR}%~ %{$reset_color%}'
+PROMPT+='┌ ${DIR_COLOR}%~ %{$reset_color%}'
 PROMPT+='$(git_prompt_info)'
 PROMPT+='%(?.. ${PAREN_COLOR}[${ERROR_COLOR}%?${PAREN_COLOR}]%{$reset_color%})'
 PROMPT+='${NEWLINE}'
-PROMPT+='${LOGIN_COLOR}╰ %{$reset_color%}%(!.▶.❯) '
+PROMPT+='└%(!.▶.❯) '
 # PROMPT+='❯ '
 # ▶
 # ❯
