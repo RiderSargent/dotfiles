@@ -294,9 +294,6 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 iab cm ✓
 iab lod ಠ_ಠ
-iab 1lod ಠ_ರೃ
-iab tflip (╯°□°)╯︵ ┻━┻
-iab rockout \m/…(>.<)…\m/
 
 cab Ag Ag!
 cab AgBuffer AgBuffer!
