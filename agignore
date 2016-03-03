@@ -1,4 +1,10 @@
+.489454/*
 .git
+.cache/*
+.config/*
+.cups/*
+.CFUserTextEncoding
+.DS_Store
 1Password
 Applications
 Library
@@ -6,3 +12,4 @@ Movies
 Music
 Pictures
 *.fugitiveblame
+.atom/*
