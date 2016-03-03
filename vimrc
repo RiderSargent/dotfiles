@@ -50,6 +50,7 @@ Plugin 'majutsushi/tagbar'
 " Plugin 'suan/vim-instant-markdown'
 " Plugin 'shime/vim-livedown'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'tpope/vim-markdown'
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
@@ -64,10 +65,10 @@ Plugin 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
 Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
-" Plugin 'arecarn/Preserve'
 Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'arecarn/Preserve'
 " Plugin 'danro/rename.vim'
-" Plugin 'jelera/vim-javascript-syntax'
 
 " Plugin 'ecomba/vim-ruby-refactoring'
 " Plugin 'AndrewRadev/switch.vim'
@@ -587,7 +588,8 @@ autocmd VimResized * :wincmd =
 autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
 
 " By default, vim thinks .md is Modula-2, make it markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = [ 'html', 'ruby' ]
 
 " auto-reload .vimrc
 augroup reload_vimrc
