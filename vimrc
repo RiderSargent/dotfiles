@@ -510,9 +510,10 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
 " Match TrailingWhitespace except when typing at the end of the line
+autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
 autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match TrailingWhitespace /\s\+$/
-" autocmd BufEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd BufWinLeave * call clearmatches()
 
 " Highlight TrailingWhitespace highlight group
 highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
