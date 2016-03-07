@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Shift 3 to # and opt 3 to £</name>
+    <identifier>private.shift_3_to_hash</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, ModifierFlag::SHIFT_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, ModifierFlag::SHIFT_R,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+</root>
