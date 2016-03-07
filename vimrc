@@ -13,9 +13,9 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Essential
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
@@ -26,17 +26,13 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-markdown'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
-Plugin 'rizzatti/dash.vim'
-
+Plugin 'itchyny/lightline.vim'
 Plugin 'thoughtbot/vim-rspec'
-" Plugin 'benmills/vimux'
-" Plugin 'jgdavey/tslime.vim'
-" Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-clojure-static'
+Plugin 'rizzatti/dash.vim'
 
 " Non-essential, but very useful
 Plugin 'walm/jshint.vim'
@@ -46,11 +42,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
 
-" Markdown stuff
-" Plugin 'suan/vim-instant-markdown'
-" Plugin 'shime/vim-livedown'
-" Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'tpope/vim-markdown'
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
@@ -162,9 +153,37 @@ let g:rws_lightline_colorscheme = 'jellybeans'
 
 
 " --- One Dark ---
-" colorscheme onedark
 " set background=dark
+" colorscheme onedark
 " set noshowmode
+
+
+" --- Vimbrant ---
+" set background=dark
+" colorscheme vimbrant
+" highlight ColorColumn ctermbg=7
+" highlight ColorColumn guibg=Gray
+
+
+" --- Railscasts ---
+" set background=dark
+" colorscheme base16-railscasts
+
+" highlight clear SignColumn
+" highlight VertSplit    ctermbg=236
+" highlight ColorColumn  ctermbg=237
+" highlight LineNr       ctermbg=236 ctermfg=240
+" highlight CursorLineNr ctermbg=236 ctermfg=240
+" highlight CursorLine   ctermbg=236
+" " highlight StatusLineNC ctermbg=238 ctermfg=0
+" " highlight StatusLine   ctermbg=240 ctermfg=12
+" highlight IncSearch    ctermbg=3   ctermfg=1
+" highlight Search       ctermbg=1   ctermfg=3
+" highlight Visual       ctermbg=3   ctermfg=0
+" highlight Pmenu        ctermbg=240 ctermfg=12
+" highlight PmenuSel     ctermbg=3   ctermfg=1
+" highlight SpellBad     ctermbg=0   ctermfg=1
+
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
