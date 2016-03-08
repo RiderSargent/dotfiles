@@ -226,7 +226,7 @@ set number                         " show current line cumber
 set relativenumber                 " relative line numbering
 set ruler                          " show current position
 " set scrolloff=1                    " force 1 line padding when scrolling
-set scrolloff=5                 " Start scrolling when within 5 lines near the top/bottom
+set scrolloff=3                 " Start scrolling when within 3 lines near the top/bottom
 set sidescrolloff=10            " Start scrolling when within 10 characters of the left/right
 set sidescroll=1                " Scroll to left/right one column at a time."
 set shiftround                     " when at 3 spaces and I hit tab, go to 4,
