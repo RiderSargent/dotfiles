@@ -1,0 +1,15 @@
+# vim:syntax=zsh
+
+# export ZSH_THEME="ridersargent"
+export EDITOR=vim
+
+export GIT_NAME="Rider Sargent"
+export GIT_EMAIL="rider@vzaar.com"
+
+# set max open files and max procs
+ulimit -n 65536
+ulimit -u 2048
+
+export VZDOCS_EMAIL="546388471661-u0ij272bg6q10gpvlv0i03mqjvkda53p@developer.gserviceaccount.com"
+export VZDOCS_P12KEY="$HOME/Dropbox/vzaarSecured/vzaar-google.p12"
+export VZDOCS_PASSWORD="notasecret"

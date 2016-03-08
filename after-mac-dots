@@ -1,0 +1,9 @@
+# vim:syntax=zsh
+
+# --- vzaar --------------------------------------------------------------------
+# vzaar environment settings
+export VZAAR_VD_DB_USERNAME="vzaar_dev"
+export VZAAR_VD_DB_PASS="pass@word1"
+
+# --- My Settings --------------------------------------------------------------
+__md__source_if_exists "${HOME}/.dotfiles/zshrc"
