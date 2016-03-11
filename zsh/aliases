@@ -1,16 +1,16 @@
 unalias ga
 unalias v
 
-alias aliases='$EDITOR ~/.dotfiles/zsh/aliases'
 alias amend='git commit --amend --no-edit'
 alias c='clear'
+alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases'
 alias ef='exercism fetch'
 alias es='exercism submit'
 alias ga='git add'
 alias gcnm='git commit -m "Minor changes. Commit message skipped."'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias n='nvim'
-alias notes='$EDITOR ~/Dropbox/Notes'
+alias notes='cd ~/Dropbox/Notes; $EDITOR +CtrlP'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias so='source'
@@ -21,8 +21,8 @@ alias tl='tmux ls'
 alias tmux="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
 alias v='vim'
-alias vs='ls -al ~/.vim/sessions'
 alias vapi='cd ~/Development/vzaar/vzaar-api-ruby'
+alias vim_sessions='ls -al ~/.vim/sessions'
 alias vushuru='cd ~/Development/vzaar/vzaar-ushuru'
 alias vz='mux vz'
 alias vznotes='$EDITOR ~/Dropbox/Notes/vzaar/vznotes.md'
