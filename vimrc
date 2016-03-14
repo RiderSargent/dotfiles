@@ -33,6 +33,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'guns/vim-clojure-static'
 Plugin 'rizzatti/dash.vim'
+" Plugin 'sjl/gundo.vim'
 
 " Non-essential, but very useful
 Plugin 'walm/jshint.vim'
