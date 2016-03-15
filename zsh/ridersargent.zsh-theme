@@ -48,7 +48,8 @@ PROMPT+='└%(!.▶.❯) '
 PROMPT+='%{$reset_color%}'
 
 # Righthand Prompt
-RPROMPT='${RIGHT_PROMPT_COLOR}$(~/.rvm/bin/rvm-prompt i v g)%{$reset_color%}'
+# RPROMPT='${RIGHT_PROMPT_COLOR}$(~/.rvm/bin/rvm-prompt i v g)%{$reset_color%}'
+RPROMPT='${RIGHT_PROMPT_COLOR}$(prompt_rvm)%{$reset_color%}'
 
 # Git Prompt Info
 ZSH_THEME_GIT_PROMPT_PREFIX="${PAREN_COLOR}(%{$reset_color%}"

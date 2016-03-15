@@ -20,6 +20,14 @@ git_prompt_info() {
     echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
+
+prompt_rvm() {
+  rbv=`rvm-prompt`
+  rbv=${rbv#ruby-}
+  [[ $rbv == *"@"* ]] || rbv="${rbv}@default"
+  echo $rbv
+}
+
 source_if_exists() {
   local file ;
   for file ; do
