@@ -1,15 +1,3 @@
-# I copied this function here so I could put the branch name after
-# ZSH_THEME_GIT_PROMPT_DIRTY or ZSH_THEME_GIT_PROMPT_CLEAN instead of before.
-# original function is in ~/.oh-my-zsh/lib/git.zsh
-
-function git_prompt_info() {
-  if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
-    ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-  fi
-}
-
 # To see color indexes run spectrum_ls
 #   use 3-digit index like this: $FG[000]
 

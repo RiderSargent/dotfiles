@@ -25,6 +25,4 @@ source "${HOME}/.dotfiles/zsh/aliases"
 source "${HOME}/.dotfiles/zsh/functions"
 source "${HOME}/.dotfiles/zsh/ridersargent.zsh-theme"
 
-precmd () { print -Pn "\e]2;%~\a" }
-
 ensure_tmux_is_running
