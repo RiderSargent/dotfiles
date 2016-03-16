@@ -3,7 +3,7 @@
 DOTFILES_ROOT="`pwd`"
 
 # TODO: setup nvim and nvimrc
-for RC in 'after-mac-dots' 'agignore' 'before-mac-dots' 'rspec' 'tmux.conf' 'vim' 'vimrc' 'zshrc' ; do
+for RC in 'after-mac-dots' 'agignore' 'before-mac-dots' 'rspec' 'tmux.conf' 'nvim' 'nvimrc' 'vim' 'vimrc' 'zshrc' ; do
     SOURCE="$DOTFILES_ROOT/$RC"
     # DESTINATION="$DOTFILES_ROOT/temp/.$RC"
     DESTINATION="$HOME/.$RC"
