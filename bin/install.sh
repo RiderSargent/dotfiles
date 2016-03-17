@@ -2,15 +2,23 @@
 
 DOTFILES_ROOT="`pwd`"
 
-# TODO: setup nvim and nvimrc
-for RC in 'after-mac-dots' 'agignore' 'before-mac-dots' 'rspec' 'tmux.conf' 'nvim' 'nvimrc' 'vim' 'vimrc' 'zshrc' ; do
-    SOURCE="$DOTFILES_ROOT/$RC"
-    # DESTINATION="$DOTFILES_ROOT/temp/.$RC"
-    DESTINATION="$HOME/.$RC"
+rcfiles="after-mac-dots"
+rcfiles+=" agignore"
+rcfiles+=" before-mac-dots"
+rcfiles+=" rspec"
+rcfiles+=" tmux.conf"
+rcfiles+=" nvim"
+rcfiles+=" nvimrc"
+rcfiles+=" vim"
+rcfiles+=" vimrc"
+rcfiles+=" zshrc"
 
-  # echo "SOURCE: $SOURCE"
-  # echo "DESTINATION: $DESTINATION"
-  # echo ''
+# for filename in $rcfiles ; do
+for filename in $rcfiles ; do
+    SOURCE="$DOTFILES_ROOT/$filename"
+    DESTINATION="$HOME/.$filename"
+
+  # echo "$DESTINATION --> $SOURCE"
 
   if [ -L $DESTINATION ] ; then
     TYPE="File"
