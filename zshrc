@@ -25,4 +25,4 @@ source "${HOME}/.dotfiles/zsh/aliases"
 source "${HOME}/.dotfiles/zsh/functions"
 source "${HOME}/.dotfiles/zsh/ridersargent.zsh-theme"
 
-ensure_tmux_is_running
+# ensure_tmux_is_running
