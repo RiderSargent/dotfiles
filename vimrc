@@ -65,6 +65,8 @@ Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'ecomba/vim-ruby-refactoring'
 " Plugin 'AndrewRadev/switch.vim'
 
+Plugin 'lambdatoast/elm.vim'
+
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
@@ -114,7 +116,7 @@ let g:jellybeans_overrides = {
   \  'ColorColumn':  { 'guibg': '2a2a2a' },
   \  'VertSplit':    { 'guifg': '333333', 'guibg': '151515' },
   \  'Folded':       { 'guibg': '222222' },
-  \  'SpecialKey':   { 'guifg': 'ff4444', 'guibg': '151515' },
+  \  'SpecialKey':   { 'guifg': '444444', 'guibg': '151515' },
   \}
 
 " 'NonText' = 'eol', 'extends' and 'precedes'.
