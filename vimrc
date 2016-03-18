@@ -29,6 +29,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-markdown'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
+Plugin 'christoomey/vim-system-copy'
 Plugin 'itchyny/lightline.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'guns/vim-clojure-static'
@@ -53,6 +54,9 @@ Plugin 'honza/vim-snippets'
 
 " Text Objects
 Plugin 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
+Plugin 'kana/vim-textobj-entire'               "ie to select inner everything
+Plugin 'kana/vim-textobj-line'                 "il to select inner line
+Plugin 'kana/vim-textobj-indent'               "ii to select inner indent
 Plugin 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
 Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
