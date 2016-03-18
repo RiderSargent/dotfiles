@@ -607,8 +607,8 @@ au WinLeave * setlocal nocursorline
 " Automatically rebalance panes on window resize
 autocmd VimResized * :wincmd =
 
-" Strip whitespace (while keeping cursor pos) for the indicated filetypes
-autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
+" Trim trailing whitespace (while keeping cursor pos) for the indicated filetypes
+autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,*.elm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
 
 " By default, vim thinks .md is Modula-2, make it markdown
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
