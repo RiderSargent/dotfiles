@@ -346,9 +346,6 @@ noremap L g_
 " Visually select text entered last time in insert
 nnoremap gV `[v`]
 
-nnoremap cr :so $MYVIMRC<CR>
-nnoremap cv :e $MYVIMRC<CR>
-
 " Arrow keys to resize in normal mode
 noremap <down> <C-W>+
 noremap <up> <C-W>-
@@ -407,11 +404,12 @@ nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR
 nnoremap <LEADER>bw :w<CR>
 nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
-" " Vimux Commands
-" nnoremap <LEADER>ci :call VimuxInterruptRunner()<CR>
-" nnoremap <LEADER>cl :call VimuxRunLastCommand()<CR>
-" nnoremap <LEADER>cp :call VimuxPromptCommand()<CR>
 
+nnoremap <LEADER>ca :VtrAttachToPane<cr>
+nnoremap <LEADER>cc :VtrSendCommandToRunner<cr>
+nnoremap <LEADER>cf :VtrFlushCommand<cr>
+nnoremap <LEADER>cr :VtrSendCommandToRunner<cr>
+nnoremap <LEADER>cz :VtrFocusRunner<cr>
 
 
 " Editor
@@ -465,6 +463,10 @@ nnoremap <LEADER>ss :mksession! ~/.vim/sessions/
 
 " Tagbar
 nnoremap <LEADER>tt :TagbarToggle<CR>
+
+" vimrc
+nnoremap <LEADER>vr :so $MYVIMRC<CR>
+nnoremap <LEADER>ve :e $MYVIMRC<CR>
 
 nnoremap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 nnoremap <LEADER>; :Commentary<CR>
