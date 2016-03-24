@@ -52,6 +52,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/after/snippets
 
+
 " Text Objects
 Plugin 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
 Plugin 'kana/vim-textobj-entire'               "ie to select inner everything
@@ -61,13 +62,10 @@ Plugin 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
 Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
-Plugin 'jszakmeister/vim-togglecursor'
+" Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'arecarn/Preserve'
-" Plugin 'danro/rename.vim'
 
 " Plugin 'ecomba/vim-ruby-refactoring'
-" Plugin 'AndrewRadev/switch.vim'
 
 Plugin 'lambdatoast/elm.vim'
 
@@ -390,7 +388,6 @@ nnoremap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to space
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
-" nnoremap <LEADER>ba :b#<CR>
 nnoremap <LEADER>ba <C-^>
 nnoremap <LEADER>bb :CtrlPBuffer<CR>
 nnoremap <LEADER>bd :bd<CR>
