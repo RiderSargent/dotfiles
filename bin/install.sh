@@ -1,19 +1,19 @@
 # !/bin/zsh
 
-DOTFILES_ROOT="`pwd`"
+DOTFILES_ROOT="$HOME/.dotfiles"
 
 rcfiles="after-mac-dots"
 rcfiles+=" agignore"
 rcfiles+=" before-mac-dots"
-rcfiles+=" rspec"
-rcfiles+=" tmux.conf"
 rcfiles+=" nvim"
 rcfiles+=" nvimrc"
+rcfiles+=" rspec"
+rcfiles+=" spacemacs"
+rcfiles+=" tmux.conf"
 rcfiles+=" vim"
 rcfiles+=" vimrc"
 rcfiles+=" zshrc"
 
-# for filename in $rcfiles ; do
 for filename in $rcfiles ; do
     SOURCE="$DOTFILES_ROOT/$filename"
     DESTINATION="$HOME/.$filename"
