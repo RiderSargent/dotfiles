@@ -111,7 +111,7 @@ let g:rws_lightline_colorscheme = 'default'
 let g:jellybeans_use_term_background_color = 0
 
 let g:jellybeans_overrides = {
-  \  'background':   { 'guibg': '000000' },
+  \  'background':   { 'guibg': 'NONE' },
   \  'Todo':         { 'guifg': 'dd0093' },
   \  'Search':       { 'guifg': '333333', 'guibg': '8788d6', 'attr': 'bold' },
   \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
