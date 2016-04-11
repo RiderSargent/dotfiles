@@ -33,6 +33,7 @@ Plugin 'christoomey/vim-system-copy'
 Plugin 'itchyny/lightline.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'guns/vim-clojure-static'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'rizzatti/dash.vim'
 " Plugin 'sjl/gundo.vim'
 
