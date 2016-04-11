@@ -22,6 +22,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
 alias v='vim'
 alias vapi='cd ~/Development/vzaar/vzaar-api-ruby'
+alias vfunksie='cd ~/Development/vzaar/vzaar-funksie'
 alias vim_sessions='ls -al ~/.vim/sessions'
 alias vushuru='cd ~/Development/vzaar/vzaar-ushuru'
 alias vz='mux vz'
