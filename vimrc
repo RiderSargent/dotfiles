@@ -38,6 +38,7 @@ Plugin 'rizzatti/dash.vim'
 " Plugin 'sjl/gundo.vim'
 
 " Non-essential, but very useful
+Plugin 'tommcdo/vim-exchange'
 Plugin 'walm/jshint.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
@@ -68,7 +69,8 @@ Plugin 'jelera/vim-javascript-syntax'
 
 " Plugin 'ecomba/vim-ruby-refactoring'
 
-Plugin 'lambdatoast/elm.vim'
+" Plugin 'lambdatoast/elm.vim'
+Plugin 'ElmCast/elm-vim'
 
 " Colorschemes
 Plugin 'altercation/vim-colors-solarized'
