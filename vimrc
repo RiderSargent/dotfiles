@@ -272,7 +272,7 @@ set textwidth=0
 set title
 set titlestring=Vim:\ %F\ %y%h%r%m
 
-set wildmode=list:longest
+set wildmode=list:longest,full
 set wildignore=*/tmp/*,*.swp,*.zip,*.1password
 
 " make arrow keys (and h, l) wrap at beginning/end of lines
