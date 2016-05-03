@@ -115,6 +115,7 @@ let g:rws_lightline_colorscheme = 'default'
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
+
 " " --- Jellybeans ---
 " let g:jellybeans_use_term_background_color = 0
 
@@ -203,7 +204,7 @@ let g:rws_lightline_colorscheme = 'default'
 
 
 let g:rws_lightline_colorscheme = 'gruvbox'
-let g:gruvbox_italic=1
+set noshowmode
 set background=dark
 colorscheme gruvbox
 
@@ -741,16 +742,15 @@ let g:lightline = {
       \ 'colorscheme': rws_lightline_colorscheme,
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'filename': 'LightLineFilename',
-      \   'fileformat': 'LightLineFileformat',
       \   'filetype': 'LightLineFiletype',
       \   'fileencoding': 'LightLineFileencoding',
       \   'mode': 'LightLineMode',
@@ -796,10 +796,6 @@ function! LightLineFugitive()
   catch
   endtry
   return ''
-endfunction
-
-function! LightLineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightLineFiletype()
