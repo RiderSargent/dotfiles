@@ -78,6 +78,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'croaky/vim-colors-github'
 Plugin 'geoffharcourt/one-dark.vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 
@@ -111,43 +112,43 @@ let g:rws_lightline_colorscheme = 'default'
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
-" --- Jellybeans ---
-let g:jellybeans_use_term_background_color = 0
+" " --- Jellybeans ---
+" let g:jellybeans_use_term_background_color = 0
 
-let g:jellybeans_overrides = {
-  \  'background':   { 'guibg': 'NONE' },
-  \  'Todo':         { 'guifg': 'dd0093' },
-  \  'Search':       { 'guifg': '333333', 'guibg': '8788d6', 'attr': 'bold' },
-  \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
-  \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
-  \  'CursorColumn': { 'guibg': '2a2a2a' },
-  \  'CursorLine':   { 'guibg': '2a2a2a' },
-  \  'ColorColumn':  { 'guibg': '2a2a2a' },
-  \  'VertSplit':    { 'guifg': '333333', 'guibg': '151515' },
-  \  'Folded':       { 'guibg': '222222' },
-  \  'SpecialKey':   { 'guifg': '444444', 'guibg': '151515' },
-  \}
+" let g:jellybeans_overrides = {
+"   \  'background':   { 'guibg': 'NONE' },
+"   \  'Todo':         { 'guifg': 'dd0093' },
+"   \  'Search':       { 'guifg': '333333', 'guibg': '8788d6', 'attr': 'bold' },
+"   \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
+"   \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
+"   \  'CursorColumn': { 'guibg': '2a2a2a' },
+"   \  'CursorLine':   { 'guibg': '2a2a2a' },
+"   \  'ColorColumn':  { 'guibg': '2a2a2a' },
+"   \  'VertSplit':    { 'guifg': '333333', 'guibg': '151515' },
+"   \  'Folded':       { 'guibg': '222222' },
+"   \  'SpecialKey':   { 'guifg': '444444', 'guibg': '151515' },
+"   \}
 
-" 'NonText' = 'eol', 'extends' and 'precedes'.
-" 'SpecialKey' = 'nbsp', 'tab' and 'trail'.
+" " 'NonText' = 'eol', 'extends' and 'precedes'.
+" " 'SpecialKey' = 'nbsp', 'tab' and 'trail'.
 
-" SpecialKey     xxx term=bold ctermfg=238 ctermbg=234 guifg=#444444 guibg=#1c1c1c
-" NonText        xxx term=bold ctermfg=240 ctermbg=233 guifg=#606060 guibg=#151515
-" CursorColumn   xxx ctermbg=234 guibg=#1c1c1c
-" CursorLine     xxx ctermbg=234 guibg=#1c1c1c
-" ColorColumn    xxx ctermbg=234 guibg=#1c1c1c
-" VertSplit      xxx ctermfg=243 ctermbg=16 guifg=#777777 guibg=#403c41
+" " SpecialKey     xxx term=bold ctermfg=238 ctermbg=234 guifg=#444444 guibg=#1c1c1c
+" " NonText        xxx term=bold ctermfg=240 ctermbg=233 guifg=#606060 guibg=#151515
+" " CursorColumn   xxx ctermbg=234 guibg=#1c1c1c
+" " CursorLine     xxx ctermbg=234 guibg=#1c1c1c
+" " ColorColumn    xxx ctermbg=234 guibg=#1c1c1c
+" " VertSplit      xxx ctermfg=243 ctermbg=16 guifg=#777777 guibg=#403c41
 
+" colorscheme jellybeans
+" set background=dark
+" set noshowmode
+" let g:rws_lightline_colorscheme = 'jellybeans'
+" " let g:rws_lightline_colorscheme = 'seoul256'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" " let g:rws_lightline_colorscheme = 'powerline'
+" " let g:rws_lightline_colorscheme = 'Tomorrow'
+" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
-colorscheme jellybeans
-set background=dark
-set noshowmode
-let g:rws_lightline_colorscheme = 'jellybeans'
-" let g:rws_lightline_colorscheme = 'seoul256'
-" let g:rws_lightline_colorscheme = 'landscape'
-" let g:rws_lightline_colorscheme = 'powerline'
-" let g:rws_lightline_colorscheme = 'Tomorrow'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 " --- Github ---
 " colorscheme github
@@ -156,6 +157,7 @@ let g:rws_lightline_colorscheme = 'jellybeans'
 " let g:rws_lightline_colorscheme = 'wombat'
 " " let g:rws_lightline_colorscheme = 'landscape'
 " " let g:rws_lightline_colorscheme = 'PaperColor'
+
 
 " --- Mustard ---
 " colorscheme mustard
@@ -196,6 +198,11 @@ let g:rws_lightline_colorscheme = 'jellybeans'
 " highlight PmenuSel     ctermbg=3   ctermfg=1
 " highlight SpellBad     ctermbg=0   ctermfg=1
 
+
+let g:rws_lightline_colorscheme = 'gruvbox'
+let g:gruvbox_italic=1
+set background=dark
+colorscheme gruvbox
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
