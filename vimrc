@@ -37,6 +37,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'rizzatti/dash.vim'
 " Plugin 'sjl/gundo.vim'
 
+Plugin 'kassio/neoterm'
+
 " Non-essential, but very useful
 Plugin 'tommcdo/vim-exchange'
 Plugin 'walm/jshint.vim'
