@@ -38,6 +38,7 @@ Plugin 'rizzatti/dash.vim'
 " Plugin 'sjl/gundo.vim'
 
 Plugin 'kassio/neoterm'
+Plugin 'easymotion/vim-easymotion'
 
 " Non-essential, but very useful
 Plugin 'tommcdo/vim-exchange'
@@ -330,6 +331,14 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 
 " ---------------------------------------------------------------------------- "
+"  EasyMotion
+" ---------------------------------------------------------------------------- "
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+
+" ---------------------------------------------------------------------------- "
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
 
@@ -442,6 +451,13 @@ nnoremap <LEADER>fw :w<CR>
 " Goto File
 nnoremap <LEADER>gs :wincmd f<CR>
 nnoremap <LEADER>gv :vertical wincmd f<CR>
+
+" EasyMotion
+nmap <LEADER>j <Plug>(easymotion-bd-w)
+nmap <LEADER>J <Plug>(easymotion-bd-W)
+nmap <LEADER>k <Plug>(easymotion-s)
+nmap <LEADER>K <Plug>(easymotion-s2)
+nmap <LEADER>l <Plug>(easymotion-bd-jk)
 
 " Linting
 nnoremap <LEADER>lj :JSHint<CR>
