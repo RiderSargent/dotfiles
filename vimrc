@@ -377,7 +377,7 @@ noremap <right> <C-W>>
 noremap <left> <C-W><
 
 " Open help at bottom of screen
-cnoremap help bo help
+" cnoremap help bo help
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
 " 'change option...'
