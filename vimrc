@@ -145,8 +145,8 @@ let g:rws_lightline_colorscheme = 'default'
 
 " colorscheme jellybeans
 " set background=dark
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'jellybeans'
+" " set noshowmode
+" " let g:rws_lightline_colorscheme = 'jellybeans'
 " " let g:rws_lightline_colorscheme = 'seoul256'
 " " let g:rws_lightline_colorscheme = 'landscape'
 " " let g:rws_lightline_colorscheme = 'powerline'
@@ -163,24 +163,10 @@ let g:rws_lightline_colorscheme = 'default'
 " " let g:rws_lightline_colorscheme = 'PaperColor'
 
 
-" --- Mustard ---
-" colorscheme mustard
-" set background=dark
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'wombat'
-
-
 " --- One Dark ---
 " set background=dark
 " colorscheme onedark
 " set noshowmode
-
-
-" --- Vimbrant ---
-" set background=dark
-" colorscheme vimbrant
-" highlight ColorColumn ctermbg=7
-" highlight ColorColumn guibg=Gray
 
 
 " --- Railscasts ---
@@ -203,14 +189,23 @@ let g:rws_lightline_colorscheme = 'default'
 " highlight SpellBad     ctermbg=0   ctermfg=1
 
 
+" --- Gruvbox ---
 let g:rws_lightline_colorscheme = 'gruvbox'
 set noshowmode
 set background=dark
 colorscheme gruvbox
 
+highlight Normal guibg=NONE
+highlight SignColumn guibg=NONE
+highlight GitGutterAdd guifg=#b8bb26 guibg=NONE
+highlight GitGutterChange guifg=#8ec07c guibg=NONE
+highlight GitGutterDelete guifg=#fb4934 guibg=NONE
+highlight GitGutterChangeDelete guifg=#8ec07c guibg=NONE
+highlight VertSplit guifg=#928374 guibg=NONE
+
+
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
-
 
 " ---------------------------------------------------------------------------- "
 "   General Settings
@@ -339,6 +334,7 @@ let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
 let g:EasyMotion_smartcase = 1
 
+
 " ---------------------------------------------------------------------------- "
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
@@ -363,9 +359,9 @@ nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRe
 nnoremap j gj
 nnoremap k gk
 
-" Move to beginning/end of line
-noremap H ^
-noremap L g_
+" Swap ; and :
+" nnoremap : ;
+nnoremap ; :
 
 " Visually select text entered last time in insert
 nnoremap gV `[v`]
@@ -378,6 +374,13 @@ noremap <left> <C-W><
 
 " Open help at bottom of screen
 " cnoremap help bo help
+
+" Move to beginning/end of line
+" noremap H ^
+" noremap L g_
+noremap H 0
+noremap L $
+
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
 " 'change option...'
@@ -582,6 +585,8 @@ highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
 " ---------------------------------------------------------------------------- "
 "  Don't create any mappings
 let g:gitgutter_map_keys = 0
+"  Don't change column color
+let g:gitgutter_override_sign_column_highlight = 0
 
 
 " ---------------------------------------------------------------------------- "
@@ -738,134 +743,51 @@ command! RemoveFancyCharacters :call RemoveFancyCharacters()
 " endif
 
 
+
 let g:lightline = {
       \ 'colorscheme': rws_lightline_colorscheme,
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'inactive': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
+      \   'left':  [ [ 'mode', 'paste' ],
+      \              [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'filename': 'LightLineFilename',
-      \   'filetype': 'LightLineFiletype',
-      \   'fileencoding': 'LightLineFileencoding',
-      \   'mode': 'LightLineMode',
-      \   'ctrlpmark': 'CtrlPMark',
       \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \ },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
-function! LightLineModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+function! LightLineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
 function! LightLineReadonly()
-  return &ft !~? 'help' && &readonly ? 'RO' : ''
-endfunction
-
-function! LightLineFilename()
-  let fname = expand('%:t')
-  return fname == 'ControlP' ? g:lightline.ctrlp_item :
-        \ fname == '__Tagbar__' ? g:lightline.fname :
-        \ fname =~ '__Gundo\|NERD_tree' ? '' :
-        \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &ft == 'unite' ? unite#get_status_string() :
-        \ &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
-        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! LightLineFugitive()
-  try
-    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = ''  " edit here for cool mark
-      let _ = fugitive#head()
-      return strlen(_) ? mark._ : ''
-    endif
-  catch
-  endtry
-  return ''
-endfunction
-
-function! LightLineFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! LightLineMode()
-  let fname = expand('%:t')
-  return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ? 'NERDTree' :
-        \ &ft == 'unite' ? 'Unite' :
-        \ &ft == 'vimfiler' ? 'VimFiler' :
-        \ &ft == 'vimshell' ? 'VimShell' :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-
-function! CtrlPMark()
-  if expand('%:t') =~ 'ControlP'
-    call lightline#link('iR'[g:lightline.ctrlp_regex])
-    return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
-          \ , g:lightline.ctrlp_next], 0)
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "RO"
   else
-    return ''
+    return ""
   endif
 endfunction
 
-let g:ctrlp_status_func = {
-  \ 'main': 'CtrlPStatusFunc_1',
-  \ 'prog': 'CtrlPStatusFunc_2',
-  \ }
-
-function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
-  let g:lightline.ctrlp_regex = a:regex
-  let g:lightline.ctrlp_prev = a:prev
-  let g:lightline.ctrlp_item = a:item
-  let g:lightline.ctrlp_next = a:next
-  return lightline#statusline(0)
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+       \ ('' != expand('%') ? expand('%') : '[No Name]') .
+       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
-function! CtrlPStatusFunc_2(str)
-  return lightline#statusline(0)
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
 endfunction
-
-let g:tagbar_status_func = 'TagbarStatusFunc'
-
-function! TagbarStatusFunc(current, sort, fname, ...) abort
-    let g:lightline.fname = a:fname
-  return lightline#statusline(0)
-endfunction
-
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.c,*.cpp call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
-
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-let g:vimshell_force_overwrite_statusline = 0
-
 
 
 " jump to last position in file
