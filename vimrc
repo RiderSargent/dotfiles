@@ -307,12 +307,12 @@ endif
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Use sane regexes.
-nnoremap / /\v
-vnoremap / /\v
+nmap / /\v
+vmap / /\v
 
 " Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+nmap n nzzzv
+nmap N Nzzzv
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
@@ -322,8 +322,8 @@ function! s:VSetSearch()
   let @@ = temp
 endfunction
 
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 
 " ---------------------------------------------------------------------------- "
@@ -352,43 +352,43 @@ cab AgBuffer AgBuffer!
 
 " --- Generic Normal Mode ---------------------------------------------------- "
 " Highlight and Search for word under the cursor without changing the cursor position
-nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
 " Make j and k move by screen line, not file line
 " (works the way you'd expect on wrapped lines)
-nnoremap j gj
-nnoremap k gk
+nmap j gj
+nmap k gk
 
 " Swap ; and :
-" nnoremap : ;
-nnoremap ; :
+" nmap : ;
+nmap ; :
 
 " Visually select text entered last time in insert
-nnoremap gV `[v`]
+nmap gV `[v`]
 
 " Arrow keys to resize in normal mode
-noremap <down> <C-W>+
-noremap <up> <C-W>-
-noremap <right> <C-W>>
-noremap <left> <C-W><
+map <down> <C-W>+
+map <up> <C-W>-
+map <right> <C-W>>
+map <left> <C-W><
 
 " Open help at bottom of screen
-" cnoremap help bo help
+" cmap help bo help
 
 " Move to beginning/end of line
-" noremap H ^
-" noremap L g_
-noremap H 0
-noremap L $
+" map H ^
+" map L g_
+map H 0
+map L $
 
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
 " 'change option...'
 " 'gutter'
-nnoremap <silent> cog :set nonumber! relativenumber!<CR>
+nmap <silent> cog :set nonumber! relativenumber!<CR>
 
 " 'page' (colorcolumn for cols greater than 79)
-nnoremap cop :call ToggleColorcolumn()<CR>
+nmap cop :call ToggleColorcolumn()<CR>
 
 function! ToggleColorcolumn()
   if &colorcolumn==0
@@ -408,55 +408,55 @@ map <SPACE> <LEADER>
 
 
 " Convert between 1.8 and 1.9 hash syntaxes
-nnoremap <leader>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<cr>
-vnoremap <leader>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
-nnoremap <leader>18 :%s/\(\w\+\):\s/:\1 => /gc<cr>
-vnoremap <leader>18 :s/\(\w\+\):\s/:\1 => /g<cr>
+nmap <leader>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<cr>
+vmap <leader>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
+nmap <leader>18 :%s/\(\w\+\):\s/:\1 => /gc<cr>
+vmap <leader>18 :s/\(\w\+\):\s/:\1 => /g<cr>
 
-nnoremap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
+nmap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
-nnoremap <LEADER>ba <C-^>
-nnoremap <LEADER>bb :CtrlPBuffer<CR>
-nnoremap <LEADER>bd :bd<CR>
-nnoremap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
-nnoremap <LEADER>bl :buffers<CR>:
-nnoremap <LEADER>bn :bn<CR>
-nnoremap <LEADER>bo :CtrlPBuffer<CR>
-nnoremap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
-nnoremap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
-nnoremap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
-nnoremap <LEADER>bw :w<CR>
-nnoremap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
+nmap <LEADER>ba <C-^>
+nmap <LEADER>bb :CtrlPBuffer<CR>
+nmap <LEADER>bd :bd<CR>
+nmap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
+nmap <LEADER>bl :buffers<CR>:
+nmap <LEADER>bn :bn<CR>
+nmap <LEADER>bo :CtrlPBuffer<CR>
+nmap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
+nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
+nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+nmap <LEADER>bw :w<CR>
+nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
 
-nnoremap <LEADER>ca :VtrAttachToPane<cr>
-nnoremap <LEADER>cc :VtrSendCommandToRunner<cr>
-nnoremap <LEADER>cf :VtrFlushCommand<cr>
-nnoremap <LEADER>cl :VtrSendLinesToRunner<cr>
-nnoremap <LEADER>cr :VtrSendCommandToRunner<cr>
-nnoremap <LEADER>cz :VtrFocusRunner<cr>
+nmap <LEADER>ca :VtrAttachToPane<cr>
+nmap <LEADER>cc :VtrSendCommandToRunner<cr>
+nmap <LEADER>cf :VtrFlushCommand<cr>
+nmap <LEADER>cl :VtrSendLinesToRunner<cr>
+nmap <LEADER>cr :VtrSendCommandToRunner<cr>
+nmap <LEADER>cz :VtrFocusRunner<cr>
 
 
 " Editor
-nnoremap <LEADER>ee :NERDTreeToggle<CR>
-nnoremap <LEADER>eh :call <SID>SynStack()<CR>
-nnoremap <LEADER>et :TagbarToggle<CR>
+nmap <LEADER>ee :NERDTreeToggle<CR>
+nmap <LEADER>eh :call <SID>SynStack()<CR>
+nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
-nnoremap <LEADER>ff :CtrlPMRU<CR>
-nnoremap <LEADER>fn :enew<CR>
-nnoremap <LEADER>fo :CtrlP<CR>
-nnoremap <LEADER>fp :echo expand('%:p')<CR>
-nnoremap <LEADER>fr :CtrlPMRU<CR>
-nnoremap <LEADER>ft :NERDTreeToggle<CR>
-nnoremap <LEADER>fw :w<CR>
+nmap <LEADER>ff :CtrlPMRU<CR>
+nmap <LEADER>fn :enew<CR>
+nmap <LEADER>fo :CtrlP<CR>
+nmap <LEADER>fp :echo expand('%:p')<CR>
+nmap <LEADER>fr :CtrlPMRU<CR>
+nmap <LEADER>ft :NERDTreeToggle<CR>
+nmap <LEADER>fw :w<CR>
 
-nnoremap <LEADER>gb :Gblame<CR>
+nmap <LEADER>gb :Gblame<CR>
 " Goto File
-nnoremap <LEADER>gs :wincmd f<CR>
-nnoremap <LEADER>gv :vertical wincmd f<CR>
+nmap <LEADER>gs :wincmd f<CR>
+nmap <LEADER>gv :vertical wincmd f<CR>
 
 " EasyMotion
 nmap <LEADER>j <Plug>(easymotion-bd-w)
@@ -466,84 +466,84 @@ nmap <LEADER>K <Plug>(easymotion-s2)
 nmap <LEADER>l <Plug>(easymotion-bd-jk)
 
 " Linting
-nnoremap <LEADER>lj :JSHint<CR>
+nmap <LEADER>lj :JSHint<CR>
 
 " Notes
-nnoremap <LEADER>ne :e ~/Dropbox/Notes/
-nnoremap <LEADER>ns :w ~/Dropbox/Notes/
+nmap <LEADER>ne :e ~/Dropbox/Notes/
+nmap <LEADER>ns :w ~/Dropbox/Notes/
 
 " Panes
-nnoremap <LEADER>pb :wincmd =<CR>
-nnoremap <LEADER>pm <C-w>1\|
-nnoremap <LEADER>pn :vnew<CR>
-nnoremap <LEADER>po :only<CR>
-nnoremap <LEADER>pq :q<CR>
-nnoremap <LEADER>ps :sp<CR>
-nnoremap <LEADER>pv :vsp<CR>
-nnoremap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
+nmap <LEADER>pb :wincmd =<CR>
+nmap <LEADER>pm <C-w>1\|
+nmap <LEADER>pn :vnew<CR>
+nmap <LEADER>po :only<CR>
+nmap <LEADER>pq :q<CR>
+nmap <LEADER>ps :sp<CR>
+nmap <LEADER>pv :vsp<CR>
+nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
-nnoremap <LEADER>ra :call RunAllSpecs()<CR>
-nnoremap <LEADER>rc :call RunCurrentSpecFile()<CR>
-nnoremap <LEADER>rl :call RunLastSpec()<CR>
-nnoremap <LEADER>rn :call RunNearestSpec()<CR>
+nmap <LEADER>ra :call RunAllSpecs()<CR>
+nmap <LEADER>rc :call RunCurrentSpecFile()<CR>
+nmap <LEADER>rl :call RunLastSpec()<CR>
+nmap <LEADER>rn :call RunNearestSpec()<CR>
 
 " Run current buffer as Ruby script
-nnoremap <LEADER>rr :!ruby -W0 %<CR>
+nmap <LEADER>rr :!ruby -W0 %<CR>
 
 " Search/Sessions
-nnoremap <LEADER>sa :Ag!<SPACE>
-" nnoremap <LEADER>sa :grep! "\b<C-R><C-W>\b":cw<CR>
-nnoremap <LEADER>sl :source ~/.vim/sessions/
-nnoremap <LEADER>ss :mksession! ~/.vim/sessions/
+nmap <LEADER>sa :Ag!<SPACE>
+" nmap <LEADER>sa :grep! "\b<C-R><C-W>\b":cw<CR>
+nmap <LEADER>sl :source ~/.vim/sessions/
+nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 " Tagbar
-nnoremap <LEADER>tt :TagbarToggle<CR>
+nmap <LEADER>tt :TagbarToggle<CR>
 
 " vimrc
-nnoremap <LEADER>vr :so $MYVIMRC<CR>
-nnoremap <LEADER>ve :vs $MYVIMRC<CR>
-nnoremap <LEADER>vv :so $MYVIMRC<CR>
+nmap <LEADER>vr :so $MYVIMRC<CR>
+nmap <LEADER>ve :vs $MYVIMRC<CR>
+nmap <LEADER>vv :so $MYVIMRC<CR>
 
-" nnoremap <LEADER>vap  :VtrAttachToPane<cr>
-" nnoremap <LEADER>vrr  :VtrResizeRunner<cr>
-" nnoremap <LEADER>vror :VtrReorientRunner<cr>
-" nnoremap <LEADER>vsc  :VtrSendCommandToRunner<cr>
-" nnoremap <LEADER>vsl  :VtrSendLinesToRunner<cr>
-" nnoremap <LEADER>vor  :VtrOpenRunner<cr>
-" nnoremap <LEADER>vkr  :VtrKillRunner<cr>
-" nnoremap <LEADER>vfr  :VtrFocusRunner<cr>
-" nnoremap <LEADER>vdr  :VtrDetachRunner<cr>
-" nnoremap <LEADER>var  :VtrReattachRunner<cr>
-" nnoremap <LEADER>vcr  :VtrClearRunner<cr>
-" nnoremap <LEADER>vfc  :VtrFlushCommand<cr>
+" nmap <LEADER>vap  :VtrAttachToPane<cr>
+" nmap <LEADER>vrr  :VtrResizeRunner<cr>
+" nmap <LEADER>vror :VtrReorientRunner<cr>
+" nmap <LEADER>vsc  :VtrSendCommandToRunner<cr>
+" nmap <LEADER>vsl  :VtrSendLinesToRunner<cr>
+" nmap <LEADER>vor  :VtrOpenRunner<cr>
+" nmap <LEADER>vkr  :VtrKillRunner<cr>
+" nmap <LEADER>vfr  :VtrFocusRunner<cr>
+" nmap <LEADER>vdr  :VtrDetachRunner<cr>
+" nmap <LEADER>var  :VtrReattachRunner<cr>
+" nmap <LEADER>vcr  :VtrClearRunner<cr>
+" nmap <LEADER>vfc  :VtrFlushCommand<cr>
 
-nnoremap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
-nnoremap <LEADER>; :Commentary<CR>
+nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
+nmap <LEADER>; :Commentary<CR>
 
-vnoremap ; :'<,'>Commentary<CR>
-vnoremap <LEADER>y "*y
+vmap ; :'<,'>Commentary<CR>
+vmap <LEADER>y "*y
 
 " Example of using = reg and functions in mapping:
 " map <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 
 " --- Ctrl Combos ------------------------------------------------------------ "
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Enable dot command over visual selection
-xnoremap . :normal .<CR>
+xmap . :normal .<CR>
 
 " Disable entering Ex mode
-nnoremap Q <NOP>
+nmap Q <NOP>
 
 " Disable man lookup
-" nnoremap <S-k> <nop>
+" nmap <S-k> <nop>
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 
 " --- Highlight Trailing Whitespace ------------------------------------------ "
@@ -669,7 +669,7 @@ endfunction
 " This is an explosion of the process above.
 " Usage:
 "   Highlight and Search for word under the cursor without changing the cursor position
-"   nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+"   nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 function! PreserveSave()
     let b:winview = winsaveview()
 endfunction
@@ -804,7 +804,7 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+imap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 
 " Send the output of a cmd to a new tab (or split)
