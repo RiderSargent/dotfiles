@@ -453,6 +453,7 @@ nnoremap <LEADER>fr :CtrlPMRU<CR>
 nnoremap <LEADER>ft :NERDTreeToggle<CR>
 nnoremap <LEADER>fw :w<CR>
 
+nnoremap <LEADER>gb :Gblame<CR>
 " Goto File
 nnoremap <LEADER>gs :wincmd f<CR>
 nnoremap <LEADER>gv :vertical wincmd f<CR>
@@ -516,12 +517,14 @@ nnoremap <LEADER>vv :so $MYVIMRC<CR>
 " nnoremap <LEADER>vcr  :VtrClearRunner<cr>
 " nnoremap <LEADER>vfc  :VtrFlushCommand<cr>
 
-
 nnoremap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 nnoremap <LEADER>; :Commentary<CR>
 
 vnoremap ; :'<,'>Commentary<CR>
 vnoremap <LEADER>y "*y
+
+" Example of using = reg and functions in mapping:
+" map <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 
 " --- Ctrl Combos ------------------------------------------------------------ "
