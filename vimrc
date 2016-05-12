@@ -280,7 +280,7 @@ set title
 set titlestring=Vim:\ %F\ %y%h%r%m
 
 set wildmode=list:longest,full
-set wildignore=*/tmp/*,*.swp,*.zip,*.1password
+set wildignore=*/tmp/*,*.swp,*.zip,*.1password,*.fugitiveblame
 
 " make arrow keys (and h, l) wrap at beginning/end of lines
 "   < > = cursor keys in normal and visual mode
@@ -361,7 +361,7 @@ nmap k gk
 
 " Swap ; and :
 " nmap : ;
-nmap ; :
+" nmap ; :
 
 " Visually select text entered last time in insert
 nmap gV `[v`]
@@ -377,9 +377,9 @@ map <left> <C-W><
 
 " Move to beginning/end of line
 " map H ^
-" map L g_
 map H 0
-map L $
+map L g_
+" map L $
 
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
