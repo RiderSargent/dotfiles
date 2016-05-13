@@ -146,12 +146,6 @@ let g:rws_lightline_colorscheme = 'default'
 " colorscheme jellybeans
 " set background=dark
 " " set noshowmode
-" " let g:rws_lightline_colorscheme = 'jellybeans'
-" " let g:rws_lightline_colorscheme = 'seoul256'
-" " let g:rws_lightline_colorscheme = 'landscape'
-" " let g:rws_lightline_colorscheme = 'powerline'
-" " let g:rws_lightline_colorscheme = 'Tomorrow'
-" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 
 " --- Github ---
@@ -206,6 +200,12 @@ highlight VertSplit guifg=#928374 guibg=NONE
 
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
+" " let g:rws_lightline_colorscheme = 'jellybeans'
+" " let g:rws_lightline_colorscheme = 'seoul256'
+" " let g:rws_lightline_colorscheme = 'landscape'
+" " let g:rws_lightline_colorscheme = 'powerline'
+" " let g:rws_lightline_colorscheme = 'Tomorrow'
+" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
 " ---------------------------------------------------------------------------- "
 "   General Settings
