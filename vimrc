@@ -103,20 +103,22 @@ runtime macros/matchit.vim
 
 let g:rws_lightline_colorscheme = 'default'
 
-" --- Solarized Light ---
+
+" --- Solarized Light -------------------------------------------------------- "
 " colorscheme solarized
 " set background=light
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_light'
 
-" --- Solarized Dark ---
+
+" --- Solarized Dark --------------------------------------------------------- "
 " colorscheme solarized
 " set background=dark
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'solarized_dark'
 
 
-" " --- Jellybeans ---
+" --- Jellybeans ------------------------------------------------------------- "
 " let g:jellybeans_use_term_background_color = 0
 
 " let g:jellybeans_overrides = {
@@ -133,6 +135,11 @@ let g:rws_lightline_colorscheme = 'default'
 "   \  'SpecialKey':   { 'guifg': '444444', 'guibg': '151515' },
 "   \}
 
+" colorscheme jellybeans
+" set background=dark
+" set noshowmode
+" let g:rws_lightline_colorscheme = 'jellybeans'
+
 " " 'NonText' = 'eol', 'extends' and 'precedes'.
 " " 'SpecialKey' = 'nbsp', 'tab' and 'trail'.
 
@@ -143,27 +150,21 @@ let g:rws_lightline_colorscheme = 'default'
 " " ColorColumn    xxx ctermbg=234 guibg=#1c1c1c
 " " VertSplit      xxx ctermfg=243 ctermbg=16 guifg=#777777 guibg=#403c41
 
-" colorscheme jellybeans
-" set background=dark
-" " set noshowmode
 
-
-" --- Github ---
+" --- Github ----------------------------------------------------------------- "
 " colorscheme github
 " set background=light
 " set noshowmode
 " let g:rws_lightline_colorscheme = 'wombat'
-" " let g:rws_lightline_colorscheme = 'landscape'
-" " let g:rws_lightline_colorscheme = 'PaperColor'
 
 
-" --- One Dark ---
+" --- One Dark --------------------------------------------------------------- "
 " set background=dark
 " colorscheme onedark
 " set noshowmode
 
 
-" --- Railscasts ---
+" --- Railscasts ------------------------------------------------------------- "
 " set background=dark
 " colorscheme base16-railscasts
 
@@ -183,7 +184,7 @@ let g:rws_lightline_colorscheme = 'default'
 " highlight SpellBad     ctermbg=0   ctermfg=1
 
 
-" --- Gruvbox ---
+" --- Gruvbox ---------------------------------------------------------------- "
 let g:rws_lightline_colorscheme = 'gruvbox'
 set noshowmode
 set background=dark
@@ -198,6 +199,7 @@ highlight GitGutterChangeDelete guifg=#8ec07c guibg=NONE
 highlight VertSplit guifg=#928374 guibg=NONE
 
 
+" --- LightLine Stuff -------------------------------------------------------- "
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
 " " let g:rws_lightline_colorscheme = 'jellybeans'
