@@ -322,8 +322,8 @@ function! s:VSetSearch()
   let @@ = temp
 endfunction
 
-vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 
 " ---------------------------------------------------------------------------- "
