@@ -378,10 +378,10 @@ map <left> <C-W><
 " cmap help bo help
 
 " Move to beginning/end of line
-" map H ^
-map H 0
-map L g_
+" map H 0
 " map L $
+map H ^
+map L g_
 
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
