@@ -361,6 +361,12 @@ nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestor
 nmap j gj
 nmap k gk
 
+" Move to beginning/end of line
+" map H 0
+" map L $
+map H g^
+map L g$
+
 " Swap ; and :
 " nmap : ;
 " nmap ; :
@@ -376,12 +382,6 @@ map <left> <C-W><
 
 " Open help at bottom of screen
 " cmap help bo help
-
-" Move to beginning/end of line
-" map H 0
-" map L $
-map H ^
-map L g_
 
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
