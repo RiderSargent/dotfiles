@@ -724,7 +724,6 @@ let g:lightline = {
       \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
       \ },
       \ 'component_function': {
-      \   'fugitive': 'LightLineFugitive',
       \   'filename': 'LightLineFilename',
       \ },
       \ }
