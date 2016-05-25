@@ -470,6 +470,9 @@ nmap <LEADER>l <Plug>(easymotion-bd-jk)
 " Linting
 nmap <LEADER>lj :JSHint<CR>
 
+" Line
+nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+
 " Notes
 nmap <LEADER>ne :e ~/Dropbox/Notes/
 nmap <LEADER>ns :w ~/Dropbox/Notes/
@@ -505,19 +508,6 @@ nmap <LEADER>tt :TagbarToggle<CR>
 nmap <LEADER>vr :so $MYVIMRC<CR>
 nmap <LEADER>ve :vs $MYVIMRC<CR>
 nmap <LEADER>vv :so $MYVIMRC<CR>
-
-" nmap <LEADER>vap  :VtrAttachToPane<cr>
-" nmap <LEADER>vrr  :VtrResizeRunner<cr>
-" nmap <LEADER>vror :VtrReorientRunner<cr>
-" nmap <LEADER>vsc  :VtrSendCommandToRunner<cr>
-" nmap <LEADER>vsl  :VtrSendLinesToRunner<cr>
-" nmap <LEADER>vor  :VtrOpenRunner<cr>
-" nmap <LEADER>vkr  :VtrKillRunner<cr>
-" nmap <LEADER>vfr  :VtrFocusRunner<cr>
-" nmap <LEADER>vdr  :VtrDetachRunner<cr>
-" nmap <LEADER>var  :VtrReattachRunner<cr>
-" nmap <LEADER>vcr  :VtrClearRunner<cr>
-" nmap <LEADER>vfc  :VtrFlushCommand<cr>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 nmap <LEADER>; :Commentary<CR>
