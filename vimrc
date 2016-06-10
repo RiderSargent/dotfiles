@@ -342,7 +342,6 @@ let g:EasyMotion_smartcase = 1
 " ---------------------------------------------------------------------------- "
 
 iab cm ✓
-iab lod ಠ_ಠ
 
 cab Ag Ag!
 cab AgBuffer AgBuffer!
