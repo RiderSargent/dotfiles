@@ -344,6 +344,7 @@ let g:EasyMotion_smartcase = 1
 iab cm ✓
 
 cab Ag Ag!
+cab ag Ag!
 cab AgBuffer AgBuffer!
 
 
@@ -354,6 +355,9 @@ cab AgBuffer AgBuffer!
 " --- Generic Normal Mode ---------------------------------------------------- "
 " Highlight and Search for word under the cursor without changing the cursor position
 nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+
+noremap <C-e> 3<C-e>
+noremap <C-y> 3<C-y>
 
 " Make j and k move by screen line, not file line
 " (works the way you'd expect on wrapped lines)
@@ -436,6 +440,7 @@ nmap <LEADER>ca :VtrAttachToPane<cr>
 nmap <LEADER>cc :VtrSendCommandToRunner<cr>
 nmap <LEADER>cf :VtrFlushCommand<cr>
 nmap <LEADER>cl :VtrSendLinesToRunner<cr>
+vmap <LEADER>cl :VtrSendLinesToRunner<cr>
 nmap <LEADER>cr :VtrSendCommandToRunner<cr>
 nmap <LEADER>cz :VtrFocusRunner<cr>
 
