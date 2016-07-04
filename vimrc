@@ -356,8 +356,6 @@ cab AgBuffer AgBuffer!
 " Highlight and Search for word under the cursor without changing the cursor position
 nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
-noremap <C-e> 3<C-e>
-noremap <C-y> 3<C-y>
 
 " Make j and k move by screen line, not file line
 " (works the way you'd expect on wrapped lines)
@@ -367,7 +365,8 @@ nmap k gk
 " Move to beginning/end of line
 " map H 0
 " map L $
-map H g^
+" map H g^
+map H ^
 map L g$
 
 " Swap ; and :
