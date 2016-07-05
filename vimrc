@@ -309,8 +309,8 @@ endif
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Use sane regexes.
-nmap / /\v
-vmap / /\v
+" nmap / /\v
+" vmap / /\v
 
 " Keep search matches in the middle of the window.
 nmap n nzzzv
