@@ -2,6 +2,10 @@ snippet ---
 	--------------------------------------------------------------------------------
 snippet ===
 	================================================================================
+snippet day
+	`strftime("%a")`
+snippet ldate
+	`strftime("%Y-%m-%d %a")`
 snippet pr
 	#### Summary
 	${0}[mandatory]
@@ -20,7 +24,11 @@ snippet pr
 	[optional]
 	Are there any questions that need answering before this is merged?
 	Are there any relevant issues outside the scope of this pull request?
-snippet ldate
-	`strftime("%Y-%m-%d %a")`
-snippet day
-	`strftime("%a")`
+snippet status
+	Ticket number / desc
+	- progress report / issues preventing progress
+	- time spent and estimated time to completion
+
+	Other stuff
+	- Testing / merging PR (which one, and any issues / problems etc.)
+	- Meetings (only significant meetings)
