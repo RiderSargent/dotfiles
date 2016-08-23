@@ -254,7 +254,6 @@ set shiftround                     " when at 3 spaces and I hit tab, go to 4,
 set shortmess=atI                  " Don't show the Vim intro message
 set showbreak=↪\                   " wrapped line indicator
 set showcmd                        " show incomplete commands in cmd bar
-set sidescrolloff=2                " force 2 chars padding when scrolling horiz
 set smartcase                      " case sensitive if search has capped letter
 set smartindent
 set splitbelow                     " New split windows below
