@@ -243,7 +243,7 @@ set noswapfile                     " turn off swapfile creation
 set nowrap                         " turn off word wrap
 set nrformats=                     " treat all numbers as base 10
 set number                         " show current line cumber
-set relativenumber                 " relative line numbering
+" set relativenumber                 " relative line numbering
 set ruler                          " show current position
 " set scrolloff=1                    " force 1 line padding when scrolling
 set scrolloff=3                 " Start scrolling when within 3 lines near the top/bottom
@@ -388,7 +388,7 @@ map <left> <C-W><
 " --- Unimpaired-inspired ---------------------------------------------------- "
 " 'change option...'
 " 'gutter'
-nmap <silent> cog :set nonumber! relativenumber!<CR>
+" nmap <silent> cog :set nonumber! relativenumber!<CR>
 
 " 'page' (colorcolumn for cols greater than 79)
 nmap cop :call ToggleColorcolumn()<CR>
