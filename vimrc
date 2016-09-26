@@ -588,7 +588,8 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use Silver Searcher with CtrlP
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  " let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
 endif
 
 
