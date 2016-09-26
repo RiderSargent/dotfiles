@@ -209,6 +209,8 @@ highlight VertSplit guifg=#928374 guibg=NONE
 " " let g:rws_lightline_colorscheme = 'Tomorrow'
 " " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
 
+
+
 " ---------------------------------------------------------------------------- "
 "   General Settings
 " ---------------------------------------------------------------------------- "
@@ -298,11 +300,26 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 
 if has("nvim")
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
 
 
+
 " ---------------------------------------------------------------------------- "
-"  NEW - Stolen from Steve Losh
+"  Stolen from Chris Toomey
+" ---------------------------------------------------------------------------- "
+" Use line cursor in insert mode, block in normal (only in tmux)
+" if exists('$TMUX')
+"     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
+
+
+" ---------------------------------------------------------------------------- "
+"  Stolen from Steve Losh
 " ---------------------------------------------------------------------------- "
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
