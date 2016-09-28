@@ -39,6 +39,7 @@ Plugin 'rizzatti/dash.vim'
 
 Plugin 'kassio/neoterm'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'rgarver/Kwbd.vim'
 
 " Non-essential, but very useful
 Plugin 'tommcdo/vim-exchange'
