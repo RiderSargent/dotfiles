@@ -305,6 +305,10 @@ if has("nvim")
 endif
 
 
+" removes hash from comment delimiters so my text lists format properly
+" (<CR> returns to same indent as -, not indent of first word)
+autocmd FileType text setlocal comments=fb:*
+
 
 " ---------------------------------------------------------------------------- "
 "  Stolen from Chris Toomey
