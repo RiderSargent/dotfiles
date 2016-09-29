@@ -72,7 +72,7 @@ Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 " Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'jelera/vim-javascript-syntax'
 
-" Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ecomba/vim-ruby-refactoring'
 
 " Plugin 'lambdatoast/elm.vim'
 Plugin 'ElmCast/elm-vim'
@@ -94,7 +94,7 @@ filetype plugin indent on
 syntax enable                      " syntax highlighting
 
 " Allow % to jump between class, def, end, etc in Ruby files.
-" Also needed by Drew Neil's Ruby text objects plugin
+" Also needed by Drew Neil's Ruby text objects plugin and vim-ruby-refactoring
 runtime macros/matchit.vim
 
 
