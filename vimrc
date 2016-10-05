@@ -203,12 +203,23 @@ highlight VertSplit guifg=#928374 guibg=NONE
 " --- LightLine Stuff -------------------------------------------------------- "
 " lightline themes: can be found here:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
-" " let g:rws_lightline_colorscheme = 'jellybeans'
-" " let g:rws_lightline_colorscheme = 'seoul256'
-" " let g:rws_lightline_colorscheme = 'landscape'
-" " let g:rws_lightline_colorscheme = 'powerline'
-" " let g:rws_lightline_colorscheme = 'Tomorrow'
-" " let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+" let g:rws_lightline_colorscheme = '16color'
+" let g:rws_lightline_colorscheme = 'PaperColor'
+" let g:rws_lightline_colorscheme = 'PaperColor_dark'
+" let g:rws_lightline_colorscheme = 'PaperColor_light'
+" let g:rws_lightline_colorscheme = 'Tomorrow'
+" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
+" let g:rws_lightline_colorscheme = 'Tomorrow_Night_Blue'
+" let g:rws_lightline_colorscheme = 'Tomorrow_Night_Bright'
+  " let g:rws_lightline_colorscheme = 'Tomorrow_Night_Eighties'
+  " let g:rws_lightline_colorscheme = 'default'
+  " let g:rws_lightline_colorscheme = 'gruvbox'
+" let g:rws_lightline_colorscheme = 'jellybeans'
+" let g:rws_lightline_colorscheme = 'landscape'
+  " let g:rws_lightline_colorscheme = 'powerline'
+" let g:rws_lightline_colorscheme = 'seoul256'
+" let g:rws_lightline_colorscheme = 'solarized'
+  " let g:rws_lightline_colorscheme = 'wombat'
 
 
 
