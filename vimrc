@@ -593,10 +593,9 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use Silver Searcher with CtrlP
-  let g:ctrlp_user_command = 'ag -Q -l --path-to-agignore ~/.agignore --nocolor --hidden -g "" %s'
-  " let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
+  " let g:ctrlp_user_command = 'ag -Q -l --path-to-agignore ~/.agignore --nocolor --hidden -g "" %s'
+  let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
 endif
-
 
 " ---------------------------------------------------------------------------- "
 "   CtrlP Settings
@@ -621,6 +620,9 @@ let g:ctrlp_open_new_file = 'r'
 " open files with <C-z>, <C-o> in vert splits, open the first file in current
 " window and jump to it
 let g:ctrlp_open_multiple_files = 'vjr'
+
+" Don't use caching - Silver Searcher is fast enough w/o it.
+let g:ctrlp_use_caching = 0
 
 " Set working dir to nearest ancestor of the current file (r)
 " or the dir of the current file, unless it's a subdir of cwd (a)
