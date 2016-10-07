@@ -583,11 +583,18 @@ nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " The following (re: TrailingWhitespace) is from the following page:
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
+let $PROGRAMMING_FILES = '.vimrc,.gvimrc,.rake'
+let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm,*.elm,*.clj'
+
+" Trim trailing whitespace (while keeping cursor pos) for the indicated filetypes
+autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
+
 " Match TrailingWhitespace except when typing at the end of the line
-autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
-autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+autocmd BufWinEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+autocmd InsertEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+autocmd BufWinLeave $PROGRAMMING_FILES call clearmatches()
+
 
 " Highlight TrailingWhitespace highlight group
 highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
@@ -670,9 +677,6 @@ au WinLeave * setlocal nocursorline
 
 " Automatically rebalance panes on window resize
 autocmd VimResized * :wincmd =
-
-" Trim trailing whitespace (while keeping cursor pos) for the indicated filetypes
-autocmd BufWritePre *.js,*.rb,*.erb,*.html,*.htm,*.elm,.vimrc,.gvimrc,.rake,.clj,.php :call Preserve("%s/\\s\\+$//e")
 
 " By default, vim thinks .md is Modula-2, make it markdown
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
