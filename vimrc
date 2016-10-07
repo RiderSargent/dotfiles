@@ -499,10 +499,10 @@ nmap <LEADER>gs :wincmd f<CR>
 nmap <LEADER>gv :vertical wincmd f<CR>
 
 " EasyMotion
-nmap <LEADER>j <Plug>(easymotion-bd-w)
-nmap <LEADER>J <Plug>(easymotion-bd-W)
-nmap <LEADER>k <Plug>(easymotion-s)
-nmap <LEADER>K <Plug>(easymotion-s2)
+nmap <LEADER>j <Plug>(easymotion-bd-W)
+nmap <LEADER>J <Plug>(easymotion-bd-w)
+nmap <LEADER>k <Plug>(easymotion-s2)
+nmap <LEADER>K <Plug>(easymotion-s)
 nmap <LEADER>l <Plug>(easymotion-bd-jk)
 
 " Linting
