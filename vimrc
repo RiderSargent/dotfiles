@@ -36,6 +36,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'rizzatti/dash.vim'
 " Plugin 'sjl/gundo.vim'
+Plugin 'simnalamburt/vim-mundo'
 
 Plugin 'kassio/neoterm'
 Plugin 'easymotion/vim-easymotion'
@@ -540,6 +541,9 @@ nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 " Tagbar
 nmap <LEADER>tt :TagbarToggle<CR>
+
+" Mundo
+nmap <LEADER>u :MundoToggle<CR>
 
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
