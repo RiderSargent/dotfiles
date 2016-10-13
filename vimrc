@@ -584,7 +584,7 @@ nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
 let $PROGRAMMING_FILES = '.vimrc,.gvimrc,.rake'
-let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm,*.elm,*.clj'
+let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm,*.elm,*.haml,*.clj'
 
 " Trim trailing whitespace (while keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
