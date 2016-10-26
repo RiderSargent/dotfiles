@@ -299,7 +299,7 @@ set wildignore=*/tmp/*,*.swp,*.zip,*.1password,*.fugitiveblame
 "   < > = cursor keys in normal and visual mode
 "   [ ] = cursor keys in insert mode
 set whichwrap=<,>,h,l,[,]
-set path=.,/usr/include,,
+set path=.,/usr/include,,**
 set suffixesadd+=.txt,.rb,.js,.erb,.php
 set visualbell
 
