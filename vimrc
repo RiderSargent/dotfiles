@@ -35,7 +35,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'guns/vim-clojure-static'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'rizzatti/dash.vim'
-" Plugin 'sjl/gundo.vim'
 Plugin 'simnalamburt/vim-mundo'
 
 Plugin 'kassio/neoterm'
@@ -72,12 +71,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
 Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
-" Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'jelera/vim-javascript-syntax'
-
 Plugin 'ecomba/vim-ruby-refactoring'
-
-" Plugin 'lambdatoast/elm.vim'
 Plugin 'ElmCast/elm-vim'
 
 " Colorschemes
