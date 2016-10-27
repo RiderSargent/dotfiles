@@ -79,7 +79,7 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'croaky/vim-colors-github'
-Plugin 'geoffharcourt/one-dark.vim'
+Plugin 'joshdick/onedark.vim'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
@@ -158,9 +158,9 @@ let g:rws_lightline_colorscheme = 'default'
 
 
 " --- One Dark --------------------------------------------------------------- "
-" set background=dark
-" colorscheme onedark
-" set noshowmode
+set background=dark
+colorscheme onedark
+set noshowmode
 
 
 " --- Railscasts ------------------------------------------------------------- "
@@ -184,19 +184,19 @@ let g:rws_lightline_colorscheme = 'default'
 
 
 " --- Gruvbox ---------------------------------------------------------------- "
-let g:rws_lightline_colorscheme = 'gruvbox'
-set noshowmode
-set background=dark
-colorscheme gruvbox
+" let g:rws_lightline_colorscheme = 'gruvbox'
+" set noshowmode
+" set background=dark
+" colorscheme gruvbox
+
+" highlight SignColumn guibg=NONE
+" highlight GitGutterAdd guifg=#b8bb26 guibg=NONE
+" highlight GitGutterChange guifg=#8ec07c guibg=NONE
+" highlight GitGutterDelete guifg=#fb4934 guibg=NONE
+" highlight GitGutterChangeDelete guifg=#8ec07c guibg=NONE
+" highlight VertSplit guifg=#928374 guibg=NONE
 
 highlight Normal guibg=NONE
-highlight SignColumn guibg=NONE
-highlight GitGutterAdd guifg=#b8bb26 guibg=NONE
-highlight GitGutterChange guifg=#8ec07c guibg=NONE
-highlight GitGutterDelete guifg=#fb4934 guibg=NONE
-highlight GitGutterChangeDelete guifg=#8ec07c guibg=NONE
-highlight VertSplit guifg=#928374 guibg=NONE
-
 
 " --- LightLine Stuff -------------------------------------------------------- "
 " lightline themes: can be found here:
@@ -212,7 +212,9 @@ highlight VertSplit guifg=#928374 guibg=NONE
   " let g:rws_lightline_colorscheme = 'Tomorrow_Night_Eighties'
   " let g:rws_lightline_colorscheme = 'default'
   " let g:rws_lightline_colorscheme = 'gruvbox'
-" let g:rws_lightline_colorscheme = 'jellybeans'
+  let g:rws_lightline_colorscheme = 'jellybeans'
+  " let g:rws_lightline_colorscheme = 'Dracula'
+" let g:rws_lightline_colorscheme = 'onedark'
 " let g:rws_lightline_colorscheme = 'landscape'
   " let g:rws_lightline_colorscheme = 'powerline'
 " let g:rws_lightline_colorscheme = 'seoul256'
