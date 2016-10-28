@@ -234,7 +234,6 @@ set confirm                        " start a dialog when command fails
 set cursorline                     " highlight current line
 set diffopt=iwhite                 " Set diff to ignore whitespace
 set directory=~/.vim_swap,.        " original: directory=.,~/tmp,/var/tmp,/tmp
-set encoding=utf8
 set formatoptions=tcroqnlj         " default: croql
 set hidden                         " allow vim to leave modified buffers
 set history=10000
@@ -316,6 +315,8 @@ if has("nvim")
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+else
+  set encoding=utf8
 endif
 
 
