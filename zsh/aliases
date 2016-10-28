@@ -1,5 +1,4 @@
 unalias ga
-unalias v
 
 alias amend='git commit --amend --no-edit'
 alias c='clear'
@@ -21,7 +20,7 @@ alias soa='source ~/.dotfiles/zsh/aliases'
 alias ta='tmux a -t'
 alias tk='tmux kill-session -t'
 alias tl='tmux ls'
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux256="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
 alias v='vim'
 alias vapi='cd ~/Development/vzaar/vzaar-api-ruby'
