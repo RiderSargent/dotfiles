@@ -189,14 +189,6 @@ set noshowmode
 " set background=dark
 " colorscheme gruvbox
 
-" highlight SignColumn guibg=NONE
-" highlight GitGutterAdd guifg=#b8bb26 guibg=NONE
-" highlight GitGutterChange guifg=#8ec07c guibg=NONE
-" highlight GitGutterDelete guifg=#fb4934 guibg=NONE
-" highlight GitGutterChangeDelete guifg=#8ec07c guibg=NONE
-" highlight VertSplit guifg=#928374 guibg=NONE
-
-highlight Normal guibg=NONE
 
 " --- LightLine Stuff -------------------------------------------------------- "
 " lightline themes: can be found here:
@@ -221,6 +213,17 @@ highlight Normal guibg=NONE
 " let g:rws_lightline_colorscheme = 'solarized'
   " let g:rws_lightline_colorscheme = 'wombat'
 
+
+" ---------------------------------------------------------------------------- "
+"    My Color Overrides
+" ---------------------------------------------------------------------------- "
+" Set no bg so Tmux pane highlighting will work
+highlight Normal guibg=NONE
+
+" One Dark overrides
+highlight VertSplit guifg=#636D83 guibg=NONE
+" highlight Visual guifg=#abb2bf guibg=#3e4451
+highlight Visual gui=reverse
 
 
 " ---------------------------------------------------------------------------- "
