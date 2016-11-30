@@ -650,7 +650,7 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = 'vjr'
 
 " Don't use caching - Silver Searcher is fast enough w/o it.
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_use_caching = 0
 
 " Set working dir to nearest ancestor of the current file (r)
 " or the dir of the current file, unless it's a subdir of cwd (a)
