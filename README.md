@@ -10,3 +10,4 @@ At the moment I haven't automated the installation of these files, so I currentl
 - `$ ln -s ~/.dotfiles/vim ~/.vim`
 - `$ ln -s ~/.dotfiles/vimrc ~/.vimrc`
 - Either source `~/.dotfiles/zshrc` in `~/.after-mac-dots` or simlink to `~/.zshrc`
+- `$ ln -s ~/.dotfiles/vim/lightline/onedark.vim ~/.dotfiles/vim/bundle/lightline.vim/autoload/lightline/colorscheme/onedark.vim`
