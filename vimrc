@@ -592,10 +592,11 @@ nmap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " The following (re: TrailingWhitespace) is from the following page:
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
-let $PROGRAMMING_FILES = '.vimrc,.gvimrc,.rake'
-let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm,*.elm,*.haml,*.clj'
+let $PROGRAMMING_FILES = '.vimrc,vimrc,.rake'
+let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm'
+let $PROGRAMMING_FILES .= ',*.elm,*.haml,*.clj'
 
-" Trim trailing whitespace (while keeping cursor pos) for the indicated filetypes
+" Trim trailing whitespace (keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
 
 " Match TrailingWhitespace except when typing at the end of the line
