@@ -426,6 +426,10 @@ map <left> <C-W><
 
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
+" Tab navigation
+nnoremap [t :tprevious<CR>
+nnoremap ]t :tnext<CR>
+
 " 'change option...'
 " 'gutter'
 " nmap <silent> cog :set nonumber! relativenumber!<CR>
