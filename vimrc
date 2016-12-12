@@ -584,7 +584,8 @@ nmap Q <NOP>
 " nmap <S-k> <nop>
 
 " bind K to grep word under cursor
-nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 
 " --- Highlight Trailing Whitespace ------------------------------------------ "
