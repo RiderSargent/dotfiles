@@ -312,8 +312,6 @@ set visualbell
 set timeout timeoutlen=1500 ttimeoutlen=100
 
 
-
-
 if has("nvim")
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -395,6 +393,10 @@ cab AgBuffer AgBuffer!
 " Highlight and Search for word under the cursor without changing the cursor position
 nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
+
+" Use shift on the lesser-used colon
+" nnoremap ; :
+" nnoremap : ;
 
 " Make j and k move by screen line, not file line
 " (works the way you'd expect on wrapped lines)
