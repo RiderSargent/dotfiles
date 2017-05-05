@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/rider.sargent/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -46,11 +46,15 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.dotfiles/bin"
 
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+# source "/usr/local/opt/nvm/nvm.sh"
+[ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh" ;
 
 source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
-source "/usr/local/opt/chruby/share/chruby/chruby.sh"
-source "/usr/local/opt/chruby/share/chruby/auto.sh"
+# source "/usr/local/opt/chruby/share/chruby/chruby.sh"
+[ -f "/usr/local/opt/chruby/share/chruby/chruby.sh" ] && source "/usr/local/opt/chruby/share/chruby/chruby.sh" ;
+
+# source "/usr/local/opt/chruby/share/chruby/auto.sh"
+[ -f "/usr/local/opt/chruby/share/chruby/auto.sh" ] && source "/usr/local/opt/chruby/share/chruby/auto.sh" ;
