@@ -1,0 +1,53 @@
+[user]
+  name = Rider Sargent
+  email = rider.sargent@gmail.com
+[alias]
+  a = add
+  amend = commit --amend
+  br = branch
+  ci = commit
+  co = checkout
+  ctags = !.git/hooks/ctags
+  di = diff
+  ds = diff --staged
+  dump = cat-file -p
+  edit = !vim `git ls-files -m`
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  l = log --graph --oneline --pretty=format:'%C(yellow)%h %C(green)%cr %C(blue)%an %Creset%s %Cred%d%Creset'
+  pr = pull-request
+  s = status
+  ss = status -sb
+  st = status
+  type = cat-file -t
+  uncommit = reset --soft HEAD^
+[core]
+	excludesfile = /Users/rider.sargent/.gitignore_global
+[color]
+  ui = true
+[push]
+  default = upstream
+[init]
+  templatedir = ~/.git_template
+[gui]
+  warndetachedcommit = true
+[diff]
+  compactionHeuristic = true
+[url "git@github.com:"]
+  insteadOf = "https://github.com/"
+[url "git@github.com:"]
+  pushInsteadOf = "git://github.com/"
+[url "git@github.com:"]
+  pushInsteadOf = "https://github.com/"
+
+; [url "git@github.com:"]
+;   insteadOf = https://github.com/
+; [url "git@github.com:"]
+;   pushInsteadOf = "git://github.com/"
+; [url "git@github.com:"]
+;   pushInsteadOf = "https://github.com/"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -1,11 +1,7 @@
-unalias ga
-
-alias amend='git commit --amend --no-edit'
 alias c='clear'
 alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases'
 alias ef='exercism fetch'
 alias es='exercism submit'
-alias ga='git add'
 alias gcnm='git commit -m "Minor changes. Commit message skipped."'
 alias gmnf='git merge --no-ff --no-edit --log'
 alias grep='grep --color'
