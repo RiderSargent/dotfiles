@@ -13,7 +13,7 @@
 # Default Background
 LOGIN_COLOR=$FG[008]
 DIR_COLOR=$FG[003]
-PAREN_COLOR=$FG[008]
+PAREN_COLOR=$FG[007]
 GIT_CLEAN_COLOR=$FG[002]
 GIT_DIRTY_COLOR=$FG[001]
 RIGHT_PROMPT_COLOR=$FG[008]
@@ -39,7 +39,7 @@ PROMPT+='%{$reset_color%}'
 
 # Righthand Prompt
 # RPROMPT='${RIGHT_PROMPT_COLOR}$(~/.rvm/bin/rvm-prompt i v g)%{$reset_color%}'
-RPROMPT='${RIGHT_PROMPT_COLOR}$(prompt_rvm)%{$reset_color%}'
+# RPROMPT='${RIGHT_PROMPT_COLOR}$(prompt_rvm)%{$reset_color%}'
 
 # Git Prompt Info
 ZSH_THEME_GIT_PROMPT_PREFIX="${PAREN_COLOR}(%{$reset_color%}"
