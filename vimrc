@@ -252,7 +252,7 @@ set list                           " TODO: set this only in programming files
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
-set noesckeys                      " remove delay when hitting esc in insert
+" set noesckeys                      " remove delay when hitting esc in insert
                                    " mode - probationary: breaks arrow keys in
                                    " insert mode
 set noswapfile                     " turn off swapfile creation
