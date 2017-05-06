@@ -1,5 +1,4 @@
-dotfiles
-================================================================================
+# dotfiles
 My config files.
 
 At the moment I haven't automated the installation of these files, so I currently have to do the following to set these up:
@@ -9,5 +8,15 @@ At the moment I haven't automated the installation of these files, so I currentl
 - `$ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf`
 - `$ ln -s ~/.dotfiles/vim ~/.vim`
 - `$ ln -s ~/.dotfiles/vimrc ~/.vimrc`
-- Either source `~/.dotfiles/zshrc` in `~/.after-mac-dots` or simlink to `~/.zshrc`
+- `$ ln -s ~/.dotfiles/zshrc ~/.zshrc`
 - `$ ln -s ~/.dotfiles/vim/lightline/onedark.vim ~/.dotfiles/vim/bundle/lightline.vim/autoload/lightline/colorscheme/onedark.vim`
+- `$ ln -s ~/.dotfiles/gitconfig ~/.gitconfig`
+- `$ ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global`
+
+## Misc
+You may need to run the following to get Git to respect the `.gitignore_global`:
+`$ git config --global core.excludesfile ~/.gitignore_global`
+
+This repo also assumes the following software to be installed:
+- Neovim
+- Chruby
