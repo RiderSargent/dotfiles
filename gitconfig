@@ -21,7 +21,7 @@
   type = cat-file -t
   uncommit = reset --soft HEAD^
 [core]
-	excludesfile = /Users/rider.sargent/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
   ui = true
 [push]
