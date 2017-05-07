@@ -1,0 +1,19 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-clojure"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "FiraCode-Light"
+    invisibles: {}
+    scrollPastEnd: true
+  elmjutsu:
+    cacheDirectory: "/var/folders/8k/2zxgz_6954z69h869gjhk86r0000gn/T/elmjutsu29999cdd6WKGfNuxe"
+  "exception-reporting":
+    userId: "35df5645-fe78-3f4b-fa3c-ff3151e5149b"
+  firacode:
+    fontWeight: "light"
+  minimap: {}
+  welcome:
+    showOnStartup: false
