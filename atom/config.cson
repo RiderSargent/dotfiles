@@ -1,5 +1,6 @@
 "*":
   core:
+    audioBeep: false
     disabledPackages: [
       "language-clojure"
     ]
@@ -11,9 +12,14 @@
   elmjutsu:
     cacheDirectory: "/var/folders/8k/2zxgz_6954z69h869gjhk86r0000gn/T/elmjutsu29999cdd6WKGfNuxe"
   "exception-reporting":
-    userId: "35df5645-fe78-3f4b-fa3c-ff3151e5149b"
+    userId: "d119ab13-dece-4547-a40c-d52c19fda4f2"
   firacode:
     fontWeight: "light"
+  "git-plus":
+    experimental:
+      useSplitDiff: true
+  "markdown-toc-auto":
+    max: 5
   minimap: {}
   welcome:
     showOnStartup: false
