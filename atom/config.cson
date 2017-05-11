@@ -3,6 +3,8 @@
     audioBeep: false
     disabledPackages: [
       "language-clojure"
+      "hasklig"
+      "firacode"
     ]
     telemetryConsent: "limited"
   editor:
