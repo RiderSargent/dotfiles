@@ -42,8 +42,8 @@ export DISABLE_AUTO_TITLE="true"
 # export MY_INITIALS="RS"
 export EDITOR='nvim'
 
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.dotfiles/bin"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 # source "/usr/local/opt/nvm/nvm.sh"
