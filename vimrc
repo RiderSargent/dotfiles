@@ -55,11 +55,12 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 
 " Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
-Plugin 'tomtom/tlib_vim'                       " snipmate dependancy
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
+" Plugin 'tomtom/tlib_vim'                       " snipmate dependancy
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/after/snippets
+
 
 
 " Text Objects
