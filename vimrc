@@ -49,19 +49,13 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 
-
-" Snippets
-" Plugin 'MarcWeber/vim-addon-mw-utils'          " snipmate dependancy
-" Plugin 'tomtom/tlib_vim'                       " snipmate dependancy
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'honza/vim-snippets'
-" My snippets live in ~/.dotfiles/vim/after/snippets
-
-
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+" My snippets live in ~/.dotfiles/vim/UltiSnips
 
 " Text Objects
 Plugin 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
@@ -367,6 +361,16 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+
+
+" ---------------------------------------------------------------------------- "
+"  UltiSnips
+" ---------------------------------------------------------------------------- "
+let g:UltiSnipsSnippetDirectories=[
+  \ $HOME."/.dotfiles/vim/UltiSnips",
+  \ $HOME."/.dotfiles/vim/bundle/vim-snippets/UltiSnips"
+  \]
 
 
 " ---------------------------------------------------------------------------- "
