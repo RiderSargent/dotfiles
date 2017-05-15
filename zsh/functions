@@ -1,14 +1,5 @@
 # vim:syntax=zsh
 
-function g {
-  if [[ $# > 0 ]]; then
-    git $@
-  else
-    git status -sb
-  fi
-}
-
-
 # I copied this function here so I could put the branch name after
 # ZSH_THEME_GIT_PROMPT_DIRTY or ZSH_THEME_GIT_PROMPT_CLEAN instead of before.
 # original function is in ~/.oh-my-zsh/lib/git.zsh
@@ -28,6 +19,8 @@ prompt_rvm() {
   echo $rbv
 }
 
+
+# Mac-dots stuff I stole.
 source_if_exists() {
   local file ;
   for file ; do
@@ -39,6 +32,8 @@ precmd () {
   print -Pn "\e]2;%~\a"
 }
 
+
+# Stuff taken from Chris Toomey
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
 ensure_tmux_is_running() {
@@ -46,3 +41,206 @@ ensure_tmux_is_running() {
     tat
   fi
 }
+
+
+################################################################################
+# git functions
+################################################################################
+
+# This creates a double-duty usage for 'g'. If you type just 'g' alone, it will
+# call 'git status', otherwise it is just an alias for 'git'.
+# function g {
+#   if [[ $# > 0 ]]; then
+#     git $@
+#   else
+#     git status -sb
+#   fi
+# }
+
+
+################################################################################
+# Mac Dots stuff
+################################################################################
+
+# Log output:
+#
+# * 51c333e    (12 days)    <Gary Bernhardt>   add vim-eunuch
+#
+# The time massaging regexes start with ^[^<]* because that ensures that they
+# only operate before the first "<". That "<" will be the beginning of the
+# author name, ensuring that we don't destroy anything in the commit message
+# that looks like time.
+#
+# The log format uses } characters between each field, and `column` is later
+# used to split on them. A } in the commit subject or any other field will
+# break this.
+
+# Helper function to show usage for any macdots function
+__md__help() {
+  case $1 in
+    -h) echo "desc:   ${@: -2:1}\nusage:  ${@: -1:1}"; return 1 ;;
+  esac
+}
+
+
+local hash="%C(yellow)%h%Creset"
+local relative_time="%Cgreen%cr%Creset"
+local date="%Cgreen%ad%Creset"
+local author="%C(bold blue)%an%Creset"
+local refs="%C(red)%d%Creset"
+local subject="%s"
+
+FORMAT="$hash}$relative_time}$author}$refs $subject"
+
+__md__glp() {
+  __md__help $@ "Show the GitLog in pretty format [ Git Log Pretty ]" "glp [number of rows]"
+  [ $? -eq 1 ] && return 0
+
+  if [ -z "$1" ] ; then
+    local rows=20
+  else
+    local rows=$1
+  fi
+  git log --graph --pretty="tformat:${FORMAT}" -$rows |
+    # Replace (2 years ago) with (2 years)
+    sed -Ee 's/(^[^<]*) ago)/\1)/' |
+    # Replace (2 years, 5 months) with (2 years)
+    sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?)/\1)/' |
+    # Line columns up based on } delimiter
+    column -s '}' -t |
+    # Page only if we need to
+    less -FXRS
+}
+
+DEPLOYMENT_FORMAT="%ad}%an}%s}%h"
+
+__md__gld() {
+  __md__help $@ "Show the GitLog in deployment doc format [ Git Log Deployment ]" "gld [number of rows]"
+  [ $? -eq 1 ] && return 0
+
+  if [ -z "$1" ] ; then
+    local rows=1
+  else
+    local rows=$1
+  fi
+  git log --no-merges --date=short --pretty="tformat:${DEPLOYMENT_FORMAT}" -$rows |
+    # Replace (2 years ago) with (2 years)
+    sed -Ee 's/(^[^<]*) ago)/\1)/' |
+    # Replace (2 years, 5 months) with (2 years)
+    sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?)/\1)/' |
+    # ensure each line starts with '* '
+    sed -Ee 's/(^.)/\* \1/' |
+    # Line columns up based on } delimiter
+    column -s '}' -t |
+    # Page only if we need to
+    less -FXRS
+}
+
+unset hash;
+unset relative_time;
+unset date;
+unset author;
+unset refs;
+unset subject;
+
+
+# Name of current git branch
+__md__gbr() {
+  branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="(unnamed branch)"
+  echo ${branch##refs/heads/}
+}
+
+__md__gdfr() {
+  __md__help $@ "Delete git branch from remote [ Git Delete From Remote ]" "gdrf [-c | name-of-branch]"
+  [ $? -eq 1 ] && return 0
+
+  if [ ! $# -eq 1 ] ; then __md__gdfr -h ; return ; fi
+
+  case $1 in
+    -c) local branch=`current_branch` ;;
+     *) local branch=$1 ;;
+  esac
+
+  echo "\e[1;33mAre you SURE you want to delete the remote '$branch' branch?\e[0m"
+  echo "(anything other than 'yes' will cancel) > \c"
+  read line
+  if [ "$line" = yes ]
+  then
+    git push origin :$branch
+  else
+    echo "\e[1;32mClose one dude!\e[0m"
+  fi
+}
+
+__md__gh() {
+  __md__help $@ "Opens GitHub for the current git repository in your browser" "gh"
+  [ $? -eq 1 ] && return 0
+
+  giturl=$(git config --get remote.origin.url)
+  if [ -z "$giturl" ] ; then
+    echo "Not a git repository or no remote.origin.url set"
+    return
+  fi
+  open $(__md__gurl)
+}
+
+__md__gmpr() {
+  __md__help $@ "Merge branch, create a merge commit and delete the local branch [ Git Merge Pull Request ]" "gmpr <branch>"
+  [ $? -eq 1 ] && return 0
+
+  if [ ! $# -eq 1 ] ; then __md__gmpr -h ; return ; fi
+
+  git merge $1 --no-ff --log --no-edit
+  git branch -d $1
+}
+
+__md__gptr() {
+  __md__help $@ "Push the current branch to origin [ Git Push To Remote ]" "gptr"
+  [ $? -eq 1 ] && return 0
+
+  git push -u origin `current_branch`
+}
+
+__md__gpr() {
+  __md__help $@ "Initiate pull request for the current branch [ Git Pull Request ]" "gpr"
+  [ $? -eq 1 ] && return 0
+
+  __md__gptr
+  giturl=$(__md__gurl)
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/tree/pull\/new}
+  open $giturl
+}
+
+__md__grbw() {
+  __md__help $@ "Rebase with the specified remote branch [ Git ReBase With ]" "grbw <remote-branch>"
+  [ $? -eq 1 ] && return 0
+
+  if [ ! $# -eq 1 ] ; then __md__grbw -h ; return ; fi
+
+  git pull --rebase origin $1 ;
+}
+
+__md__groh() {
+  __md__help $@ "Reset the current branch to origin [ Git Reset Origin Hard ]" "groh"
+  [ $? -eq 1 ] && return 0
+
+  origin_branch="origin/$(current_branch)"
+  git reset $origin_branch --hard;
+}
+
+# Git Url for current repo with branch
+__md__gurl() {
+  giturl=$(git config --get remote.origin.url)
+  if [ -z "$giturl" ] ; then
+    echo "Not a git repository or no remote.origin.url set"
+    return
+  fi
+
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/\.git/\/tree/}
+  branch=$(__md__gbr)
+  giturl=$giturl$branch
+  echo $giturl
+}
+

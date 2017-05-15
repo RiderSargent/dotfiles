@@ -41,20 +41,16 @@ export DISABLE_AUTO_TITLE="true"
 
 # export MY_INITIALS="RS"
 export EDITOR='nvim'
+export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-# source "/usr/local/opt/nvm/nvm.sh"
-[ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh" ;
 
 source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
-# source "/usr/local/opt/chruby/share/chruby/chruby.sh"
-[ -f "/usr/local/opt/chruby/share/chruby/chruby.sh" ] && source "/usr/local/opt/chruby/share/chruby/chruby.sh" ;
+source_if_exists "/usr/local/opt/nvm/nvm.sh"
+source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
+source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 
-# source "/usr/local/opt/chruby/share/chruby/auto.sh"
-[ -f "/usr/local/opt/chruby/share/chruby/auto.sh" ] && source "/usr/local/opt/chruby/share/chruby/auto.sh" ;
