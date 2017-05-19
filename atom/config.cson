@@ -1,6 +1,7 @@
 "*":
   core:
     audioBeep: false
+    automaticallyUpdate: false
     disabledPackages: [
       "language-clojure"
       "hasklig"
@@ -9,8 +10,10 @@
     telemetryConsent: "limited"
   editor:
     fontFamily: "FiraCode-Light"
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
+    showIndentGuide: true
   elmjutsu:
     cacheDirectory: "/var/folders/8k/2zxgz_6954z69h869gjhk86r0000gn/T/elmjutsu29999cdd6WKGfNuxe"
   "exception-reporting":
@@ -18,10 +21,20 @@
   firacode:
     fontWeight: "light"
   "git-plus":
+    commits:
+      verboseCommits: true
     experimental:
       useSplitDiff: true
+    general:
+      splitPane: "Right"
+    remoteInteractions:
+      pullBeforePush: true
+      pullRebase: true
+  "linter-ui-default": {}
   "markdown-toc-auto":
     max: 5
   minimap: {}
+  pigments:
+    markerType: "native-square-dot"
   welcome:
     showOnStartup: false
