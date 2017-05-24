@@ -8,7 +8,8 @@ atom/compile-cache
 atom/dev
 atom/packages
 atom/storage
-vim/bundle/**
-vim/sessions/**
-vim/view/**
+vim/bundle
+vim/plugged
+vim/sessions
+vim/view
 zshrc

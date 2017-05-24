@@ -1,91 +1,85 @@
-" set shell=bash\ -i
+" Autoload Plug.vim if it is not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 
 " ---------------------------------------------------------------------------- "
-"   Vundle
+"   Plug.vim
 " ---------------------------------------------------------------------------- "
-set nocompatible " required by vundle
-filetype off     " required by vundle
 
-" set up the runtime path to include vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-markdown'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'christoomey/vim-system-copy'
+Plug 'itchyny/lightline.vim'
+Plug 'thoughtbot/vim-rspec'
+" Plug 'guns/vim-clojure-static'
+Plug 'elixir-lang/vim-elixir'
+Plug 'rizzatti/dash.vim'
+Plug 'simnalamburt/vim-mundo'
 
-" let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'rking/ag.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-markdown'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'christoomey/vim-tmux-runner'
-Plugin 'christoomey/vim-system-copy'
-Plugin 'itchyny/lightline.vim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'guns/vim-clojure-static'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'rizzatti/dash.vim'
-Plugin 'simnalamburt/vim-mundo'
-
-Plugin 'kassio/neoterm'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rgarver/Kwbd.vim'
+Plug 'kassio/neoterm'
+Plug 'easymotion/vim-easymotion'
+Plug 'rgarver/Kwbd.vim'
 
 " Non-essential, but very useful
-Plugin 'tommcdo/vim-exchange'
-Plugin 'walm/jshint.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Raimondi/delimitMate'
-Plugin 'godlygeek/tabular'
-" Plugin 'majutsushi/tagbar'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tommcdo/vim-exchange'
+Plug 'walm/jshint.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'Raimondi/delimitMate'
+Plug 'godlygeek/tabular'
+" Plug 'majutsushi/tagbar'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/UltiSnips
 
 " Text Objects
-Plugin 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
-Plugin 'kana/vim-textobj-entire'               "ie to select inner everything
-Plugin 'kana/vim-textobj-line'                 "il to select inner line
-Plugin 'kana/vim-textobj-indent'               "ii to select inner indent
-Plugin 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
-Plugin 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
-Plugin 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
+Plug 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
+Plug 'kana/vim-textobj-entire'               "ie to select inner everything
+Plug 'kana/vim-textobj-line'                 "il to select inner line
+Plug 'kana/vim-textobj-indent'               "ii to select inner indent
+Plug 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
+Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
+Plug 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'ElmCast/elm-vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'ElmCast/elm-vim'
 
 " Colorschemes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'croaky/vim-colors-github'
-Plugin 'joshdick/onedark.vim'
-Plugin 'morhetz/gruvbox'
-
-call vundle#end()
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+Plug 'croaky/vim-colors-github'
+Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+call plug#end()
 
 
 " ---------------------------------------------------------------------------- "
 "   My Stuff
 " ---------------------------------------------------------------------------- "
-filetype plugin indent on
-syntax enable                      " syntax highlighting
-
 " Allow % to jump between class, def, end, etc in Ruby files.
 " Also needed by Drew Neil's Ruby text objects plugin and vim-ruby-refactoring
 runtime macros/matchit.vim
@@ -247,6 +241,7 @@ set list                           " TODO: set this only in programming files
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
+set nocompatible
 " set noesckeys                      " remove delay when hitting esc in insert
                                    " mode - probationary: breaks arrow keys in
                                    " insert mode
