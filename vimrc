@@ -6,74 +6,89 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
-" ---------------------------------------------------------------------------- "
+" ============================================================================ "
 "   Plug.vim
-" ---------------------------------------------------------------------------- "
+" ============================================================================ "
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-markdown'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-system-copy'
-Plug 'itchyny/lightline.vim'
-Plug 'thoughtbot/vim-rspec'
-" Plug 'guns/vim-clojure-static'
-Plug 'elixir-lang/vim-elixir'
-Plug 'rizzatti/dash.vim'
 Plug 'simnalamburt/vim-mundo'
-
-Plug 'kassio/neoterm'
-Plug 'easymotion/vim-easymotion'
-Plug 'rgarver/Kwbd.vim'
-
-" Non-essential, but very useful
 Plug 'tommcdo/vim-exchange'
-Plug 'walm/jshint.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdtree'
-Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
-" Plug 'majutsushi/tagbar'
+Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+Plug 'easymotion/vim-easymotion'
+Plug 'rgarver/Kwbd.vim'
+
+" ---------------------------------------------------------------------------- "
+"   Language specific
+" ---------------------------------------------------------------------------- "
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'ecomba/vim-ruby-refactoring', { 'for': 'ruby' }
+
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'poetic/vim-textobj-javascript', { 'for': 'javascript' }
+Plug 'walm/jshint.vim', { 'for': 'javascript' }
+
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+
+" ---------------------------------------------------------------------------- "
+"   Non-essential, but very useful
+" ---------------------------------------------------------------------------- "
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+  Plug 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/UltiSnips
 
-" Text Objects
+" ---------------------------------------------------------------------------- "
+"   Text Objects
+" ---------------------------------------------------------------------------- "
 Plug 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
 Plug 'kana/vim-textobj-entire'               "ie to select inner everything
 Plug 'kana/vim-textobj-line'                 "il to select inner line
 Plug 'kana/vim-textobj-indent'               "ii to select inner indent
-Plug 'nelstrom/vim-textobj-rubyblock'        "ar, ir to select Ruby blocks
 Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
-Plug 'poetic/vim-textobj-javascript'         "ac, ic to select chunks in JS
 
-Plug 'jelera/vim-javascript-syntax'
-Plug 'ecomba/vim-ruby-refactoring'
-Plug 'ElmCast/elm-vim'
-
-" Colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'nanotech/jellybeans.vim'
-Plug 'croaky/vim-colors-github'
+" ---------------------------------------------------------------------------- "
+"   Colorschemes
+" ---------------------------------------------------------------------------- "
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'croaky/vim-colors-github'
+" Plug 'morhetz/gruvbox'
+
+" ---------------------------------------------------------------------------- "
+"   Neovim only
+" ---------------------------------------------------------------------------- "
+if has("nvim")
+  Plug 'kassio/neoterm'
+endif
+
 call plug#end()
 
 
@@ -84,140 +99,6 @@ call plug#end()
 " Also needed by Drew Neil's Ruby text objects plugin and vim-ruby-refactoring
 runtime macros/matchit.vim
 
-
-" ---------------------------------------------------------------------------- "
-"   Colors
-" ---------------------------------------------------------------------------- "
-
-let g:rws_lightline_colorscheme = 'default'
-
-
-" --- Solarized Light -------------------------------------------------------- "
-" colorscheme solarized
-" set background=light
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'solarized_light'
-
-
-" --- Solarized Dark --------------------------------------------------------- "
-" colorscheme solarized
-" set background=dark
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'solarized_dark'
-
-
-" --- Jellybeans ------------------------------------------------------------- "
-" let g:jellybeans_use_term_background_color = 0
-
-" let g:jellybeans_overrides = {
-"   \  'background':   { 'guibg': 'NONE' },
-"   \  'Todo':         { 'guifg': 'dd0093' },
-"   \  'Search':       { 'guifg': '333333', 'guibg': '8788d6', 'attr': 'bold' },
-"   \  'IncSearch':    { 'guifg': '333333', 'guibg': 'dad085', 'attr': 'bold' },
-"   \  'CursorLineNr': { 'guifg': 'dad085', 'attr': 'none' },
-"   \  'CursorColumn': { 'guibg': '2a2a2a' },
-"   \  'CursorLine':   { 'guibg': '2a2a2a' },
-"   \  'ColorColumn':  { 'guibg': '2a2a2a' },
-"   \  'VertSplit':    { 'guifg': '333333', 'guibg': '151515' },
-"   \  'Folded':       { 'guibg': '222222' },
-"   \  'SpecialKey':   { 'guifg': '444444', 'guibg': '151515' },
-"   \}
-
-" colorscheme jellybeans
-" set background=dark
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'jellybeans'
-
-" " 'NonText' = 'eol', 'extends' and 'precedes'.
-" " 'SpecialKey' = 'nbsp', 'tab' and 'trail'.
-
-" " SpecialKey     xxx term=bold ctermfg=238 ctermbg=234 guifg=#444444 guibg=#1c1c1c
-" " NonText        xxx term=bold ctermfg=240 ctermbg=233 guifg=#606060 guibg=#151515
-" " CursorColumn   xxx ctermbg=234 guibg=#1c1c1c
-" " CursorLine     xxx ctermbg=234 guibg=#1c1c1c
-" " ColorColumn    xxx ctermbg=234 guibg=#1c1c1c
-" " VertSplit      xxx ctermfg=243 ctermbg=16 guifg=#777777 guibg=#403c41
-
-
-" --- Github ----------------------------------------------------------------- "
-" colorscheme github
-" set background=light
-" set noshowmode
-" let g:rws_lightline_colorscheme = 'wombat'
-
-
-" --- One Dark --------------------------------------------------------------- "
-set background=dark
-colorscheme onedark
-set noshowmode
-
-
-" --- Railscasts ------------------------------------------------------------- "
-" set background=dark
-" colorscheme base16-railscasts
-
-" highlight clear SignColumn
-" highlight VertSplit    ctermbg=236
-" highlight ColorColumn  ctermbg=237
-" highlight LineNr       ctermbg=236 ctermfg=240
-" highlight CursorLineNr ctermbg=236 ctermfg=240
-" highlight CursorLine   ctermbg=236
-" " highlight StatusLineNC ctermbg=238 ctermfg=0
-" " highlight StatusLine   ctermbg=240 ctermfg=12
-" highlight IncSearch    ctermbg=3   ctermfg=1
-" highlight Search       ctermbg=1   ctermfg=3
-" highlight Visual       ctermbg=3   ctermfg=0
-" highlight Pmenu        ctermbg=240 ctermfg=12
-" highlight PmenuSel     ctermbg=3   ctermfg=1
-" highlight SpellBad     ctermbg=0   ctermfg=1
-
-
-" --- Gruvbox ---------------------------------------------------------------- "
-" let g:rws_lightline_colorscheme = 'gruvbox'
-" set noshowmode
-" set background=dark
-" colorscheme gruvbox
-
-
-" --- LightLine Stuff -------------------------------------------------------- "
-" lightline themes: can be found here:
-" https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
-" let g:rws_lightline_colorscheme = '16color'
-" let g:rws_lightline_colorscheme = 'PaperColor'
-" let g:rws_lightline_colorscheme = 'PaperColor_dark'
-" let g:rws_lightline_colorscheme = 'PaperColor_light'
-" let g:rws_lightline_colorscheme = 'Tomorrow'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night_Blue'
-" let g:rws_lightline_colorscheme = 'Tomorrow_Night_Bright'
-  " let g:rws_lightline_colorscheme = 'Tomorrow_Night_Eighties'
-  " let g:rws_lightline_colorscheme = 'default'
-  " let g:rws_lightline_colorscheme = 'gruvbox'
-  " let g:rws_lightline_colorscheme = 'jellybeans'
-  " let g:rws_lightline_colorscheme = 'Dracula'
-let g:rws_lightline_colorscheme = 'onedark'
-" let g:rws_lightline_colorscheme = 'landscape'
-  " let g:rws_lightline_colorscheme = 'powerline'
-" let g:rws_lightline_colorscheme = 'seoul256'
-" let g:rws_lightline_colorscheme = 'solarized'
-  " let g:rws_lightline_colorscheme = 'wombat'
-
-
-" ---------------------------------------------------------------------------- "
-"    My Color Overrides
-" ---------------------------------------------------------------------------- "
-" Set no bg so Tmux pane highlighting will work
-highlight Normal guibg=NONE
-
-" One Dark overrides
-highlight VertSplit guifg=#636D83 guibg=NONE
-" highlight Visual guifg=#abb2bf guibg=#3e4451
-highlight Visual gui=reverse
-
-
-" ---------------------------------------------------------------------------- "
-"   General Settings
-" ---------------------------------------------------------------------------- "
 set autoindent
 set autoread                       " reload files when they change outside Vim
 set backspace=eol,indent,start     " backspace over anything
@@ -300,6 +181,35 @@ set visualbell
 " time out on mapping after one and a half seconds,
 " time out on key codes after a tenth of a second.
 set timeout timeoutlen=1500 ttimeoutlen=100
+
+
+" ---------------------------------------------------------------------------- "
+"   Colors
+" ---------------------------------------------------------------------------- "
+
+let g:rws_lightline_colorscheme = 'default'
+
+
+" --- One Dark --------------------------------------------------------------- "
+set background=dark
+colorscheme onedark
+set noshowmode
+
+
+" --- LightLine Stuff -------------------------------------------------------- "
+let g:rws_lightline_colorscheme = 'onedark'
+
+
+" ---------------------------------------------------------------------------- "
+"    My Color Overrides
+" ---------------------------------------------------------------------------- "
+" Set no bg so Tmux pane highlighting will work
+highlight Normal guibg=NONE
+
+" One Dark overrides
+highlight VertSplit guifg=#636D83 guibg=NONE
+" highlight Visual guifg=#abb2bf guibg=#3e4451
+highlight Visual gui=reverse
 
 
 if has("nvim")
@@ -560,7 +470,7 @@ nmap <LEADER>u :MundoToggle<CR>
 
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
-nmap <LEADER>ve :vs $MYVIMRC<CR>
+nmap <LEADER>ve :e $MYVIMRC<CR>
 nmap <LEADER>vv :so $MYVIMRC<CR>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
