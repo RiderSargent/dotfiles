@@ -36,5 +36,7 @@
   minimap: {}
   pigments:
     markerType: "native-square-dot"
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   welcome:
     showOnStartup: false
