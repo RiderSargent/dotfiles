@@ -45,6 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
 
 source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
