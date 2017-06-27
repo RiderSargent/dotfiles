@@ -49,6 +49,7 @@ Plug 'ecomba/vim-ruby-refactoring', { 'for': 'ruby' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'poetic/vim-textobj-javascript', { 'for': 'javascript' }
 Plug 'walm/jshint.vim', { 'for': 'javascript' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
@@ -292,6 +293,7 @@ let g:EasyMotion_smartcase = 1
 " ---------------------------------------------------------------------------- "
 
 iab cm ✓
+iab lmda λ
 
 cab Ag Ag!
 cab ag Ag!
