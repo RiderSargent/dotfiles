@@ -1,4 +1,6 @@
 "*":
+  "autocomplete-plus":
+    enableAutoActivation: false
   core:
     audioBeep: false
     automaticallyUpdate: false
@@ -13,7 +15,7 @@
     fontSize: 12
     invisibles: {}
     scrollPastEnd: true
-    showIndentGuide: true
+  "elm-format": {}
   elmjutsu:
     cacheDirectory: "/var/folders/8k/2zxgz_6954z69h869gjhk86r0000gn/T/elmjutsu29999cdd6WKGfNuxe"
   "exception-reporting":
@@ -30,7 +32,9 @@
     remoteInteractions:
       pullBeforePush: true
       pullRebase: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 69
+    showPanel: true
   "markdown-toc-auto":
     max: 5
   minimap: {}
@@ -40,3 +44,5 @@
     notifiedUseExMode: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
