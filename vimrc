@@ -84,11 +84,20 @@ Plug 'joshdick/onedark.vim'
 " Plug 'croaky/vim-colors-github'
 " Plug 'morhetz/gruvbox'
 
+
 " ---------------------------------------------------------------------------- "
 "   Neovim only
 " ---------------------------------------------------------------------------- "
 if has("nvim")
   Plug 'kassio/neoterm'
+  set inccommand=split               " interactive search/replace for NeoVim
+  set termguicolors
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  " :set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  "   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  "   \,sm:block-blinkwait175-blinkoff150-blinkon175
+else
+  set encoding=utf8
 endif
 
 call plug#end()
@@ -189,7 +198,7 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 "   Colors
 " ---------------------------------------------------------------------------- "
 
-let g:rws_lightline_colorscheme = 'default'
+" let g:rws_lightline_colorscheme = 'default'
 
 
 " --- One Dark --------------------------------------------------------------- "
@@ -212,18 +221,6 @@ highlight Normal guibg=NONE
 highlight VertSplit guifg=#636D83 guibg=NONE
 " highlight Visual guifg=#abb2bf guibg=#3e4451
 highlight Visual gui=reverse
-
-
-if has("nvim")
-  set termguicolors
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-  :set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-    \,sm:block-blinkwait175-blinkoff150-blinkon175
-else
-  set encoding=utf8
-endif
 
 
 " removes hash from comment delimiters so my text lists format properly
