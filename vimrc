@@ -34,6 +34,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'rgarver/Kwbd.vim'
+Plug 'machakann/vim-highlightedyank'
 
 " ---------------------------------------------------------------------------- "
 "   Language specific
