@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -31,6 +32,7 @@ Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'kassio/neoterm'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'rgarver/Kwbd.vim'
@@ -79,6 +81,7 @@ Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 "   Colorschemes
 " ---------------------------------------------------------------------------- "
 Plug 'joshdick/onedark.vim'
+Plug 'iCyMind/NeoSolarized'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'croaky/vim-colors-github'
@@ -89,7 +92,6 @@ Plug 'joshdick/onedark.vim'
 "   Neovim only
 " ---------------------------------------------------------------------------- "
 if has("nvim")
-  Plug 'kassio/neoterm'
   set inccommand=split               " interactive search/replace for NeoVim
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
