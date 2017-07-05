@@ -87,9 +87,11 @@ Plug 'iCyMind/NeoSolarized'
 " Plug 'croaky/vim-colors-github'
 " Plug 'morhetz/gruvbox'
 
+call plug#end()
+
 
 " ---------------------------------------------------------------------------- "
-"   Neovim only
+"   Neovim vs Vim
 " ---------------------------------------------------------------------------- "
 if has("nvim")
   set inccommand=split               " interactive search/replace for NeoVim
@@ -98,8 +100,6 @@ if has("nvim")
 else
   set encoding=utf8
 endif
-
-call plug#end()
 
 
 " ---------------------------------------------------------------------------- "
@@ -136,6 +136,7 @@ set nocompatible
 " set noesckeys                      " remove delay when hitting esc in insert
                                    " mode - probationary: breaks arrow keys in
                                    " insert mode
+set noshowmode
 set noswapfile                     " turn off swapfile creation
 set nowrap                         " turn off word wrap
 set nrformats=                     " treat all numbers as base 10
@@ -197,17 +198,18 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 "   Colors
 " ---------------------------------------------------------------------------- "
 
-" let g:rws_lightline_colorscheme = 'default'
+set background=dark
+let g:rws_lightline_colorscheme = 'default'
 
 
 " --- One Dark --------------------------------------------------------------- "
-set background=dark
-colorscheme onedark
-set noshowmode
+" colorscheme onedark
+" let g:rws_lightline_colorscheme = 'one'
 
 
-" --- LightLine Stuff -------------------------------------------------------- "
-let g:rws_lightline_colorscheme = 'onedark'
+" --- Solarized -------------------------------------------------------------- "
+colorscheme NeoSolarized
+let g:rws_lightline_colorscheme = 'solarized'
 
 
 " ---------------------------------------------------------------------------- "
