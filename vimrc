@@ -203,13 +203,13 @@ let g:rws_lightline_colorscheme = 'default'
 
 
 " --- One Dark --------------------------------------------------------------- "
-" colorscheme onedark
-" let g:rws_lightline_colorscheme = 'one'
+colorscheme onedark
+let g:rws_lightline_colorscheme = 'one'
 
 
 " --- Solarized -------------------------------------------------------------- "
-colorscheme NeoSolarized
-let g:rws_lightline_colorscheme = 'solarized'
+" colorscheme NeoSolarized
+" let g:rws_lightline_colorscheme = 'solarized'
 
 
 " ---------------------------------------------------------------------------- "
