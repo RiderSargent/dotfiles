@@ -34,7 +34,6 @@
       pullRebase: true
   "linter-ui-default":
     panelHeight: 69
-    showPanel: true
   "markdown-toc-auto":
     max: 5
   minimap: {}
