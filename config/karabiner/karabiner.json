@@ -6,6 +6,39 @@
     },
     "profiles": [
         {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 500
+                },
+                "rules": [
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Change ctrl to esc if pressed alone.",
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [],
             "fn_function_keys": {
                 "f1": "display_brightness_decrement",
@@ -22,16 +55,7 @@
                 "f9": "fastforward"
             },
             "name": "Default profile",
-            "one_to_many_mappings": {},
             "selected": true,
-            "simple_modifications": {
-                "caps_lock": "left_control",
-                "escape": "f20"
-            },
-            "standalone_keys": {
-                "caps_lock": "escape",
-                "left_control": "escape"
-            },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "iso",
