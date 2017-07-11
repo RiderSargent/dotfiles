@@ -10,6 +10,7 @@ alias bnotes='$EDITOR ~/Dropbox/Notes/Babylon/babylon_health.md'
 alias bp='cd ~/Code/babylon/rails'
 alias c='clear'
 alias ctags="`brew --prefix`/bin/ctags"
+alias e='exit'
 alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases'
 alias ef='exercism fetch'
 alias es='exercism submit'
