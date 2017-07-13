@@ -12,7 +12,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -284,10 +284,6 @@ let g:EasyMotion_smartcase = 1
 iab cm ✓
 iab lmda λ
 
-cab Ag Ag!
-cab ag Ag!
-cab AgBuffer AgBuffer!
-
 
 " ---------------------------------------------------------------------------- "
 "   Key Mappings
@@ -449,8 +445,8 @@ nmap <LEADER>rn :call RunNearestSpec()<CR>
 nmap <LEADER>rr :!ruby -W0 %<CR>
 
 " Search/Sessions
-nmap <LEADER>sa :Ag!<SPACE>
-" nmap <LEADER>sa :grep! "\b<C-R><C-W>\b":cw<CR>
+nmap <LEADER>sa :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap <LEADER>sf :AckFile! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
@@ -492,7 +488,7 @@ nmap Q <NOP>
 
 " bind K to grep word under cursor
 " nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nmap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 
 " --- Highlight Trailing Whitespace ------------------------------------------ "
@@ -532,6 +528,9 @@ let g:gitgutter_override_sign_column_highlight = 0
 " Use ag over grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use Silver Searcher with ack.vim
+  let g:ackprg = 'ag --vimgrep'
 
   " Use Silver Searcher with CtrlP
   let g:ctrlp_user_command = 'ag -l -g "" %s'
