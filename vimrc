@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/tpope-vim-abolish'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -25,9 +26,18 @@ Plug 'tpope/vim-unimpaired'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-system-copy'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/neco-vim'
+  Plug 'pbogut/deoplete-elm'
+  Plug 'SirVer/ultisnips'
+  Plug 'awetzel/elixir.nvim'
+  Plug 'carlitux/deoplete-ternjs'
+  Plug 'fishbullet/deoplete-ruby'
+  Plug 'Shougo/deoplete-rct'
+  Plug 'zchee/deoplete-zsh'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tommcdo/vim-exchange'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux'
@@ -523,6 +533,13 @@ if executable('ag')
   " Use Silver Searcher with CtrlP
   let g:ctrlp_user_command = 'ag -l -g "" %s'
 endif
+
+
+" ---------------------------------------------------------------------------- "
+"   Deoplete
+" ---------------------------------------------------------------------------- "
+let g:deoplete#enable_at_startup = 1
+
 
 " ---------------------------------------------------------------------------- "
 "   CtrlP Settings
