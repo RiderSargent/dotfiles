@@ -127,8 +127,8 @@ set laststatus=2                   " To make status line appear without needing
                                    " to create a split first:
 set linebreak
 " set listchars=tab:»·,trail:·,nbsp:·,eol:¬
-set listchars=tab:»·
-set list                           " TODO: set this only in programming files
+set listchars=tab:»-,trail:·,eol:¬
+set nolist                         " TODO: set this only in programming files
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
@@ -222,6 +222,9 @@ highlight Normal guibg=NONE
 highlight VertSplit guifg=#636D83 guibg=NONE
 " highlight Visual guifg=#abb2bf guibg=#3e4451
 highlight Visual gui=reverse
+
+" Listchars
+highlight NonText guifg=#636D83
 
 
 " removes hash from comment delimiters so my text lists format properly
@@ -363,7 +366,8 @@ vmap <leader>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 nmap <leader>18 :%s/\(\w\+\):\s/:\1 => /gc<cr>
 vmap <leader>18 :s/\(\w\+\):\s/:\1 => /g<cr>
 
-nmap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
+" nmap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
+nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
