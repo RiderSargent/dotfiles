@@ -530,8 +530,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use Silver Searcher with CtrlP
-  " let g:ctrlp_user_command = 'ag -Q -l --path-to-agignore ~/.agignore --nocolor --hidden -g "" %s'
-  let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag -l -g "" %s'
 endif
 
 " ---------------------------------------------------------------------------- "
@@ -541,6 +540,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim  " Add CtrlP to runtime path
 
 " Run in MRU mode
 let g:ctrlp_cmd = 'CtrlPMRU'
+
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|fugitiveblame)$'
+
+" Don't remember matches in MRU list
+" let g:ctrlp_mruf_exclude = '/private/.*'
+let g:ctrlp_mruf_exclude = '\.fugitiveblame'
 
 " Number of files to remember
 let g:ctrlp_mruf_max = 500
@@ -559,7 +564,7 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_open_multiple_files = 'vjr'
 
 " Don't use caching - Silver Searcher is fast enough w/o it.
-" let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 0
 
 " Set working dir to nearest ancestor of the current file (r)
 " or the dir of the current file, unless it's a subdir of cwd (a)
