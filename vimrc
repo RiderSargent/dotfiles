@@ -218,7 +218,7 @@ let g:rws_lightline_colorscheme = 'one'
 " Set no bg so Tmux pane highlighting will work
 highlight Normal guibg=NONE
 
-" One Dark overrides
+" --- One Dark overrides ----------------------------------------------------- "
 highlight VertSplit guifg=#636D83 guibg=NONE
 " highlight Visual guifg=#abb2bf guibg=#3e4451
 highlight Visual gui=reverse
@@ -294,10 +294,6 @@ iab lmda λ
 nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
 
-" Use shift on the lesser-used colon
-" nnoremap ; :
-" nnoremap : ;
-
 " Make j and k move by screen line, not file line
 " (works the way you'd expect on wrapped lines)
 nmap j gj
@@ -310,10 +306,6 @@ nmap k gk
 map H ^
 map L g$
 
-" Swap ; and :
-" nmap : ;
-" nmap ; :
-
 " Visually select text entered last time in insert
 nmap gV `[v`]
 
@@ -323,20 +315,13 @@ map <up> <C-W>-
 map <right> <C-W>>
 map <left> <C-W><
 
-" Open help at bottom of screen
-" cmap help bo help
-
 
 " --- Unimpaired-inspired ---------------------------------------------------- "
 " Tab navigation
 nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
 
-" 'change option...'
-" 'gutter'
-" nmap <silent> cog :set nonumber! relativenumber!<CR>
-
-" 'page' (colorcolumn for cols greater than 79)
+" 'page' (colorcolumn for cols greater than 80)
 nmap cop :call ToggleColorcolumn()<CR>
 
 function! ToggleColorcolumn()
@@ -481,7 +466,10 @@ nmap <C-l> <C-w>l
 xmap . :normal .<CR>
 
 " Disable entering Ex mode
-nmap Q <NOP>
+nnoremap Q <NOP>
+
+" Make Y behave similarly to D and C - yank to EOL
+nmap Y y$
 
 " Disable man lookup
 " nmap <S-k> <nop>
