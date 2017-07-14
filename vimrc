@@ -29,7 +29,6 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'
 call s:SourceConfigFilesIn('rcplugins')
 
 Plug 'tpope/tpope-vim-abolish'
@@ -384,12 +383,10 @@ nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
 nmap <LEADER>ba <C-^>
-nmap <LEADER>bb :CtrlPBuffer<CR>
 nmap <LEADER>bd :bd<CR>
 nmap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
 nmap <LEADER>bl :buffers<CR>:
 nmap <LEADER>bn :bn<CR>
-nmap <LEADER>bo :CtrlPBuffer<CR>
 nmap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
 nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
 nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
@@ -412,11 +409,8 @@ nmap <LEADER>eh :call <SID>SynStack()<CR>
 nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
-nmap <LEADER>ff :CtrlPMRU<CR>
 nmap <LEADER>fn :enew<CR>
-nmap <LEADER>fo :CtrlP<CR>
 nmap <LEADER>fp :echo expand('%:p')<CR>
-nmap <LEADER>fr :CtrlPMRU<CR>
 nmap <LEADER>ft :NERDTreeToggle<CR>
 nmap <LEADER>fw :w<CR>
 
@@ -538,8 +532,6 @@ let g:gitgutter_override_sign_column_highlight = 0
 " Use ag over grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  " Use Silver Searcher with CtrlP
-  let g:ctrlp_user_command = 'ag -l -g "" %s'
 endif
 
 
@@ -547,44 +539,6 @@ endif
 "   Deoplete
 " ---------------------------------------------------------------------------- "
 let g:deoplete#enable_at_startup = 1
-
-
-" ---------------------------------------------------------------------------- "
-"   CtrlP Settings
-" ---------------------------------------------------------------------------- "
-set runtimepath^=~/.vim/bundle/ctrlp.vim  " Add CtrlP to runtime path
-
-" Run in MRU mode
-let g:ctrlp_cmd = 'CtrlPMRU'
-
-" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|fugitiveblame)$'
-
-" Don't remember matches in MRU list
-" let g:ctrlp_mruf_exclude = '/private/.*'
-let g:ctrlp_mruf_exclude = '\.fugitiveblame'
-
-" Number of files to remember
-let g:ctrlp_mruf_max = 500
-
-" Customize results window
-let g:ctrlp_match_window = 'bottom,order:btt,max:20,results:50'
-
-" t = in a new tab
-" h = in a new horizontal split
-" v = in a new vertical split (default)
-" r = current window
-let g:ctrlp_open_new_file = 'r'
-
-" open files with <C-z>, <C-o> in vert splits, open the first file in current
-" window and jump to it
-let g:ctrlp_open_multiple_files = 'vjr'
-
-" Don't use caching - Silver Searcher is fast enough w/o it.
-let g:ctrlp_use_caching = 0
-
-" Set working dir to nearest ancestor of the current file (r)
-" or the dir of the current file, unless it's a subdir of cwd (a)
-let g:ctrlp_working_path_mode = 'ra'
 
 
 " ---------------------------------------------------------------------------- "
