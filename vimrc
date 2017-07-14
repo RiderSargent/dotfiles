@@ -26,6 +26,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-system-copy'
+
+if has("nvim")
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/neco-vim'
   Plug 'pbogut/deoplete-elm'
@@ -35,6 +37,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fishbullet/deoplete-ruby'
   Plug 'Shougo/deoplete-rct'
   Plug 'zchee/deoplete-zsh'
+  Plug 'kassio/neoterm'
+endif
+
 Plug 'simnalamburt/vim-mundo'
 Plug 'tommcdo/vim-exchange'
 " Plug 'ervandew/supertab'
@@ -42,7 +47,6 @@ Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'kassio/neoterm'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'rgarver/Kwbd.vim'
@@ -107,6 +111,18 @@ if has("nvim")
   set inccommand=split               " interactive search/replace for NeoVim
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+  " <Esc> to exit terminal mode
+  tnoremap <Esc> <C-\><C-n>
+
+  " This leaves us without ability to send <Esc> to term processes, so:
+  tnoremap <A-[> <Esc>
+
+  " Terminal mode navigation
+  tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
+  tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<CR>
+  tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<CR>
+  tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<CR>
 else
   set encoding=utf8
 endif
