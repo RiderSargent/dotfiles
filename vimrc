@@ -35,7 +35,6 @@ if has("nvim")
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete-rct'
     Plug 'Shougo/neco-vim'
-    Plug 'SirVer/ultisnips'
     Plug 'awetzel/elixir.nvim'
     Plug 'carlitux/deoplete-ternjs'
     Plug 'fishbullet/deoplete-ruby'
@@ -44,14 +43,6 @@ if has("nvim")
 
   Plug 'kassio/neoterm'
 endif
-
-
-" ---------------------------------------------------------------------------- "
-"   Non-essential, but very useful
-" ---------------------------------------------------------------------------- "
-Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-" My snippets live in ~/.dotfiles/vim/UltiSnips
 
 call plug#end()
 
@@ -220,16 +211,6 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
-
-
-" ---------------------------------------------------------------------------- "
-"  UltiSnips
-" ---------------------------------------------------------------------------- "
-let g:UltiSnipsSnippetDirectories=[
-  \ $HOME."/.dotfiles/vim/UltiSnips",
-  \ $HOME."/.dotfiles/vim/bundle/vim-snippets/UltiSnips"
-  \]
 
 
 " ---------------------------------------------------------------------------- "
