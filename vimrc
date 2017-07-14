@@ -31,15 +31,6 @@ call plug#begin('~/.vim/plugged')
 
 call s:SourceConfigFilesIn('rcplugins')
 
-Plug 'tpope/tpope-vim-abolish'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-system-copy'
@@ -414,7 +405,6 @@ nmap <LEADER>fp :echo expand('%:p')<CR>
 nmap <LEADER>ft :NERDTreeToggle<CR>
 nmap <LEADER>fw :w<CR>
 
-nmap <LEADER>gb :Gblame<CR>
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>
 nmap <LEADER>gv :vertical wincmd f<CR>
@@ -470,9 +460,7 @@ nmap <LEADER>ve :e $MYVIMRC<CR>
 nmap <LEADER>vv :so $MYVIMRC<CR>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
-nmap <LEADER>; :Commentary<CR>
 
-vmap ; :'<,'>Commentary<CR>
 vmap <LEADER>y "*y
 
 " Example of using = reg and functions in mapping:

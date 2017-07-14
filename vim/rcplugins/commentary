@@ -1,0 +1,6 @@
+" vim:ft=vim
+
+Plug 'tpope/vim-commentary'
+
+nmap <LEADER>; :Commentary<CR>
+vmap ; :'<,'>Commentary<CR>
