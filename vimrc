@@ -6,6 +6,23 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
+" Set leader key before defining leader mappings.
+" (<SPACE> mapped this way so <leader> shows up as ',' in showcmd)
+let mapleader=","
+map <SPACE> <LEADER>
+
+
+" Stolen from Chris Toomey's dotfiles to load broken out config files.
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
+endfunction
+
+
 " ============================================================================ "
 "   Plug.vim
 " ============================================================================ "
@@ -14,6 +31,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+call s:SourceConfigFilesIn('rcplugins')
+
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
@@ -354,11 +373,6 @@ endfunction
 
 
 " --- Leader Combos ---------------------------------------------------------- "
-" Set leader key (<SPACE> mapped this way to show up in showcmd)
-let mapleader=","
-map <SPACE> <LEADER>
-
-
 " Convert between 1.8 and 1.9 hash syntaxes
 nmap <LEADER>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
 vmap <LEADER>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
