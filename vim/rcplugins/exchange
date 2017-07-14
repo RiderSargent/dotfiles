@@ -1,0 +1,3 @@
+" vim:ft=vim
+
+Plug 'tommcdo/vim-exchange'

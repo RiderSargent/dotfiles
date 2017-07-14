@@ -1,0 +1,17 @@
+" vim:ft=vim
+
+Plug 'easymotion/vim-easymotion'
+
+" EasyMotion
+nmap <LEADER>j <Plug>(easymotion-bd-W)
+nmap <LEADER>J <Plug>(easymotion-bd-w)
+nmap <LEADER>k <Plug>(easymotion-s2)
+nmap <LEADER>K <Plug>(easymotion-s)
+nmap <LEADER>l <Plug>(easymotion-bd-jk)
+
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+

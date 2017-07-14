@@ -45,55 +45,14 @@ if has("nvim")
   Plug 'kassio/neoterm'
 endif
 
-Plug 'simnalamburt/vim-mundo'
-Plug 'tommcdo/vim-exchange'
-Plug 'godlygeek/tabular'
-Plug 'Raimondi/delimitMate'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-
-Plug 'easymotion/vim-easymotion'
-Plug 'rgarver/Kwbd.vim'
-Plug 'machakann/vim-highlightedyank'
-
-" ---------------------------------------------------------------------------- "
-"   Language specific
-" ---------------------------------------------------------------------------- "
-Plug 'vim-ruby/vim-ruby',              { 'for': 'ruby' }
-Plug 'tpope/vim-bundler',              { 'for': 'ruby' }
-Plug 'tpope/vim-rails',                { 'for': 'ruby' }
-Plug 'tpope/vim-rake',                 { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'ecomba/vim-ruby-refactoring',    { 'for': 'ruby' }
-
-Plug 'jelera/vim-javascript-syntax',   { 'for': 'javascript' }
-Plug 'poetic/vim-textobj-javascript',  { 'for': 'javascript' }
-Plug 'walm/jshint.vim',                { 'for': 'javascript' }
-
-Plug 'kchmck/vim-coffee-script',       { 'for': 'coffee' }
-Plug 'elixir-lang/vim-elixir',         { 'for': 'elixir' }
-Plug 'ElmCast/elm-vim',                { 'for': 'elm' }
-Plug 'tpope/vim-markdown',             { 'for': 'markdown' }
 
 " ---------------------------------------------------------------------------- "
 "   Non-essential, but very useful
 " ---------------------------------------------------------------------------- "
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/UltiSnips
-
-" ---------------------------------------------------------------------------- "
-"   Text Objects
-" ---------------------------------------------------------------------------- "
-Plug 'kana/vim-textobj-user'                 "vim-textobj-* dependancy
-Plug 'kana/vim-textobj-entire'               "ie to select inner everything
-Plug 'kana/vim-textobj-line'                 "il to select inner line
-Plug 'kana/vim-textobj-indent'               "ii to select inner indent
-Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 
 " ---------------------------------------------------------------------------- "
 "   Colorschemes
@@ -287,15 +246,6 @@ let g:UltiSnipsSnippetDirectories=[
 
 
 " ---------------------------------------------------------------------------- "
-"  EasyMotion
-" ---------------------------------------------------------------------------- "
-" Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
- " type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
-
-
-" ---------------------------------------------------------------------------- "
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
 
@@ -375,29 +325,17 @@ nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to sys
 
 
 " Editor
-nmap <LEADER>ee :NERDTreeToggle<CR>
 nmap <LEADER>eh :call <SID>SynStack()<CR>
 nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
 nmap <LEADER>fn :enew<CR>
 nmap <LEADER>fp :echo expand('%:p')<CR>
-nmap <LEADER>ft :NERDTreeToggle<CR>
 nmap <LEADER>fw :w<CR>
 
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>
 nmap <LEADER>gv :vertical wincmd f<CR>
-
-" EasyMotion
-nmap <LEADER>j <Plug>(easymotion-bd-W)
-nmap <LEADER>J <Plug>(easymotion-bd-w)
-nmap <LEADER>k <Plug>(easymotion-s2)
-nmap <LEADER>K <Plug>(easymotion-s)
-nmap <LEADER>l <Plug>(easymotion-bd-jk)
-
-" Linting
-nmap <LEADER>lj :JSHint<CR>
 
 " Line
 nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
@@ -416,23 +354,12 @@ nmap <LEADER>ps :sp<CR>
 nmap <LEADER>pv :vsp<CR>
 nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
-nmap <LEADER>ra :call RunAllSpecs()<CR>
-nmap <LEADER>rc :call RunCurrentSpecFile()<CR>
-nmap <LEADER>rl :call RunLastSpec()<CR>
-nmap <LEADER>rn :call RunNearestSpec()<CR>
-
-" Run current buffer as Ruby script
-nmap <LEADER>rr :!ruby -W0 %<CR>
-
 " Search/Sessions
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 " Tagbar
 nmap <LEADER>tt :TagbarToggle<CR>
-
-" Mundo
-nmap <LEADER>u :MundoToggle<CR>
 
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
@@ -486,15 +413,6 @@ highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
 
 
 " ---------------------------------------------------------------------------- "
-"   GitGutter
-" ---------------------------------------------------------------------------- "
-"  Don't create any mappings
-let g:gitgutter_map_keys = 0
-"  Don't change column color
-let g:gitgutter_override_sign_column_highlight = 0
-
-
-" ---------------------------------------------------------------------------- "
 "   The Silver Searcher
 " ---------------------------------------------------------------------------- "
 " Use ag over grep
@@ -510,13 +428,6 @@ let g:deoplete#enable_at_startup = 1
 
 
 " ---------------------------------------------------------------------------- "
-"   elm-vim
-" ---------------------------------------------------------------------------- "
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
-
-
-" ---------------------------------------------------------------------------- "
 "   Functions
 " ---------------------------------------------------------------------------- "
 
@@ -526,16 +437,6 @@ au WinLeave * setlocal nocursorline
 
 " Automatically rebalance panes on window resize
 autocmd VimResized * :wincmd =
-
-" By default, vim thinks .md is Modula-2, make it markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = [ 'html', 'ruby' ]
-
-" auto-reload .vimrc
-augroup reload_vimrc
-  autocmd!
-  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-augroup END
 
 " Set filetype to text if it is unset
 autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
@@ -674,19 +575,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
       \ | wincmd p | diffthis
 endif
-
-
-" Set paste mode automatically when pasting in insert mode
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
-
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
 
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
