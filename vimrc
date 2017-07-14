@@ -28,15 +28,16 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-system-copy'
 
 if has("nvim")
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/neco-vim'
-  Plug 'pbogut/deoplete-elm'
-  Plug 'SirVer/ultisnips'
-  Plug 'awetzel/elixir.nvim'
-  Plug 'carlitux/deoplete-ternjs'
-  Plug 'fishbullet/deoplete-ruby'
-  Plug 'Shougo/deoplete-rct'
-  Plug 'zchee/deoplete-zsh'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete-rct'
+    Plug 'Shougo/neco-vim'
+    Plug 'SirVer/ultisnips'
+    Plug 'awetzel/elixir.nvim'
+    Plug 'carlitux/deoplete-ternjs'
+    Plug 'fishbullet/deoplete-ruby'
+    Plug 'pbogut/deoplete-elm'
+    Plug 'zchee/deoplete-zsh'
+
   Plug 'kassio/neoterm'
 endif
 
@@ -55,22 +56,22 @@ Plug 'machakann/vim-highlightedyank'
 " ---------------------------------------------------------------------------- "
 "   Language specific
 " ---------------------------------------------------------------------------- "
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby',              { 'for': 'ruby' }
+Plug 'tpope/vim-bundler',              { 'for': 'ruby' }
+Plug 'tpope/vim-rails',                { 'for': 'ruby' }
+Plug 'tpope/vim-rake',                 { 'for': 'ruby' }
+Plug 'thoughtbot/vim-rspec',           { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'ecomba/vim-ruby-refactoring', { 'for': 'ruby' }
+Plug 'ecomba/vim-ruby-refactoring',    { 'for': 'ruby' }
 
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'poetic/vim-textobj-javascript', { 'for': 'javascript' }
-Plug 'walm/jshint.vim', { 'for': 'javascript' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'jelera/vim-javascript-syntax',   { 'for': 'javascript' }
+Plug 'poetic/vim-textobj-javascript',  { 'for': 'javascript' }
+Plug 'walm/jshint.vim',                { 'for': 'javascript' }
 
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'kchmck/vim-coffee-script',       { 'for': 'coffee' }
+Plug 'elixir-lang/vim-elixir',         { 'for': 'elixir' }
+Plug 'ElmCast/elm-vim',                { 'for': 'elm' }
+Plug 'tpope/vim-markdown',             { 'for': 'markdown' }
 
 " ---------------------------------------------------------------------------- "
 "   Non-essential, but very useful
@@ -96,7 +97,6 @@ Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
 " ---------------------------------------------------------------------------- "
 Plug 'joshdick/onedark.vim'
 Plug 'iCyMind/NeoSolarized'
-" Plug 'altercation/vim-colors-solarized'
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'croaky/vim-colors-github'
 " Plug 'morhetz/gruvbox'
@@ -246,7 +246,6 @@ highlight Normal guibg=NONE
 
 " --- One Dark overrides ----------------------------------------------------- "
 highlight VertSplit guifg=#636D83 guibg=NONE
-" highlight Visual guifg=#abb2bf guibg=#3e4451
 highlight Visual gui=reverse
 
 " Listchars
@@ -263,10 +262,6 @@ autocmd FileType text setlocal comments=fb:*
 " ---------------------------------------------------------------------------- "
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-" Use sane regexes.
-" nmap / /\v
-" vmap / /\v
 
 " Keep search matches in the middle of the window.
 nmap n nzzzv
@@ -326,9 +321,6 @@ nmap j gj
 nmap k gk
 
 " Move to beginning/end of line
-" map H 0
-" map L $
-" map H g^
 map H ^
 map L g$
 
@@ -368,10 +360,10 @@ map <SPACE> <LEADER>
 
 
 " Convert between 1.8 and 1.9 hash syntaxes
-nmap <leader>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<cr>
-vmap <leader>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
-nmap <leader>18 :%s/\(\w\+\):\s/:\1 => /gc<cr>
-vmap <leader>18 :s/\(\w\+\):\s/:\1 => /g<cr>
+nmap <LEADER>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
+vmap <LEADER>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
+nmap <LEADER>18 :%s/\(\w\+\):\s/:\1 => /gc<CR>
+vmap <LEADER>18 :s/\(\w\+\):\s/:\1 => /g<CR>
 
 " nmap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
 nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
@@ -392,13 +384,13 @@ nmap <LEADER>bw :w<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
 
-nmap <LEADER>ca :VtrAttachToPane<cr>
-nmap <LEADER>cc :VtrSendCommandToRunner<cr>
-nmap <LEADER>cf :VtrFlushCommand<cr>
-nmap <LEADER>cl :VtrSendLinesToRunner<cr>
-vmap <LEADER>cl :VtrSendLinesToRunner<cr>
-nmap <LEADER>cr :VtrSendCommandToRunner<cr>
-nmap <LEADER>cz :VtrFocusRunner<cr>
+nmap <LEADER>ca :VtrAttachToPane<CR>
+nmap <LEADER>cc :VtrSendCommandToRunner<CR>
+nmap <LEADER>cf :VtrFlushCommand<CR>
+nmap <LEADER>cl :VtrSendLinesToRunner<CR>
+vmap <LEADER>cl :VtrSendLinesToRunner<CR>
+nmap <LEADER>cr :VtrSendCommandToRunner<CR>
+nmap <LEADER>cz :VtrFocusRunner<CR>
 
 
 " Editor
@@ -603,13 +595,6 @@ let g:elm_setup_keybindings = 0
 
 
 " ---------------------------------------------------------------------------- "
-"   Vimux
-" ---------------------------------------------------------------------------- "
-" let g:VimuxHeight = "30"
-" let g:VimuxUseNearest = 1
-
-
-" ---------------------------------------------------------------------------- "
 "   Functions
 " ---------------------------------------------------------------------------- "
 
@@ -702,17 +687,12 @@ command! RemoveFancyCharacters :call RemoveFancyCharacters()
 " ---------------------------------------------------------------------------- "
 "   Experimental
 " ---------------------------------------------------------------------------- "
-" Use line cursor in insert mode, block in normal (only in tmux)
-" if exists('$TMUX')
-"     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-" else
-"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-" endif
+" Nothing here at the moment...
 
 
-
+" ---------------------------------------------------------------------------- "
+"   Lightline
+" ---------------------------------------------------------------------------- "
 let g:lightline = {
       \ 'colorscheme': rws_lightline_colorscheme,
       \ 'active': {
