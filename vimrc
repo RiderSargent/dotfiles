@@ -29,7 +29,6 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 call s:SourceConfigFilesIn('rcplugins')
 
@@ -462,8 +461,6 @@ nmap <LEADER>rn :call RunNearestSpec()<CR>
 nmap <LEADER>rr :!ruby -W0 %<CR>
 
 " Search/Sessions
-nmap <LEADER>sa :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nmap <LEADER>sf :AckFile! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
@@ -503,13 +500,6 @@ nnoremap Q <NOP>
 " Make Y behave similarly to D and C - yank to EOL
 nmap Y y$
 
-" Disable man lookup
-" nmap <S-k> <nop>
-
-" bind K to grep word under cursor
-" nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nmap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 
 " --- Highlight Trailing Whitespace ------------------------------------------ "
 " The following (re: TrailingWhitespace) is from the following page:
@@ -548,10 +538,6 @@ let g:gitgutter_override_sign_column_highlight = 0
 " Use ag over grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use Silver Searcher with ack.vim
-  let g:ackprg = 'ag --vimgrep'
-
   " Use Silver Searcher with CtrlP
   let g:ctrlp_user_command = 'ag -l -g "" %s'
 endif
@@ -561,7 +547,6 @@ endif
 "   Deoplete
 " ---------------------------------------------------------------------------- "
 let g:deoplete#enable_at_startup = 1
-let g:ack_use_dispatch = 1
 
 
 " ---------------------------------------------------------------------------- "
