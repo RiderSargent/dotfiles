@@ -1,0 +1,13 @@
+" vim:ft=vim
+
+Plug 'christoomey/vim-tmux-runner'
+
+nmap <LEADER>ca :VtrAttachToPane<CR>
+nmap <LEADER>cc :VtrSendCommandToRunner<CR>
+nmap <LEADER>cf :VtrFlushCommand<CR>
+nmap <LEADER>cl :VtrSendLinesToRunner<CR>
+vmap <LEADER>cl :VtrSendLinesToRunner<CR>
+nmap <LEADER>cr :VtrSendCommandToRunner<CR>
+nmap <LEADER>cz :VtrFocusRunner<CR>
+
+

@@ -1,0 +1,10 @@
+" vim:ft=vim
+
+Plug 'christoomey/vim-tmux-navigator'
+
+if has("nvim")
+  tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
+  tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<CR>
+  tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<CR>
+  tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<CR>
+endif

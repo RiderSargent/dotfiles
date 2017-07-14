@@ -31,10 +31,6 @@ call plug#begin('~/.vim/plugged')
 
 call s:SourceConfigFilesIn('rcplugins')
 
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'christoomey/vim-system-copy'
-
 if has("nvim")
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete-rct'
@@ -51,7 +47,6 @@ endif
 
 Plug 'simnalamburt/vim-mundo'
 Plug 'tommcdo/vim-exchange'
-" Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux'
@@ -125,12 +120,6 @@ if has("nvim")
 
   " This leaves us without ability to send <Esc> to term processes, so:
   tnoremap <A-[> <Esc>
-
-  " Terminal mode navigation
-  tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
-  tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<CR>
-  tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<CR>
-  tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<CR>
 else
   set encoding=utf8
 endif
@@ -383,15 +372,6 @@ nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
 nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
 nmap <LEADER>bw :w<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
-
-
-nmap <LEADER>ca :VtrAttachToPane<CR>
-nmap <LEADER>cc :VtrSendCommandToRunner<CR>
-nmap <LEADER>cf :VtrFlushCommand<CR>
-nmap <LEADER>cl :VtrSendLinesToRunner<CR>
-vmap <LEADER>cl :VtrSendLinesToRunner<CR>
-nmap <LEADER>cr :VtrSendCommandToRunner<CR>
-nmap <LEADER>cz :VtrFocusRunner<CR>
 
 
 " Editor
