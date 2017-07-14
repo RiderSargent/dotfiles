@@ -46,6 +46,8 @@ endif
 
 call plug#end()
 
+call s:SourceConfigFilesIn('rcfiles')
+
 
 " ---------------------------------------------------------------------------- "
 "   Neovim vs Vim
@@ -96,7 +98,7 @@ set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
 set nocompatible
-" set noesckeys                      " remove delay when hitting esc in insert
+" set noesckeys                    " remove delay when hitting esc in insert
                                    " mode - probationary: breaks arrow keys in
                                    " insert mode
 set noshowmode
@@ -157,115 +159,14 @@ set visualbell
 set timeout timeoutlen=1500 ttimeoutlen=100
 
 
-" ---------------------------------------------------------------------------- "
-"   Colors
-" ---------------------------------------------------------------------------- "
-
-set background=dark
-
-
-" --- One Dark --------------------------------------------------------------- "
-colorscheme onedark
-
-
-" --- Solarized -------------------------------------------------------------- "
-" colorscheme NeoSolarized
-
-
-" ---------------------------------------------------------------------------- "
-"    My Color Overrides
-" ---------------------------------------------------------------------------- "
-" Set no bg so Tmux pane highlighting will work
-highlight Normal guibg=NONE
-
-" --- One Dark overrides ----------------------------------------------------- "
-highlight VertSplit guifg=#636D83 guibg=NONE
-highlight Visual gui=reverse
-
-" Listchars
-highlight NonText guifg=#636D83
-
-
-" removes hash from comment delimiters so my text lists format properly
-" (<CR> returns to same indent as -, not indent of first word)
-autocmd FileType text setlocal comments=fb:*
-
-
-" ---------------------------------------------------------------------------- "
-"  Stolen from Steve Losh
-" ---------------------------------------------------------------------------- "
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-" Keep search matches in the middle of the window.
-nmap n nzzzv
-nmap N Nzzzv
-
-" Visual Mode */# from Scrooloose
-function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
-endfunction
-
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
 
 " ---------------------------------------------------------------------------- "
 "  Abbreviations
 " ---------------------------------------------------------------------------- "
-
 iab cm ✓
 iab lmda λ
-
-
-" ---------------------------------------------------------------------------- "
-"   Key Mappings
-" ---------------------------------------------------------------------------- "
-
-" --- Generic Normal Mode ---------------------------------------------------- "
-" Highlight and Search for word under the cursor without changing the cursor position
-nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
-
-
-" Make j and k move by screen line, not file line
-" (works the way you'd expect on wrapped lines)
-nmap j gj
-nmap k gk
-
-" Move to beginning/end of line
-map H ^
-map L g$
-
-" Visually select text entered last time in insert
-nmap gV `[v`]
-
-" Arrow keys to resize in normal mode
-map <down> <C-W>+
-map <up> <C-W>-
-map <right> <C-W>>
-map <left> <C-W><
-
-
-" --- Unimpaired-inspired ---------------------------------------------------- "
-" Tab navigation
-nnoremap [t :tprevious<CR>
-nnoremap ]t :tnext<CR>
-
-" 'page' (colorcolumn for cols greater than 80)
-nmap cop :call ToggleColorcolumn()<CR>
-
-function! ToggleColorcolumn()
-  if &colorcolumn==0
-    execute "set colorcolumn=" . join(range(81,335), ',')
-    echo "colorcolumn>80"
-  else
-    set colorcolumn=0
-    echo "colorcolumn=0"
-  endif
-endfunction
 
 
 " --- Leader Combos ---------------------------------------------------------- "
@@ -275,7 +176,6 @@ vmap <LEADER>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 nmap <LEADER>18 :%s/\(\w\+\):\s/:\1 => /gc<CR>
 vmap <LEADER>18 :s/\(\w\+\):\s/:\1 => /g<CR>
 
-" nmap <LEADER>2 :call Preserve("%s/	/  /g")<CR>:echo "Converted tabs to spaces"<CR>
 nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
@@ -291,9 +191,7 @@ nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
 nmap <LEADER>bw :w<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
-
 " Editor
-nmap <LEADER>eh :call <SID>SynStack()<CR>
 nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
@@ -342,29 +240,23 @@ vmap <LEADER>y "*y
 " map <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 
-" --- Ctrl Combos ------------------------------------------------------------ "
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-" Enable dot command over visual selection
-xmap . :normal .<CR>
-
-" Disable entering Ex mode
-nnoremap Q <NOP>
-
-" Make Y behave similarly to D and C - yank to EOL
-nmap Y y$
-
-
 " --- Highlight Trailing Whitespace ------------------------------------------ "
 " The following (re: TrailingWhitespace) is from the following page:
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 
-let $PROGRAMMING_FILES = '.vimrc,vimrc,.rake'
-let $PROGRAMMING_FILES .= ',*.js,*.rb,*.erb,*.php,*.html,*.htm'
-let $PROGRAMMING_FILES .= ',*.elm,*.haml,*.clj'
+let $PROGRAMMING_FILES = '.vimrc'
+let $PROGRAMMING_FILES .= ',vimrc'
+let $PROGRAMMING_FILES .= ',.rake'
+let $PROGRAMMING_FILES .= ',*.js'
+let $PROGRAMMING_FILES .= ',*.rb'
+let $PROGRAMMING_FILES .= ',*.elm'
+let $PROGRAMMING_FILES .= ',*.erb'
+let $PROGRAMMING_FILES .= ',*.php'
+let $PROGRAMMING_FILES .= ',*.html'
+let $PROGRAMMING_FILES .= ',*.htm'
+let $PROGRAMMING_FILES .= ',*.elm'
+let $PROGRAMMING_FILES .= ',*.haml'
+let $PROGRAMMING_FILES .= ',*.clj'
 
 " Trim trailing whitespace (keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
@@ -399,28 +291,10 @@ let g:deoplete#enable_at_startup = 1
 "   Functions
 " ---------------------------------------------------------------------------- "
 
-" Only have cursorline in active window.
-au WinEnter * setlocal cursorline
-au WinLeave * setlocal nocursorline
+" Highlight and Search for word under the cursor without changing the cursor position
+nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
-" Automatically rebalance panes on window resize
-autocmd VimResized * :wincmd =
-
-" Set filetype to text if it is unset
-autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
-
-" From Vimcasts Episode #25
-"   (http://vimcasts.org/episodes/creating-colorschemes-for-vim/)
-" Show syntax highlighting groups for word under cursor
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-
-" This is an iteration on the above from https://github.com/arecarn/Preserve.vim
+" From https://github.com/arecarn/Preserve.vim
 " I couldn't get Vundle to install it automatically, so I nicked it.
 function! Preserve(command)
   " Preparation: save last search and cursor position
@@ -474,50 +348,3 @@ function! RemoveFancyCharacters()
 endfunction
 command! RemoveFancyCharacters :call RemoveFancyCharacters()
 
-
-" ---------------------------------------------------------------------------- "
-"   Experimental
-" ---------------------------------------------------------------------------- "
-" Nothing here at the moment...
-
-
-" jump to last position in file
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
-
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-      \ | wincmd p | diffthis
-endif
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
-
-imap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-
-" Send the output of a cmd to a new tab (or split)
-" ex: :TabMessage highlight
-function! TabMessage(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  if empty(message)
-    echoerr "no output"
-  else
-    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    vnew
-    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-    silent put=message
-  endif
-endfunction
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
