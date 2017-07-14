@@ -49,19 +49,9 @@ endif
 " ---------------------------------------------------------------------------- "
 "   Non-essential, but very useful
 " ---------------------------------------------------------------------------- "
-Plug 'itchyny/lightline.vim'
 Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 " My snippets live in ~/.dotfiles/vim/UltiSnips
-
-" ---------------------------------------------------------------------------- "
-"   Colorschemes
-" ---------------------------------------------------------------------------- "
-Plug 'joshdick/onedark.vim'
-Plug 'iCyMind/NeoSolarized'
-" Plug 'nanotech/jellybeans.vim'
-" Plug 'croaky/vim-colors-github'
-" Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -181,17 +171,14 @@ set timeout timeoutlen=1500 ttimeoutlen=100
 " ---------------------------------------------------------------------------- "
 
 set background=dark
-let g:rws_lightline_colorscheme = 'default'
 
 
 " --- One Dark --------------------------------------------------------------- "
 colorscheme onedark
-let g:rws_lightline_colorscheme = 'one'
 
 
 " --- Solarized -------------------------------------------------------------- "
 " colorscheme NeoSolarized
-" let g:rws_lightline_colorscheme = 'solarized'
 
 
 " ---------------------------------------------------------------------------- "
@@ -511,54 +498,6 @@ command! RemoveFancyCharacters :call RemoveFancyCharacters()
 "   Experimental
 " ---------------------------------------------------------------------------- "
 " Nothing here at the moment...
-
-
-" ---------------------------------------------------------------------------- "
-"   Lightline
-" ---------------------------------------------------------------------------- "
-let g:lightline = {
-      \ 'colorscheme': rws_lightline_colorscheme,
-      \ 'active': {
-      \   'left':  [ [ 'mode', 'paste' ],
-      \              [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'filename': 'LightLineFilename',
-      \ },
-      \ }
-
-function! LightLineFugitive()
-  return exists('*fugitive#head') ? fugitive#head() : ''
-endfunction
-
-function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "RO"
-  else
-    return ""
-  endif
-endfunction
-
-function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-       \ ('' != expand('%') ? expand('%') : '[No Name]') .
-       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
 
 
 " jump to last position in file
