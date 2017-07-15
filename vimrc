@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 
 if has("nvim")
+  Plug 'kassio/neoterm'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'Shougo/deoplete-rct'
     Plug 'Shougo/neco-vim'
@@ -40,8 +41,6 @@ if has("nvim")
     Plug 'fishbullet/deoplete-ruby'
     Plug 'pbogut/deoplete-elm'
     Plug 'zchee/deoplete-zsh'
-
-  Plug 'kassio/neoterm'
 endif
 
 call plug#end()
@@ -170,12 +169,6 @@ iab lmda λ
 
 
 " --- Leader Combos ---------------------------------------------------------- "
-" Convert between 1.8 and 1.9 hash syntaxes
-nmap <LEADER>19 :%s/:\([^ ]*\)\(\s*\)=>/\1:/gc<CR>
-vmap <LEADER>19 :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
-nmap <LEADER>18 :%s/\(\w\+\):\s/:\1 => /gc<CR>
-vmap <LEADER>18 :s/\(\w\+\):\s/:\1 => /g<CR>
-
 nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
