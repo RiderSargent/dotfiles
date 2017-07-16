@@ -314,21 +314,3 @@ if !exists(":PreserveRestore")
   command! -bar -nargs=0 PreserveRestore call PreserveRestore()
 endif
 
-" ---------------------------------------------------------------------------- "
-"  From Gary Bernhardt's .vimrc file
-"    RemoveFancyCharacters COMMAND
-"    Remove smart quotes, etc.
-" ---------------------------------------------------------------------------- "
-function! RemoveFancyCharacters()
-    let typo = {}
-    let typo["“"] = '"'
-    let typo["”"] = '"'
-    let typo["‘"] = "'"
-    let typo["’"] = "'"
-    let typo["–"] = '--'
-    let typo["—"] = '---'
-    let typo["…"] = '...'
-    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/gec'
-endfunction
-command! RemoveFancyCharacters :call RemoveFancyCharacters()
-
