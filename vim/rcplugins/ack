@@ -14,6 +14,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-if has("nvim")
-  let g:ack_use_dispatch = 1
-endif
+" if has("nvim")
+"   let g:ack_use_dispatch = 1
+" endif
