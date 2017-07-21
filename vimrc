@@ -28,6 +28,7 @@ endfunction
 " ============================================================================ "
 
 call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.local/share/nvim/plugged')
 
 call s:SourceConfigFilesIn('rcplugins')
 
