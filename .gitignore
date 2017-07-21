@@ -1,5 +1,6 @@
 *.swp
 .DS_Store
+.netrwhist
 atom/.apm
 atom/.node-gyp
 atom/.npm
@@ -12,4 +13,3 @@ vim/bundle
 vim/plugged
 vim/sessions
 vim/view
-vim/.netrwhist
