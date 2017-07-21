@@ -1,1 +1,1 @@
-/Users/ridersargent/.dotfiles/vimrc
+../../vimrc
