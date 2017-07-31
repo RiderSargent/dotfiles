@@ -32,50 +32,9 @@ call plug#begin('~/.vim/plugged')
 
 call s:SourceConfigFilesIn('rcplugins')
 
-if has("nvim")
-  Plug 'kassio/neoterm'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/deoplete-rct'
-    Plug 'Shougo/neco-vim'
-    Plug 'awetzel/elixir.nvim'
-    Plug 'carlitux/deoplete-ternjs'
-    Plug 'fishbullet/deoplete-ruby'
-    Plug 'pbogut/deoplete-elm'
-    Plug 'zchee/deoplete-zsh'
-endif
-
 call plug#end()
 
 call s:SourceConfigFilesIn('rcfiles')
-
-
-" inoremap <silent><expr> <TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ <SID>check_back_space() ? "\<TAB>" :
-" \ deoplete#mappings#manual_complete()
-" function! s:check_back_space() abort "{{{
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction"}}}
-
-
-
-" inoremap <silent><expr> <TAB>
-"     \ pumvisible() ? "\<C-n>" :
-"     \ <SID>check_back_space() ? "\<TAB>" :
-"     \ deoplete#mappings#manual_complete()
-
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#smart_close_popup()
-
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
-
-let g:UltiSnipsExpandTrigger = ""
 
 
 " ---------------------------------------------------------------------------- "
