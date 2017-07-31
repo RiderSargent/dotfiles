@@ -1,0 +1,34 @@
+" vim:ft=vim
+
+
+" --- Highlight Trailing Whitespace ------------------------------------------ "
+" The following (re: TrailingWhitespace) is from the following page:
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+
+let $PROGRAMMING_FILES = '.vimrc'
+let $PROGRAMMING_FILES .= ',vimrc'
+let $PROGRAMMING_FILES .= ',.rake'
+let $PROGRAMMING_FILES .= ',*.js'
+let $PROGRAMMING_FILES .= ',*.rb'
+let $PROGRAMMING_FILES .= ',*.elm'
+let $PROGRAMMING_FILES .= ',*.erb'
+let $PROGRAMMING_FILES .= ',*.php'
+let $PROGRAMMING_FILES .= ',*.html'
+let $PROGRAMMING_FILES .= ',*.htm'
+let $PROGRAMMING_FILES .= ',*.elm'
+let $PROGRAMMING_FILES .= ',*.haml'
+let $PROGRAMMING_FILES .= ',*.clj'
+
+" Trim trailing whitespace (keeping cursor pos) for the indicated filetypes
+autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
+
+" Match TrailingWhitespace except when typing at the end of the line
+autocmd BufWinEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+autocmd InsertEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+autocmd BufWinLeave $PROGRAMMING_FILES call clearmatches()
+
+
+" Highlight TrailingWhitespace highlight group
+highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
+

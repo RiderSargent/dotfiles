@@ -1,0 +1,66 @@
+" vim:ft=vim
+
+" --- Leader Combos ---------------------------------------------------------- "
+nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
+
+" --- Experimental Spacemacs-like keybindings -------------------------------- "
+" Buffers
+nmap <LEADER>ba <C-^>
+nmap <LEADER>bd :bd<CR>
+nmap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
+nmap <LEADER>bl :buffers<CR>:
+nmap <LEADER>bn :bn<CR>
+nmap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
+nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
+nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+nmap <LEADER>bw :w<CR>
+nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
+
+" Editor
+nmap <LEADER>et :TagbarToggle<CR>
+
+" Files
+nmap <LEADER>fn :enew<CR>
+nmap <LEADER>fp :echo expand('%:p')<CR>
+nmap <LEADER>fw :w<CR>
+
+" Goto File
+nmap <LEADER>gs :wincmd f<CR>
+nmap <LEADER>gv :vertical wincmd f<CR>
+
+" Line
+nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+
+" Notes
+nmap <LEADER>ne :e ~/Dropbox/Notes/
+nmap <LEADER>ns :w ~/Dropbox/Notes/
+
+" Panes
+nmap <LEADER>pb :wincmd =<CR>
+nmap <LEADER>pm <C-w>1\|
+nmap <LEADER>pn :vnew<CR>
+nmap <LEADER>po :only<CR>
+nmap <LEADER>pq :q<CR>
+nmap <LEADER>ps :sp<CR>
+nmap <LEADER>pv :vsp<CR>
+nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
+
+" Search/Sessions
+nmap <LEADER>sl :source ~/.vim/sessions/
+nmap <LEADER>ss :mksession! ~/.vim/sessions/
+
+" Tagbar
+nmap <LEADER>tt :TagbarToggle<CR>
+
+" vimrc
+nmap <LEADER>vr :so $MYVIMRC<CR>
+nmap <LEADER>ve :e $MYVIMRC<CR>
+nmap <LEADER>vv :so $MYVIMRC<CR>
+
+nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
+
+vmap <LEADER>y "*y
+
+" Example of using = reg and functions in mapping:
+" map <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+

@@ -17,6 +17,7 @@ set hidden                         " allow vim to leave modified buffers
 set history=10000
 set hlsearch
 set ignorecase                     " case insensitive search
+set inccommand=split               " interactive search/replace for NeoVim
 set incsearch                      " incremental search
 set laststatus=2                   " To make status line appear without needing
                                    " to create a split first:
@@ -24,6 +25,7 @@ set linebreak
 " set listchars=tab:»·,trail:·,nbsp:·,eol:¬
 set listchars=tab:»-,trail:·,eol:¬
 set nolist                         " TODO: set this only in programming files
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set mouse=a                        " enable mouse support
 set mousehide                      " hide the mouse pointer while typing
 set nobackup                       " turn off backups
@@ -51,6 +53,7 @@ set smartcase                      " case sensitive if search has capped letter
 set smartindent
 set splitbelow                     " New split windows below
 set splitright                     " New vertical split windows to the right
+set termguicolors
 set vb t_vb=                       " turn off beep
 
 set expandtab                      " Use spaces instead of <Tab>s
