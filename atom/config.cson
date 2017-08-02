@@ -14,6 +14,7 @@
     fontFamily: "FiraCode-Light"
     fontSize: 12
     invisibles: {}
+    preferredLineLength: 100
     scrollPastEnd: true
   "elm-format": {}
   elmjutsu:
