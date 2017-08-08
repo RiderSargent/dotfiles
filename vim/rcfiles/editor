@@ -12,6 +12,9 @@ xmap . :normal .<CR>
 " Disable entering Ex mode
 nnoremap Q <NOP>
 
+" Highlight and Search for word under the cursor without changing the cursor position
+nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+
 nmap j gj
 nmap k gk
 
@@ -35,6 +38,10 @@ nmap cop :call ToggleColorcolumn()<CR>
 " Keep search matches in the middle of the window.
 nmap n nzzzv
 nmap N Nzzzv
+
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 
 " removes hash from comment delimiters so my text lists format properly
@@ -103,6 +110,15 @@ function! XTermPasteBegin()
   return ""
 endfunction
 imap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+
+" Visual Mode */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
 
 
 " ---------------------------------------------------------------------------- "
