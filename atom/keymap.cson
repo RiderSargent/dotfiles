@@ -42,3 +42,11 @@
   'ctrl-j': 'window:focus-pane-below'
   'ctrl-k': 'window:focus-pane-above'
   'ctrl-l': 'window:focus-pane-on-right'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'shift-L': 'vim-mode-plus:move-to-last-character-of-line'
+  'shift-H': 'vim-mode-plus:move-to-first-character-of-line'
+  '[ space': 'custom:insert-line-above'
+  '] space': 'custom:insert-line-below'
+  '[ e': 'editor:move-line-up'
+  '] e': 'editor:move-line-down'

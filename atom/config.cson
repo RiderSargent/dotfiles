@@ -1,6 +1,6 @@
 "*":
   "autocomplete-plus":
-    enableAutoActivation: false
+    autoActivationDelay: 500
   core:
     audioBeep: false
     automaticallyUpdate: false
@@ -12,9 +12,7 @@
     telemetryConsent: "limited"
   editor:
     fontFamily: "FiraCode-Light"
-    fontSize: 12
     invisibles: {}
-    preferredLineLength: 100
     scrollPastEnd: true
   "elm-format": {}
   elmjutsu:
@@ -23,6 +21,8 @@
     userId: "d119ab13-dece-4547-a40c-d52c19fda4f2"
   firacode:
     fontWeight: "light"
+  "git-blame":
+    columnWidth: 300
   "git-plus":
     commits:
       verboseCommits: true
@@ -35,11 +35,14 @@
       pullRebase: true
   "linter-ui-default":
     panelHeight: 69
+  "markdown-preview": {}
   "markdown-toc-auto":
     max: 5
   minimap: {}
   pigments:
     markerType: "native-square-dot"
+  "recent-files-fuzzy-finder":
+    restoreSession: true
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
   welcome:
