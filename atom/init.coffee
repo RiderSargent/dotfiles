@@ -11,12 +11,12 @@
 #     console.log "Saved! #{editor.getPath()}"
 
 # Merge panes
-atom.commands.add 'atom-workspace', 'init:merge-panes', ->
-  aPanes = atom.workspace.getCenter().getPanes()
-  oFirstPane = aPanes.shift()
-  for oPane in aPanes
-    for oItem in oPane.getItems()
-      oPane.moveItemToPane oItem, oFirstPane
+atom.commands.add 'atom-workspace', 'custom:merge-panes', ->
+  panes = atom.workspace.getCenter().getPanes()
+  firstPane = panes.shift()
+  for pane in panes
+    for tab in pane.getItems()
+      pane.moveItemToPane tab, firstPane
 
 atom.commands.add 'atom-text-editor.vim-mode-plus.normal-mode', 'custom:insert-line-above', ->
   editor = atom.workspace.getActiveTextEditor()
