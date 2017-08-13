@@ -8,6 +8,7 @@
       "language-clojure"
       "hasklig"
       "firacode"
+      "minimap"
     ]
     telemetryConsent: "limited"
   editor:
