@@ -40,3 +40,5 @@ alias tn='tmux new -s'
 alias v='vim'
 alias vim_sessions='ls -al ~/.vim/sessions'
 alias weather='curl wttr.in'
+
+unalias rg
