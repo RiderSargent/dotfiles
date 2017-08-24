@@ -1,6 +1,7 @@
 "*":
   "autocomplete-plus":
     autoActivationDelay: 500
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
   core:
     audioBeep: false
     automaticallyUpdate: false
