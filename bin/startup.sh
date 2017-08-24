@@ -5,3 +5,5 @@
 
 # Start MySQL server
 mysql.server start
+
+tat
