@@ -12,6 +12,7 @@
       "minimap"
     ]
     telemetryConsent: "limited"
+    titleBar: "custom"
   editor:
     fontFamily: "FiraCode-Light"
     invisibles: {}
@@ -41,6 +42,8 @@
   "markdown-toc-auto":
     max: 5
   minimap: {}
+  "no-title-bar":
+    enableLiberalWindowDragging: false
   pigments:
     markerType: "native-square-dot"
   "recent-files-fuzzy-finder":
