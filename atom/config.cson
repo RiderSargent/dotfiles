@@ -10,6 +10,10 @@
       "hasklig"
       "firacode"
       "minimap"
+      "wrap-guide"
+    ]
+    packagesWithKeymapsDisabled: [
+      "split-diff"
     ]
     telemetryConsent: "limited"
     titleBar: "custom"
@@ -48,6 +52,9 @@
     markerType: "native-square-dot"
   "recent-files-fuzzy-finder":
     restoreSession: true
+  "split-diff":
+    ignoreWhitespace: true
+    turnOffSoftWrap: true
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
   welcome:
