@@ -8,6 +8,7 @@ atom/blob-store
 atom/compile-cache
 atom/dev
 atom/packages
+atom/split-diff
 atom/storage
 vim/bundle
 vim/plugged
