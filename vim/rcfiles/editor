@@ -28,6 +28,11 @@ map L g$
 " Visually select text entered last time in insert
 nmap gV `[v`]
 
+" %% for current buffer file name
+cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
+" :: for current buffer file path
+cnoremap :: <C-R>=fnameescape(expand('%'))<CR>
+
 " Tab navigation
 nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
