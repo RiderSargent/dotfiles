@@ -1,6 +1,8 @@
 package config
 package spark
 package weather
+theme agnoster
+theme bobthefish
 theme default
 theme pure
 theme simple-ass-prompt

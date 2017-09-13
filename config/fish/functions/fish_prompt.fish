@@ -1,1 +1,1 @@
-/Users/rider.sargent/.local/share/omf/themes/pure/fish_prompt.fish
+/Users/rider.sargent/.local/share/omf/themes/agnoster/fish_prompt.fish
