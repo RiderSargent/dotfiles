@@ -31,6 +31,9 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
+# To view all possible commands, run this in the dev console:
+# atom.commands.registeredCommands
+
 'body':
   'ctrl-h': 'window:focus-pane-on-left'
   'ctrl-j': 'window:focus-pane-below'
@@ -42,11 +45,19 @@
   'ctrl-j': 'window:focus-pane-below'
   'ctrl-k': 'window:focus-pane-above'
   'ctrl-l': 'window:focus-pane-on-right'
+  'c o s': 'spell-check:toggle'
+  'c o w': 'editor:toggle-soft-wrap'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
+  'space g b': 'git-blame:toggle'
+  'space f r': 'recent-files-fuzzy-finder:toggle-finder'
   'shift-L': 'vim-mode-plus:move-to-last-character-of-line'
   'shift-H': 'vim-mode-plus:move-to-first-character-of-line'
   '[ space': 'custom:insert-line-above'
   '] space': 'custom:insert-line-below'
   '[ e': 'editor:move-line-up'
   '] e': 'editor:move-line-down'
+
+'atom-text-editor.vim-mode-plus.visual-mode.characterwise':
+  'shift-L': 'vim-mode-plus:move-to-last-character-of-line'
+  'shift-H': 'vim-mode-plus:move-to-first-character-of-line'

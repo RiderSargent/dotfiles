@@ -11,6 +11,7 @@
       "firacode"
       "minimap"
       "wrap-guide"
+      "minimap-highlight-selected"
     ]
     packagesWithKeymapsDisabled: [
       "split-diff"
@@ -19,6 +20,7 @@
     titleBar: "custom"
   editor:
     fontFamily: "FiraCode-Light"
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
   "elm-format": {}
@@ -29,7 +31,7 @@
   firacode:
     fontWeight: "light"
   "git-blame":
-    columnWidth: 300
+    columnWidth: 337
   "git-plus":
     commits:
       verboseCommits: true
@@ -40,6 +42,10 @@
     remoteInteractions:
       pullBeforePush: true
       pullRebase: true
+  linter:
+    lintOnChange: false
+    lintOnChangeInterval: 1000
+    lintPreviewTabs: false
   "linter-ui-default":
     panelHeight: 69
   "markdown-preview": {}
@@ -55,6 +61,10 @@
   "split-diff":
     ignoreWhitespace: true
     turnOffSoftWrap: true
+  "sync-settings":
+    _lastBackupHash: "9425a183436ec7a7280166d03bf1447700eae862"
+    gistId: "caca0605812f61c649f60c2088a45cd7"
+    personalAccessToken: "2739824f479e529e76b854ee022930abe0a09478"
   "vim-mode-plus-ex-mode":
     notifiedUseExMode: true
   welcome:
