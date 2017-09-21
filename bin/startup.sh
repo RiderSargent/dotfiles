@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # If administrator permissions are needed, uncomment the following line.
 # sudo -v
