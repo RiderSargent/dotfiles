@@ -6,7 +6,7 @@ set PATH $PATH ~/.dotfiles/bin
 
 set EDITOR nvim
 
-set -g fish_prompt_pwd_dir_length 3
+# set -g fish_prompt_pwd_dir_length 3
 
 # bobthefish settings
 # set theme_color_scheme terminal-dark
@@ -30,13 +30,13 @@ alias ef="exercism fetch"
 alias es="exercism submit"
 alias g="git"
 alias gaa="git add --all"
+alias gb="git branch"
 alias gc="git commit -m"
 alias gcd="git checkout develop"
 alias gcm="git checkout master"
 alias gcnm="git commit"
 alias gco="git checkout"
 alias gd="git diff"
-alias gfa="git fetch --all --prune"
 alias gl="git pull"
 alias gp="git push"
 alias gs="git status -sb"
@@ -47,4 +47,6 @@ alias n="nvim"
 alias notes="cd ~/Dropbox/Notes; $EDITOR +CtrlP"
 alias rc="rails console"
 alias rs="rails server"
+alias so="source"
+alias tl="tmux ls"
 
