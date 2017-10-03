@@ -9,5 +9,6 @@ function glp
   # fi
   # git log --graph --pretty="tformat:${FORMAT}" -$rows | sed -Ee 's/(^[^<]*) ago)/\1)/' | sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?)/\1)/' | column -s '}' -t | less -FXRS
 
-  git log --graph --pretty="tformat:%C(yellow)%h%Creset}%Cgreen%cr%Creset}%C(bold blue)%an%Creset}%C(red)%d%Creset %s" -20 | sed -Ee 's/(^[^<]*) ago)/\1)/' | sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?)/\1)/' | column -s '}' -t | less -FXRS
+  # git log --graph --pretty="tformat:%C(yellow)%h%Creset}%Cgreen%cr%Creset}%C(bold blue)%an%Creset}%C(red)%d%Creset %s" -20 | sed -Ee 's/(^[^<]*) ago)/\1)/' | sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?)/\1)/' | column -s '}' -t | less -FXRS
+  git log --graph --pretty="tformat:%C(yellow)%h%Creset  %Cgreen%cr%Creset  %C(bold blue)%an%Creset %C(red)%d%Creset %s" -25
 end
