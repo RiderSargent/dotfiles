@@ -35,11 +35,3 @@ call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 
 call s:SourceConfigFilesIn('rcfiles')
-
-
-" ---------------------------------------------------------------------------- "
-"  Abbreviations
-" ---------------------------------------------------------------------------- "
-iab cm ✓
-iab lmda λ
-

@@ -23,6 +23,9 @@ nmap <LEADER>et :TagbarToggle<CR>
 nmap <LEADER>fn :enew<CR>
 nmap <LEADER>fp :echo expand('%:p')<CR>
 nmap <LEADER>fw :w<CR>
+nmap <LEADER>fzf :FzfFiles<CR>
+nmap <LEADER>fzs :FzfSnippets<CR>
+nmap <LEADER>fzt :FzfTags<CR>
 
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>

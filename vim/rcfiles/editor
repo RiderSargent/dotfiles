@@ -70,6 +70,11 @@ autocmd BufReadPost *
   \ endif
 
 
+" --- Abbreviations ---------------------------------------------------------- "
+iab cm ✓
+iab lmda λ
+
+
 " --- Functions and Commands ------------------------------------------------- "
 function! ToggleColorcolumn()
   if &colorcolumn==0
