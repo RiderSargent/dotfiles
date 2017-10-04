@@ -13,6 +13,11 @@ highlight Normal guibg=NONE
 highlight VertSplit guifg=#636D83 guibg=NONE
 highlight Visual gui=reverse
 
+" highlight Search guibg=#33466C guifg=none
+highlight Search guibg=#4D5564 guifg=none
+highlight CursorColumn guibg=#31343C
+highlight CursorLine guibg=#31343C
+" highlight ColorLine guibg=#31343C
 
 " --- Functions -------------------------------------------------------------- "
 " From Vimcasts Episode #25
