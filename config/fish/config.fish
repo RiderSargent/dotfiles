@@ -8,6 +8,9 @@ setenv EDITOR nvim
 
 # set -g fish_prompt_pwd_dir_length 3
 
+# Load fishmarks (http://github.com/techwizrd/fishmarks)
+source ~/.fishmarks/marks.fish
+
 # bobthefish settings
 # set theme_color_scheme terminal-dark
 set -g theme_display_ruby yes
@@ -47,7 +50,9 @@ alias l="ls -alh"
 alias n="nvim"
 alias notes="cd ~/Dropbox/Notes; $EDITOR +CtrlP"
 alias rc="rails console"
+alias rrg="rake routes | grep"
 alias rs="rails server"
+alias s="spring"
 alias so="source"
 alias tl="tmux ls"
 
