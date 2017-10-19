@@ -1,7 +1,7 @@
 function migrate
-  if rake db:migrate
+  if bundle exec rake db:migrate
     echo "==> Dev migrated"
-    if rake db:migrate RAILS_ENV=test
+    if bundle exec rake db:migrate RAILS_ENV=test
       echo "==> Test migrated"
     end
   end
