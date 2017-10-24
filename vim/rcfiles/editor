@@ -44,6 +44,7 @@ nmap cop :call ToggleColorcolumn()<CR>
 nmap n nzzzv
 nmap N Nzzzv
 
+nmap <CR> :nohlsearch<CR>
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
