@@ -11,6 +11,8 @@ let $PROGRAMMING_FILES .= ',.rake'
 let $PROGRAMMING_FILES .= ',*.js'
 let $PROGRAMMING_FILES .= ',*.rb'
 let $PROGRAMMING_FILES .= ',*.elm'
+let $PROGRAMMING_FILES .= ',*.ex'
+let $PROGRAMMING_FILES .= ',*.exs'
 let $PROGRAMMING_FILES .= ',*.erb'
 let $PROGRAMMING_FILES .= ',*.php'
 let $PROGRAMMING_FILES .= ',*.html'
@@ -23,12 +25,12 @@ let $PROGRAMMING_FILES .= ',*.clj'
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
 
 " Match TrailingWhitespace except when typing at the end of the line
-autocmd BufWinEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
-autocmd InsertEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
-autocmd BufWinLeave $PROGRAMMING_FILES call clearmatches()
+" autocmd BufWinEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+" autocmd InsertEnter $PROGRAMMING_FILES match TrailingWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeave $PROGRAMMING_FILES match TrailingWhitespace /\s\+$/
+" autocmd BufWinLeave $PROGRAMMING_FILES call clearmatches()
 
 
 " Highlight TrailingWhitespace highlight group
-highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
+" highlight TrailingWhitespace ctermbg=107 guibg=#799d6a
 
