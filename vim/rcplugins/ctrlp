@@ -37,7 +37,7 @@ let g:ctrlp_open_new_file = 'r'
 
 " open files with <C-z>, <C-o> in vert splits, open the first file in current
 " window and jump to it
-let g:ctrlp_open_multiple_files = 'vjr'
+let g:ctrlp_open_multiple_files = '3vjr'
 
 " Don't use caching - Silver Searcher is fast enough w/o it.
 let g:ctrlp_use_caching = 0
@@ -45,3 +45,7 @@ let g:ctrlp_use_caching = 0
 " Set working dir to nearest ancestor of the current file (r)
 " or the dir of the current file, unless it's a subdir of cwd (a)
 let g:ctrlp_working_path_mode = 'ra'
+
+" If a file is already open, open it again in a new pane instead of switching
+" to the existing pane.
+let g:ctrlp_switch_buffer = 'et'
