@@ -3,11 +3,12 @@
 
 Plug 'mileszs/ack.vim'
 
-nmap <LEADER>sa :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nmap <LEADER>sf :AckFile! "\b<C-R><C-W>\b"<CR>:cw<CR>
+cnoreabbrev ag Ack!
+cnoreabbrev ack Ack!
+cnoreabbrev Ack Ack!
 
 " bind K to search word under cursor
-nmap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap K :Ack "\b<cword>\b"<CR>
 
 if executable('ag')
   " Use Silver Searcher with ack.vim
