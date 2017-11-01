@@ -1,15 +1,26 @@
-source /usr/local/share/chruby/chruby.fish
-source /usr/local/share/chruby/auto.fish
-
 set PATH $PATH ~/bin
 set PATH $PATH ~/.dotfiles/bin
 
 setenv EDITOR nvim
 
-# set -g fish_prompt_pwd_dir_length 3
 
-# Load fishmarks (http://github.com/techwizrd/fishmarks)
-source ~/.fishmarks/marks.fish
+# source chruby files if they exist.
+if test -f /usr/local/share/chruby/chruby.fish
+  source /usr/local/share/chruby/chruby.fish
+end
+
+if test -f /usr/local/share/chruby/auto.fish
+  source /usr/local/share/chruby/auto.fish
+end
+
+
+# Load fishmarks (http://github.com/techwizrd/fishmarks) if it exists.
+if test -f ~/.fishmarks/marks.fish
+  source ~/.fishmarks/marks.fish
+else
+  echo "fishmarks not installed."
+end
+
 
 # bobthefish settings
 # set theme_color_scheme terminal-dark
