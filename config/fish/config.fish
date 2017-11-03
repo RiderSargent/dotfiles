@@ -33,6 +33,7 @@ set -g theme_newline_cursor yes
 alias RED="RAILS_ENV=development"
 alias REP="RAILS_ENV=production"
 alias RET="RAILS_ENV=test"
+alias ag="ag --color-path \"35\" --color-line-number \"32\" --color-match \"1;31\""
 alias bb="cd ~/Code/babylon/rails"
 alias be="bundle exec"
 alias bi="bundle install"
