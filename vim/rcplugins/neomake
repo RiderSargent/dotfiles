@@ -2,4 +2,4 @@
 
 Plug 'neomake/neomake'
 
-" autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
