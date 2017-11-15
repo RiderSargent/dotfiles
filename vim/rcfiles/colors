@@ -1,8 +1,9 @@
 " vim:ft=vim
 
-set background=dark
-colorscheme onedark
-" colorscheme NeoSolarized
+" set background=dark
+" colorscheme onedark
+colorscheme NeoSolarized
+set background=light
 
 " --- One Dark overrides ----------------------------------------------------- "
 highlight NonText guifg=#636D83
