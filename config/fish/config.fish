@@ -23,7 +23,7 @@ end
 
 
 # bobthefish settings
-# set theme_color_scheme terminal-dark
+set theme_color_scheme solarized-light
 set -g theme_display_ruby yes
 set -g theme_newline_cursor yes
 
