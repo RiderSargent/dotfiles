@@ -1,8 +1,0 @@
-" vim:ft=vim
-
-Plug 'tpope/vim-markdown',             { 'for': 'markdown' }
-
-" By default, vim thinks .md is Modula-2, make it markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = [ 'html', 'ruby' ]
-

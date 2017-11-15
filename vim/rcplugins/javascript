@@ -1,6 +1,0 @@
-" vim:ft=vim
-
-Plug 'jelera/vim-javascript-syntax',  { 'for': 'javascript' }
-Plug 'poetic/vim-textobj-javascript', { 'for': 'javascript' }
-Plug 'walm/jshint.vim',               { 'for': 'javascript' }
-

@@ -1,5 +1,0 @@
-" vim:ft=vim
-
-Plug 'tpope/vim-fugitive'
-
-nmap <LEADER>gb :Gblame<CR>

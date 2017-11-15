@@ -1,5 +1,0 @@
-" vim:ft=vim
-
-Plug 'simnalamburt/vim-mundo'
-
-nmap <LEADER>u :MundoToggle<CR>
