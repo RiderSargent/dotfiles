@@ -1,23 +1,24 @@
 " vim:ft=vim
 
-set background=dark
-colorscheme onedark
-" colorscheme NeoSolarized
+colorscheme NeoSolarized
+set background=light
 
 " --- One Dark overrides ----------------------------------------------------- "
-highlight NonText guifg=#636D83
+" set background=dark
+" colorscheme onedark
+" highlight NonText guifg=#636D83
 
-" Set no bg so Tmux pane highlighting will work (in onedark)
-highlight Normal guibg=NONE
+" " Set no bg so Tmux pane highlighting will work (in onedark)
+" highlight Normal guibg=NONE
 
-highlight VertSplit guifg=#636D83 guibg=NONE
-highlight Visual gui=reverse
+" highlight VertSplit guifg=#636D83 guibg=NONE
+" highlight Visual gui=reverse
 
-" highlight Search guibg=#33466C guifg=none
-highlight Search guibg=#4D5564 guifg=none
-highlight CursorColumn guibg=#31343C
-highlight CursorLine guibg=#31343C
-" highlight ColorLine guibg=#31343C
+" " highlight Search guibg=#33466C guifg=none
+" highlight Search guibg=#4D5564 guifg=none
+" highlight CursorColumn guibg=#31343C
+" highlight CursorLine guibg=#31343C
+" " highlight ColorLine guibg=#31343C
 
 " --- Functions -------------------------------------------------------------- "
 " From Vimcasts Episode #25

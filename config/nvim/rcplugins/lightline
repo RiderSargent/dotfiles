@@ -17,10 +17,10 @@ Plug 'itchyny/lightline.vim'
 " let g:rws_lightline_colorscheme = 'jellybeans'
 " let g:rws_lightline_colorscheme = 'landscape'
 " let g:rws_lightline_colorscheme = 'molokai'
-let g:rws_lightline_colorscheme = 'one'
+" let g:rws_lightline_colorscheme = 'one'
 " let g:rws_lightline_colorscheme = 'powerline'
 " let g:rws_lightline_colorscheme = 'seoul256'
-" let g:rws_lightline_colorscheme = 'solarized'
+let g:rws_lightline_colorscheme = 'solarized'
 " let g:rws_lightline_colorscheme = 'wombat'
 
 
