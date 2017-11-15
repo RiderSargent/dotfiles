@@ -1,0 +1,92 @@
+" vim:ft=vim
+
+" Allow % to jump between class, def, end, etc in Ruby files.
+" Also needed by Drew Neil's Ruby text objects plugin and vim-ruby-refactoring
+runtime macros/matchit.vim
+
+set autoindent
+set autoread                       " reload files when they change outside Vim
+set backspace=eol,indent,start     " backspace over anything
+set backupdir=~/.vim_backup,.      " original: backupdir=.,~/tmp,~/
+set confirm                        " start a dialog when command fails
+set cursorline                     " highlight current line
+set diffopt=iwhite                 " Set diff to ignore whitespace
+set directory=~/.vim_swap,.        " original: directory=.,~/tmp,/var/tmp,/tmp
+set formatoptions=tcroqnlj         " default: croql
+set hidden                         " allow vim to leave modified buffers
+set history=10000
+set hlsearch
+set ignorecase                     " case insensitive search
+set inccommand=split               " interactive search/replace for NeoVim
+set incsearch                      " incremental search
+set laststatus=2                   " To make status line appear without needing
+                                   " to create a split first:
+set linebreak
+" set listchars=tab:»·,trail:·,nbsp:·,eol:¬
+set listchars=tab:»-,trail:·
+set list                           " TODO: set this only in programming files
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set mouse=a                        " enable mouse support
+set mousehide                      " hide the mouse pointer while typing
+set nobackup                       " turn off backups
+set nocompatible
+" set noesckeys                    " remove delay when hitting esc in insert
+                                   " mode - probationary: breaks arrow keys in
+                                   " insert mode
+set noshowmode
+set noswapfile                     " turn off swapfile creation
+set nowrap                         " turn off word wrap
+set nrformats=                     " treat all numbers as base 10
+set number                         " show current line cumber
+" set relativenumber                 " relative line numbering
+set ruler                          " show current position
+" set scrolloff=1                    " force 1 line padding when scrolling
+set scrolloff=2                 " Start scrolling when within 3 lines near the top/bottom
+set sidescrolloff=10            " Start scrolling when within 10 characters of the left/right
+set sidescroll=1                " Scroll to left/right one column at a time."
+set shiftround                     " when at 3 spaces and I hit tab, go to 4,
+                                   " not 5
+set shortmess=atI                  " Don't show the Vim intro message
+set showbreak=↪\                   " wrapped line indicator
+set showcmd                        " show incomplete commands in cmd bar
+set smartcase                      " case sensitive if search has capped letter
+set smartindent
+set splitbelow                     " New split windows below
+set splitright                     " New vertical split windows to the right
+set termguicolors
+set vb t_vb=                       " turn off beep
+
+set expandtab                      " Use spaces instead of <Tab>s
+set tabstop=2                      " Specifies the width of a tab
+set softtabstop=2                  " Amount of whitespace <BS> removes
+                                   " (generally should equal shiftwidth if
+                                   " expandtab and should equal tabstop if
+                                   " noexpandtab)
+set shiftwidth=2                   " Amount of whitespace to insert or remove
+                                   " using the indentation commands in normal
+                                   " mode
+set synmaxcol=800                  " don't try to highlight lines longer than
+                                   " 800 chars
+
+" Defaults: blank, buffers, curdir, folds, help, options, tabpages, winsize
+set sessionoptions=buffers
+set sessionoptions+=curdir
+
+set textwidth=0
+set title
+set titlestring=Vim:\ %F\ %y%h%r%m
+
+set wildmode=list:longest,full
+set wildignore=*/tmp/*,*.swp,*.zip,*.1password,*.fugitiveblame
+
+" make arrow keys (and h, l) wrap at beginning/end of lines
+"   < > = cursor keys in normal and visual mode
+"   [ ] = cursor keys in insert mode
+set whichwrap=<,>,h,l,[,]
+set path=.,/usr/include,,**
+set suffixesadd+=.txt,.rb,.js,.erb,.php
+set visualbell
+
+" time out on mapping after one and a half seconds,
+" time out on key codes after a tenth of a second.
+set timeout timeoutlen=1500 ttimeoutlen=100

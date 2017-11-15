@@ -1,0 +1,39 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/Code/babylon/rails
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +22 app/clients/integration_patient_data_service_client.rb
+badd +32 app/jobs/pds_trace_job.rb
+badd +0 ~/Dropbox/Notes/Babylon/CORE-785-schedule-PDS-trace-for-patients-on-consumer-networks.md
+badd +0 app/models/patients_gp_detail.rb
+argglobal
+silent! argdel *
+edit ~/Dropbox/Notes/Babylon/CORE-785-schedule-PDS-trace-for-patients-on-consumer-networks.md
+set splitbelow splitright
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+argglobal
+let s:l = 3 - ((2 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+3
+normal! 021|
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=atI
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

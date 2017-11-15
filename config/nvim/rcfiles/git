@@ -1,0 +1,5 @@
+" vim:ft=vim
+
+" Highlight Git conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+

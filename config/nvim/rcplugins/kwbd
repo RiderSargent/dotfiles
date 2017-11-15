@@ -1,0 +1,3 @@
+" vim:ft=vim
+
+Plug 'rgarver/Kwbd.vim'

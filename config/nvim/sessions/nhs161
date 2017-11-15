@@ -1,0 +1,79 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/Code/babylon/rails
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +302 app/models/ability.rb
+badd +36 ~/Dropbox/Notes/Babylon/NHS-161-practice-manager.md
+badd +21 app/views/layouts/_sidebar.html.erb
+badd +110 app/views/admin/consultants/_form.html.erb
+badd +47 app/controllers/admin/consultants_controller.rb
+badd +67 app/presenters/admin/consultant_form_presenter.rb
+badd +22 app/models/consultant.rb
+badd +23 app/models/role.rb
+badd +19 app/controllers/api/v1/api_controller.rb
+badd +22 spec/factories/portal_login.rb
+badd +73 features/consultant.feature
+badd +22 features/step_definitions/consultant_steps.rb
+badd +11 spec/factories/admin.rb
+badd +208 features/step_definitions/supply_network_steps.rb
+badd +17 features/step_definitions/non_babylon_consultant_steps.rb
+argglobal
+silent! argdel *
+edit ~/Dropbox/Notes/Babylon/NHS-161-practice-manager.md
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd w
+wincmd t
+set winminheight=1 winminwidth=1 winheight=1 winwidth=1
+wincmd =
+argglobal
+let s:l = 5 - ((4 * winheight(0) + 20) / 40)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 03|
+wincmd w
+argglobal
+edit features/consultant.feature
+let s:l = 101 - ((29 * winheight(0) + 20) / 40)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+101
+normal! 0
+wincmd w
+argglobal
+edit features/step_definitions/consultant_steps.rb
+let s:l = 6 - ((3 * winheight(0) + 20) / 40)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+6
+normal! 0
+wincmd w
+2wincmd w
+wincmd =
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=atI
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

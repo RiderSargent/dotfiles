@@ -1,0 +1,9 @@
+" vim:ft=vim
+
+Plug 'kassio/neoterm'
+
+" <Esc> to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+" This leaves us without ability to send <Esc> to term processes, so:
+tnoremap <A-[> <Esc>

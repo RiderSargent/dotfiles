@@ -1,0 +1,29 @@
+" vim:ft=vim
+
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    \ }
+
+nmap <LEADER>bb :CommandTBuffer<CR>
+nmap <LEADER>bo :CommandTBuffer<CR>
+nmap <LEADER>ff :CommandTMRU<CR>
+nmap <LEADER>fo :CommandT<CR>
+nmap <LEADER>fr :CommandTMRU<CR>
+
+" CommandT
+" CommandTBuffer
+" CommandTCommand
+" CommandTHelp
+" CommandTFlush
+" CommandTHistory
+" CommandTJump
+" CommandTLine
+" CommandTLoad
+" CommandTMRU
+" CommandTOpen
+" CommandTSearch
+" CommandTTag
+
+let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
+
+let g:CommandTMaxHeight = 0

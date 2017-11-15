@@ -1,0 +1,151 @@
+" vim:ft=vim
+
+" Arrow keys to resize in normal mode
+map <down> <C-W>+
+map <up> <C-W>-
+map <right> <C-W>>
+map <left> <C-W><
+
+" Enable dot command over visual selection
+xmap . :normal .<CR>
+
+" Disable entering Ex mode
+nnoremap Q <NOP>
+
+" Highlight and Search for word under the cursor without changing the cursor position
+nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+
+nmap j gj
+nmap k gk
+
+" Make Y behave similarly to D and C - yank to EOL
+nmap Y y$
+
+" Move to beginning/end of line
+map H ^
+map L g$
+
+" Visually select text entered last time in insert
+nmap gV `[v`]
+
+" %% for current buffer file name
+cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
+" :: for current buffer file path
+cnoremap :: <C-R>=fnameescape(expand('%'))<CR>
+
+" Tab navigation
+nnoremap [t :tprevious<CR>
+nnoremap ]t :tnext<CR>
+
+" 'page' (colorcolumn for cols greater than 80)
+nmap cop :call ToggleColorcolumn()<CR>
+
+" Keep search matches in the middle of the window.
+nmap n nzzzv
+nmap N Nzzzv
+
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+
+" removes hash from comment delimiters so my text lists format properly
+" (<CR> returns to same indent as -, not indent of first word)
+autocmd FileType text setlocal comments=fb:*
+
+" Only have cursorline in active window.
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
+" Automatically rebalance panes on window resize
+autocmd VimResized * :wincmd =
+
+" Set filetype to text if it is unset
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+
+" jump to last position in file
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+
+" --- Abbreviations ---------------------------------------------------------- "
+iab cm ✓
+iab lmda λ
+
+
+" --- Functions and Commands ------------------------------------------------- "
+function! ToggleColorcolumn()
+  if &colorcolumn==0
+    execute "set colorcolumn=" . join(range(81,335), ',')
+    echo "colorcolumn>80"
+  else
+    set colorcolumn=0
+    echo "colorcolumn=0"
+  endif
+endfunction
+
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+      \ | wincmd p | diffthis
+endif
+
+
+" Send the output of a cmd to a new tab (or split)
+" ex: :TabMessage highlight
+function! TabMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    vnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+imap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+
+" Visual Mode */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+
+" ---------------------------------------------------------------------------- "
+"  From Gary Bernhardt's .vimrc file
+"    RemoveFancyCharacters COMMAND
+"    Remove smart quotes, etc.
+" ---------------------------------------------------------------------------- "
+function! RemoveFancyCharacters()
+    let typo = {}
+    let typo["“"] = '"'
+    let typo["”"] = '"'
+    let typo["‘"] = "'"
+    let typo["’"] = "'"
+    let typo["–"] = '--'
+    let typo["—"] = '---'
+    let typo["…"] = '...'
+    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/gec'
+endfunction
+command! RemoveFancyCharacters :call RemoveFancyCharacters()
+

@@ -1,0 +1,33 @@
+" vim:ft=vim
+
+set background=dark
+colorscheme onedark
+" colorscheme NeoSolarized
+
+" --- One Dark overrides ----------------------------------------------------- "
+highlight NonText guifg=#636D83
+
+" Set no bg so Tmux pane highlighting will work (in onedark)
+highlight Normal guibg=NONE
+
+highlight VertSplit guifg=#636D83 guibg=NONE
+highlight Visual gui=reverse
+
+" highlight Search guibg=#33466C guifg=none
+highlight Search guibg=#4D5564 guifg=none
+highlight CursorColumn guibg=#31343C
+highlight CursorLine guibg=#31343C
+" highlight ColorLine guibg=#31343C
+
+" --- Functions -------------------------------------------------------------- "
+" From Vimcasts Episode #25
+"   (http://vimcasts.org/episodes/creating-colorschemes-for-vim/)
+" Show syntax highlighting groups for word under cursor
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+nmap <LEADER>eh :call <SID>SynStack()<CR>

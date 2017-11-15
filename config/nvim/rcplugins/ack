@@ -1,0 +1,20 @@
+" vim:ft=vim
+" Run Ack (or Ag) in Vim.
+
+Plug 'mileszs/ack.vim'
+
+cnoreabbrev ag Ack!
+cnoreabbrev ack Ack!
+cnoreabbrev Ack Ack!
+
+" bind K to search word under cursor
+nmap K :Ack "\b<cword>\b"<CR>
+
+if executable('ag')
+  " Use Silver Searcher with ack.vim
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" if has("nvim")
+"   let g:ack_use_dispatch = 1
+" endif

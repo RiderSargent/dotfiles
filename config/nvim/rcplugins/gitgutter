@@ -1,0 +1,30 @@
+" vim:ft=vim
+
+Plug 'airblade/vim-gitgutter'
+
+"  Don't create any mappings
+let g:gitgutter_map_keys = 0
+
+"  Don't change column color
+let g:gitgutter_override_sign_column_highlight = 0
+
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '•'
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_removed = '_'
+let g:gitgutter_sign_modified_removed = '•'
+
+" Δ
+" •
+" ⬤
+" ‣
+" ➤
+" ⎆
+" ⤚
+" 🖒
+" 😱
+" 🙂
+" 🦖
+" ⋅
+" ·
+" •
