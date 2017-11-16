@@ -1,7 +1,15 @@
 " vim:ft=vim
 
+" --- One Dark overrides ----------------------------------------------------- "
 colorscheme NeoSolarized
 set background=light
+
+highlight NonText guifg=#93A1A1
+
+" Set no bg so Tmux pane highlighting will work
+highlight Normal guibg=NONE
+
+" highlight Visual gui=reverse
 
 " --- One Dark overrides ----------------------------------------------------- "
 " set background=dark
@@ -19,6 +27,7 @@ set background=light
 " highlight CursorColumn guibg=#31343C
 " highlight CursorLine guibg=#31343C
 " " highlight ColorLine guibg=#31343C
+
 
 " --- Functions -------------------------------------------------------------- "
 " From Vimcasts Episode #25
