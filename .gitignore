@@ -3,7 +3,7 @@
 .netrwhist
 config/nvim/bundle
 config/nvim/plugged
-config/nvim/sessions
+config/nvim/sessions/*
 config/nvim/view
 vim/bundle
 vim/plugged
