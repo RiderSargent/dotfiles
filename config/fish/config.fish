@@ -22,6 +22,68 @@ else
 end
 
 
+# colors
+
+# --- Defaults (sort of) ---
+# more info: https://fishshell.com/docs/current/index.html#variables-color
+# set fish_color_autosuggestion brcyan
+# set fish_color_command --bold
+# set fish_color_comment red
+# set fish_color_cwd green
+# set fish_color_cwd_root red
+# set fish_color_end brmagenta
+# set fish_color_error brred
+# set fish_color_escape 'bryellow'  '--bold'
+# set fish_color_history_current --bold
+# set fish_color_host normal
+# set fish_color_match --background=brblue
+# set fish_color_normal normal
+# set fish_color_operator bryellow
+# set fish_color_param cyan
+# set fish_color_quote yellow
+# set fish_color_redirection brblue
+# set fish_color_search_match 'bryellow'  '--background=brblack'
+# set fish_color_selection 'white'  '--bold'  '--background=brblack'
+# set fish_color_status red
+# set fish_color_user brgreen
+# set fish_color_valid_path --underline
+
+# set fish_pager_color_completion cyan
+# set fish_pager_color_description 'B3A06D'  'yellow'
+# set fish_pager_color_prefix brown
+# set fish_pager_color_progress 'brwhite'  '--background=cyan'
+
+
+# brcyan is the very light grey in Solarized color scheme
+set fish_color_autosuggestion brcyan
+set fish_color_command --bold
+set fish_color_comment red
+set fish_color_cwd green
+set fish_color_cwd_root red
+set fish_color_end brmagenta
+set fish_color_error brred
+set fish_color_escape 'bryellow'  '--bold'
+set fish_color_history_current --bold
+set fish_color_host normal
+set fish_color_match --background=brblue
+set fish_color_normal normal
+set fish_color_operator blue
+set fish_color_param cyan
+set fish_color_quote yellow
+set fish_color_redirection brblue
+set fish_color_search_match 'bryellow'  '--background=white'
+set fish_color_selection 'white'  '--bold'  '--background=brblack'
+set fish_color_status red
+set fish_color_user brgreen
+set fish_color_valid_path --underline
+
+set fish_pager_color_completion cyan
+set fish_pager_color_description 'brcyan'
+set fish_pager_color_prefix brgreen
+set fish_pager_color_progress 'brwhite'  '--background=cyan'
+
+
+
 # bobthefish settings
 set theme_color_scheme terminal-light
 # set theme_color_scheme solarized-light
@@ -31,9 +93,6 @@ set -g theme_newline_cursor yes
 
 # --- Aliases ------------------------------------------------------------------
 # alias G="| grep"
-alias RED="RAILS_ENV=development"
-alias REP="RAILS_ENV=production"
-alias RET="RAILS_ENV=test"
 alias ag="ag --color-path \"35\" --color-line-number \"32\" --color-match \"1;31\""
 alias bb="cd ~/Code/babylon/rails"
 alias be="bundle exec"
