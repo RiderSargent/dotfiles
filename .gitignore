@@ -1,6 +1,7 @@
 *.swp
 .DS_Store
 .netrwhist
+config/fish/fishd.*
 config/nvim/bundle
 config/nvim/plugged
 config/nvim/sessions
