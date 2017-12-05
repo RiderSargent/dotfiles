@@ -56,6 +56,7 @@ nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 
+nmap <LEADER>tb <Plug>BlockToggle
 " Tagbar
 nmap <LEADER>tt :TagbarToggle<CR>
 

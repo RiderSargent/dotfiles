@@ -1,0 +1,5 @@
+" vim:ft=vim
+
+Plug 'vim-scripts/blockle.vim'
+
+let g:blockle_mapping = '<LEADER>tb'
