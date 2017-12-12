@@ -1,9 +1,32 @@
 " vim:ft=vim
 
+" --- Solarized raw colors ---------------------------------------------------
+"  base03:    #002b36; darkest  \
+"  base02:    #073642;          / Dark bg tones
+"  base01:    #586e75;     \
+"  base00:    #657b83;      | Content tones
+"  base0:     #839496;      |
+"  base1:     #93a1a1;     /
+"  base2:     #eee8d5;          \ Light bg tones
+"  base3:     #fdf6e3; lightest /
+"  yellow:    #b58900;
+"  orange:    #cb4b16;
+"  red:       #dc322f;
+"  magenta:   #d33682;
+"  violet:    #6c71c4;
+"  blue:      #268bd2;
+"  cyan:      #2aa198;
+"  green:     #859900;
+
+
 " --- Solarized Dark overrides ----------------------------------------------- "
 colorscheme NeoSolarized
 set background=dark
 " highlight NonText guifg=#93A1A1
+highlight NonText cterm=none gui=none guifg=#657b83
+
+" highlight IncSearch cterm=standout ctermfg=9 gui=standout guifg=#cb4b16
+" highlight Search cterm=reverse ctermfg=3 gui=reverse guifg=#b58900
 
 " Set no bg so Tmux pane highlighting will work
 highlight Normal guibg=NONE
