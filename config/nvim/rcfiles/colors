@@ -1,15 +1,22 @@
 " vim:ft=vim
 
-" --- One Dark overrides ----------------------------------------------------- "
+" --- Solarized Dark overrides ----------------------------------------------- "
 colorscheme NeoSolarized
-set background=light
-
-highlight NonText guifg=#93A1A1
+set background=dark
+" highlight NonText guifg=#93A1A1
 
 " Set no bg so Tmux pane highlighting will work
 highlight Normal guibg=NONE
 
-" highlight Visual gui=reverse
+
+" --- Solarized Light overrides --------------------------------------------- "
+" colorscheme NeoSolarized
+" " set background=light
+" " highlight NonText guifg=#93A1A1
+
+" " Set no bg so Tmux pane highlighting will work
+" highlight Normal guibg=NONE
+
 
 " --- One Dark overrides ----------------------------------------------------- "
 " set background=dark
