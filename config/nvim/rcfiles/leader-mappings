@@ -16,6 +16,8 @@ nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
 nmap <LEADER>bw :w<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
+nmap <LEADER>cp :let @*=expand("%:p")<CR>:echo "file path copied to clipboard"<CR>
+
 " Editor
 nmap <LEADER>et :TagbarToggle<CR>
 
