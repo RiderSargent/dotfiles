@@ -34,7 +34,7 @@ nmap <LEADER>gs :wincmd f<CR>
 nmap <LEADER>gv :vertical wincmd f<CR>
 
 " Line
-nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
+nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "line trimmed"<CR>
 
 " Notes
 nmap <LEADER>ne :e ~/Dropbox/Notes/
