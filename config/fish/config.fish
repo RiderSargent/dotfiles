@@ -1,4 +1,5 @@
 set PATH $PATH ~/bin
+set PATH $PATH ~/bin/login_scripts
 set PATH $PATH ~/.dotfiles/bin
 
 setenv EDITOR nvim
@@ -124,6 +125,17 @@ set theme_color_scheme solarized-dark
 # set theme_color_scheme base16-dark
 set -g theme_display_ruby no
 set -g theme_newline_cursor yes
+
+set -x CONSULTANT_EMAIL 'test_uk_gp@babylon.com'
+set -x CONSULTANT_PASSWORD 'Brainstrom6'
+set -x RUBY_ID 'RUBYID'
+set -x RUBY_SECRET 'RUBYSECRET'
+set -x ASK2_ID 'ASK2'
+set -x ASK2_SECRET 'ASK2'
+set -x PRESCRIPTION_ID 'PRESCRIPTIONPROVIDERID'
+set -x PRESCRIPTION_SECRET 'PRESCRIPTIONPROVIDERRSECRET'
+set -x IP_DATASERVICE_ID 'IPDATASERVICEID'
+set -x IP_DATASERVICE_SECRET 'IPDATASERVICESECRET'
 
 
 # --- Aliases ------------------------------------------------------------------

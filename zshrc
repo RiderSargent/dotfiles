@@ -64,6 +64,21 @@ source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
+export CONSULTANT_EMAIL='test_uk_gp@babylon.com'
+export CONSULTANT_PASSWORD='Brainstrom6'
+
+
+export RUBY_ID="RUBYID"
+export RUBY_SECRET="RUBYSECRET"
+export ASK2_ID="ASK2"
+export ASK2_SECRET="ASK2"
+export PRESCRIPTION_ID="PRESCRIPTIONPROVIDERID"
+export PRESCRIPTION_SECRET="PRESCRIPTIONPROVIDERRSECRET"
+export IP_DATASERVICE_ID="IPDATASERVICEID"
+export IP_DATASERVICE_SECRET="IPDATASERVICESECRET"
+
+
+
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
