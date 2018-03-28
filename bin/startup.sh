@@ -4,4 +4,6 @@
 # sudo -v
 
 # Start MySQL server
-mysql.server start && tat
+mysql.server start
+redis-server &
+tat
