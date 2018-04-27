@@ -120,8 +120,8 @@ set fish_color_search_match 'bryellow'  '--background=brgreen'
 # --- bobthefish settings ------------------------------------------------------
 # set theme_color_scheme terminal-dark
 # set theme_color_scheme terminal-light
-set theme_color_scheme solarized-dark
-# set theme_color_scheme solarized-light
+# set theme_color_scheme solarized-dark
+set theme_color_scheme solarized-light
 # set theme_color_scheme base16-dark
 set -g theme_display_ruby no
 set -g theme_newline_cursor yes
