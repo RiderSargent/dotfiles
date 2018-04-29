@@ -235,21 +235,34 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "non_us_backslash"
+                                "key_code": "grave_accent_and_tilde"
                             },
                             "to": {
-                                "key_code": "grave_accent_and_tilde"
+                                "key_code": "non_us_backslash"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "grave_accent_and_tilde"
+                                "key_code": "non_us_backslash"
                             },
                             "to": {
-                                "key_code": "non_us_backslash"
+                                "key_code": "grave_accent_and_tilde"
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 321,
+                        "vendor_id": 1241
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -364,6 +377,7 @@
             ],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
+                "country_code": 2,
                 "keyboard_type": "iso",
                 "standalone_keys_delay_milliseconds": 100
             }
@@ -647,6 +661,7 @@
             ],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
+                "country_code": 0,
                 "keyboard_type": "ansi",
                 "standalone_keys_delay_milliseconds": 100
             }

@@ -120,11 +120,14 @@ set fish_color_search_match 'bryellow'  '--background=brgreen'
 # --- bobthefish settings ------------------------------------------------------
 # set theme_color_scheme terminal-dark
 # set theme_color_scheme terminal-light
-set theme_color_scheme solarized-dark
-# set theme_color_scheme solarized-light
+# set theme_color_scheme solarized-dark
+set theme_color_scheme solarized-light
 # set theme_color_scheme base16-dark
 set -g theme_display_ruby no
 set -g theme_newline_cursor yes
+
+set -x VAULT_ADDR 'https://vault.babylontech.co.uk:8200'
+set -x VAULT_TOKEN '90c23ab9-61a2-a27b-13ee-15a0c3ff0765'
 
 set -x CONSULTANT_EMAIL 'test_uk_gp@babylon.com'
 set -x CONSULTANT_PASSWORD 'Brainstrom6'
@@ -137,6 +140,11 @@ set -x PRESCRIPTION_SECRET 'PRESCRIPTIONPROVIDERRSECRET'
 set -x IP_DATASERVICE_ID 'IPDATASERVICEID'
 set -x IP_DATASERVICE_SECRET 'IPDATASERVICESECRET'
 
+set -x GOPATH '/Users/rider.sargent/golang'
+set PATH $PATH ~/golang/bin
+
+# set up Rust path
+set PATH $PATH ~/.cargo/bin
 
 # --- Aliases ------------------------------------------------------------------
 # alias G="| grep"

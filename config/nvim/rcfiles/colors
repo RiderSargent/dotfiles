@@ -20,25 +20,25 @@
 
 
 " --- Solarized Dark overrides ----------------------------------------------- "
-colorscheme NeoSolarized
-set background=dark
-" highlight NonText guifg=#93A1A1
-highlight NonText cterm=none gui=none guifg=#657b83
-
-" highlight IncSearch cterm=standout ctermfg=9 gui=standout guifg=#cb4b16
-" highlight Search cterm=reverse ctermfg=3 gui=reverse guifg=#b58900
-
-" Set no bg so Tmux pane highlighting will work
-highlight Normal guibg=NONE
-
-
-" --- Solarized Light overrides --------------------------------------------- "
 " colorscheme NeoSolarized
-" " set background=light
+" set background=dark
 " " highlight NonText guifg=#93A1A1
+" highlight NonText cterm=none gui=none guifg=#657b83
+
+" " highlight IncSearch cterm=standout ctermfg=9 gui=standout guifg=#cb4b16
+" " highlight Search cterm=reverse ctermfg=3 gui=reverse guifg=#b58900
 
 " " Set no bg so Tmux pane highlighting will work
 " highlight Normal guibg=NONE
+
+
+" --- Solarized Light overrides --------------------------------------------- "
+colorscheme NeoSolarized
+set background=light
+highlight NonText guifg=#93A1A1
+
+" Set no bg so Tmux pane highlighting will work
+highlight Normal guibg=NONE
 
 
 " --- One Dark overrides ----------------------------------------------------- "
