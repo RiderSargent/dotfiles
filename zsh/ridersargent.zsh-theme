@@ -15,10 +15,9 @@ RIGHT_PROMPT_COLOR=$FG[008]
 NEWLINE=$'\n'
 
 # Prompt
-PROMPT='${TIME_COLOR}[%*]%{$reset_color%} '
-PROMPT+='%(?..${PAREN_COLOR}[${ERROR_COLOR}%?${PAREN_COLOR}]%{$reset_color%})'
+PROMPT='%(?..${PAREN_COLOR}[${ERROR_COLOR}%?${PAREN_COLOR}]%{$reset_color%}${NEWLINE})'
 PROMPT+='${NEWLINE}'
-PROMPT+='${NEWLINE}'
+PROMPT+='${TIME_COLOR}[%*]%{$reset_color%} '
 PROMPT+='${LOGIN_COLOR}%n%{$reset_color%} '
 PROMPT+='${HOST_COLOR}@%m%{$reset_color%} '
 PROMPT+='${DIR_COLOR}%~%{$reset_color%} '
