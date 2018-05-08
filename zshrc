@@ -49,9 +49,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
 
 # --- Misc ---------------------------------------------------------------------
-# eval "$(thefuck --alias)"
-# eval "$(thefuck --alias fuck)"
-
 # export MY_INITIALS="RS"
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
