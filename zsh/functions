@@ -163,6 +163,24 @@ __md__gld() {
     less -FXRS
 }
 
+unset BLACK;
+unset BRIGHT_BLACK;
+unset RED;
+unset BRIGHT_RED;
+unset GREEN;
+unset BRIGHT_GREEN;
+unset YELLOW;
+unset BRIGHT_YELLOW;
+unset BLUE;
+unset BRIGHT_BLUE;
+unset MAGENTA;
+unset BRIGHT_MAGENTA;
+unset CYAN;
+unset BRIGHT_CYAN;
+unset WHITE;
+unset BRIGHT_WHITE;
+unset RESET;
+
 unset hash;
 unset relative_time;
 unset date;
