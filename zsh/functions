@@ -271,3 +271,24 @@ __md__gurl() {
   echo $giturl
 }
 
+
+# Migrate both dev and test dbs
+__rws__db_migrate() {
+  if bundle exec rake db:migrate; then
+    echo "==> Dev migrated"
+    if bundle exec rake db:migrate RAILS_ENV=test; then
+      echo "==> Test migrated"
+    fi
+  fi
+}
+
+
+# Reset both dev and test dbs
+__rws__db_reset() {
+  if bundle exec rake db:reset; then
+    echo "==> Dev migrated"
+    if bundle exec rake db:reset RAILS_ENV=test; then
+      echo "==> Test migrated"
+    fi
+  fi
+}
