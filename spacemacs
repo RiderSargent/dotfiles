@@ -46,7 +46,8 @@ values."
      ruby
      ruby-on-rails
      (shell :variables
-            shell-default-term-shell "/usr/local/bin/zsh"
+            ;; shell-default-term-shell "/usr/local/bin/zsh"
+            shell-default-shell 'ansi-term
             shell-default-height 40
             shell-default-position 'bottom)
      ;; spell-checking
@@ -146,7 +147,7 @@ values."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
                                :size 14
-                               :weight normal
+                               :weight light
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -302,7 +303,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'changed
    ))
 
 (defun dotspacemacs/user-init ()
@@ -315,11 +316,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq
    exec-path-from-shell-check-startup-files nil
    tern-command '("node" "/usr/local/lib/node_modules/tern/bin/tern")
-  )
-
-  (setq-default
-   avy-all-windows 'all-frames)
-  )
+   ))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -330,10 +327,21 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   ;; Rider's stuff
-  (setq yas-snippet-dirs '("~/.emacs.d/private/snippets"))
-  ;; remove separators on powerline
-  (setq powerline-default-separator nil)
+  (setq
+   powerline-default-separator nil
+   yas-snippet-dirs '("~/.emacs.d/private/snippets")
+   )
 
+  (setq-default
+   avy-all-windows 'all-frames
+   )
+
+  ;; `SPC o` and `SPC m o` are reserved for the user. Setting key bindings
+  ;; behind these is guaranteed to never conflict with Spacemacs default
+  ;; key bindings.
+  (spacemacs/set-leader-keys "os" 'yas-new-snippet)
+
+  ;; Evil mode bindings
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
 
@@ -344,7 +352,6 @@ you should place your code here."
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
-  ;; Also in visual mode
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
   )
