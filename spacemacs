@@ -326,7 +326,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; Rider's stuff
+  ;;;;;;;;;;;;;;;;;;;
+  ;; Rider's stuff ;;
+  ;;;;;;;;;;;;;;;;;;;
+
   (setq
    powerline-default-separator nil
    yas-snippet-dirs '("~/.emacs.d/private/snippets")
@@ -335,11 +338,6 @@ you should place your code here."
   (setq-default
    avy-all-windows 'all-frames
    )
-
-  ;; `SPC o` and `SPC m o` are reserved for the user. Setting key bindings
-  ;; behind these is guaranteed to never conflict with Spacemacs default
-  ;; key bindings.
-  (spacemacs/set-leader-keys "os" 'yas-new-snippet)
 
   ;; Evil mode bindings
   (define-key evil-normal-state-map "H" "^")
@@ -354,6 +352,19 @@ you should place your code here."
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+  ;; `SPC o` and `SPC m o` are reserved for the user. Setting key bindings
+  ;; behind these is guaranteed to never conflict with Spacemacs default
+  ;; key bindings.
+  (spacemacs/set-leader-keys "od" 'ldate)
+  (spacemacs/set-leader-keys "os" 'yas-new-snippet)
+
+  ;; Functions
+  (defun ldate ()
+    "Inserts date time string in `%Y-%m-%d %a` format."
+    (interactive)
+    (insert (format-time-string "%Y-%m-%d %a")))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
