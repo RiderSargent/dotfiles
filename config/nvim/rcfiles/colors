@@ -33,30 +33,30 @@
 
 
 " --- Solarized Light overrides --------------------------------------------- "
-colorscheme NeoSolarized
-set background=light
-highlight NonText guifg=#93A1A1
+" colorscheme NeoSolarized
+" set background=light
+" highlight NonText guifg=#93A1A1
+
+" " Set no bg so Tmux pane highlighting will work
+" highlight Normal guibg=NONE
+
+
+" --- One Dark overrides ----------------------------------------------------- "
+set background=dark
+colorscheme onedark
+highlight NonText guifg=#636D83
 
 " Set no bg so Tmux pane highlighting will work
 highlight Normal guibg=NONE
 
+highlight VertSplit guifg=#636D83 guibg=NONE
+highlight Visual gui=reverse
 
-" --- One Dark overrides ----------------------------------------------------- "
-" set background=dark
-" colorscheme onedark
-" highlight NonText guifg=#636D83
-
-" " Set no bg so Tmux pane highlighting will work (in onedark)
-" highlight Normal guibg=NONE
-
-" highlight VertSplit guifg=#636D83 guibg=NONE
-" highlight Visual gui=reverse
-
-" " highlight Search guibg=#33466C guifg=none
-" highlight Search guibg=#4D5564 guifg=none
-" highlight CursorColumn guibg=#31343C
-" highlight CursorLine guibg=#31343C
-" " highlight ColorLine guibg=#31343C
+" highlight Search guibg=#33466C guifg=none
+highlight Search guibg=#4D5564 guifg=none
+highlight CursorColumn guibg=#31343C
+highlight CursorLine guibg=#31343C
+" highlight ColorLine guibg=#31343C
 
 
 " --- Functions -------------------------------------------------------------- "
