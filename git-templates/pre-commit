@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Find all files staged for commit that have been added or modified
+ruby_files_to_check=$(git diff --cached --diff-filter=AM --name-only | grep -E '\.e?rb$')
+
+# If no Ruby files are affected, skip the analysis and exit successfully
+[[ -z $ruby_files_to_check ]] && exit 0
+
+# Otherwise validate Ruby files
+if ! ag "binding.pry" $ruby_files_to_check ; then
+    exit 0
+else
+    exit 1
+fi
