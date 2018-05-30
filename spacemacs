@@ -340,6 +340,7 @@ you should place your code here."
 
   (setq-default
    avy-all-windows 'all-frames
+   truncate-lines 't
    )
 
   ;; Evil mode bindings
