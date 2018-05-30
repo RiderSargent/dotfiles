@@ -2,13 +2,13 @@
 #   use 3-digit index like this: $FG[000]
 
 # Default Background
-TIME_COLOR=$FG[005]
+TIME_COLOR=$FG[008]
 LOGIN_COLOR=$FG[004]
 HOST_COLOR=$FG[006]
-DIR_COLOR=$FG[002]
+DIR_COLOR=$FG[012]
 PAREN_COLOR=$FG[008]
-GIT_CLEAN_COLOR=$FG[003]
-GIT_DIRTY_COLOR=$FG[001]
+GIT_CLEAN_COLOR=$FG[010]
+GIT_DIRTY_COLOR=$FG[009]
 ERROR_COLOR=$FG[001]
 RIGHT_PROMPT_COLOR=$FG[008]
 
@@ -18,8 +18,8 @@ NEWLINE=$'\n'
 PROMPT='%(?..${PAREN_COLOR}[${ERROR_COLOR}%?${PAREN_COLOR}]%{$reset_color%}${NEWLINE})'
 PROMPT+='${NEWLINE}'
 PROMPT+='${TIME_COLOR}[%*]%{$reset_color%} '
-PROMPT+='${LOGIN_COLOR}%n%{$reset_color%} '
-PROMPT+='${HOST_COLOR}@%m%{$reset_color%} '
+# PROMPT+='${LOGIN_COLOR}%n%{$reset_color%} '
+# PROMPT+='${HOST_COLOR}@%m%{$reset_color%} '
 PROMPT+='${DIR_COLOR}%~%{$reset_color%} '
 PROMPT+='$(git_prompt_info) '
 PROMPT+='${NEWLINE}'
