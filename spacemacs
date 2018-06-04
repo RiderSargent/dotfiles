@@ -329,27 +329,28 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;;;;;;;;;;;;;;;;;;;
-  ;; Rider's stuff ;;
-  ;;;;;;;;;;;;;;;;;;;
+  ;; --- Rider's stuff ---------------------------------------------------------
 
   (setq
-   powerline-default-separator nil
-   yas-snippet-dirs '("~/.emacs.d/private/snippets")
-   )
+    powerline-default-separator nil
+    yas-snippet-dirs '("~/.emacs.d/private/snippets"))
 
   (setq-default
-   avy-all-windows 'all-frames
-   truncate-lines 't
-   )
+    avy-all-windows 'all-frames
+    truncate-lines 't)
+
+  ;; Karabiner Elements overwrites my `left-shift + 3` to `left-opt + 3` ("#")
+  ;; and Spacemacs uses that for switching windows, so needs to be remapped
+  (define-key evil-insert-state-map (kbd "M-3") "#")
 
   ;; Evil mode bindings
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
 
-  ;; Karabiner Elements overwrites my `left-shift + 3` to `left-opt + 3` ("#")
-  ;; and Spacemacs uses that for switching windows, so needs to be remapped
-  (define-key evil-insert-state-map (kbd "M-3") "#")
+  ;; Use vim-surround's original key bindings
+  (evil-define-key 'visual evil-surround-mode-map
+    "s" 'evil-substitute
+    "S" 'evil-surround-region)
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
@@ -363,7 +364,7 @@ you should place your code here."
   (spacemacs/set-leader-keys "od" 'ldate)
   (spacemacs/set-leader-keys "os" 'yas-new-snippet)
 
-  ;; Functions
+  ;; --- Functions -------------------------------------------------------------
   (defun ldate ()
     "Inserts date time string in `%Y-%m-%d %a` format."
     (interactive)
