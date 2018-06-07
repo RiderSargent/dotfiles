@@ -57,6 +57,8 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
 
+export ENABLE_BOOTSNAP=true
+
 source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
