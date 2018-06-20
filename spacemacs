@@ -379,11 +379,11 @@ you should place your code here."
 
   ;; --- Functions -------------------------------------------------------------
   (defun ldate ()
-    "Inserts date time string in `%Y-%m-%d %a` format."
+    "Inserts date time string in ` %Y-%m-%d %a` format."
     (interactive)
-    (insert (format-time-string "%Y-%m-%d %a")))
+    (insert (format-time-string " %Y-%m-%d %a")))
 
-  )
+ )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
