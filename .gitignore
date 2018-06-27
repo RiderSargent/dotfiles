@@ -2,6 +2,7 @@
 .DS_Store
 .netrwhist
 .#spacemacs
+config/configstore
 config/fish/fishd.*
 config/nvim/bundle
 config/nvim/plugged
