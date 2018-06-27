@@ -24,7 +24,6 @@ nmap <LEADER>et :TagbarToggle<CR>
 " Files
 nmap <LEADER>fn :enew<CR>
 nmap <LEADER>fp :echo expand('%:p')<CR>
-nmap <LEADER>fw :w<CR>
 nmap <LEADER>fzf :FzfFiles<CR>
 nmap <LEADER>fzs :FzfSnippets<CR>
 nmap <LEADER>fzt :FzfTags<CR>
@@ -42,25 +41,19 @@ nmap <LEADER>ns :w ~/Dropbox/Notes/
 
 " Panes
 nmap <LEADER>pb :wincmd =<CR>
-nmap <LEADER>pm <C-w>1\|
 nmap <LEADER>pn :vnew<CR>
-nmap <LEADER>po :only<CR>
-nmap <LEADER>pq :q<CR>
 nmap <LEADER>ps :sp<CR>
 nmap <LEADER>pv :vsp<CR>
 nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
 " Search/Sessions"
 nmap <LEADER>s :Ack<SPACE>
-nmap <LEADER>ss :Ack<SPACE>
-nmap <LEADER>sa :Ack "\b<cword>\b"<CR>
+nmap <LEADER>sa :Ack<SPACE>
 nmap <LEADER>sf :AckFile!<SPACE>
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
-
 nmap <LEADER>tb <Plug>BlockToggle
-" Tagbar
 nmap <LEADER>tt :TagbarToggle<CR>
 
 " vimrc
