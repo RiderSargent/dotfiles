@@ -1,6 +1,8 @@
 " vim:ft=vim
 
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
 
 let g:fzf_command_prefix = 'Fzf'
 
@@ -13,7 +15,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~50%' }
+let g:fzf_layout = { 'down': '~38%' }
 
 " In Neovim, you can set up fzf window using a Vim command
 " let g:fzf_layout = { 'window': 'enew' }
@@ -33,6 +35,12 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+nmap <LEADER>ff :FZFMru<CR>
+nmap <LEADER>fo :FZF<CR>
+nmap <LEADER>fr :FZFMru<CR>
+nmap <LEADER>bb :FZFBuffers<CR>
+nmap <LEADER>bo :FZFBuffers<CR>
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -69,11 +77,11 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 
-command! FZFMru call fzf#run({
-\ 'source':  s:all_files(),
-\ 'sink':    'edit',
-\ 'options': '-m -x +s',
-\ 'down':    '50%' })
+" command! FZFMru call fzf#run({
+" \ 'source':  s:all_files(),
+" \ 'sink':    'edit',
+" \ 'options': '-m -x +s',
+" \ 'down':    '50%' })
 
 function! s:all_files()
   return extend(

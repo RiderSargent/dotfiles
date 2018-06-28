@@ -3,11 +3,11 @@
 
 Plug 'ctrlpvim/ctrlp.vim'
 
-nmap <LEADER>bb :CtrlPBuffer<CR>
-nmap <LEADER>bo :CtrlPBuffer<CR>
-nmap <LEADER>ff :CtrlPMRU<CR>
-nmap <LEADER>fo :CtrlP<CR>
-nmap <LEADER>fr :CtrlPMRU<CR>
+" nmap <LEADER>bb :CtrlPBuffer<CR>
+" nmap <LEADER>bo :CtrlPBuffer<CR>
+" nmap <LEADER>ff :CtrlPMRU<CR>
+" nmap <LEADER>fo :CtrlP<CR>
+" nmap <LEADER>fr :CtrlPMRU<CR>
 
 if executable('ag')
   " Use Silver Searcher with CtrlP
