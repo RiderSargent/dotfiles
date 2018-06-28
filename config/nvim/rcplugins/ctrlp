@@ -27,7 +27,7 @@ let g:ctrlp_mruf_exclude = '\.fugitiveblame'
 let g:ctrlp_mruf_max = 500
 
 " Customize results window
-let g:ctrlp_match_window = 'bottom,order:btt,max:20,results:50'
+let g:ctrlp_match_window = 'bottom,order:btt,max:25,results:50'
 
 " t = in a new tab
 " h = in a new horizontal split
@@ -37,7 +37,7 @@ let g:ctrlp_open_new_file = 'r'
 
 " open files with <C-z>, <C-o> in vert splits, open the first file in current
 " window and jump to it
-let g:ctrlp_open_multiple_files = '3vjr'
+let g:ctrlp_open_multiple_files = '2vjr'
 
 " Don't use caching - Silver Searcher is fast enough w/o it.
 let g:ctrlp_use_caching = 0
@@ -48,4 +48,4 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " If a file is already open, open it again in a new pane instead of switching
 " to the existing pane.
-let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_switch_buffer = '0'
