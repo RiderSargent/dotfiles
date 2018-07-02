@@ -1,0 +1,3 @@
+" vim:ft=vim
+
+Plug 'keith/swift.vim', { 'for': 'swift' }
