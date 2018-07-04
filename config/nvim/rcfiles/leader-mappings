@@ -22,12 +22,12 @@ nmap <LEADER>cp :let @*=expand("%:p")<CR>:echo "file path copied to clipboard"<C
 nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
+nmap <LEADER>fa :Ack!<SPACE>
 nmap <LEADER>fn :enew<CR>
-" nmap <LEADER>fp :echo expand('%:p')<CR>
 nmap <LEADER>fp :let @*=expand("%:p")<CR>:echo expand('%:p')<CR>
-nmap <LEADER>fzf :FzfFiles<CR>
-nmap <LEADER>fzs :FzfSnippets<CR>
-nmap <LEADER>fzt :FzfTags<CR>
+nmap <LEADER>fzf :FZFFiles<CR>
+nmap <LEADER>fzs :FZFSnippets<CR>
+nmap <LEADER>fzt :FZFTags<CR>
 
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>
@@ -60,6 +60,7 @@ nmap <LEADER>tt :TagbarToggle<CR>
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
 nmap <LEADER>ve :e $MYVIMRC<CR>
+nmap <LEADER>vo :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 nmap <LEADER>vv :so $MYVIMRC<CR>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
