@@ -6,14 +6,15 @@ nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
 nmap <LEADER>ba <C-^>
+nmap <LEADER>bb :FZFBuffers<CR>
 nmap <LEADER>bd :bd<CR>
 nmap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
 nmap <LEADER>bl :buffers<CR>:
 nmap <LEADER>bn :bn<CR>
+nmap <LEADER>bo :FZFBuffers<CR>
 nmap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
 nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
 nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
-nmap <LEADER>bw :w<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
 nmap <LEADER>cp :let @*=expand("%:p")<CR>:echo "file path copied to clipboard"<CR>
@@ -23,11 +24,13 @@ nmap <LEADER>et :TagbarToggle<CR>
 
 " Files
 nmap <LEADER>fa :Ack!<SPACE>
+nmap <LEADER>ff :FZFMru<CR>
 nmap <LEADER>fn :enew<CR>
+nmap <LEADER>fo :FZF<CR>
 nmap <LEADER>fp :let @*=expand("%:p")<CR>:echo expand('%:p')<CR>
-nmap <LEADER>fzf :FZFFiles<CR>
-nmap <LEADER>fzs :FZFSnippets<CR>
-nmap <LEADER>fzt :FZFTags<CR>
+nmap <LEADER>fr :FZFMru<CR>
+nmap <LEADER>fs :FZFSnippets<CR>
+nmap <LEADER>ft :FZFTags<CR>
 
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>

@@ -8,10 +8,10 @@ let g:fzf_command_prefix = 'FZF'
 
 
 " This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+" let g:fzf_action = {
+"   \ 'ctrl-t': 'tab split',
+"   \ 'ctrl-x': 'split',
+"   \ 'ctrl-v': 'vsplit' }
 
 " Default fzf layout
 " - down / up / left / right
@@ -35,12 +35,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-nmap <LEADER>ff :FZFMru<CR>
-nmap <LEADER>fo :FZF<CR>
-nmap <LEADER>fr :FZFMru<CR>
-nmap <LEADER>bb :FZFBuffers<CR>
-nmap <LEADER>bo :FZFBuffers<CR>
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -83,9 +77,9 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " \ 'options': '-m -x +s',
 " \ 'down':    '50%' })
 
-function! s:all_files()
-  return extend(
-  \ filter(copy(v:oldfiles),
-  \        "v:val !~ 'fugitive:\\|.fugitiveblame\\|NERD_tree\\|^/tmp/\\|.git/'"),
-  \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
-endfunction
+" function! s:all_files()
+"   return extend(
+"   \ filter(copy(v:oldfiles),
+"   \        "v:val !~ 'fugitive:\\|.fugitiveblame\\|NERD_tree\\|^/tmp/\\|.git/'"),
+"   \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
+" endfunction

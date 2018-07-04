@@ -52,9 +52,15 @@ function! LightLineReadonly()
 endfunction
 
 function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-       \ ('' != expand('%') ? expand('%') : '[No Name]') .
-       \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  if &filetype == "fzf"
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+         \ ('[FZF]') .
+         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  else
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+         \ ('' != expand('%') ? expand('%') : '[No Name]') .
+         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+  endif
 endfunction
 
 function! LightLineModified()
