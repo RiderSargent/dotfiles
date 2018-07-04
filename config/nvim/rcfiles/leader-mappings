@@ -48,8 +48,8 @@ nmap <LEADER>pv :vsp<CR>
 nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
 " Search/Sessions"
-nmap <LEADER>s :Ack<SPACE>
-nmap <LEADER>sa :Ack<SPACE>
+nmap <LEADER>s :Ack!<SPACE>
+nmap <LEADER>sa :Ack!<SPACE>
 nmap <LEADER>sf :AckFile!<SPACE>
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
