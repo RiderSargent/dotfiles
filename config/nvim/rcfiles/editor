@@ -76,6 +76,12 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+" hitting Esc twice in FZF windows closes them
+augroup fzf
+  autocmd!
+  autocmd FileType fzf nmap <buffer> <ESC> :q<CR>:echo<CR>
+augroup END
+
 
 " --- Abbreviations ---------------------------------------------------------- "
 iab cm ✓
