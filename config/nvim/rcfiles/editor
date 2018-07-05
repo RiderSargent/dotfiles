@@ -1,5 +1,10 @@
 " vim:ft=vim
 
+" FZF Mappings search
+nmap <LEADER><TAB> <plug>(fzf-maps-n)
+xmap <LEADER><TAB> <plug>(fzf-maps-x)
+omap <LEADER><TAB> <plug>(fzf-maps-o)
+
 " Arrow keys to resize in normal mode
 map <down> <C-W>+
 map <up> <C-W>-
@@ -28,17 +33,17 @@ map L $
 " Visually select text entered last time in insert
 nmap gV `[v`]
 
-" %% for current buffer file name
+" %% for current buffer path and filename (relative)
 cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
-" :: for current buffer file path
-cnoremap :: <C-R>=fnameescape(expand('%'))<CR>
+" :: for current buffer directory (relative)
+cnoremap :: <C-R>=fnameescape(expand('%:h'))<CR>
 
 " Tab navigation
 nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
 
-" 'page' (colorcolumn for cols greater than 80)
-nmap cop :call ToggleColorcolumn()<CR>
+" Unimpaired-like toggle for colorcolumn > 80
+nmap yoy :call ToggleColorcolumn()<CR>
 
 " Keep search matches in the middle of the window.
 nmap n nzzzv
