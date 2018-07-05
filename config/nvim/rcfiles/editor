@@ -20,8 +20,9 @@ nnoremap Q <NOP>
 " Highlight and Search for word under the cursor without changing the cursor position
 nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
-nmap j gj
-nmap k gk
+" use j and k if a count is given, gj and gk otherwise
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Make Y behave similarly to D and C - yank to EOL
 nmap Y y$
@@ -32,6 +33,11 @@ map L $
 
 " Visually select text entered last time in insert
 nmap gV `[v`]
+
+" Stay in visual mode when indenting. You will never have to run gv after
+" performing an indentation.
+vnoremap < <gv
+vnoremap > >gv
 
 " %% for current buffer path and filename (relative)
 cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
