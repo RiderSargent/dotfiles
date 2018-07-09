@@ -18,21 +18,21 @@ xmap . :normal .<CR>
 nnoremap Q <NOP>
 
 " Highlight and Search for word under the cursor without changing the cursor position
-nmap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
+nnoremap <silent> * :PreserveSave<CR>:normal! *N<CR>:set hlsearch<CR>:PreserveRestore<CR>
 
 " use j and k if a count is given, gj and gk otherwise
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Make Y behave similarly to D and C - yank to EOL
-nmap Y y$
+nnoremap Y y$
 
 " Move to beginning/end of line
-map H ^
-map L $
+nnoremap H ^
+nnoremap L $
 
 " Visually select text entered last time in insert
-nmap gV `[v`]
+nnoremap gV `[v`]
 
 " Stay in visual mode when indenting. You will never have to run gv after
 " performing an indentation.
@@ -49,7 +49,7 @@ nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
 
 " Unimpaired-like toggle for colorcolumn > 80
-nmap yoy :call ToggleColorcolumn()<CR>
+nnoremap yoy :call ToggleColorcolumn()<CR>
 
 " Keep search matches in the middle of the window.
 " (currently mimicked in vim-indexed-search plugin
@@ -57,7 +57,7 @@ nmap yoy :call ToggleColorcolumn()<CR>
 " nnoremap N Nzzzv
 
 " Use sensible regexes
-nmap / /\v
+nnoremap / /\v
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
