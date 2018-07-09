@@ -1,3 +1,9 @@
 " vim:ft=vim
 
 Plug 'henrik/vim-indexed-search'
+
+" center search results (like nzz)
+let g:indexed_search_center = 1
+
+" Dont move to next match by default (like *N)
+let g:indexed_search_dont_move = 1

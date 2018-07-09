@@ -52,8 +52,9 @@ nnoremap ]t :tnext<CR>
 nmap yoy :call ToggleColorcolumn()<CR>
 
 " Keep search matches in the middle of the window.
-nmap n nzzzv
-nmap N Nzzzv
+" (currently mimicked in vim-indexed-search plugin
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 
 " Use sensible regexes
 nmap / /\v
