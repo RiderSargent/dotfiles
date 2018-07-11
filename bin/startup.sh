@@ -5,5 +5,5 @@
 
 # Start MySQL server
 mysql.server start
-redis-server &
+# redis-server &
 tat
