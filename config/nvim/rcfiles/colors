@@ -58,6 +58,7 @@ highlight CursorColumn guibg=#31343C
 highlight CursorLine guibg=#31343C
 " highlight ColorLine guibg=#31343C
 
+highlight Comment gui=italic
 
 " --- Functions -------------------------------------------------------------- "
 " From Vimcasts Episode #25
