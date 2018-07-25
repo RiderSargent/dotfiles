@@ -20,6 +20,7 @@ let $PROGRAMMING_FILES .= ',*.htm'
 let $PROGRAMMING_FILES .= ',*.elm'
 let $PROGRAMMING_FILES .= ',*.haml'
 let $PROGRAMMING_FILES .= ',*.clj'
+let $PROGRAMMING_FILES .= ',*.swift'
 
 " Trim trailing whitespace (keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
