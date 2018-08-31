@@ -1,6 +1,6 @@
 " vim:ft=vim
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
 nmap <LEADER>ee :NERDTreeToggle<CR>
 nmap <LEADER>ft :NERDTreeToggle<CR>
