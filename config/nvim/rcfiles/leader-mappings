@@ -26,6 +26,7 @@ nmap <LEADER>fb :FZFBuffers<CR>
 nmap <LEADER>fc :FZFCommands<CR>
 nmap <LEADER>ff :FZF<CR>
 nmap <LEADER>fg :FZFRg<SPACE>
+nmap <LEADER>fm :FZFMaps<CR>
 nmap <LEADER>fo :echo "Use <SPACE>ff!"<CR>
 nmap <LEADER>fp :let @*=expand("%:p")<CR>:echo expand('%:p')<CR>
 nmap <LEADER>fr :FZFMru<CR>
@@ -41,7 +42,9 @@ nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "line trimmed"<CR>
 
 " Notes
 nmap <LEADER>ne :e ~/Dropbox/Notes/
+nmap <LEADER>nf :NERDTreeFind<CR>
 nmap <LEADER>ns :w ~/Dropbox/Notes/
+nmap <LEADER>nt :NERDTreeToggle<CR>
 
 " Panes
 nmap <LEADER>pb :wincmd =<CR>

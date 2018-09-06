@@ -2,5 +2,4 @@
 
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
-nmap <LEADER>ee :NERDTreeToggle<CR>
-nmap <LEADER>ft :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=40
