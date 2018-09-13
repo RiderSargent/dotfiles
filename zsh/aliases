@@ -7,6 +7,7 @@ alias be='bundle exec'
 alias bi='bundle install'
 alias bnotes='$EDITOR ~/Dropbox/Notes/Babylon/babylon_health.md'
 alias bp='cd ~/Code/babylon/rails'
+alias burp='brew update && brew upgrade'
 alias c='clear'
 alias ctags="`brew --prefix`/bin/ctags"
 alias db_migrate='__rws__db_migrate'
