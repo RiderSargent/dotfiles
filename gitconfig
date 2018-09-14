@@ -24,6 +24,7 @@
   uncommit = reset --soft HEAD^
 [core]
   excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
   ui = true
 [push]
@@ -40,13 +41,6 @@
   pushInsteadOf = "git://github.com/"
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
-
-; [url "git@github.com:"]
-;   insteadOf = https://github.com/
-; [url "git@github.com:"]
-;   pushInsteadOf = "git://github.com/"
-; [url "git@github.com:"]
-;   pushInsteadOf = "https://github.com/"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -62,3 +56,15 @@
   rebase = true
 [commit]
   template = ~/.stCommitMsg
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
