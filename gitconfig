@@ -1,46 +1,48 @@
 [user]
-  name = Rider Sargent
-  email = rider.sargent@gmail.com
+	name = Rider Sargent
+	email = rider.sargent@gmail.com
 [alias]
-  a = add
-  aa = add --all
-  amend = commit --amend
-  br = branch
-  c = commit
-  ci = commit
-  co = checkout
-  ctags = !.git/hooks/ctags
-  di = diff
-  ds = diff --staged
-  dump = cat-file -p
-  edit = !vim `git ls-files -m`
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  l = log --graph --oneline --pretty=format:'%C(yellow)%h %C(green)%cr %C(blue)%an %Creset%s %Cred%d%Creset'
-  pr = pull-request
-  s = status -sb
-  ss = status
-  st = status
-  type = cat-file -t
-  uncommit = reset --soft HEAD^
+	a = add
+	aa = add --all
+	amend = commit --amend
+	br = branch
+	c = commit
+	ci = commit
+	co = checkout
+	ctags = !.git/hooks/ctags
+	di = diff
+	ds = diff --staged
+	dump = cat-file -p
+	edit = !vim `git ls-files -m`
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	l = log --graph --oneline --pretty=format:'%C(yellow)%h %C(green)%cr %C(blue)%an %Creset%s %Cred%d%Creset'
+	pr = pull-request
+	s = status -sb
+	ss = status
+	st = status
+	type = cat-file -t
+	uncommit = reset --soft HEAD^
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
-  ui = true
+	ui = true
+[pager]
+	udiff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 [push]
-  default = upstream
+	default = upstream
 [init]
-  templatedir = ~/.git_template
+	templatedir = ~/.git_template
 [gui]
-  warndetachedcommit = true
+	warndetachedcommit = true
 [diff]
-  compactionHeuristic = true
+	compactionHeuristic = true
 [url "git@github.com:"]
-  insteadOf = "https://github.com/"
+	insteadOf = "https://github.com/"
 [url "git@github.com:"]
-  pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "git://github.com/"
 [url "git@github.com:"]
-  pushInsteadOf = "https://github.com/"
+	pushInsteadOf = "https://github.com/"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -48,14 +50,14 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [filter "lfs"]
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [pull]
-  rebase = true
+	rebase = true
 [commit]
-  template = ~/.stCommitMsg
+	template = ~/.stCommitMsg
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
