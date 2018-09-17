@@ -2,4 +2,6 @@
 
 Plug 'neomake/neomake'
 
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'rubocop_rails']
+
 autocmd! BufWritePost * Neomake
