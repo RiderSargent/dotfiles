@@ -67,6 +67,7 @@ set synmaxcol=800                  " don't try to highlight lines longer than
 " Defaults: blank, buffers, curdir, folds, help, options, tabpages, winsize
 set sessionoptions=buffers
 set sessionoptions+=curdir
+set sessionoptions+=tabpages
 
 set textwidth=0
 set title
