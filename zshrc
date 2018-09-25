@@ -60,6 +60,7 @@ export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
 
 export ENABLE_BOOTSNAP=true
 
+source "$HOME/.dotfiles/zsh/tmuxinator.zsh"
 source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"

@@ -29,6 +29,7 @@ alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias log="n ~/Dropbox/Notes/Babylon/log.md"
 alias mss='mysql.server start'
 alias mst='mysql.server stop'
+alias mux="tmuxinator"
 alias n='nvim'
 alias notes='cd ~/Dropbox/Notes; $EDITOR +FZF'
 alias path='echo $PATH | tr -s ":" "\n"'
