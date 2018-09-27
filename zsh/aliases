@@ -1,6 +1,9 @@
 alias -g G='| grep'
 alias -g L='| wc -l'
 alias -g M='| less'
+alias :q="exit"
+alias :sp="tmux split-window"
+alias :vsp="tmux split-window -h"
 alias bb='cd ~/Code/babylon/rails'
 alias bcp='cd ~/Code/clinical-portal'
 alias be='bundle exec'
@@ -35,6 +38,7 @@ alias notes='cd ~/Dropbox/Notes; $EDITOR +FZF'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias please='sudo !!'
 alias rebm='rebase_master'
+alias reload="exec $SHELL -l"
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases'
