@@ -42,6 +42,11 @@ ensure_tmux_is_running() {
   fi
 }
 
+# Format CSVs
+function csv {
+  cat $1 | perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' | column -t -s, | less -S
+}
+
 
 ################################################################################
 # git functions
@@ -56,6 +61,18 @@ ensure_tmux_is_running() {
 #     git status -sb
 #   fi
 # }
+
+function gupdate {
+  git stash
+  git checkout develop
+  git pull
+  git checkout @{-1}
+  git rebase develop
+}
+
+function gro {
+  git reset --hard origin/$1
+}
 
 
 ################################################################################
