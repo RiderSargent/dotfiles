@@ -9,5 +9,5 @@ windows:
       layout: main-horizontal
       panes:
         - nvim
-        - # empty for shell prompt
+        - mysql.server start
   - server: 
