@@ -71,3 +71,7 @@ source_if_exists "/usr/local/opt/nvm/nvm.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 
+# brewfile wrapping of brew command
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
