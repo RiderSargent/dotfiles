@@ -8,6 +8,6 @@ windows:
   - code:
       layout: main-horizontal
       panes:
-        - nvim
         - mysql.server start
+        - # terminal
   - server: 
