@@ -1,3 +1,8 @@
+-- Clear the console
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "-", function()
+  hs.console.clearConsole()
+end)
+
 -- Show screen and window info
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "0", function()
   local focusedWindow = hs.window.focusedWindow()
@@ -5,9 +10,29 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "0", function()
   local screen = focusedWindow:screen()
   local screenFrame = screen:frame()
 
-  text = "screenFrame.x: " .. screenFrame.x .. "\nscreenFrame.y: " .. screenFrame.y .. "\nfocusedWindowFrame.x: " .. focusedWindowFrame.x .. "\nfocusedWindowFrame.y: " .. focusedWindowFrame.y .. "\nfocusedWindowFrame.h: " .. focusedWindowFrame.h .. "\nfocusedWindowFrame.w: " .. focusedWindowFrame.w .. "."
+  local log = hs.logger.new('windowing','debug')
 
-  hs.alert.show(text)
+  local formatString = "\nscreenFrame.x: %8s\n"
+                       .. "screenFrame.y: %8s\n"
+                       .. "screenFrame.w: %8s\n"
+                       .. "screenFrame.h: %8s\n"
+                       .. "\n"
+                       .. "focusedWindowFrame.x: %8s\n"
+                       .. "focusedWindowFrame.y: %8s\n"
+                       .. "focusedWindowFrame.w: %8s\n"
+                       .. "focusedWindowFrame.h: %8s\n"
+
+  log.df(
+    formatString,
+    screenFrame.x,
+    screenFrame.y,
+    screenFrame.w,
+    screenFrame.h,
+    focusedWindowFrame.x,
+    focusedWindowFrame.y,
+    focusedWindowFrame.w,
+    focusedWindowFrame.h
+  )
 end)
 
 -- Window to full screen
