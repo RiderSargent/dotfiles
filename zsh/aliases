@@ -24,6 +24,7 @@ alias gc='git commit -m'
 alias gcan='git commit --amend --no-edit'
 alias gcnm='git commit -m "Minor changes. Commit message skipped."'
 alias gh='__md__gh'
+alias git=hub
 alias glp='__md__glp'
 alias gmnf='git merge --no-ff --no-edit --log'
 alias grep='grep --color'
