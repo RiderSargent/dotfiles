@@ -66,6 +66,23 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "2", function()
   focusedWindow:setFrame(focusedWindowFrame)
 end)
 
+-- Window to centered 1280 by 1024
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "4", function()
+  local focusedWindow = hs.window.focusedWindow()
+  local focusedWindowFrame = focusedWindow:frame()
+  local screen = focusedWindow:screen()
+  local screenFrame = screen:frame()
+
+  local width = 1280
+
+  focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2 - 640)
+  focusedWindowFrame.y = screenFrame.y + 10
+  focusedWindowFrame.w = width
+  focusedWindowFrame.h = screenFrame.h - 20
+
+  focusedWindow:setFrame(focusedWindowFrame)
+end)
+
 -- Window to left half of screen
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "h", function()
   local focusedWindow = hs.window.focusedWindow()
