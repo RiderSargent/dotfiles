@@ -46,16 +46,7 @@ end)
 
 -- Window to full screen
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "1", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
-
-  focusedWindowFrame.x = screenFrame.x
-  focusedWindowFrame.y = screenFrame.y
-  focusedWindowFrame.w = screenFrame.w
-  focusedWindowFrame.h = screenFrame.h
-  focusedWindow:setFrame(focusedWindowFrame)
+  hs.window.focusedWindow():maximize()
 end)
 
 -- Window to centered 1440 by 900
