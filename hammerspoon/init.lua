@@ -1,3 +1,14 @@
+--------------------------------------------------------------------------------
+-- Global settings                                                            --
+--------------------------------------------------------------------------------
+logger = hs.logger.new('RWS','debug')
+hs.window.animationDuration = 0
+
+
+--------------------------------------------------------------------------------
+-- Hotkey settings                                                            --
+--------------------------------------------------------------------------------
+
 -- Clear the console
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "-", function()
   hs.console.clearConsole()
@@ -10,8 +21,6 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "0", function()
   local screen = focusedWindow:screen()
   local screenFrame = screen:frame()
 
-  local log = hs.logger.new('windowing','debug')
-
   local formatString = "\nscreenFrame.x: %8s\n"
                        .. "screenFrame.y: %8s\n"
                        .. "screenFrame.w: %8s\n"
@@ -22,7 +31,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "0", function()
                        .. "focusedWindowFrame.w: %8s\n"
                        .. "focusedWindowFrame.h: %8s\n"
 
-  log.df(
+  logger.df(
     formatString,
     screenFrame.x,
     screenFrame.y,
@@ -139,7 +148,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "l", function()
   focusedWindow:setFrame(focusedWindowFrame)
 end)
 
--- Reload Config Automatically
+
+--------------------------------------------------------------------------------
+-- Reload Config Automatically                                                --
+--------------------------------------------------------------------------------
 function reloadConfig(files)
     doReload = false
     for _,file in pairs(files) do
@@ -152,5 +164,6 @@ function reloadConfig(files)
     end
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Config loaded")
+-- hs.alert.show("Config loaded")
+logger.d("Config loaded")
 
