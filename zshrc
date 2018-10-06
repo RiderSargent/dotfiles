@@ -65,6 +65,10 @@ source "$HOME/.dotfiles/zsh/aliases"
 source "$HOME/.dotfiles/zsh/functions"
 source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
+source "$HOME/.dotfiles/zsh/fzf.zsh"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
+
 source_if_exists "$HOME/babylon_credentials.sh"
 
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
@@ -75,3 +79,4 @@ source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
