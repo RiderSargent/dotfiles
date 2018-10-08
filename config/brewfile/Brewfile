@@ -100,7 +100,6 @@ brew plantuml
 brew postgresql
 brew python
 brew python@2
-brew qt@5.5
 brew rbspy
 brew readline
 brew reattach-to-user-namespace
@@ -132,6 +131,7 @@ tap homebrew/versions
 
 tap homebrew/cask
 cask anki
+cask typora
 
 tap d12frosted/emacs-plus
 brew emacs-plus
@@ -147,9 +147,10 @@ brew brew-file
 # Other Homebrew packages
 brew ghc@8.0
 brew pdftk
+brew qt@5.5
 
 # Other Cask applications
-cask typora
+cask daisydisk
 
 # App Store applications
 appstore 627545560 Alinof TimerPro (3.2.1)
