@@ -390,7 +390,7 @@
                 }
             ],
             "name": "UK Laptop",
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
@@ -708,7 +708,7 @@
                 }
             ],
             "name": "US Laptop",
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
