@@ -6,6 +6,26 @@
     },
     "profiles": [
         {
+            "name": "UK Laptop",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "left_control"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "escape"
+                    },
+                    "to": {
+                        "key_code": "f17"
+                    }
+                }
+            ],
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -389,8 +409,16 @@
                     }
                 }
             ],
-            "name": "UK Laptop",
-            "selected": true,
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "country_code": 2,
+                "keyboard_type": "iso",
+                "standalone_keys_delay_milliseconds": 100
+            }
+        },
+        {
+            "name": "US Laptop",
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -409,14 +437,6 @@
                     }
                 }
             ],
-            "virtual_hid_keyboard": {
-                "caps_lock_delay_milliseconds": 0,
-                "country_code": 2,
-                "keyboard_type": "iso",
-                "standalone_keys_delay_milliseconds": 100
-            }
-        },
-        {
             "complex_modifications": {
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
@@ -704,26 +724,6 @@
                     },
                     "to": {
                         "key_code": "volume_increment"
-                    }
-                }
-            ],
-            "name": "US Laptop",
-            "selected": false,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": {
-                        "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "escape"
-                    },
-                    "to": {
-                        "key_code": "f17"
                     }
                 }
             ],
