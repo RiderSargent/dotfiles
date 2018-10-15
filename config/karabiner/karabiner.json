@@ -239,9 +239,9 @@
                         ]
                     },
                     {
+                        "description": "Change f17 to command+control+option+shift.",
                         "manipulators": [
                             {
-                                "description": "Change f17 to command+control+option+shift.",
                                 "from": {
                                     "key_code": "f17",
                                     "modifiers": {
@@ -254,9 +254,9 @@
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "right_command",
+                                            "right_control",
+                                            "right_option"
                                         ]
                                     }
                                 ],
@@ -601,9 +601,9 @@
                         ]
                     },
                     {
+                        "description": "Change f17 to command+control+option+shift.",
                         "manipulators": [
                             {
-                                "description": "Change f17 to command+control+option+shift.",
                                 "from": {
                                     "key_code": "f17",
                                     "modifiers": {
@@ -616,9 +616,9 @@
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "right_command",
+                                            "right_control",
+                                            "right_option"
                                         ]
                                     }
                                 ],
