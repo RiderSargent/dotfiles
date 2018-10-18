@@ -51,7 +51,8 @@ nnoremap [t :tprevious<CR>
 nnoremap ]t :tnext<CR>
 
 " Unimpaired-like toggle for colorcolumn > 80
-nnoremap yoy :call ToggleColorcolumn()<CR>
+nnoremap yoy :call ToggleColorcolumn(80)<CR>
+nnoremap yot :call ToggleColorcolumn(120)<CR>
 
 " Keep search matches in the middle of the window.
 " (currently mimicked in vim-indexed-search plugin
@@ -98,10 +99,11 @@ iab lmda λ
 
 
 " --- Functions and Commands ------------------------------------------------- "
-function! ToggleColorcolumn()
+function! ToggleColorcolumn(maxCol)
   if &colorcolumn==0
-    execute "set colorcolumn=" . join(range(81,335), ',')
-    echo "colorcolumn>80"
+    let colPlusOne = a:maxCol + 1
+    execute "set colorcolumn=" . join(range(colPlusOne,335), ',')
+    echo "colorcolumn>" . a:maxCol
   else
     set colorcolumn=0
     echo "colorcolumn=0"
