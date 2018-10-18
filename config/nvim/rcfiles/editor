@@ -60,7 +60,7 @@ nnoremap yot :call ToggleColorcolumn(120)<CR>
 " nnoremap N Nzzzv
 
 " Use sensible regexes
-nnoremap / /\v
+" nnoremap / /\v
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
