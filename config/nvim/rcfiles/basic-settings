@@ -13,6 +13,8 @@ set nocursorline                   " don't highlight current line
 set diffopt=iwhite                 " Set diff to ignore whitespace
 set directory=~/.vim_swap,.        " original: directory=.,~/tmp,/var/tmp,/tmp
 set formatoptions=tcroqnlj         " default: croql
+set foldmethod=indent
+set foldlevelstart=99              " start with all folds open
 set hidden                         " allow vim to leave modified buffers
 set history=5000
 set hlsearch
@@ -68,6 +70,7 @@ set synmaxcol=800                  " don't try to highlight lines longer than
 set sessionoptions=buffers
 set sessionoptions+=curdir
 set sessionoptions+=tabpages
+set sessionoptions+=folds
 
 set textwidth=0
 set title
