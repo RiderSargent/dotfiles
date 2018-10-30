@@ -5,6 +5,81 @@ logger = hs.logger.new('RWS','debug')
 hyperkey = {"cmd", "alt", "ctrl", "shift"}
 hs.window.animationDuration = 0
 
+hs.grid.setGrid('12x12') -- allows us to place on quarters, thirds and halves
+hs.grid.setMargins({0,0})
+
+local chain = nil
+local lastSeenChain = nil
+local lastSeenWindow = nil
+
+local grid = {
+  topHalf = '0,0 12x6',
+  topThird = '0,0 12x4',
+  topTwoThirds = '0,0 12x8',
+  rightHalf = '6,0 6x12',
+  rightThird = '8,0 4x12',
+  rightTwoThirds = '4,0 8x12',
+  bottomHalf = '0,6 12x6',
+  bottomThird = '0,8 12x4',
+  bottomTwoThirds = '0,4 12x8',
+  leftHalf = '0,0 6x12',
+  leftThird = '0,0 4x12',
+  leftTwoThirds = '0,0 8x12',
+  topLeft = '0,0 6x6',
+  topRight = '6,0 6x6',
+  bottomRight = '6,6 6x6',
+  bottomLeft = '0,6 6x6',
+  fullScreen = '0,0 12x12',
+  centeredBig = '2,0 8x12',
+  centeredSmall = '2,2 8x8',
+}
+
+
+--------------------------------------------------------------------------------
+-- Grid Layout                                                                --
+--------------------------------------------------------------------------------
+-- Shamelessly stolen from wincent:
+-- https://github.com/wincent/wincent/blob/master/roles/dotfiles/files/.hammerspoon/init.lua
+
+-- Chain the specified movement commands.
+--
+-- This is like the "chain" feature in Slate, but with a couple of enhancements:
+--
+--  - Chains always start on the screen the window is currently on.
+--  - A chain will be reset after 2 seconds of inactivity, or on switching from
+--    one chain to another, or on switching from one app to another, or from one
+--    window to another.
+--
+chain = (function(movements)
+  local chainResetInterval = 2 -- seconds
+  local cycleLength = #movements
+  local sequenceNumber = 1
+
+  return function()
+    local win = hs.window.frontmostWindow()
+    local id = win:id()
+    local now = hs.timer.secondsSinceEpoch()
+    local screen = win:screen()
+
+    if
+      lastSeenChain ~= movements or
+      lastSeenAt < now - chainResetInterval or
+      lastSeenWindow ~= id
+    then
+      sequenceNumber = 1
+      lastSeenChain = movements
+    elseif (sequenceNumber == 1) then
+      -- At end of chain, restart chain on next screen.
+      screen = screen:next()
+    end
+    lastSeenAt = now
+    lastSeenWindow = id
+
+    hs.grid.set(win, movements[sequenceNumber], screen)
+    sequenceNumber = sequenceNumber % cycleLength + 1
+  end
+end)
+
 
 --------------------------------------------------------------------------------
 -- Hotkey settings                                                            --
@@ -14,6 +89,14 @@ hs.window.animationDuration = 0
 hs.hotkey.bind(hyperkey, "-", function()
   hs.console.clearConsole()
 end)
+
+hs.hotkey.bind(hyperkey, 'n', (function()
+  hs.toggleConsole()
+end))
+
+hs.hotkey.bind(hyperkey, 's', (function()
+  hs.grid.show()
+end))
 
 -- Show screen and window info
 hs.hotkey.bind(hyperkey, "0", function()
@@ -89,61 +172,43 @@ hs.hotkey.bind(hyperkey, "space", function()
   hs.window.focusedWindow():centerOnScreen()
 end)
 
--- Window to left half of screen
-hs.hotkey.bind(hyperkey, "h", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
 
-  focusedWindowFrame.x = screenFrame.x
-  focusedWindowFrame.y = screenFrame.y
-  focusedWindowFrame.w = screenFrame.w / 2
-  focusedWindowFrame.h = screenFrame.h
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+hs.hotkey.bind(hyperkey, 'k', chain({
+  grid.topHalf,
+  grid.topThird,
+  grid.topTwoThirds,
+}))
 
--- Window to top half of screen
-hs.hotkey.bind(hyperkey, "k", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
+hs.hotkey.bind(hyperkey, 'l', chain({
+  grid.rightHalf,
+  grid.rightThird,
+  grid.rightTwoThirds,
+}))
 
-  focusedWindowFrame.x = screenFrame.x
-  focusedWindowFrame.y = screenFrame.y
-  focusedWindowFrame.w = screenFrame.w
-  focusedWindowFrame.h = screenFrame.h / 2
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+hs.hotkey.bind(hyperkey, 'j', chain({
+  grid.bottomHalf,
+  grid.bottomThird,
+  grid.bottomTwoThirds,
+}))
 
--- Window to bottom half of screen
-hs.hotkey.bind(hyperkey, "j", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
+hs.hotkey.bind(hyperkey, 'h', chain({
+  grid.leftHalf,
+  grid.leftThird,
+  grid.leftTwoThirds,
+}))
 
-  focusedWindowFrame.x = screenFrame.x
-  focusedWindowFrame.y = screenFrame.y + (screenFrame.h / 2)
-  focusedWindowFrame.w = screenFrame.w
-  focusedWindowFrame.h = screenFrame.h / 2
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+hs.hotkey.bind(hyperkey, 'u', chain({
+  grid.fullScreen,
+  grid.centeredBig,
+  grid.centeredSmall,
+}))
 
--- Window to right half of screen
-hs.hotkey.bind(hyperkey, "l", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
-
-  focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2)
-  focusedWindowFrame.y = screenFrame.y
-  focusedWindowFrame.w = screenFrame.w / 2
-  focusedWindowFrame.h = screenFrame.h
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+hs.hotkey.bind(hyperkey, 'i', chain({
+  grid.topLeft,
+  grid.topRight,
+  grid.bottomRight,
+  grid.bottomLeft,
+}))
 
 
 --------------------------------------------------------------------------------
@@ -161,6 +226,5 @@ function reloadConfig(files)
     end
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
--- hs.alert.show("Config loaded")
 logger.d("Config loaded")
 
