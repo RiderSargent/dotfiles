@@ -113,6 +113,7 @@ brew sl
 brew sphinx-doc
 brew sqlite
 brew tailor
+brew tealdeer
 brew texinfo
 brew the_silver_searcher
 brew tmux
