@@ -19,8 +19,10 @@ nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to sys
 
 nmap <LEADER>cp :let @*=expand("%:p")<CR>:echo "file path copied to clipboard"<CR>
 
+" <LocalLeader>e -- Edit file, starting in same directory as current file.
+nmap <LEADER>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+
 " Files
-" nmap <LEADER>fa :Ack!<SPACE>
 nmap <LEADER>fa :FZFAg<SPACE>
 nmap <LEADER>fb :FZFBuffers<CR>
 nmap <LEADER>fc :FZFCommands<CR>
@@ -53,6 +55,8 @@ nmap <LEADER>ps :sp<CR>
 nmap <LEADER>pv :vsp<CR>
 nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
 
+nmap <LEADER>q :q<CR>
+
 " Search/Sessions"
 nmap <LEADER>s :Ack!<SPACE>
 nmap <LEADER>sa :Ack!<SPACE>
@@ -62,6 +66,8 @@ nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 nmap <LEADER>tb <Plug>BlockToggle
 nmap <LEADER>tt :TagbarToggle<CR>
+
+nmap <LEADER>w :w<CR>
 
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
