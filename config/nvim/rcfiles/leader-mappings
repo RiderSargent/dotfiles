@@ -6,12 +6,12 @@ nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
 " Buffers
 nmap <LEADER>ba <C-^>
-nmap <LEADER>bb :echo "Use <SPACE>fb!"<CR>
+nmap <LEADER>bb :echo "--- Use: <LEADER>fb ---"<CR>
 nmap <LEADER>bd :Kwbd<CR>
 nmap <LEADER>bi :call Preserve("normal gg=G")<CR>:echo "buffer indented"<CR>
 nmap <LEADER>bl :buffers<CR>:
 nmap <LEADER>bn :bn<CR>
-nmap <LEADER>bo :echo "Use <SPACE>fb!"<CR>
+nmap <LEADER>bo :echo "--- Use: <LEADER>fb ---"<CR>
 nmap <LEADER>br :e!<CR>:echo "buffer reloaded"<CR>
 nmap <LEADER>bra :bufdo e!<CR>:echo "all buffers reloaded"<CR>
 nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
@@ -29,7 +29,7 @@ nmap <LEADER>fc :FZFCommands<CR>
 nmap <LEADER>ff :FZF<CR>
 nmap <LEADER>fg :FZFRg<SPACE>
 nmap <LEADER>fm :FZFMaps<CR>
-nmap <LEADER>fo :echo "Use <SPACE>ff!"<CR>
+nmap <LEADER>fo :echo "--- Use: <LEADER>ff ---"<CR>
 nmap <LEADER>fp :let @*=expand("%:p")<CR>:echo expand('%:p')<CR>
 nmap <LEADER>fr :FZFMru<CR>
 nmap <LEADER>fs :FZFSnippets<CR>
@@ -53,7 +53,7 @@ nmap <LEADER>pb :wincmd =<CR>
 nmap <LEADER>pn :vnew<CR>
 nmap <LEADER>ps :sp<CR>
 nmap <LEADER>pv :vsp<CR>
-nmap <LEADER>pz :wincmd _<CR>:wincmd \|<CR>
+nmap <LEADER>pz :echo "--- Use: <LEADER>z ---"<CR>
 
 nmap <LEADER>q :q<CR>
 
@@ -74,6 +74,8 @@ nmap <LEADER>vr :so $MYVIMRC<CR>
 nmap <LEADER>ve :e $MYVIMRC<CR>
 nmap <LEADER>vo :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 nmap <LEADER>vv :so $MYVIMRC<CR>
+
+nmap <LEADER>z :wincmd _<CR>:wincmd \|<CR>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 
