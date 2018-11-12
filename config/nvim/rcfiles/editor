@@ -41,6 +41,10 @@ nnoremap gV `[v`]
 vnoremap < <gv
 vnoremap > >gv
 
+" Emacs/Readline-like line nav
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
 " %% for current buffer path and filename (relative)
 cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
 " :: for current buffer directory (relative)
