@@ -1,6 +1,11 @@
 " vim:ft=vim
 
 " --- Leader Combos ---------------------------------------------------------- "
+nmap <LEADER>+ :vnew<CR>
+nmap <LEADER>- :sp<CR>
+nmap <LEADER>= :wincmd =<CR>
+nmap <LEADER>\ :vsp<CR>
+
 nmap <LEADER>2 <silent> :retab<CR>:echo "Converted tabs to spaces"<CR>
 
 " --- Experimental Spacemacs-like keybindings -------------------------------- "
@@ -18,6 +23,9 @@ nmap <LEADER>bt :call Preserve("%s/\\s\\+$//e")<CR>:echo "buffer trimmed"<CR>
 nmap <LEADER>by :call Preserve("normal ggVG\"*y")<CR>:echo "buffer copied to system clipboard"<CR>
 
 nmap <LEADER>cp :let @*=expand("%:p")<CR>:echo "file path copied to clipboard"<CR>
+
+nmap <LEADER>d "_d
+vmap <LEADER>d "_d
 
 " <LocalLeader>e -- Edit file, starting in same directory as current file.
 nmap <LEADER>e :edit <C-R>=expand('%:p:h') . '/'<CR>
@@ -48,11 +56,14 @@ nmap <LEADER>nf :NERDTreeFind<CR>
 nmap <LEADER>ns :w ~/Dropbox/Notes/
 nmap <LEADER>nt :NERDTreeToggle<CR>
 
+nmap <LEADER>p "0p
+vmap <LEADER>p "0p
+
 " Panes
-nmap <LEADER>pb :wincmd =<CR>
-nmap <LEADER>pn :vnew<CR>
-nmap <LEADER>ps :sp<CR>
-nmap <LEADER>pv :vsp<CR>
+nmap <LEADER>pb :echo "--- Use: <LEADER>= ---"<CR>
+nmap <LEADER>pn :echo "--- Use: <LEADER>+ ---"<CR>
+nmap <LEADER>ps :echo "--- Use: <LEADER>- ---"<CR>
+nmap <LEADER>pv :echo "--- Use: <LEADER>\ ---"<CR>
 nmap <LEADER>pz :echo "--- Use: <LEADER>z ---"<CR>
 
 nmap <LEADER>q :q<CR>
