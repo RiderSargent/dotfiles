@@ -33,6 +33,9 @@ vnoremap H ^
 nnoremap L $
 vnoremap L $
 
+" Don't add space when joining lines
+nnoremap J gJ
+
 " Visually select text entered last time in insert
 nnoremap gV `[v`]
 
