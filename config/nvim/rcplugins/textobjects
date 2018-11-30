@@ -5,4 +5,5 @@ Plug 'kana/vim-textobj-entire'               "ie to select inner everything
 Plug 'kana/vim-textobj-line'                 "il to select inner line
 Plug 'kana/vim-textobj-indent'               "ii to select inner indent
 Plug 'Julian/vim-textobj-variable-segment'   "av, iv to select word in varname
+Plug 'idbrii/textobj-word-column.vim'        "ac, ic, aC, iC -select column or COLUMN
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
