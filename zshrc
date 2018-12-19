@@ -54,6 +54,7 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
 export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
