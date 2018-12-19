@@ -57,7 +57,6 @@
 [pull]
 	rebase = true
 [commit]
-	template = ~/.stCommitMsg
 	verbose = true
 [color "diff-highlight"]
 	oldNormal = red bold
