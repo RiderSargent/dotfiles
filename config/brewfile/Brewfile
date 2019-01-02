@@ -17,6 +17,7 @@ brew curl
 brew diff-so-fancy
 brew elixir
 brew erlang
+brew exa
 brew exercism
 brew fontconfig
 brew freetype
