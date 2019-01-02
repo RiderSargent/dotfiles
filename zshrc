@@ -70,6 +70,9 @@ source "$HOME/.dotfiles/zsh/fzf.zsh"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
+# exa color tweaks
+export EXA_COLORS="uu=0;33:gu=0;33:da=0;36"
+
 source_if_exists "$HOME/.dotfiles/zsh/babylon.zsh"
 
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
