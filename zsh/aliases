@@ -37,7 +37,7 @@ alias gss='git stash save -u'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias l="exa --long --all --header --git --sort=name --group-directories-first --time-style=long-iso"
 alias log="n ~/Dropbox/Notes/Babylon/log.md"
-alias lt="exa --tree"
+alias lt="exa --tree --level=2 --long --all --header --git --git-ignore"
 alias mss='mysql.server start'
 alias mst='mysql.server stop'
 alias mux="tmuxinator"
