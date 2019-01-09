@@ -19,6 +19,7 @@ brew elixir
 brew erlang
 brew exa
 brew exercism
+brew fd
 brew fontconfig
 brew freetype
 brew fribidi
