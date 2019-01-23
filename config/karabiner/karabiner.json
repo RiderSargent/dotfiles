@@ -407,6 +407,14 @@
                     "to": {
                         "key_code": "f17"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": {
+                        "key_code": "f17"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
