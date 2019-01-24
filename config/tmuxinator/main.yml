@@ -1,0 +1,11 @@
+name: main
+root: ~/code/sohohouse
+
+startup_window: code
+
+windows:
+  - notes:
+    - cd ~/Dropbox/Notes/Sohohouse
+    - nvim ./log.md
+  - code:
+  - server:
