@@ -71,7 +71,8 @@ source "$HOME/.dotfiles/zsh/fzf.zsh"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
 # exa color tweaks
-export EXA_COLORS="uu=0;33:gu=0;33:da=0;36"
+# export EXA_COLORS="uu=0;33:gu=0;33:da=0;36"
+export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 source_if_exists "$HOME/.dotfiles/zsh/babylon.zsh"
 
