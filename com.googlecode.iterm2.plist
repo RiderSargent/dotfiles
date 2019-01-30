@@ -1135,12 +1135,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>916 110 698 337 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-339 1583 796 486 -413 1050 2560 1057 </string>
+	<string>-339 1652 918 452 -413 1050 2560 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>363 1231 970 876 -413 1050 2560 1057 </string>
+	<string>-413 1050 2560 1058 -413 1050 2560 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>933 1431 850 676 -413 1050 2560 1057 </string>
+	<string>933 1245 970 854 -413 1050 2560 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1323,9 +1325,9 @@
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>10.732493258248729</real>
+			<real>14.328295526649745</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1742,6 +1744,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>FiraCode-Light 14</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1785,7 +1789,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.19607193845177665</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1801,7 +1805,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/rider.sargent</string>
 		</dict>
@@ -5479,8 +5483,20 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>098E55C4-A37F-49ED-A0E9-6B8E9DC51420</string>
+	<key>NoSyncLastTipTime</key>
+	<real>570532405.47061801</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>569854648.00623095</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PerformDNSLookups</key>
@@ -5535,7 +5551,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-22T13:07:03Z</date>
+	<date>2019-01-30T09:22:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
