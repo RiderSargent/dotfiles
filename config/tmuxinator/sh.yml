@@ -1,0 +1,19 @@
+name: sh
+root: ~/code/sohohouse
+
+windows:
+  - notes:
+    - cd ~/Dropbox/Notes/Sohohouse
+    - nvim ./log.md
+  - term:
+    - cd ~
+    - clear
+  - events:
+    - cd ~/code/sohohouse/events
+    - clear
+  - identity:
+    - cd ~/code/sohohouse/identity
+    - clear
+  - portfwd:
+    - cd ~/code/sohohouse/portfwd
+    - clear
