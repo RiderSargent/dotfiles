@@ -37,6 +37,23 @@ bindkey -e
 export DISABLE_AUTO_TITLE="true"
 
 
+# --- Misc ---------------------------------------------------------------------
+# export MY_INITIALS="RS"
+export EDITOR='nvim'
+export NVM_DIR="$HOME/.nvm"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+export ENABLE_BOOTSNAP=true
+
+source "$HOME/.dotfiles/zsh/tmuxinator.zsh"
+source "$HOME/.dotfiles/zsh/aliases"
+source "$HOME/.dotfiles/zsh/functions"
+source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+
+
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
@@ -47,32 +64,16 @@ export DISABLE_AUTO_TITLE="true"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
-
-# --- Misc ---------------------------------------------------------------------
-# export MY_INITIALS="RS"
-export EDITOR='nvim'
-export NVM_DIR="$HOME/.nvm"
-
-export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin"
-export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
-
-export ENABLE_BOOTSNAP=true
-
-source "$HOME/.dotfiles/zsh/tmuxinator.zsh"
-source "$HOME/.dotfiles/zsh/aliases"
-source "$HOME/.dotfiles/zsh/functions"
-source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
 source "$HOME/.dotfiles/zsh/fzf.zsh"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
-# exa color tweaks
+
+# --- EXA ----------------------------------------------------------------------
 # export EXA_COLORS="uu=0;33:gu=0;33:da=0;36"
 export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
+
 
 source_if_exists "$HOME/.dotfiles/zsh/babylon.zsh"
 
