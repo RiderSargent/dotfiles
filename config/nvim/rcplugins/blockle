@@ -1,5 +1,5 @@
 " vim:ft=vim
 
-Plug 'vim-scripts/blockle.vim'
+Plug 'vim-scripts/blockle.vim', { 'for': 'ruby' }
 
 let g:blockle_mapping = '<LEADER>tb'
