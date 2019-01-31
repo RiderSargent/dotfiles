@@ -1,3 +1,4 @@
+# --- Oh My Zsh ----------------------------------------------------------------
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -18,9 +19,6 @@ plugins=(git rails zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 
 # ------------------------------------------------------------------------------
 # Save timestamps and duration for each history entry
@@ -30,6 +28,9 @@ unsetopt HISTIGNOREDUPS
 
 # Use Emacs keymaps
 bindkey -e
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
 # --- Tmux ---------------------------------------------------------------------
@@ -48,10 +49,10 @@ export PATH="$HOME/bin:$PATH"
 
 export ENABLE_BOOTSNAP=true
 
-source "$HOME/.dotfiles/zsh/tmuxinator.zsh"
-source "$HOME/.dotfiles/zsh/aliases"
-source "$HOME/.dotfiles/zsh/functions"
-source "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
+source_if_exists "$HOME/.dotfiles/zsh/aliases"
+source_if_exists "$HOME/.dotfiles/zsh/functions"
+source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
 
 # --- FZF ----------------------------------------------------------------------
@@ -66,7 +67,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!.git/*"'
 
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
-source "$HOME/.dotfiles/zsh/fzf.zsh"
+source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
