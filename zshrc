@@ -77,6 +77,8 @@ export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 source_if_exists "$HOME/.dotfiles/zsh/babylon.zsh"
 
+source_if_exists "/Users/rider.sargent/code/dan2552/gathering-of-scripts/source-gathering-zsh"
+
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
