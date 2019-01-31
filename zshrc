@@ -49,10 +49,11 @@ export PATH="$HOME/bin:$PATH"
 
 export ENABLE_BOOTSNAP=true
 
-source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
+source "$HOME/.dotfiles/zsh/functions"
+
 source_if_exists "$HOME/.dotfiles/zsh/aliases"
-source_if_exists "$HOME/.dotfiles/zsh/functions"
 source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
 
 
 # --- FZF ----------------------------------------------------------------------
