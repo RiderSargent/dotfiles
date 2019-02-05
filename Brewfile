@@ -64,6 +64,7 @@ brew "rabbitmq", restart_service: true, link: false
 brew "reattach-to-user-namespace"
 brew "redis"
 brew "ripgrep"
+brew "rtv"
 brew "ruby-install"
 brew "tealdeer"
 brew "tmux"
