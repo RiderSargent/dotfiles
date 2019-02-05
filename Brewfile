@@ -59,6 +59,7 @@ brew "libyaml"
 brew "mas"
 brew "neovim"
 brew "node"
+brew "postgresql", restart_service: true
 brew "python@2"
 brew "rabbitmq", restart_service: true, link: false
 brew "reattach-to-user-namespace"
