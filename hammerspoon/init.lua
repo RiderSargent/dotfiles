@@ -128,10 +128,17 @@ hs.hotkey.bind(hyperkey, "0", function()
   )
 end)
 
--- Window to full screen
-hs.hotkey.bind(hyperkey, "1", function()
-  hs.window.focusedWindow():maximize()
-end)
+-- -- Window to full screen
+-- hs.hotkey.bind(hyperkey, "1", function()
+--   hs.window.focusedWindow():maximize()
+-- end)
+
+-- Cycle window between full screen, centered big and centered small
+hs.hotkey.bind(hyperkey, '1', chain({
+  grid.fullScreen,
+  grid.centeredBig,
+  grid.centeredSmall,
+}))
 
 -- Window to centered 1440 by 900
 hs.hotkey.bind(hyperkey, "2", function()
