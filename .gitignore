@@ -5,6 +5,7 @@
 config/configstore
 config/fish/fishd.*
 config/htop/htoprc
+config/hub
 config/karabiner/automatic_backups
 config/nvim/bundle
 config/nvim/plugged
