@@ -12,6 +12,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>CGFontRenderingFontSmoothingDisabled</key>
+	<false/>
 	<key>CopySelection</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -1138,9 +1140,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>916 110 698 337 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-2486 1083 918 452 -2560 507 2560 1058 </string>
+	<string>-2486 1048 796 486 -2560 507 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2134 535 970 854 -2560 507 2560 1058 </string>
+	<string>-2000 631 1434 893 -2560 507 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>933 1245 970 854 -413 1050 2560 1058 </string>
 	<key>New Bookmarks</key>
@@ -1788,8 +1790,10 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.19607193845177665</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -5477,6 +5481,8 @@
 			<string>/Users/rider.sargent</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -5484,7 +5490,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>098E55C4-A37F-49ED-A0E9-6B8E9DC51420</string>
 	<key>NoSyncLastTipTime</key>
-	<real>571569078.87270403</real>
+	<real>571656075.27669001</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -5504,6 +5510,7 @@
 		<string>0009</string>
 		<string>0010</string>
 		<string>0011</string>
+		<string>0012</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -5559,7 +5566,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-11T09:11:18Z</date>
+	<date>2019-02-12T09:21:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
