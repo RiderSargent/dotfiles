@@ -4,16 +4,11 @@ root: ~/code/sohohouse
 windows:
   - notes:
     - cd ~/Dropbox/Notes/Sohohouse
+    - clear
     - nvim ./log.md
+  - sohohouse:
+    - cd ~/code/sohohouse
+    - clear
   - term:
     - cd ~
-    - clear
-  - events:
-    - cd ~/code/sohohouse/events
-    - clear
-  - identity:
-    - cd ~/code/sohohouse/identity
-    - clear
-  - portfwd:
-    - cd ~/code/sohohouse/portfwd
     - clear
