@@ -58,6 +58,7 @@ brew "kubernetes-cli", link: false
 brew "kubernetes-helm"
 brew "libyaml"
 brew "mas"
+brew "msgpack"
 brew "neovim"
 brew "node"
 brew "postgresql", restart_service: true
@@ -86,6 +87,7 @@ cask "expressvpn"
 cask "font-fira-code"
 cask "font-hack"
 cask "google-chrome"
+cask "insomnia"
 cask "iterm2"
 cask "karabiner-elements"
 cask "keybase"
@@ -103,7 +105,9 @@ cask "spotify"
 cask "typora"
 cask "visual-studio-code"
 cask "vlc"
+mas "Airmail 3", id: 918858936
 mas "Alinof TimerPro", id: 627545560
+mas "Bear", id: 1091189122
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iStat Menus", id: 1319778037
@@ -112,6 +116,7 @@ mas "Memory Cleaner", id: 748212890
 mas "Moom", id: 419330170
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Quiver", id: 866773894
 mas "WhatsApp", id: 1147396723
 mas "WhiteNoise", id: 415139197
 mas "Xcode", id: 497799835
