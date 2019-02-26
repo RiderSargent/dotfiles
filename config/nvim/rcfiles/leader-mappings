@@ -31,7 +31,7 @@ vmap <LEADER>d "_d
 nmap <LEADER>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 
 " Files
-nmap <LEADER>fa :FZFAg<SPACE>
+nmap <LEADER>fa :FZFAgWithDefault<SPACE>
 nmap <LEADER>fb :FZFBuffers<CR>
 nmap <LEADER>fc :FZFCommands<CR>
 nmap <LEADER>ff :FZF<CR>
@@ -41,7 +41,7 @@ nmap <LEADER>fo :echo "--- Use: <LEADER>ff ---"<CR>
 nmap <LEADER>fp :let @*=expand("%:p")<CR>:echo expand('%:p')<CR>
 nmap <LEADER>fr :FZFMru<CR>
 nmap <LEADER>fs :FZFSnippets<CR>
-nmap <LEADER>ft :FZFTags<CR>
+nmap <LEADER>ft :FZFTagsWithDefault<CR>
 
 " Goto File
 nmap <LEADER>gs :wincmd f<CR>
