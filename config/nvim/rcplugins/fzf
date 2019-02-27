@@ -93,25 +93,16 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " http://vimdoc.sourceforge.net/htmldoc/usr_40.html#40.2
 " http://vimdoc.sourceforge.net/htmldoc/map.html#:command-completion
 
-" TODO: generalize this to work for any function
-command! -nargs=* FZFAgWithDefault call FZFAgWithDefault(<f-args>)
+command! -nargs=* FZFAgWithDefault call WordUnderCursorOrDefault('fzf#vim#ag', <f-args>)
+command! -nargs=* FZFTagsWithDefault call WordUnderCursorOrDefault('fzf#vim#tags', <f-args>)
 
-function! FZFAgWithDefault(...)
+function! WordUnderCursorOrDefault(cmd, ...)
+  let Fn = function(a:cmd)
+
   if empty(a:0)
-    call fzf#vim#ag(expand('<cword>'))
+    call Fn(expand('<cword>'))
   else
-    call fzf#vim#ag(join(a:000))
-  endif
-endfunction
-
-
-command! -nargs=* FZFTagsWithDefault call FZFTagsWithDefault(<f-args>)
-
-function! FZFTagsWithDefault(...)
-  if empty(a:0)
-    call fzf#vim#tags(expand('<cword>'))
-  else
-    call fzf#vim#tags(join(a:000))
+    call Fn(join(a:000))
   endif
 endfunction
 
