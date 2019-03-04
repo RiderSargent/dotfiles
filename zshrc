@@ -52,8 +52,45 @@ export ENABLE_BOOTSNAP=true
 source "$HOME/.dotfiles/zsh/functions"
 
 source_if_exists "$HOME/.dotfiles/zsh/aliases"
-source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+# source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+
 source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
+
+
+# --- Spaceship Prompt ---------------------------------------------------------
+# More info:
+# https://denysdovhan.com/spaceship-prompt/docs/Options.html#vi-mode-vi_mode
+source_if_exists "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
+
+export SPACESHIP_PROMPT_ORDER=(
+    time          # Time stampts section
+    host          # Hostname section
+    user          # Username section
+    dir           # Current directory section
+    git           # Git section (git_branch + git_status)
+    # package       # Package version
+    # node          # Node.js section
+    # elm           # Elm section
+    elixir        # Elixir section
+    # xcode         # Xcode section
+    # swift         # Swift section
+    # rust          # Rust section
+    # docker        # Docker section
+    pyenv         # Pyenv section
+    exec_time     # Execution time
+    line_sep      # Line break
+    # battery       # Battery level and status
+    # vi_mode       # Vi-mode indicator
+    jobs          # Background jobs indicator
+    exit_code     # Exit code section
+    char          # Prompt character
+  )
+export SPACESHIP_RPROMPT_ORDER=(ruby)
+
+export SPACESHIP_CHAR_SYMBOL="❯ "
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_TIME_FORMAT="%T"
+export SPACESHIP_RUBY_SYMBOL=""
 
 
 # --- FZF ----------------------------------------------------------------------
