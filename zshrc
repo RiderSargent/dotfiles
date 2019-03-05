@@ -90,7 +90,9 @@ export SPACESHIP_RPROMPT_ORDER=(ruby)
 export SPACESHIP_CHAR_SYMBOL="❯ "
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_TIME_FORMAT="%T"
+export SPACESHIP_TIME_COLOR="blue"
 export SPACESHIP_RUBY_SYMBOL=""
+export SPACESHIP_RUBY_COLOR="blue"
 
 
 # --- FZF ----------------------------------------------------------------------
