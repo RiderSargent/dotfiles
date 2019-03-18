@@ -69,8 +69,7 @@ colorscheme nord
 " highlight Normal guibg=NONE
 
 highlight VertSplit guifg=#636D83 guibg=NONE
-" highlight Visual gui=reverse
-highlight Search guibg=#3b4252 guifg=none
+highlight Search guifg=#3B4252 guibg=#88C0D0
 highlight Comment gui=italic
 
 
