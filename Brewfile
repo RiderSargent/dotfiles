@@ -66,7 +66,7 @@ brew "nnn"
 brew "node"
 brew "postgresql", restart_service: true
 brew "python@2"
-brew "rabbitmq", restart_service: true, link: false
+brew "rabbitmq", restart_service: true
 brew "reattach-to-user-namespace"
 brew "redis"
 brew "ripgrep"
@@ -81,6 +81,7 @@ brew "joshuaclayton/formulae/unused"
 cask "alfred"
 cask "anki"
 cask "appcleaner"
+cask "atom"
 cask "brave-browser"
 cask "chromedriver"
 cask "cyberduck"
