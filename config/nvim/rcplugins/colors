@@ -1,8 +1,8 @@
 " vim:ft=vim
 
-" Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 " Plug 'iCyMind/NeoSolarized'
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'croaky/vim-colors-github'
 " Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'

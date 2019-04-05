@@ -5,12 +5,9 @@ Plug 'itchyny/lightline.vim'
 " Colorschemes:
 " https://github.com/itchyny/lightline.vim/tree/master/autoload/lightline/colorscheme
 
-let g:rws_lightline_colorscheme = 'nord'
-
-
 " Config
 let g:lightline = {
-      \ 'colorscheme': rws_lightline_colorscheme,
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left':  [ [ 'mode', 'paste' ],
       \              [ 'fugitive', 'filename' ] ],
