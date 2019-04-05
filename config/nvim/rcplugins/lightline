@@ -7,7 +7,7 @@ Plug 'itchyny/lightline.vim'
 
 " Config
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'iceberg',
       \ 'active': {
       \   'left':  [ [ 'mode', 'paste' ],
       \              [ 'fugitive', 'filename' ] ],
