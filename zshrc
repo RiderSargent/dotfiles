@@ -50,11 +50,11 @@ export PATH="$HOME/bin:$PATH"
 export ENABLE_BOOTSNAP=true
 
 source "$HOME/.dotfiles/zsh/functions"
-
 source_if_exists "$HOME/.dotfiles/zsh/aliases"
-# source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
-
 source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
+
+
+# source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
 
 # --- Spaceship Prompt ---------------------------------------------------------
@@ -94,6 +94,8 @@ export SPACESHIP_TIME_COLOR="blue"
 export SPACESHIP_RUBY_SYMBOL=""
 export SPACESHIP_RUBY_COLOR="red"
 
+export ZSH_THEME="spaceship"
+
 
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
@@ -116,13 +118,11 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 
-source_if_exists "$HOME/.dotfiles/zsh/babylon.zsh"
-
 source_if_exists "/Users/rider.sargent/code/dan2552/gathering-of-scripts/source-gathering-zsh"
-
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
+
 
 # brewfile wrapping of brew command
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
