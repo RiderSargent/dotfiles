@@ -1,16 +1,16 @@
 " vim:ft=vim
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/deoplete-rct',      { 'for': 'ruby' }
-  Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
-  Plug 'Shougo/neco-vim',          { 'for': ['vim', 'nvim'] }
-  Plug 'awetzel/elixir.nvim',      { 'for': 'elixir' }
-  Plug 'carlitux/deoplete-ternjs', { 'for': 'js' }
-  Plug 'pbogut/deoplete-elm',      { 'for': 'elm' }
-  Plug 'zchee/deoplete-zsh',       { 'for': 'zsh' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"   Plug 'Shougo/deoplete-rct',      { 'for': 'ruby' }
+"   Plug 'fishbullet/deoplete-ruby', { 'for': 'ruby' }
+"   Plug 'Shougo/neco-vim',          { 'for': ['vim', 'nvim'] }
+"   Plug 'awetzel/elixir.nvim',      { 'for': 'elixir' }
+"   Plug 'carlitux/deoplete-ternjs', { 'for': 'js' }
+"   Plug 'pbogut/deoplete-elm',      { 'for': 'elm' }
+"   Plug 'zchee/deoplete-zsh',       { 'for': 'zsh' }
 
 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 
 " inoremap <silent><expr> <TAB>
