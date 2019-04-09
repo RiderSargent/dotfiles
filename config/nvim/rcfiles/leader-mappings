@@ -75,6 +75,7 @@ nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
 nmap <LEADER>tb <Plug>BlockToggle
 nmap <LEADER>tt :TagbarToggle<CR>
+nmap <LEADER>tq cs"'
 
 " vimrc
 nmap <LEADER>vr :so $MYVIMRC<CR>
