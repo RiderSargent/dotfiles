@@ -11,7 +11,7 @@ alias burp='brew update && brew upgrade'
 alias c='clear'
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags_all="ctags -R *"
-alias ctags_ruby="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)"
+alias ctags_ruby="__rws__ctags_ruby"
 alias db_migrate='__rws__db_migrate'
 alias db_reset='__rws__db_reset'
 alias dots='cd ~/.dotfiles'
@@ -65,4 +65,5 @@ alias v='vim'
 alias vim_sessions='ls -al ~/.vim/sessions'
 alias weather='curl wttr.in'
 
-unalias rg
+# if rg is aliased, unalias it.
+(( ${+aliases[rg]} )) && unalias rg

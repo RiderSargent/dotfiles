@@ -309,3 +309,8 @@ __rws__db_reset() {
     fi
   fi
 }
+
+# Run ctags for all Ruby files in a project (including gems)
+__rws__ctags_ruby() {
+  ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
+}
