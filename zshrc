@@ -19,48 +19,17 @@ export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
 
-
-# ------------------------------------------------------------------------------
-# Save timestamps and duration for each history entry
-setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY
-unsetopt HISTIGNOREDUPS
-
-# Use Emacs keymaps
-bindkey -e
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-
-# --- Tmux ---------------------------------------------------------------------
-# needed to keep oh-my-zsh from overwriting named windows
-export DISABLE_AUTO_TITLE="true"
-
-
-# --- Misc ---------------------------------------------------------------------
-# export MY_INITIALS="RS"
-export EDITOR='nvim'
-export NVM_DIR="$HOME/.nvm"
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-
-export ENABLE_BOOTSNAP=true
-
 source "$HOME/.dotfiles/zsh/functions"
-source_if_exists "$HOME/.dotfiles/zsh/aliases"
+source_if_exists "$HOME/.dotfiles/zsh/aliases.zsh"
 source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
-
-
 # source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 
 
 # --- Spaceship Prompt ---------------------------------------------------------
 # More info:
 # https://denysdovhan.com/spaceship-prompt/docs/Options.html#vi-mode-vi_mode
-source_if_exists "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
+# source_if_exists "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
+source_if_exists "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
 
 export SPACESHIP_PROMPT_ORDER=(
     time          # Time stampts section
@@ -97,6 +66,40 @@ export SPACESHIP_RUBY_COLOR="red"
 export ZSH_THEME="spaceship"
 
 
+# --- Z ------------------------------------------------------------------------
+source_if_exists "/usr/local/etc/profile.d/z.sh"
+
+
+# ------------------------------------------------------------------------------
+# Save timestamps and duration for each history entry
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+unsetopt HISTIGNOREDUPS
+
+# Use Emacs keymaps
+bindkey -e
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+
+# --- Tmux ---------------------------------------------------------------------
+# needed to keep oh-my-zsh from overwriting named windows
+export DISABLE_AUTO_TITLE="true"
+
+
+# --- Misc ---------------------------------------------------------------------
+# export MY_INITIALS="RS"
+export EDITOR='nvim'
+export NVM_DIR="$HOME/.nvm"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+export ENABLE_BOOTSNAP=true
+
+
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
@@ -114,7 +117,6 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 
 
 # --- EXA ----------------------------------------------------------------------
-# export EXA_COLORS="uu=0;33:gu=0;33:da=0;36"
 export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 
@@ -128,4 +130,3 @@ source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
-
