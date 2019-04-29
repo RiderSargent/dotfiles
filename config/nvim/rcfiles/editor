@@ -41,17 +41,17 @@ nnoremap gV `[v`]
 
 " Stay in visual mode when indenting. You will never have to run gv after
 " performing an indentation.
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Emacs/Readline-like line nav
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
 " %% for current buffer path and filename (relative)
-cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
+" cnoremap %% <C-R>=fnameescape(expand('%'))<CR>
 " :: for current buffer directory (relative)
-cnoremap :: <C-R>=fnameescape(expand('%:h'))<CR>
+" cnoremap :: <C-R>=fnameescape(expand('%:h'))<CR>
 
 " Tab navigation
 nnoremap [t :tprevious<CR>
