@@ -1696,7 +1696,7 @@
 	<key>HideActivityIndicator</key>
 	<true/>
 	<key>HideMenuBarInFullscreen</key>
-	<false/>
+	<true/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTab</key>
@@ -1761,9 +1761,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 498 620 392 0 0 2560 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>882 325 796 486 0 0 2560 1057 </string>
+	<string>882 490 770 429 0 0 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>426 181 970 876 0 0 2560 1057 </string>
+	<string>0 0 1274 1057 0 0 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>601 133 970 876 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -6565,7 +6565,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>098E55C4-A37F-49ED-A0E9-6B8E9DC51420</string>
 	<key>NoSyncLastTipTime</key>
-	<real>576404380.69929099</real>
+	<real>577873529.86595798</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -6625,6 +6625,17 @@
 		<string>0049</string>
 		<string>0050</string>
 		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -6680,7 +6691,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-08T08:19:40Z</date>
+	<date>2019-04-25T08:25:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -6702,7 +6713,7 @@
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>4</integer>
 	<key>TabViewType</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
@@ -6714,7 +6725,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.8</string>
+	<string>3.2.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
