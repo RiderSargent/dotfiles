@@ -34,6 +34,7 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gss='git stash save -u'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias install_ruby='ruby-install ruby-$(cat .ruby-version)'
 alias l="exa --long --all --header --git --sort=name --group-directories-first --time-style=long-iso"
 alias log="n ~/Dropbox/Notes/Sohohouse/log.md"
 alias lt="exa --tree --level=2 --long --all --header --git --git-ignore"
