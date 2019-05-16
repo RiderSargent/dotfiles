@@ -120,7 +120,7 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 
-source_if_exists "/Users/rider.sargent/code/dan2552/gathering-of-scripts/source-gathering-zsh"
+source_if_exists "$HOME/code/dan2552/gathering-of-scripts/source-gathering-zsh"
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
@@ -133,10 +133,4 @@ fi
 
 
 # --- Soho House Stuff ---------------------------------------------------------
-# TODO: move this out into Soho House stuff
-export PATH="$HOME/code/sohohouse/scripts/labs/dan2552:$PATH"
-
-# from Dan - TODO: move this out into Soho House stuff
-export IDENTITY_CLIENT_ID=c5b656450b07b5cb9540b5b9de133c76249f71b737ec100d1989047568cbc7be
-export IDENTITY_CLIENT_SECRET=ea17035c3ed73d551b6322db7c3336e4433cba8f281ad5f88be50c103d681234
-
+source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
