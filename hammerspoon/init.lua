@@ -6,7 +6,7 @@ hyperkey = {"cmd", "alt", "ctrl", "shift"}
 hs.window.animationDuration = 0
 
 hs.grid.setGrid('12x12') -- allows us to place on quarters, thirds and halves
-hs.grid.setMargins({0,0})
+hs.grid.setMargins({10,10})
 
 local chain = nil
 local lastSeenChain = nil
