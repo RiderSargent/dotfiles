@@ -1,0 +1,233 @@
+#!/usr/bin/env ruby
+
+# TODO: This should be removed once you actually commit to hedgehog, Rider
+system 'clear'
+
+prompt do
+  [
+    "\n",
+    cwd.magenta,
+    PromptHelper.git_branch,
+    " > ".gray
+  ].join
+end
+
+# TODO: implement reload
+
+# - Aliases ------------------------------------------------------------------ #
+
+# TODO: Aliases from zsh
+#         - ..
+#         - ...
+# TODO: Paths from zsh
+
+function 'b' do |args|
+  run("branch #{args}")
+end
+
+function 'burp' do
+  run('brew update && brew upgrade')
+end
+
+function 'c' do
+  run('clear')
+end
+
+function 'code' do
+  run('cd ~/code')
+end
+
+function 'dots' do
+  run('cd ~/.dotfiles')
+end
+
+function 'e' do
+  run('exit')
+end
+
+function 'f' do
+  run(%Q{fzf --preview 'bat --color "always" {}'})
+end
+
+function 'gc' do |args|
+  run("git commit #{args}")
+end
+
+function 'gcan' do
+  run('git commit --amend --no-edit')
+end
+
+function 'gd' do
+  run('git diff')
+end
+
+function 'glp' do |args|
+  format="$hash}$relative_time}$author}$refs $subject"
+  cmd = <<~CMD
+  git log --graph --pretty="tformat:%h}%cr}%ad}%d %s" -20 |
+    # Replace '2 years ago' with (2 years)
+    sed -Ee 's/(^[^<]*) ago/\1/' |
+    # Replace '2 years, 5 months' with (2 years)
+    sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?/\1/' |
+    # Line columns up based on } delimiter
+    column -s '}' -t |
+    # Page only if we need to
+    less -F -X -S -E -R
+  CMD
+  run('git log --graph --pretty="tformat:%h}%cr}%ad}%d %s" -20')
+end
+
+function 'gs' do
+  run('git status -sb')
+end
+
+function 'p' do |args|
+  function('cd').call("~/code/sohohouse/#{args.first}")
+  run('branch')
+  puts ''
+  puts `which ruby`.chomp.split('/').find { |part| part.start_with?('ruby') }
+end
+
+function 'install_ruby' do |args|
+  run('ruby-install ruby-$(cat .ruby-version')
+end
+
+function 'l' do |args|
+  # requires exa
+  run("exa --long --all --header --git --sort=name --group-directories-first --time-style=long-iso #{args}")
+end
+
+function 'log' do
+  run("#{ENV['EDITOR']} ~/Dropbox/Notes/Sohohouse/log.md")
+end
+
+function 'n' do |args|
+  run("nvim #{args}")
+end
+
+function 'weather' do
+  run('curl wttr.in')
+end
+
+
+# - "Functions" -------------------------------------------------------------- #
+
+def home_dir
+  File.expand_path('~')
+end
+
+def cwd
+  Dir.pwd.sub(home_dir, '~')
+end
+
+def migrate!
+  `bundle check >/dev/null 2>&1 || bundle`
+  return puts "FAILED" unless $?.exitstatus == 0
+  puts "Dropping..."
+  `bundle exec rake db:environment:set >/dev/null 2>/dev/null`
+  `bundle exec rake db:drop >/dev/null 2>/dev/null`
+  return puts "FAILED" unless $?.exitstatus == 0
+  puts "Creating..."
+  `bundle exec rake db:create >/dev/null 2>/dev/null`
+  return puts "FAILED" unless $?.exitstatus == 0
+  puts "Migrating..."
+  `bundle exec rake db:migrate >/dev/null 2>/dev/null`
+  return puts "FAILED" unless $?.exitstatus == 0
+  puts "Preparing tests..."
+  `bundle exec rake db:test:prepare >/dev/null 2>/dev/null`
+  return puts "FAILED" unless $?.exitstatus == 0
+  puts "Done!"
+
+  "💃"
+end
+
+def path
+  puts ENV['PATH'].split(':')
+end
+
+# Customize Ruby objects
+class String
+  def black;          "\e[30m#{self}\e[0m" end
+  def red;            "\e[31m#{self}\e[0m" end
+  def green;          "\e[32m#{self}\e[0m" end
+  def brown;          "\e[33m#{self}\e[0m" end
+  def yellow;         "\e[33m#{self}\e[0m" end
+  def blue;           "\e[34m#{self}\e[0m" end
+  def magenta;        "\e[35m#{self}\e[0m" end
+  def cyan;           "\e[36m#{self}\e[0m" end
+  def gray;           "\e[37m#{self}\e[0m" end
+
+  def bg_black;       "\e[40m#{self}\e[0m" end
+  def bg_red;         "\e[41m#{self}\e[0m" end
+  def bg_green;       "\e[42m#{self}\e[0m" end
+  def bg_brown;       "\e[43m#{self}\e[0m" end
+  def bg_blue;        "\e[44m#{self}\e[0m" end
+  def bg_magenta;     "\e[45m#{self}\e[0m" end
+  def bg_cyan;        "\e[46m#{self}\e[0m" end
+  def bg_gray;        "\e[47m#{self}\e[0m" end
+
+  def bold;           "\e[1m#{self}\e[22m" end
+  def italic;         "\e[3m#{self}\e[23m" end
+  def underline;      "\e[4m#{self}\e[24m" end
+  def blink;          "\e[5m#{self}\e[25m" end
+  def reverse_color;  "\e[7m#{self}\e[27m" end
+end
+
+class ClipboardProxy < String
+  def underscore!
+    copy_to_clipboard(underscore)
+  end
+
+  def markdown_quote
+    split("\n")
+      .map { |line| "> #{line}" }
+      .join("\n")
+  end
+
+  def markdown_quote!
+    copy_to_clipboard(markdown_quote)
+  end
+
+  def markdown_code
+    "```\n#{self}\n```"
+  end
+
+  def markdown_code!
+    copy_to_clipboard(markdown_code)
+  end
+
+  def run
+    Hedgehog::DSL.run self
+  end
+
+  private
+
+  def copy_to_clipboard(new_value)
+    IO.popen('pbcopy', 'w') { |f| f << new_value }
+    puts 'Copied to clipboard!'
+    ClipboardProxy.new(new_value)
+  end
+end
+
+def clipboard
+  ClipboardProxy.new(`pbpaste`.chomp)
+end
+
+class PromptHelper
+  def self.git_branch
+    branch = `git branch 2>/dev/null | sed -n '/\* /s///p'`.chomp.strip
+    if branch.present?
+      [
+        ' ('.gray,
+        git_branch_dirty? ? "#{branch}".red : "#{branch}".green,
+        ')'.gray
+      ].join
+    end
+  end
+
+  def self.git_branch_dirty?
+    `git status --porcelain -b | grep -v '^##' &> /dev/null`
+    $?.exitstatus == 0
+  end
+end
+
