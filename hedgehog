@@ -7,7 +7,7 @@ prompt do
   [
     "\n",
     cwd.magenta,
-    PromptHelper.git_branch,
+    PromptHelper::git_branch,
     " > ".gray
   ].join
 end
@@ -47,6 +47,10 @@ end
 
 function 'f' do
   run(%Q{fzf --preview 'bat --color "always" {}'})
+end
+
+function 'gaa' do
+  run('git add --all')
 end
 
 function 'gc' do |args|
@@ -213,8 +217,10 @@ def clipboard
   ClipboardProxy.new(`pbpaste`.chomp)
 end
 
-class PromptHelper
-  def self.git_branch
+module PromptHelper
+  module_function
+
+  def git_branch
     branch = `git branch 2>/dev/null | sed -n '/\* /s///p'`.chomp.strip
     if branch.present?
       [
@@ -225,7 +231,7 @@ class PromptHelper
     end
   end
 
-  def self.git_branch_dirty?
+  def git_branch_dirty?
     `git status --porcelain -b | grep -v '^##' &> /dev/null`
     $?.exitstatus == 0
   end
