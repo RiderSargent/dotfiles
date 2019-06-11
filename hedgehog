@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-# TODO: This should be removed once you actually commit to hedgehog, Rider
-system 'clear'
-
 prompt do
   [
     "\n",

@@ -134,3 +134,5 @@ fi
 
 # --- Soho House Stuff ---------------------------------------------------------
 source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
+
+hh
