@@ -34,6 +34,7 @@ alias gs='git status -sb'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gss='git stash save -u'
+alias hh='~/code/dan2552/Hedgehog/bin/chruby_hedgehog'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias install_ruby='ruby-install ruby-$(cat .ruby-version)'
 alias l="exa --long --all --header --git --sort=name --group-directories-first --time-style=long-iso"
