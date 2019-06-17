@@ -36,7 +36,6 @@ export SPACESHIP_PROMPT_ORDER=(
     host          # Hostname section
     user          # Username section
     dir           # Current directory section
-    git           # Git section (git_branch + git_status)
     # package       # Package version
     # node          # Node.js section
     # elm           # Elm section
@@ -45,23 +44,23 @@ export SPACESHIP_PROMPT_ORDER=(
     # swift         # Swift section
     # rust          # Rust section
     # docker        # Docker section
+    ruby
     pyenv         # Pyenv section
+    git           # Git section (git_branch + git_status)
     exec_time     # Execution time
     line_sep      # Line break
-    # battery       # Battery level and status
+    battery       # Battery level and status
     # vi_mode       # Vi-mode indicator
     jobs          # Background jobs indicator
     exit_code     # Exit code section
     char          # Prompt character
   )
-export SPACESHIP_RPROMPT_ORDER=(ruby)
 
 export SPACESHIP_CHAR_SYMBOL="❯ "
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_TIME_FORMAT="%T"
 export SPACESHIP_TIME_COLOR="blue"
 export SPACESHIP_RUBY_SYMBOL=""
-export SPACESHIP_RUBY_COLOR="red"
 
 export ZSH_THEME="spaceship"
 
