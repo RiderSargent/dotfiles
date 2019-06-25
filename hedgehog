@@ -111,6 +111,36 @@ function 'weather' do
 end
 
 
+if File.exists?(".ruby-version")
+  run "chruby #{`cat .ruby-version`.chomp}"
+end
+
+function "chruby" do |args|
+  output = `bash -lc "source /usr/local/share/chruby/chruby.sh; chruby #{args}; echo "§chruby-environment§"; ENV"`
+  out, env_str = output.split("§chruby-environment§\n")
+
+  print out
+
+  break unless args.count > 0
+
+  env_vars = env_str.split("\n").map { |env| env.split("=") }
+
+  env_vars.each do |env_var|
+    variable, value = env_var
+    next unless ["PATH", "RUBY_ROOT", "GEM_HOME", "GEM_ROOT", "GEM_PATH"].include? variable
+    ENV[variable] = value
+  end
+end
+
+original_cd = function "cd"
+function "cd" do |args|
+  original_cd.call(args)
+  if File.exists?(".ruby-version")
+    run "chruby #{`cat .ruby-version`.chomp}"
+  end
+end
+
+
 # - "Functions" -------------------------------------------------------------- #
 
 def home_dir
