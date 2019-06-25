@@ -289,10 +289,10 @@ __md__gurl() {
 }
 
 
-# Make sure everything is bundled and run rspec with documentation formatting.
+# Make sure everything is bundled before running rspec
 __rws__rspec() {
   bundle check || bundle || return 1
-  bundle exec rspec --format documentation $argv
+  bundle exec rspec
 }
 
 # Migrate both dev and test dbs
