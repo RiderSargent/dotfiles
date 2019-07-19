@@ -62,6 +62,7 @@ alias tl='tmux ls'
 alias tmux256="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
 alias v='vim'
+alias vcr='VCR_RECORD=new_episodes rspec'
 alias vim_sessions='ls -al ~/.vim/sessions'
 alias weather='curl wttr.in'
 
