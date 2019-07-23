@@ -448,6 +448,9 @@
                 }
             ],
             "name": "UK Laptop",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": false,
             "simple_modifications": [
                 {
@@ -768,6 +771,9 @@
                 }
             ],
             "name": "US Laptop",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": false,
             "simple_modifications": [
                 {
@@ -929,6 +935,9 @@
                 }
             ],
             "name": "Base",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
@@ -1173,6 +1182,9 @@
                 }
             ],
             "name": "CTRL Keyboard",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
