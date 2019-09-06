@@ -18,7 +18,7 @@ alias db_reset='__rws__db_reset'
 alias dots='cd ~/.dotfiles'
 alias e='exit'
 alias ed='exercism download'
-alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases'
+alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases.zsh'
 alias es='exercism submit'
 alias f="fzf --preview 'bat --color \"always\" {}'"
 alias gc='git commit'
@@ -38,6 +38,7 @@ alias hh='~/code/dan2552/Hedgehog/bin/chruby_hedgehog'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias install_ruby='ruby-install ruby-$(cat .ruby-version)'
 alias l="exa --long --all --header --git --sort=name --group-directories-first --time-style=long-iso"
+alias lm="exa --long --all --header --git --sort=modified --reverse --time-style=long-iso"
 alias log="n ~/Dropbox/Notes/Sohohouse/log.md"
 alias lt="exa --tree --level=2 --long --all --header --git --git-ignore"
 alias mss='mysql.server start'
