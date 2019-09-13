@@ -52,7 +52,6 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias rebm='git rebase master'
 alias reload="exec $SHELL -l"
 alias rspec='__rws__rspec'
-alias soho='cd ~/code/sohohouse'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases.zsh'
@@ -69,3 +68,10 @@ alias weather='curl wttr.in'
 
 # if rg is aliased, unalias it.
 (( ${+aliases[rg]} )) && unalias rg
+
+# Soho House stuff
+alias pen='cd ~/code/sohohouse/payments_engine'
+alias pig='cd ~/code/sohohouse/payments-integration-gateway'
+alias pis='cd ~/code/sohohouse/payments-integration-service'
+alias pro='cd ~/code/sohohouse/profile-service'
+alias soho='cd ~/code/sohohouse'
