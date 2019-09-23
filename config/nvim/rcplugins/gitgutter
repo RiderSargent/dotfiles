@@ -8,12 +8,17 @@ let g:gitgutter_map_keys = 0
 "  Don't change column color
 let g:gitgutter_override_sign_column_highlight = 0
 
-" GitGutter styling to use · instead of +/-
-let g:gitgutter_sign_added = '•'
-let g:gitgutter_sign_modified = '•'
+" Custom chars
+let g:gitgutter_sign_added = '┃'            "U+2503
+let g:gitgutter_sign_modified = '┃'         "U+2503
 let g:gitgutter_sign_removed = '_'
-let g:gitgutter_sign_modified_removed = '•'
+let g:gitgutter_sign_modified_removed = '┃' "U+2503
 
+" |
+" │ U+2502
+" ┃ U+2503
+" ─ U+2500
+" ━ U+2501
 " Δ
 " •
 " ⬤
