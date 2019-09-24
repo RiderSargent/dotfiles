@@ -3,7 +3,11 @@
 Plug 'kassio/neoterm'
 
 " <Esc> to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
+" This version won't break Fzf panes closing with Esc:
+" (from: https://github.com/junegunn/fzf.vim/issues/544#issuecomment-457456166)
+autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+autocmd FileType fzf tunmap <buffer> <Esc>
 
 " This leaves us without ability to send <Esc> to term processes, so:
 tnoremap <A-[> <Esc>
