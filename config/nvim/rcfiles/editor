@@ -155,6 +155,8 @@ function! s:VSetSearch()
   let @@ = temp
 endfunction
 
+" Format JSON (from: https://coderwall.com/p/faceag/format-json-in-vim)
+command! FormatJSON %!python -m json.tool
 
 " ---------------------------------------------------------------------------- "
 "  From Gary Bernhardt's .vimrc file
