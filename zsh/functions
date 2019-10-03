@@ -320,3 +320,13 @@ __rws__db_reset() {
 __rws__ctags_ruby() {
   ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
 }
+
+# Blatently stolen from tjmcewan's (https://gist.github.com/tjmcewan) comment here:
+# https://gist.github.com/phette23/5270658
+__rws__set_tab_name() {
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
+__rws__fuzzy_open() {
+  $EDITOR $(f)
+}

@@ -21,6 +21,7 @@ alias ed='exercism download'
 alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases.zsh'
 alias es='exercism submit'
 alias f="fzf --preview 'bat --color \"always\" {}'"
+alias fo="__rws__fuzzy_open"
 alias gc='git commit'
 alias gcan='git commit --amend --no-edit'
 alias gcm='git commit -m'
@@ -61,6 +62,7 @@ alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 alias tmux256="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
+alias tt="__rws__set_tab_name"
 alias v='vim'
 alias vcr='VCR_RECORD=new_episodes rspec'
 alias vim_sessions='ls -al ~/.vim/sessions'
