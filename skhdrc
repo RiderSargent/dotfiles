@@ -207,11 +207,17 @@ ctrl + cmd - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::moni
 ctrl + cmd - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 ctrl + cmd - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
 
-# increase region size
-shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+# # increase region size
+# shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+# shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+# shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+# shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+
+# move separators in specified direction instead of making the regions explicitly larger/smaller
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
 
 # decrease region size
 shift + cmd - a : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
