@@ -109,13 +109,13 @@
 cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # open qutebrowser
-cmd + shift - return : ~/Scripts/qtb.sh
+# cmd + shift - return : ~/Scripts/qtb.sh
 
 # open mpv
-cmd - m : open -na /Applications/mpv.app $(pbpaste)
+# cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 # close focused window
-alt - w : chunkc tiling::window --close
+# alt - w : chunkc tiling::window --close
 
 # focus window
 alt - h : chunkc tiling::window --focus west
@@ -123,8 +123,8 @@ alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
-cmd - j : chunkc tiling::window --focus prev
-cmd - k : chunkc tiling::window --focus next
+# cmd - j : chunkc tiling::window --focus prev
+# cmd - k : chunkc tiling::window --focus next
 
 # equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
@@ -161,7 +161,7 @@ cmd + alt - n : chunkc tiling::desktop --create;\
                 id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
                 chunkc tiling::desktop --focus $(echo ${id##* })
 # destroy desktop
-cmd + alt - w : chunkc tiling::desktop --annihilate
+# cmd + alt - w : chunkc tiling::desktop --annihilate
 
 # fast focus desktop
 cmd + alt - x : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
