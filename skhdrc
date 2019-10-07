@@ -241,8 +241,8 @@ alt - y : chunkc tiling::desktop --mirror vertical
 # mirror tree x-axis
 alt - x : chunkc tiling::desktop --mirror horizontal
 
-# toggle desktop offset
-alt - a : chunkc tiling::desktop --toggle offset
+# toggle desktop offset (margins)
+alt - b : chunkc tiling::desktop --toggle offset
 
 # toggle window fullscreen
 alt - f : chunkc tiling::window --toggle fullscreen
