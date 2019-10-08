@@ -2029,7 +2029,7 @@
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
-	<true/>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -2217,7 +2217,7 @@ Copy Mode</string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>3 540 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2465 124 1828 1227 1680 0 3440 1417 </string>
+	<string>2838 25 1122 1368 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>601 133 970 876 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -2433,12 +2433,14 @@ Copy Mode</string>
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.050000000000000003</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>14.328295526649745</real>
+			<real>7.4858958597715723</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2457,7 +2459,7 @@ Copy Mode</string>
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>120</integer>
+			<integer>150</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -2555,7 +2557,7 @@ Copy Mode</string>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Use Transparency</key>
-			<false/>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -2868,7 +2870,7 @@ Copy Mode</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>CascadiaCode-Regular 16</string>
+			<string>FiraCode-Retina 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -2963,13 +2965,13 @@ Copy Mode</string>
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.62999999523162842</real>
+									<real>0.63</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.62999999523162842</real>
+									<real>0.63</real>
 									<key>Red Component</key>
-									<real>0.89999997615814209</real>
+									<real>0.90000000000000002</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
@@ -3098,6 +3100,48 @@ Copy Mode</string>
 							</dict>
 						</dict>
 					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarSpringComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>base: compression resistance</key>
+								<integer>1</integer>
+								<key>base: priority</key>
+								<real>5</real>
+								<key>iTermStatusBarSpringComponentSizeMultipleKey</key>
+								<integer>1</integer>
+								<key>iTermStatusBarSpringComponentSpringConstantKey</key>
+								<real>0.01</real>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>class</key>
+						<string>iTermStatusBarSearchFieldComponent</string>
+						<key>configuration</key>
+						<dict>
+							<key>knobs</key>
+							<dict>
+								<key>base: compression resistance</key>
+								<integer>1</integer>
+								<key>base: priority</key>
+								<real>5</real>
+							</dict>
+							<key>layout advanced configuration dictionary value</key>
+							<dict>
+								<key>algorithm</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+					</dict>
 				</array>
 			</dict>
 			<key>Sync Title</key>
@@ -3109,7 +3153,7 @@ Copy Mode</string>
 			<key>Thin Strokes</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.1585065038071066</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -7205,6 +7249,7 @@ Copy Mode</string>
 	<array>
 		<string>3.3.2</string>
 		<string>3.2.9</string>
+		<string>3.3.5</string>
 		<string>3.3.4</string>
 		<string>3.3.0</string>
 		<string>3.3.3</string>
@@ -7229,9 +7274,9 @@ Copy Mode</string>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{1680, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{445, 684}</string>
+		<string>{2199, 903}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -7246,7 +7291,7 @@ Copy Mode</string>
 	<key>NoSyncLastTipTime</key>
 	<real>589277715.87967002</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>49</integer>
+	<integer>54</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586481119.19731903</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -7764,6 +7809,22 @@ Copy Mode</string>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
@@ -7961,6 +8022,8 @@ Copy Mode</string>
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>expected</string>
+		<string>CONFLICT</string>
 		<string>RWS</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -8050,6 +8113,8 @@ Copy Mode</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>PerPaneBackgroundImage</key>
+	<false/>
 	<key>PerformDNSLookups</key>
 	<false/>
 	<key>PointerActions</key>
@@ -8104,7 +8169,7 @@ Copy Mode</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-02T15:23:25Z</date>
+	<date>2019-10-07T08:12:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -8126,13 +8191,13 @@ Copy Mode</string>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>1</integer>
+	<integer>5</integer>
 	<key>TabViewType</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TabsHaveCloseButton</key>
 	<false/>
 	<key>UseBorder</key>
@@ -8148,7 +8213,7 @@ Copy Mode</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.4</string>
+	<string>3.3.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
