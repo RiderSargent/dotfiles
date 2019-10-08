@@ -129,7 +129,14 @@ alt - l : chunkc tiling::window --focus east
 # equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
 
+# save desktop layout
+# ctrl + cmd - w : chunkc tiling::desktop --serialize ~/.dotfiles/chunkwm_layouts/dev_1
+
+# load desktop layout
+ctrl + cmd - w : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/dev_1
+
 # load layout
+ctrl + cmd - 1 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/golden_two_col
 ctrl + cmd - 2 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_col
 ctrl + cmd - 3 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/three_col
 
@@ -281,10 +288,4 @@ shift + alt - t : chunkc set window_float_next 1
 ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
-
-# save desktop layout
-# ctrl + cmd - w : chunkc tiling::desktop --serialize ~/.dotfiles/chunkwm_layouts/dev_1
-
-# load desktop layout
-ctrl + cmd - w : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/dev_1
 
