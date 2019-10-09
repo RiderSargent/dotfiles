@@ -115,8 +115,8 @@ chunkc set window_use_cgs_move           0
 
 # chunkc set focused_border_color          0xff0f6288
 chunkc set focused_border_color          0xff6600ff
-chunkc set focused_border_width          6
-chunkc set focused_border_radius         6
+chunkc set focused_border_width          10
+chunkc set focused_border_radius         10
 chunkc set focused_border_outline        1
 chunkc set focused_border_skip_floating  0
 chunkc set focused_border_skip_monocle   1
