@@ -86,47 +86,47 @@ end)
 --------------------------------------------------------------------------------
 
 -- Clear the console
-hs.hotkey.bind(hyperkey, "-", function()
-  hs.console.clearConsole()
-end)
+-- hs.hotkey.bind(hyperkey, "-", function()
+--   hs.console.clearConsole()
+-- end)
 
-hs.hotkey.bind(hyperkey, 'n', (function()
-  hs.toggleConsole()
-end))
+-- hs.hotkey.bind(hyperkey, 'n', (function()
+--   hs.toggleConsole()
+-- end))
 
-hs.hotkey.bind(hyperkey, 's', (function()
-  hs.grid.show()
-end))
+-- hs.hotkey.bind(hyperkey, 's', (function()
+--   hs.grid.show()
+-- end))
 
 -- Show screen and window info
-hs.hotkey.bind(hyperkey, "0", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
+-- hs.hotkey.bind(hyperkey, "0", function()
+--   local focusedWindow = hs.window.focusedWindow()
+--   local focusedWindowFrame = focusedWindow:frame()
+--   local screen = focusedWindow:screen()
+--   local screenFrame = screen:frame()
 
-  local formatString = "\nscreenFrame.x: %8s\n"
-                       .. "screenFrame.y: %8s\n"
-                       .. "screenFrame.w: %8s\n"
-                       .. "screenFrame.h: %8s\n"
-                       .. "\n"
-                       .. "focusedWindowFrame.x: %8s\n"
-                       .. "focusedWindowFrame.y: %8s\n"
-                       .. "focusedWindowFrame.w: %8s\n"
-                       .. "focusedWindowFrame.h: %8s\n"
+--   local formatString = "\nscreenFrame.x: %8s\n"
+--                        .. "screenFrame.y: %8s\n"
+--                        .. "screenFrame.w: %8s\n"
+--                        .. "screenFrame.h: %8s\n"
+--                        .. "\n"
+--                        .. "focusedWindowFrame.x: %8s\n"
+--                        .. "focusedWindowFrame.y: %8s\n"
+--                        .. "focusedWindowFrame.w: %8s\n"
+--                        .. "focusedWindowFrame.h: %8s\n"
 
-  logger.df(
-    formatString,
-    screenFrame.x,
-    screenFrame.y,
-    screenFrame.w,
-    screenFrame.h,
-    focusedWindowFrame.x,
-    focusedWindowFrame.y,
-    focusedWindowFrame.w,
-    focusedWindowFrame.h
-  )
-end)
+--   logger.df(
+--     formatString,
+--     screenFrame.x,
+--     screenFrame.y,
+--     screenFrame.w,
+--     screenFrame.h,
+--     focusedWindowFrame.x,
+--     focusedWindowFrame.y,
+--     focusedWindowFrame.w,
+--     focusedWindowFrame.h
+--   )
+-- end)
 
 -- -- Window to full screen
 -- hs.hotkey.bind(hyperkey, "1", function()
@@ -134,88 +134,88 @@ end)
 -- end)
 
 -- Cycle window between full screen, centered big and centered small
-hs.hotkey.bind(hyperkey, '1', chain({
-  grid.fullScreen,
-  grid.centeredBig,
-  grid.centeredSmall,
-}))
+-- hs.hotkey.bind(hyperkey, '1', chain({
+--   grid.fullScreen,
+--   grid.centeredBig,
+--   grid.centeredSmall,
+-- }))
 
 -- Window to centered 1440 by 900
-hs.hotkey.bind(hyperkey, "2", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
+-- hs.hotkey.bind(hyperkey, "2", function()
+--   local focusedWindow = hs.window.focusedWindow()
+--   local focusedWindowFrame = focusedWindow:frame()
+--   local screen = focusedWindow:screen()
+--   local screenFrame = screen:frame()
 
-  local width = 1440
-  local height = 900
+--   local width = 1440
+--   local height = 900
 
-  focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2 - 720)
-  focusedWindowFrame.y = screenFrame.y + (screenFrame.h / 2 - 488)
-  focusedWindowFrame.w = width
-  focusedWindowFrame.h = height
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+--   focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2 - 720)
+--   focusedWindowFrame.y = screenFrame.y + (screenFrame.h / 2 - 488)
+--   focusedWindowFrame.w = width
+--   focusedWindowFrame.h = height
+--   focusedWindow:setFrame(focusedWindowFrame)
+-- end)
 
 -- Window to centered 1280 by 1024
-hs.hotkey.bind(hyperkey, "4", function()
-  local focusedWindow = hs.window.focusedWindow()
-  local focusedWindowFrame = focusedWindow:frame()
-  local screen = focusedWindow:screen()
-  local screenFrame = screen:frame()
+-- hs.hotkey.bind(hyperkey, "4", function()
+--   local focusedWindow = hs.window.focusedWindow()
+--   local focusedWindowFrame = focusedWindow:frame()
+--   local screen = focusedWindow:screen()
+--   local screenFrame = screen:frame()
 
-  local width = 1280
+--   local width = 1280
 
-  focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2 - 640)
-  focusedWindowFrame.y = screenFrame.y + 10
-  focusedWindowFrame.w = width
-  focusedWindowFrame.h = screenFrame.h - 20
+--   focusedWindowFrame.x = screenFrame.x + (screenFrame.w / 2 - 640)
+--   focusedWindowFrame.y = screenFrame.y + 10
+--   focusedWindowFrame.w = width
+--   focusedWindowFrame.h = screenFrame.h - 20
 
-  focusedWindow:setFrame(focusedWindowFrame)
-end)
+--   focusedWindow:setFrame(focusedWindowFrame)
+-- end)
 
 -- Center Window
-hs.hotkey.bind(hyperkey, "space", function()
-  hs.window.focusedWindow():centerOnScreen()
-end)
+-- hs.hotkey.bind(hyperkey, "space", function()
+--   hs.window.focusedWindow():centerOnScreen()
+-- end)
 
 
-hs.hotkey.bind(hyperkey, 'k', chain({
-  grid.topHalf,
-  grid.topThird,
-  grid.topTwoThirds,
-}))
+-- hs.hotkey.bind(hyperkey, 'k', chain({
+--   grid.topHalf,
+--   grid.topThird,
+--   grid.topTwoThirds,
+-- }))
 
-hs.hotkey.bind(hyperkey, 'l', chain({
-  grid.rightHalf,
-  grid.rightThird,
-  grid.rightTwoThirds,
-}))
+-- hs.hotkey.bind(hyperkey, 'l', chain({
+--   grid.rightHalf,
+--   grid.rightThird,
+--   grid.rightTwoThirds,
+-- }))
 
-hs.hotkey.bind(hyperkey, 'j', chain({
-  grid.bottomHalf,
-  grid.bottomThird,
-  grid.bottomTwoThirds,
-}))
+-- hs.hotkey.bind(hyperkey, 'j', chain({
+--   grid.bottomHalf,
+--   grid.bottomThird,
+--   grid.bottomTwoThirds,
+-- }))
 
-hs.hotkey.bind(hyperkey, 'h', chain({
-  grid.leftHalf,
-  grid.leftThird,
-  grid.leftTwoThirds,
-}))
+-- hs.hotkey.bind(hyperkey, 'h', chain({
+--   grid.leftHalf,
+--   grid.leftThird,
+--   grid.leftTwoThirds,
+-- }))
 
-hs.hotkey.bind(hyperkey, 'u', chain({
-  grid.fullScreen,
-  grid.centeredBig,
-  grid.centeredSmall,
-}))
+-- hs.hotkey.bind(hyperkey, 'u', chain({
+--   grid.fullScreen,
+--   grid.centeredBig,
+--   grid.centeredSmall,
+-- }))
 
-hs.hotkey.bind(hyperkey, 'i', chain({
-  grid.topLeft,
-  grid.topRight,
-  grid.bottomRight,
-  grid.bottomLeft,
-}))
+-- hs.hotkey.bind(hyperkey, 'i', chain({
+--   grid.topLeft,
+--   grid.topRight,
+--   grid.bottomRight,
+--   grid.bottomLeft,
+-- }))
 
 
 --------------------------------------------------------------------------------
