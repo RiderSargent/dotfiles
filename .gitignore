@@ -12,3 +12,4 @@ config/nvim/plugged
 config/nvim/sessions
 config/nvim/sessions/tmp
 config/nvim/view
+config/yarn
