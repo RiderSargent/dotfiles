@@ -22,6 +22,7 @@
 	st = status
 	type = cat-file -t
 	uncommit = reset --soft HEAD^
+  unstage = reset head
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
