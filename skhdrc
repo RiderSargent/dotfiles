@@ -45,8 +45,8 @@ hyper - 0x18 : chunkc tiling::desktop --equalize # '='
 # toggle fullscreen
 hyper - space : chunkc tiling::window --toggle fullscreen
 
-# toggle desktop offset (margins)
-hyper - m : chunkc tiling::desktop --toggle offset
+# Clear border
+hyper - b : chunkc border::clear
 
 # float / unfloat window and center on screen
 hyper - c : chunkc tiling::window --toggle float;\
@@ -55,11 +55,20 @@ hyper - c : chunkc tiling::window --toggle float;\
 # toggle window split type
 hyper - e : chunkc tiling::window --toggle split
 
+# mirror tree x-axis (flip vertically)
+# hyper - f : chunkc tiling::desktop --mirror horizontal
+
+# toggle fload
+hyper - f : chunkc tiling::window --toggle float
+
+# toggle desktop offset (margins)
+hyper - m : chunkc tiling::desktop --toggle offset
+
+# restart services
+hyper - q : brew services restart chunkwm && brew services restart skhd
+
 # rotate tree
 hyper - r : chunkc tiling::desktop --rotate 90
 
 # mirror tree y-axis (flip horizontally)
 hyper - s : chunkc tiling::desktop --mirror vertical
-
-# mirror tree x-axis (flip vertically)
-hyper - f : chunkc tiling::desktop --mirror horizontal
