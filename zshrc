@@ -115,6 +115,12 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+
+# --- asdf ---------------------------------------------------------------------
+source_if_exists /usr/local/opt/asdf/asdf.sh
+source_if_exists /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+
 # --- EXA ----------------------------------------------------------------------
 export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
