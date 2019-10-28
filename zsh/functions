@@ -330,3 +330,11 @@ __rws__set_tab_name() {
 __rws__fuzzy_open() {
   $EDITOR $(f)
 }
+
+__rws__qr_code() {
+  if [ -z "$1" ] ; then
+    echo "usage: qr STRING_TO_ENCODE"
+  else
+    curl qrenco.de/$1
+  fi
+}

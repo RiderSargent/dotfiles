@@ -51,6 +51,7 @@ alias notes='cd ~/Dropbox/Notes'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias please='sudo !!'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias qr="__rws__qr_code"
 alias rebm='git rebase master'
 alias reload="exec $SHELL -l"
 alias rspec='__rws__rspec'
