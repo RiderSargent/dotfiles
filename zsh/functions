@@ -338,3 +338,36 @@ __rws__qr_code() {
     curl qrenco.de/$1
   fi
 }
+
+# Show current version of Ruby
+# Modified from: https://github.com/denysdovhan/spaceship-prompt/blob/master/sections/ruby.zsh
+__rws__ruby_version() {
+  # Show versions only for Ruby-specific folders
+  [[ -f Gemfile || -f Rakefile || -n *.rb(#qN^/) ]] || return
+
+  local 'ruby_version'
+
+  if __rws__cmd_exists rvm-prompt; then
+    ruby_version=$(rvm-prompt i v g)
+  elif __rws__cmd_exists chruby; then
+    ruby_version=$(chruby | sed -n -e 's/ \* //p')
+  elif __rws__cmd_exists rbenv; then
+    ruby_version=$(rbenv version-name)
+  elif __rws__cmd_exists asdf; then
+    # split output on space and return first element
+    ruby_version=${$(asdf current ruby)[1]}
+  else
+    return
+  fi
+
+  [[ -z $ruby_version || "${ruby_version}" == "system" ]] && return
+
+  # Add 'v' before ruby version that starts with a number
+  [[ "${ruby_version}" =~ ^[0-9].+$ ]] && ruby_version="v${ruby_version}"
+
+  echo $ruby_version
+}
+
+__rws__cmd_exists() {
+  command -v $1 > /dev/null 2>&1
+}
