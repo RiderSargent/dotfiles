@@ -1,0 +1,40 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "time",
+    "directory",
+    "package",
+    "dotnet",
+    "golang",
+    "java",
+    "nodejs",
+    "python",
+    "ruby",
+    "rust",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "cmd_duration",
+    "jobs",
+    "battery",
+    "line_break",
+    "character",
+]
+
+[time]
+disabled = false
+format = "%H:%M"
+style = "blue"
+
+[python]
+style = "green"
+symbol = "python "
+
+[ruby]
+symbol = "ruby "
