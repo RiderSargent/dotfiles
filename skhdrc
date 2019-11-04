@@ -27,8 +27,9 @@ hyper - 9 : chunkc tiling::desktop --layout monocle
 hyper - 0 : chunkc tiling::desktop --layout float
 
 # --- Layout -------------------------------------------------------------------
-hyper - 1 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/golden_two_col
-hyper - 2 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_col
+hyper - 1 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_col
+hyper - 2 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_thirds
+hyper - 4 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/golden_two_col
 
 # This is a hack because when hyper + 3 is pressed, shift gets keyed up
 # ("unpressed") before the 3 gets keyed down. Not sure why.
