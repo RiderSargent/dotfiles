@@ -2029,7 +2029,7 @@
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
-	<false/>
+	<true/>
 	<key>DisableWindowSizeSnap</key>
 	<true/>
 	<key>EnableAPIServer</key>
@@ -2199,7 +2199,7 @@ Copy Mode</string>
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -2221,19 +2221,15 @@ Copy Mode</string>
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>929 110 445 346 0 0 1440 877 </string>
-	<key>NSWindow Frame Preferences</key>
-	<string>269 400 606 456 0 0 1440 877 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>520 561 400 129 0 0 1440 877 </string>
+	<string>916 110 698 337 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>3090 768 620 392 1680 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>294 413 918 423 0 0 1440 877 </string>
+	<string>3 540 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1695 15 3410 1388 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>102 0 970 876 0 0 1440 877 </string>
+	<string>601 133 970 876 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2524,7 +2520,7 @@ Copy Mode</string>
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
-			<true/>
+			<false/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -3125,7 +3121,7 @@ Copy Mode</string>
 			<key>Thin Strokes</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.18995082487309645</real>
+			<real>0.10812777601522844</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -7220,53 +7216,53 @@ Copy Mode</string>
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.0</string>
+		<string>3.3.2</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
+		<string>3.3.0</string>
 		<string>3.2.9</string>
-		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>Fira Code</string>
 		<string>Cascadia Code</string>
-		<string>PragmataPro</string>
-		<string>Input Mono Narrow</string>
-		<string>Source Code Pro</string>
+		<string>Fira Code</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Fira Code</string>
 		<string>Cascadia Code</string>
-		<string>Source Code Pro</string>
-		<string>GB18030 Bitmap</string>
-		<string>Input Mono Compressed</string>
 	</array>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
-	<integer>0</integer>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
-	<integer>1</integer>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1680, 1050}}</string>
+		<key>topLeft</key>
+		<string>{537, 916}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1680, 0}, {3440, 1440}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{2199, 903}</string>
+		<string>{331, 868}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>5A362B48-0CFB-4774-BFF0-D5F7BD7D1377</string>
+	<string>098E55C4-A37F-49ED-A0E9-6B8E9DC51420</string>
 	<key>NoSyncLastTipTime</key>
-	<real>592555784.78161705</real>
+	<real>589277715.87967002</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>80</integer>
+	<integer>98</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>590231630.88905299</real>
+	<real>586481119.19731903</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -7621,6 +7617,22 @@ Copy Mode</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.tmuxClientName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.tmuxRole</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -7685,14 +7697,6 @@ Copy Mode</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>number</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>currentTab.currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -7702,6 +7706,14 @@ Copy Mode</string>
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -7758,14 +7770,6 @@ Copy Mode</string>
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>currentSession.commandLine</string>
@@ -7792,31 +7796,7 @@ Copy Mode</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>title</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>tmuxWindowTitle</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -7912,25 +7892,17 @@ Copy Mode</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.termid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>currentSession.pid</string>
+				<string>iterm2</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>4</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -7950,14 +7922,6 @@ Copy Mode</string>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>currentSession.terminalWindowName</string>
@@ -7968,9 +7932,25 @@ Copy Mode</string>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.pid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>tmuxWindow</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -8011,11 +7991,18 @@ Copy Mode</string>
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>open_at</string>
+		<string>auto_promotion_closes_at</string>
+		<string>auto_can</string>
+		<string>open_at|starts_at|auto_promotion_closes_at|publish_at</string>
+		<string>open_at|starts_at|auto_promotion_closes_at</string>
+		<string>opens_at</string>
+		<string>12:45</string>
+		<string>confirm_by</string>
 		<string>e1c10bfd-930b-4d6e-9e0f-fffc14e94e9aexi</string>
-		<string>template_id</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>478128994.26637203</real>
+	<real>569854648.00623095</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -8097,6 +8084,7 @@ Copy Mode</string>
 		<string>0075</string>
 		<string>0076</string>
 		<string>0077</string>
+		<string>0078</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -8152,11 +8140,11 @@ Copy Mode</string>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=94</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=29</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-30T10:53:21Z</date>
+	<date>2019-11-13T09:24:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -8198,7 +8186,7 @@ Copy Mode</string>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>4</integer>
 	<key>iTerm Version</key>
 	<string>3.3.6</string>
 	<key>iTermAPIAuthorizationControllerSavedAccessSettings</key>
