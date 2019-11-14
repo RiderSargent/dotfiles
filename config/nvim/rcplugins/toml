@@ -1,0 +1,3 @@
+" vim:ft=vim
+
+Plug 'cespare/vim-toml', { 'for': 'toml' }
