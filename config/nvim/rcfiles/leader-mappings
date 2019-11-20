@@ -89,6 +89,10 @@ nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 
 vmap <LEADER>y "*y
 
+" base 64 encode/decode selection
+vmap <LEADER>64e c<c-r>=system('base64', @")<CR><ESC>
+vmap <LEADER>64d c<c-r>=system('base64 --decode', @")<CR><ESC>
+
 " Example of using = reg and functions in mapping:
 " map <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
