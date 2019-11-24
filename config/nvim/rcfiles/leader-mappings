@@ -54,7 +54,7 @@ nmap <LEADER>lt :call Preserve("s/\\s\\+$//e")<CR>:echo "line trimmed"<CR>
 nmap <LEADER>ne :e ~/Dropbox/Notes/
 nmap <LEADER>nf :NERDTreeFind<CR>
 nmap <LEADER>ns :w ~/Dropbox/Notes/
-nmap <LEADER>nt :NERDTreeToggle<CR>
+nmap <LEADER>nt :NERDTreeToggle<CR><c-w>=
 
 nmap <LEADER>p "0p
 vmap <LEADER>p "0p
