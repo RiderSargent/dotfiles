@@ -3,6 +3,7 @@
 .DS_Store
 .netrwhist
 config/configstore
+config/exercism
 config/fish/fishd.*
 config/htop/htoprc
 config/hub
