@@ -34,7 +34,3 @@ style = "blue"
 
 [python]
 style = "green"
-symbol = "python "
-
-[ruby]
-symbol = "ruby "
