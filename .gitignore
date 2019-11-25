@@ -6,6 +6,8 @@ config/configstore
 config/fish/fishd.*
 config/htop/htoprc
 config/hub
+config/joplin
+config/joplin-desktop
 config/karabiner/automatic_backups
 config/nvim/bundle
 config/nvim/plugged
