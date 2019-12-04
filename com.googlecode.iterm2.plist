@@ -2223,13 +2223,17 @@ Copy Mode</string>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>916 110 698 337 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>3090 768 620 392 1680 0 3440 1417 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>3 540 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1695 15 3410 1388 1680 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>601 133 970 876 0 0 1680 1027 </string>
+	<key>NeverWarnAboutShortLivedSessions_1705A931-CBC9-4AF8-8606-AA4B7AF70C00</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_1705A931-CBC9-4AF8-8606-AA4B7AF70C00_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -7216,22 +7220,27 @@ Copy Mode</string>
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.2</string>
+		<string>3.3.0</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
-		<string>3.3.0</string>
+		<string>3.3.7</string>
 		<string>3.2.9</string>
+		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>Cascadia Code</string>
+		<string>Menlo</string>
+		<string>Source Code Pro</string>
 		<string>Fira Code</string>
+		<string>Cascadia Code</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Fira Code</string>
+		<string>Andale Mono</string>
 		<string>Cascadia Code</string>
+		<string>Fira Code</string>
+		<string>Source Code Pro</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -7245,7 +7254,7 @@ Copy Mode</string>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{331, 868}</string>
+		<string>{401, 871}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -7260,7 +7269,7 @@ Copy Mode</string>
 	<key>NoSyncLastTipTime</key>
 	<real>589277715.87967002</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>98</integer>
+	<integer>112</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586481119.19731903</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -8144,7 +8153,7 @@ Copy Mode</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-13T09:24:58Z</date>
+	<date>2019-12-03T09:50:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -8188,7 +8197,7 @@ Copy Mode</string>
 	<key>findMode_iTerm</key>
 	<integer>4</integer>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.7</string>
 	<key>iTermAPIAuthorizationControllerSavedAccessSettings</key>
 	<dict>
 		<key>api_key=16777220:25077149:4ea6f63f5bdb02332a588ed878135b16d03bf873eda039f3b5bef59d6b7f00bc:Python /Users/rider.sargent/Library/ApplicationSupport/iTerm2/Scripts/example.py</key>
