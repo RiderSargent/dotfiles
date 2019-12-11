@@ -1,0 +1,4 @@
+" vim:ft=vim
+
+Plug 'junegunn/vim-emoji'
+
