@@ -21,8 +21,10 @@ let $PROGRAMMING_FILES .= ',*.html'
 let $PROGRAMMING_FILES .= ',*.js'
 let $PROGRAMMING_FILES .= ',*.php'
 let $PROGRAMMING_FILES .= ',*.rb'
+let $PROGRAMMING_FILES .= ',*.rs'
 let $PROGRAMMING_FILES .= ',*.slim'
 let $PROGRAMMING_FILES .= ',*.swift'
+let $PROGRAMMING_FILES .= ',*.yaml,*.yml'
 
 " Trim trailing whitespace (keeping cursor pos) for the indicated filetypes
 autocmd BufWritePre $PROGRAMMING_FILES :call Preserve("%s/\\s\\+$//e")
