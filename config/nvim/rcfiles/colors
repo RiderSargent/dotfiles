@@ -64,6 +64,11 @@ colorscheme iceberg
 highlight VertSplit guibg=#161821
 
 
+
+" --- Fonts ------------------------------------------------------------------ "
+highlight Comment gui=italic cterm=italic
+
+
 " --- One Dark overrides ----------------------------------------------------- "
 " set background=dark
 " colorscheme onedark
