@@ -2,6 +2,19 @@
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Manually need to install Coc plugins:
+" For list see https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
+" For example, for yank highlight (from https://github.com/neoclide/coc-yank):
+" :CocInstall coc-yank
+
+" Current CocList:
+" * coc-yank 1.1.3 ~/.dotfiles/config/coc/extensions/node_modules/coc-yank
+" * coc-snippets 2.1.14 ~/.dotfiles/config/coc/extensions/node_modules/coc-snippets
+" * coc-rls 1.1.4 ~/.dotfiles/config/coc/extensions/node_modules/coc-rls
+" * coc-lists 1.3.6 ~/.dotfiles/config/coc/extensions/node_modules/coc-lists
+" + coc-json 1.2.4 ~/.dotfiles/config/coc/extensions/node_modules/coc-json
+
+
 " The following is copied from the Coc repo readme (https://github.com/neoclide/coc.nvim)
 
 " if hidden is not set, TextEdit might fail.
@@ -12,7 +25,7 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
