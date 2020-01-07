@@ -27,6 +27,7 @@ alias gcan='git commit --amend --no-edit'
 alias gcm='git commit -m'
 alias gcnm='git commit -m "Minor changes. Commit message skipped."'
 alias gh='__md__gh'
+alias ghd='github .'
 alias git=hub
 alias glp='__md__glp'
 alias gmnf='git merge --no-ff --no-edit --log'
@@ -60,11 +61,11 @@ alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases.zsh'
 alias sod='~/.dotfiles/bin/startup.sh'
 alias ta='tmux a -t'
+alias tc="__rws__tc"
 alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 alias tmux256="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
-alias top10="history | awk '{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 10"
 alias tt="__rws__set_tab_name"
 alias v='vim'
 alias vcr='VCR_RECORD=new_episodes rspec'

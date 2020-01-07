@@ -371,3 +371,20 @@ __rws__ruby_version() {
 __rws__cmd_exists() {
   command -v $1 > /dev/null 2>&1
 }
+
+__rws__tc() {
+  __md__help $@ "Show the most used commands in current user's history" "tc [number of rows]"
+  [ $? -eq 1 ] && return 0
+
+  if [ -z "$1" ] ; then
+    local n=10
+  else
+    local n=$1
+  fi
+
+  history | \
+  awk '{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | \
+  grep -v "./" | \
+  column -c3 -s " " -t | \
+  sort -nr | nl |  head -n $n
+}
