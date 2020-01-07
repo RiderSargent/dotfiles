@@ -64,6 +64,7 @@ alias tk='tmux kill-session -t'
 alias tl='tmux ls'
 alias tmux256="TERM=screen-256color-bce tmux"
 alias tn='tmux new -s'
+alias top10="history | awk '{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 10"
 alias tt="__rws__set_tab_name"
 alias v='vim'
 alias vcr='VCR_RECORD=new_episodes rspec'
