@@ -73,7 +73,8 @@ nmap <LEADER>sf :AckFile!<SPACE>
 nmap <LEADER>sl :source ~/.vim/sessions/
 nmap <LEADER>ss :mksession! ~/.vim/sessions/
 
-nmap <LEADER>tb <Plug>BlockToggle
+" This is a bit of a hack to remove the auto-closed bracket triggered by Blockle's insertion of {
+nmap <LEADER>tb <Plug>BlockToggle<ESC>:call Preserve("silent! s/{}/{/")<CR>:echo "block toggled"<CR>
 nmap <LEADER>tt :TagbarToggle<CR>
 nmap <LEADER>tq cs"'
 
