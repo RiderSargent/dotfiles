@@ -28,13 +28,31 @@ prompt_order = [
 ]
 
 [time]
-disabled = false
+disabled = true
 format = "[%H:%M]"
 style = "blue"
+
+[directory]
+style = "bold blue"
+
+[package]
+style = "red"
 
 [python]
 style = "green"
 
+[ruby]
+style = "red"
+
+[rust]
+style = "red"
+
 [git_branch]
+style = "purple"
 symbol = "🌱 "
 
+[git_status]
+style = "red"
+
+[cmd_duration]
+style = "yellow"
