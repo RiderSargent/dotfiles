@@ -29,7 +29,7 @@ prompt_order = [
 
 [time]
 disabled = false
-format = "[ %H:%M ]"
+format = "[%H:%M]"
 style = "blue"
 
 [python]
