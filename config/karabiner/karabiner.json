@@ -958,7 +958,41 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change f17 to command+control+option+shift.",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "description": "UK Laptop built in",
+                                                "product_id": 636,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "non_us_backslash to hyper if UK keyboard",
+                                "from": {
+                                    "key_code": "non_us_backslash",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Change f17 to hyper.",
                                 "from": {
                                     "key_code": "f17",
                                     "modifiers": {
