@@ -1,0 +1,135 @@
+;; the rule [:!Ca :!T1]
+    ;; means from command a to control 1
+    ;; :!Ca is keycode :a and prefix a with !C
+
+    ;; here's the definition
+
+    ;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
+
+    ;; examples
+
+    ;; !CTSequal_sign  | mandatory command control shift =
+    ;;                 | which is command control +
+    ;; !O#Sright_arrow | mandatory option optional any right_arrow
+
+    ;; karabiner definition of mandatory and optional
+    ;; https://pqrs.org/osx/karabiner/json.html#from-event-definition-modifiers
+
+    ;; rule [<from> <to>]
+    ;; if simplified modifier is used in <to>, optional(#) definition will be
+    ;; ignored.
+
+;; Tutorial:
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md#basic1
+
+;; Examples:
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
+
+;; Keycodes:
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
+
+;; Hardware:
+;; Unknown (BH Apple?):                 vendor_id: 1452, product_id: 34304
+;; Apple Internal Keyboard (US laptop): vendor_id: 1452, product_id: 610
+;; Apple Internal Keyboard (UK laptop): vendor_id: 1452, product_id: 636
+;; CTRL Keyboard:                       vendor_id: 1240, product_id: 61138
+
+;; Run `goku` on CLI to generate karabiner.json file.
+;; Run `gokuw` on CLI to generate karabiner.json file upon saving this file.
+
+{:profiles {:Default {:default true}}
+
+ :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
+           :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 610}]
+           :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
+
+ ;; TODO s/non_us_backslask/escape/g for non-UK boards
+ :layers {:hyper-mode {:key :non_us_backslash :alone {:key :escape}}}
+
+ :main [{:des "caps_lock to esc when pressed alone, to ctrl as modifier"
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+
+        {:des "fn + hjkl to arrows"
+         :rules [[:!Fh :left_arrow]
+                 [:!Fj :down_arrow]
+                 [:!Fk :up_arrow]
+                 [:!Fl :right_arrow]]}
+
+        ;{:des "simultaneous left_shift right_shift press to caps_lock"
+        ; :rules [[[:left_shift :right_shift] :caps_lock]]}
+
+        ;; TODO there has to be a better way to do this
+        {:des "Hyper Mode"
+         :rules [:hyper-mode
+                 [:0 :!!0]
+                 [:1 :!!1]
+                 [:2 :!!2]
+                 [:3 :!!3]
+                 [:4 :!!4]
+                 [:5 :!!5]
+                 [:6 :!!6]
+                 [:7 :!!7]
+                 [:8 :!!8]
+                 [:9 :!!9]
+                 [:a :!!a]
+                 [:b :!!b]
+                 [:c :!!c]
+                 [:d :!!d]
+                 [:e :!!e]
+                 [:f :!!f]
+                 [:g :!!g]
+                 [:h :!!h]
+                 [:i :!!i]
+                 [:j :!!j]
+                 [:k :!!k]
+                 [:l :!!l]
+                 [:m :!!m]
+                 [:n :!!n]
+                 [:o :!!o]
+                 [:p :!!p]
+                 [:q :!!q]
+                 [:r :!!r]
+                 [:s :!!s]
+                 [:t :!!t]
+                 [:u :!!u]
+                 [:v :!!v]
+                 [:w :!!w]
+                 [:x :!!x]
+                 [:y :!!y]
+                 [:z :!!z]
+                 [:spacebar :!!spacebar]
+                 [:up_arrow :!!up_arrow]
+                 [:down_arrow :!!down_arrow]
+                 [:left_arrow :!!left_arrow]
+                 [:right_arrow :!!right_arrow]
+                 [:equal_sign :!!equal_sign]
+                ]}
+
+        ;; TODO - test this on US, CTRL boards
+        {:des "left_shift + 3 = #, right_shift + 3 = £"
+         :rules [[:!S3 :!O3]
+                 [:!R3 :!R3]]}
+
+        ;; CTRL specific
+        {:des "f17 to fn"
+         :rules [[:f17 :fn [:ctrl-keyboard]]]}
+
+        ;; UK laptop specific
+        {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
+         :rules [[:non_us_backslash :grave_accent_and_tilde [:apple-uk-builtin-keyboard]]
+                 [:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}
+
+        ]}
+
