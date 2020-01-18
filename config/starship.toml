@@ -1,3 +1,5 @@
+scan_timeout = 10
+
 prompt_order = [
     "username",
     "hostname",
@@ -34,6 +36,8 @@ style = "blue"
 
 [directory]
 style = "bold blue"
+truncation_length = 2
+truncate_to_repo = true
 
 [package]
 style = "red"
