@@ -65,8 +65,8 @@
                  [:!Fl :right_arrow]]}
 
         {:des "Hyper Mode"
-         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :escape}]
-                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :grave_accent_and_tilde}]
+         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
+                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
                  [:0 :!!0 ["hyper_mode" 1]]
                  [:1 :!!1 ["hyper_mode" 1]]
                  [:2 :!!2 ["hyper_mode" 1]]

@@ -80,7 +80,8 @@
         "description" : "Hyper Mode",
         "manipulators" : [ {
           "to_if_alone" : [ {
-            "key_code" : "escape"
+            "key_code" : "spacebar",
+            "modifiers" : [ "left_option" ]
           } ],
           "to_after_key_up" : [ {
             "set_variable" : {
@@ -100,7 +101,8 @@
           "type" : "basic"
         }, {
           "to_if_alone" : [ {
-            "key_code" : "grave_accent_and_tilde"
+            "key_code" : "spacebar",
+            "modifiers" : [ "left_option" ]
           } ],
           "to_after_key_up" : [ {
             "set_variable" : {
