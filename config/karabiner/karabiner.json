@@ -100,7 +100,7 @@
           "type" : "basic"
         }, {
           "to_if_alone" : [ {
-            "key_code" : "non_us_backslash"
+            "key_code" : "grave_accent_and_tilde"
           } ],
           "to_after_key_up" : [ {
             "set_variable" : {
@@ -1188,21 +1188,6 @@
       }, {
         "description" : "swap non_us_backslash and grave_accent_and_tilde for UK laptop",
         "manipulators" : [ {
-          "from" : {
-            "key_code" : "non_us_backslash"
-          },
-          "to" : [ {
-            "key_code" : "grave_accent_and_tilde"
-          } ],
-          "conditions" : [ {
-            "identifiers" : [ {
-              "vendor_id" : 1452,
-              "product_id" : 636
-            } ],
-            "type" : "device_if"
-          } ],
-          "type" : "basic"
-        }, {
           "from" : {
             "key_code" : "grave_accent_and_tilde"
           },

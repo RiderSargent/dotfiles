@@ -64,10 +64,9 @@
                  [:!Fk :up_arrow]
                  [:!Fl :right_arrow]]}
 
-        ;; TODO test on UK board
         {:des "Hyper Mode"
          :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :escape}]
-                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :non_us_backslash}]
+                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :grave_accent_and_tilde}]
                  [:0 :!!0 ["hyper_mode" 1]]
                  [:1 :!!1 ["hyper_mode" 1]]
                  [:2 :!!2 ["hyper_mode" 1]]
@@ -151,7 +150,8 @@
          :rules [[:f17 :fn [:ctrl-keyboard]]]}
 
         ;; UK laptop specific --------------------------------------------------
+        ;; non_us_backslash is already swapped with grave_accent_and_tilde in
+        ;; hyper_mode definition.
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
-         :rules [[:non_us_backslash :grave_accent_and_tilde [:apple-uk-builtin-keyboard]]
-                 [:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}]}
+         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}]}
 
