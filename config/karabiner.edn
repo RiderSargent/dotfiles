@@ -55,9 +55,6 @@
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 610}]
            :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
 
- ;; TODO s/non_us_backslask/escape/g for non-UK boards
- :layers {:hyper-mode {:key :non_us_backslash :alone {:key :escape}}}
-
  :main [{:des "caps_lock to esc when pressed alone, to ctrl as modifier"
          :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
 
@@ -67,69 +64,94 @@
                  [:!Fk :up_arrow]
                  [:!Fl :right_arrow]]}
 
-        ;{:des "simultaneous left_shift right_shift press to caps_lock"
-        ; :rules [[[:left_shift :right_shift] :caps_lock]]}
-
-        ;; TODO there has to be a better way to do this
+        ;; TODO test on UK board
         {:des "Hyper Mode"
-         :rules [:hyper-mode
-                 [:0 :!!0]
-                 [:1 :!!1]
-                 [:2 :!!2]
-                 [:3 :!!3]
-                 [:4 :!!4]
-                 [:5 :!!5]
-                 [:6 :!!6]
-                 [:7 :!!7]
-                 [:8 :!!8]
-                 [:9 :!!9]
-                 [:a :!!a]
-                 [:b :!!b]
-                 [:c :!!c]
-                 [:d :!!d]
-                 [:e :!!e]
-                 [:f :!!f]
-                 [:g :!!g]
-                 [:h :!!h]
-                 [:i :!!i]
-                 [:j :!!j]
-                 [:k :!!k]
-                 [:l :!!l]
-                 [:m :!!m]
-                 [:n :!!n]
-                 [:o :!!o]
-                 [:p :!!p]
-                 [:q :!!q]
-                 [:r :!!r]
-                 [:s :!!s]
-                 [:t :!!t]
-                 [:u :!!u]
-                 [:v :!!v]
-                 [:w :!!w]
-                 [:x :!!x]
-                 [:y :!!y]
-                 [:z :!!z]
-                 [:spacebar :!!spacebar]
-                 [:up_arrow :!!up_arrow]
-                 [:down_arrow :!!down_arrow]
-                 [:left_arrow :!!left_arrow]
-                 [:right_arrow :!!right_arrow]
-                 [:equal_sign :!!equal_sign]
-                ]}
+         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :escape}]
+                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone :non_us_backslash}]
+                 [:0 :!!0 ["hyper_mode" 1]]
+                 [:1 :!!1 ["hyper_mode" 1]]
+                 [:2 :!!2 ["hyper_mode" 1]]
+                 [:3 :!!3 ["hyper_mode" 1]]
+                 [:4 :!!4 ["hyper_mode" 1]]
+                 [:5 :!!5 ["hyper_mode" 1]]
+                 [:6 :!!6 ["hyper_mode" 1]]
+                 [:7 :!!7 ["hyper_mode" 1]]
+                 [:8 :!!8 ["hyper_mode" 1]]
+                 [:9 :!!9 ["hyper_mode" 1]]
+                 [:a :!!a ["hyper_mode" 1]]
+                 [:b :!!b ["hyper_mode" 1]]
+                 [:c :!!c ["hyper_mode" 1]]
+                 [:d :!!d ["hyper_mode" 1]]
+                 [:e :!!e ["hyper_mode" 1]]
+                 [:f :!!f ["hyper_mode" 1]]
+                 [:g :!!g ["hyper_mode" 1]]
+                 [:h :!!h ["hyper_mode" 1]]
+                 [:i :!!i ["hyper_mode" 1]]
+                 [:j :!!j ["hyper_mode" 1]]
+                 [:k :!!k ["hyper_mode" 1]]
+                 [:l :!!l ["hyper_mode" 1]]
+                 [:m :!!m ["hyper_mode" 1]]
+                 [:n :!!n ["hyper_mode" 1]]
+                 [:o :!!o ["hyper_mode" 1]]
+                 [:p :!!p ["hyper_mode" 1]]
+                 [:q :!!q ["hyper_mode" 1]]
+                 [:r :!!r ["hyper_mode" 1]]
+                 [:s :!!s ["hyper_mode" 1]]
+                 [:t :!!t ["hyper_mode" 1]]
+                 [:u :!!u ["hyper_mode" 1]]
+                 [:v :!!v ["hyper_mode" 1]]
+                 [:w :!!w ["hyper_mode" 1]]
+                 [:x :!!x ["hyper_mode" 1]]
+                 [:y :!!y ["hyper_mode" 1]]
+                 [:z :!!z ["hyper_mode" 1]]
+                 [:spacebar :!!spacebar ["hyper_mode" 1]]
+                 [:up_arrow :!!up_arrow ["hyper_mode" 1]]
+                 [:down_arrow :!!down_arrow ["hyper_mode" 1]]
+                 [:left_arrow :!!left_arrow ["hyper_mode" 1]]
+                 [:right_arrow :!!right_arrow ["hyper_mode" 1]]
+                 [:equal_sign :!!equal_sign ["hyper_mode" 1]]]}
 
-        ;; TODO - test this on US, CTRL boards
+        {:des "Capslock mode"
+         :rules [[[:left_shift :right_shift] ["caps_lock_mode" 1] ["caps_lock_mode" 0]]
+                 [[:left_shift :right_shift] ["caps_lock_mode" 0] ["caps_lock_mode" 1]]
+                 [:a :!Sa ["caps_lock_mode" 1]]
+                 [:b :!Sb ["caps_lock_mode" 1]]
+                 [:c :!Sc ["caps_lock_mode" 1]]
+                 [:d :!Sd ["caps_lock_mode" 1]]
+                 [:e :!Se ["caps_lock_mode" 1]]
+                 [:f :!Sf ["caps_lock_mode" 1]]
+                 [:g :!Sg ["caps_lock_mode" 1]]
+                 [:h :!Sh ["caps_lock_mode" 1]]
+                 [:i :!Si ["caps_lock_mode" 1]]
+                 [:j :!Sj ["caps_lock_mode" 1]]
+                 [:k :!Sk ["caps_lock_mode" 1]]
+                 [:l :!Sl ["caps_lock_mode" 1]]
+                 [:m :!Sm ["caps_lock_mode" 1]]
+                 [:n :!Sn ["caps_lock_mode" 1]]
+                 [:o :!So ["caps_lock_mode" 1]]
+                 [:p :!Sp ["caps_lock_mode" 1]]
+                 [:q :!Sq ["caps_lock_mode" 1]]
+                 [:r :!Sr ["caps_lock_mode" 1]]
+                 [:s :!Ss ["caps_lock_mode" 1]]
+                 [:t :!St ["caps_lock_mode" 1]]
+                 [:u :!Su ["caps_lock_mode" 1]]
+                 [:v :!Sv ["caps_lock_mode" 1]]
+                 [:w :!Sw ["caps_lock_mode" 1]]
+                 [:x :!Sx ["caps_lock_mode" 1]]
+                 [:y :!Sy ["caps_lock_mode" 1]]
+                 [:z :!Sz ["caps_lock_mode" 1]]]}
+
+        ;; TODO - test this on CTRL board
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3]
-                 [:!R3 :!R3]]}
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard]]
+                 [:!R3 :!O3 [:apple-us-builtin-keyboard]]]}
 
-        ;; CTRL specific
+        ;; CTRL specific -------------------------------------------------------
         {:des "f17 to fn"
          :rules [[:f17 :fn [:ctrl-keyboard]]]}
 
-        ;; UK laptop specific
+        ;; UK laptop specific --------------------------------------------------
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
          :rules [[:non_us_backslash :grave_accent_and_tilde [:apple-uk-builtin-keyboard]]
-                 [:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}
-
-        ]}
+                 [:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}]}
 
