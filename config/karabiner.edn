@@ -152,6 +152,11 @@
         ;; UK laptop specific --------------------------------------------------
         ;; non_us_backslash is already swapped with grave_accent_and_tilde in
         ;; hyper_mode definition.
+        ;; TODO Is there a way to do both left and right shifts in same rule?
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
-         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]]}]}
+         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]
+                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard]]
+                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard]]
+                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
+                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]]}]}
 
