@@ -55,14 +55,33 @@
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 610}]
            :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
 
+ :simlayers {:o-mode {:key :o}}
+ :simlayer-threshold 500 ;; default is 250
+
  :main [{:des "caps_lock to esc when pressed alone, to ctrl as modifier"
-         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]
+                 ]}
 
         {:des "fn + hjkl to arrows"
          :rules [[:!Fh :left_arrow]
                  [:!Fj :down_arrow]
                  [:!Fk :up_arrow]
-                 [:!Fl :right_arrow]]}
+                 [:!Fl :right_arrow]
+                 ]}
+
+        {:des "left_shift + 3 = #, right_shift + 3 = £"
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard]]
+                 [:!R3 :!O3 [:apple-us-builtin-keyboard]]
+                 ]}
+
+        {:des "o mode"
+         :rules [[:1 "open \"/Applications/1Password 7.app\"" :o-mode]
+                 [:b "open \"/Applications/Bear.app\"" :o-mode]
+                 [:f "open \"/System/Library/CoreServices/Finder.app\"" :o-mode]
+                 [:g "open https://google.com" :o-mode]
+                 [:i "open \"/Applications/iTerm.app\"" :o-mode]
+                 [:s "open \"/Applications/Slack.app\"" :o-mode]
+                 ]}
 
         {:des "Hyper Mode"
          :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
@@ -108,7 +127,8 @@
                  [:down_arrow :!!down_arrow ["hyper_mode" 1]]
                  [:left_arrow :!!left_arrow ["hyper_mode" 1]]
                  [:right_arrow :!!right_arrow ["hyper_mode" 1]]
-                 [:equal_sign :!!equal_sign ["hyper_mode" 1]]]}
+                 [:equal_sign :!!equal_sign ["hyper_mode" 1]]
+                 ]}
 
         {:des "Capslock mode"
          :rules [[[:left_shift :right_shift] ["caps_lock_mode" 1] ["caps_lock_mode" 0]]
@@ -138,31 +158,27 @@
                  [:w :!Sw ["caps_lock_mode" 1]]
                  [:x :!Sx ["caps_lock_mode" 1]]
                  [:y :!Sy ["caps_lock_mode" 1]]
-                 [:z :!Sz ["caps_lock_mode" 1]]]}
-
-        {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard]]
-                 [:!R3 :!O3 [:apple-us-builtin-keyboard]]]}
+                 [:z :!Sz ["caps_lock_mode" 1]]
+                 ]}
 
         ;; CTRL specific -------------------------------------------------------
         {:des "left_control to fn"
-         :rules [[:left_control :fn [:ctrl-keyboard]]]}
+         :rules [[:left_control :fn [:ctrl-keyboard]]
+                 ]}
 
         {:des "grave_accent_and_tilde to non_us_backslash for CTRL Keyboard"
          :rules [[:grave_accent_and_tilde :non_us_backslash [:ctrl-keyboard]]
                  [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:ctrl-keyboard]]
-                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:ctrl-keyboard]]]}
+                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:ctrl-keyboard]]
+                 ]}
 
         ;; UK laptop specific --------------------------------------------------
-        ;; non_us_backslash is already swapped with grave_accent_and_tilde in
-        ;; hyper_mode definition.
-        ;; TODO Is there a way to do both left and right shifts in same rule?
+        ;; Note: non_us_backslash is swapped with !Ospacebar in hyper_mode definition.
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
          :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]
                  [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard]]
                  [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard]]
                  [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
                  [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
-                 ]}]}
-
-        ;; TODO o-layer (open: iTerm, Finder, Bear, search selected in Google)
+                 ]}
+        ]}
