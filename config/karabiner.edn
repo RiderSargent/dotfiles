@@ -140,14 +140,18 @@
                  [:y :!Sy ["caps_lock_mode" 1]]
                  [:z :!Sz ["caps_lock_mode" 1]]]}
 
-        ;; TODO - test this on CTRL board
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard]]
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard]]
                  [:!R3 :!O3 [:apple-us-builtin-keyboard]]]}
 
         ;; CTRL specific -------------------------------------------------------
-        {:des "f17 to fn"
-         :rules [[:f17 :fn [:ctrl-keyboard]]]}
+        {:des "left_control to fn"
+         :rules [[:left_control :fn [:ctrl-keyboard]]]}
+
+        {:des "grave_accent_and_tilde to non_us_backslash for CTRL Keyboard"
+         :rules [[:grave_accent_and_tilde :non_us_backslash [:ctrl-keyboard]]
+                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:ctrl-keyboard]]
+                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:ctrl-keyboard]]]}
 
         ;; UK laptop specific --------------------------------------------------
         ;; non_us_backslash is already swapped with grave_accent_and_tilde in
@@ -158,5 +162,7 @@
                  [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard]]
                  [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard]]
                  [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
-                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]]}]}
+                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
+                 ]}]}
 
+        ;; TODO o-layer (open: iTerm, Finder, Bear, search selected in Google)
