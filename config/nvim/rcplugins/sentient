@@ -1,0 +1,3 @@
+" vim:ft=vim
+
+Plug 'sentient-lang/vim-sentient'
