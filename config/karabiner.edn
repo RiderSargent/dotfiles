@@ -55,8 +55,8 @@
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 610}]
            :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
 
- :simlayers {:o-mode {:key :o}}
- :simlayer-threshold 500 ;; default is 250
+ ; :simlayers {:o-mode {:key :o}}
+ ; :simlayer-threshold 500 ;; default is 250
 
  :main [{:des "caps_lock to esc when pressed alone, to ctrl as modifier"
          :rules [[:##caps_lock :left_control nil {:alone :escape}]
@@ -74,15 +74,15 @@
                  [:!R3 :!O3 [:apple-us-builtin-keyboard]]
                  ]}
 
-        {:des "o mode rules"
-         :rules [:o-mode
-                 [:1 "open \"/Applications/1Password 7.app\""]
-                 [:b "open \"/Applications/Bear.app\""]
-                 [:f "open \"/System/Library/CoreServices/Finder.app\""]
-                 [:g "open https://google.com"]
-                 [:i "open \"/Applications/iTerm.app\""]
-                 [:s "open \"/Applications/Slack.app\""]
-                 ]}
+        ; {:des "o mode rules"
+        ;  :rules [:o-mode
+        ;          [:1 "open \"/Applications/1Password 7.app\""]
+        ;          [:b "open \"/Applications/Bear.app\""]
+        ;          [:f "open \"/System/Library/CoreServices/Finder.app\""]
+        ;          [:g "open https://google.com"]
+        ;          [:i "open \"/Applications/iTerm.app\""]
+        ;          [:s "open \"/Applications/Slack.app\""]
+        ;          ]}
 
         {:des "Hyper Mode"
          :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
