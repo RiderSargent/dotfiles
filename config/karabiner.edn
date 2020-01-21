@@ -74,13 +74,14 @@
                  [:!R3 :!O3 [:apple-us-builtin-keyboard]]
                  ]}
 
-        {:des "o mode"
-         :rules [[:1 "open \"/Applications/1Password 7.app\"" :o-mode]
-                 [:b "open \"/Applications/Bear.app\"" :o-mode]
-                 [:f "open \"/System/Library/CoreServices/Finder.app\"" :o-mode]
-                 [:g "open https://google.com" :o-mode]
-                 [:i "open \"/Applications/iTerm.app\"" :o-mode]
-                 [:s "open \"/Applications/Slack.app\"" :o-mode]
+        {:des "o mode rules"
+         :rules [:o-mode
+                 [:1 "open \"/Applications/1Password 7.app\""]
+                 [:b "open \"/Applications/Bear.app\""]
+                 [:f "open \"/System/Library/CoreServices/Finder.app\""]
+                 [:g "open https://google.com"]
+                 [:i "open \"/Applications/iTerm.app\""]
+                 [:s "open \"/Applications/Slack.app\""]
                  ]}
 
         {:des "Hyper Mode"

@@ -121,7 +121,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "o mode",
+        "description" : "o mode rules",
         "manipulators" : [ {
           "from" : {
             "key_code" : "1"
