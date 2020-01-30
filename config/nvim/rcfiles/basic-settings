@@ -41,9 +41,9 @@ set nowrap                         " turn off word wrap
 set nrformats=                     " treat all numbers as base 10
 set number                         " show line numbers
 set ruler                          " show current position
-set scrolloff=3                 " Start scrolling when within 3 lines near the top/bottom
-set sidescrolloff=10            " Start scrolling when within 10 characters of the left/right
-set sidescroll=1                " Scroll to left/right one column at a time."
+set scrolloff=3                    " Start scrolling when within 3 lines near the top/bottom
+set sidescrolloff=10               " Start scrolling when within 10 characters of the left/right
+set sidescroll=1                   " Scroll to left/right one column at a time."
 set shiftround                     " when at 3 spaces and I hit tab, go to 4, not 5
 set shortmess=atI                  " Don't show the Vim intro message
 set showbreak=↪\                   " wrapped line indicator
@@ -75,6 +75,12 @@ set sessionoptions+=folds
 set textwidth=0
 set title
 set titlestring=Vim:\ %F\ %y%h%r%m
+
+if !isdirectory($HOME."/.dotfiles/config/nvim/undo-dir")
+  call mkdir($HOME."/.dotfiles/config/nvim/undo-dir", "", 0700)
+endif
+set undodir=~/.dotfiles/config/nvim/undo-dir
+set undofile
 
 set wildmode=list:longest,full
 set wildignore=*/tmp/*,*.swp,*.zip,*.1password,*.fugitiveblame
