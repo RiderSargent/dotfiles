@@ -15,7 +15,7 @@
     ;; W  | right_control
     ;; E  | right_option
     ;; R  | right_shift
-    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; !! | mandatory command + control + option + shift (hyper)
     ;; ## | optional any
 
     ;; examples
