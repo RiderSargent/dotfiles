@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " * coc-rls 1.1.4 ~/.dotfiles/config/coc/extensions/node_modules/coc-rls
 " * coc-lists 1.3.6 ~/.dotfiles/config/coc/extensions/node_modules/coc-lists
 " + coc-json 1.2.4 ~/.dotfiles/config/coc/extensions/node_modules/coc-json
+" + coc-go 0.6.2 ~/.dotfiles/config/coc/extensions/node_modules/coc-go
 
 
 " The following is copied from the Coc repo readme (https://github.com/neoclide/coc.nvim)

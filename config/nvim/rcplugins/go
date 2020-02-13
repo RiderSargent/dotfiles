@@ -1,0 +1,9 @@
+" vim:ft=vim
+" Run Ack (or Ag) in Vim.
+
+Plug 'fatih/vim-go'
+
+" Make sure golint is installed:
+" `go get -u golang.org/x/lint/golint`
+set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+
