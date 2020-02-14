@@ -99,11 +99,14 @@ export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 export ENABLE_BOOTSNAP=true
 
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
