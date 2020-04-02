@@ -150,3 +150,10 @@ fi
 source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
 
 # hh
+
+# Needed for Postgresql server?
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# This fixes an error in puma servers
+# See: https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
