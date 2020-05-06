@@ -85,8 +85,8 @@
         ;          ]}
 
         {:des "Hyper Mode"
-         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
-                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0] :alone [:!Ospacebar]}]
+         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
+                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
                  [:0 :!!0 ["hyper_mode" 1]]
                  [:1 :!!1 ["hyper_mode" 1]]
                  [:2 :!!2 ["hyper_mode" 1]]
@@ -129,6 +129,8 @@
                  [:left_arrow :!!left_arrow ["hyper_mode" 1]]
                  [:right_arrow :!!right_arrow ["hyper_mode" 1]]
                  [:equal_sign :!!equal_sign ["hyper_mode" 1]]
+                 [:tab :!!tab ["hyper_mode" 1]]
+                 [:delete_or_backspace :!!delete_or_backspace ["hyper_mode" 1]]
                  ]}
 
         {:des "Capslock mode"
