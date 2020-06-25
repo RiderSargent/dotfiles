@@ -41,10 +41,11 @@
 ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
 
 ;; Hardware:
-;; Unknown (BH Apple?):                 vendor_id: 1452, product_id: 34304
-;; Apple Internal Keyboard (US laptop): vendor_id: 1452, product_id: 610
-;; Apple Internal Keyboard (UK laptop): vendor_id: 1452, product_id: 636
-;; CTRL Keyboard:                       vendor_id: 1240, product_id: 61138
+;; Unknown (BH Apple?):                  vendor_id: 1452, product_id: 34304
+;; Apple Internal Keyboard (US laptop):  vendor_id: 1452, product_id: 610
+;; Apple Internal Keyboard (16" laptop): vendor_id: 1452, product_id: 832
+;; Apple Internal Keyboard (UK laptop):  vendor_id: 1452, product_id: 636
+;; CTRL Keyboard:                        vendor_id: 1240, product_id: 61138
 
 ;; Run `goku` on CLI to generate karabiner.json file.
 ;; Run `gokuw` on CLI to generate karabiner.json file upon saving this file.
@@ -52,7 +53,7 @@
 {:profiles {:Default {:default true}}
 
  :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
-           :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 610}]
+           :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 832}]
            :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
 
  ; :simlayers {:o-mode {:key :o}}
@@ -83,6 +84,10 @@
         ;          [:i "open \"/Applications/iTerm.app\""]
         ;          [:s "open \"/Applications/Slack.app\""]
         ;          ]}
+
+        {:des "escape to hyper hack for 16 inch MBP"
+         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
+                 ]}
 
         {:des "Hyper Mode"
          :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
