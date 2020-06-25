@@ -12,7 +12,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git rails zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(z git rails)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -23,6 +23,8 @@ source "$HOME/.dotfiles/zsh/functions"
 source_if_exists "$HOME/.dotfiles/zsh/aliases.zsh"
 source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
 # source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
+source_if_exists "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source_if_exists "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 
 # --- Spaceship Prompt ---------------------------------------------------------
@@ -65,6 +67,14 @@ if [ 1 -eq 0 ]; then
   export ZSH_THEME="spaceship"
 fi
 
+
+# --- Zsh Completions ----------------------------------------------------------
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # --- Starship Prompt ----------------------------------------------------------
 # more info: https://starship.rs/
@@ -122,7 +132,6 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(nvim {})+abort'"
 
 source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 
 # --- asdf ---------------------------------------------------------------------
