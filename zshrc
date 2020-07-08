@@ -107,16 +107,17 @@ export DISABLE_AUTO_TITLE="true"
 # export MY_INITIALS="RS"
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export ENABLE_BOOTSNAP=true
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-export ENABLE_BOOTSNAP=true
+export PATH="/usr/local/sbin:$PATH"
 
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
 
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
@@ -163,6 +164,8 @@ source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
 # Needed for Postgresql server?
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
+# Dan's habitat
+export PATH="$HOME/code/dan2552/habitat/bin:$PATH"
 # This fixes an error in puma servers
 # See: https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
