@@ -36,7 +36,7 @@ style = "blue"
 
 [directory]
 style = "bold blue"
-truncation_length = 2
+# truncation_length = 2
 truncate_to_repo = true
 
 [package]
