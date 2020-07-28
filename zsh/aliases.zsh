@@ -57,6 +57,7 @@ alias qr="__rws__qr_code"
 alias rebm='git rebase master'
 alias reload="exec $SHELL -l"
 alias rspec='__rws__rspec'
+alias sd='subl .'
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases.zsh'
