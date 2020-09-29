@@ -46,6 +46,7 @@
 ;; Apple Internal Keyboard (16" laptop): vendor_id: 1452, product_id: 832
 ;; Apple Internal Keyboard (UK laptop):  vendor_id: 1452, product_id: 636
 ;; CTRL Keyboard:                        vendor_id: 1240, product_id: 61138
+;; Pok3r Keyboard:                       vender_id: 1241, product_id: 321
 
 ;; Run `goku` on CLI to generate karabiner.json file.
 ;; Run `gokuw` on CLI to generate karabiner.json file upon saving this file.
@@ -54,7 +55,8 @@
 
  :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 832}]
-           :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]}
+           :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]
+           :pok3r-keyboard [{:vendor_id 1241 :product_id 321}]}
 
  ; :simlayers {:o-mode {:key :o}}
  ; :simlayer-threshold 500 ;; default is 250
@@ -71,7 +73,7 @@
                  ]}
 
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard]]
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard :pok3r-keyboard]]
                  [:!R3 :!O3 [:apple-us-builtin-keyboard]]
                  ]}
 
@@ -169,9 +171,9 @@
                  [:z :!Sz ["caps_lock_mode" 1]]
                  ]}
 
-        ;; CTRL specific -------------------------------------------------------
+        ;; CTRL and Pok3r specific ---------------------------------------------
         {:des "left_control to fn"
-         :rules [[:left_control :fn [:ctrl-keyboard]]
+         :rules [[:left_control :fn [:ctrl-keyboard :pok3r-keyboard]]
                  ]}
 
         {:des "grave_accent_and_tilde to non_us_backslash for CTRL Keyboard"
@@ -180,13 +182,26 @@
                  [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:ctrl-keyboard]]
                  ]}
 
-        ;; UK laptop specific --------------------------------------------------
+        ;; UK laptop and Pok3r specific ----------------------------------------
         ;; Note: non_us_backslash is swapped with !Ospacebar in hyper_mode definition.
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
          :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]
-                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard]]
-                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard]]
-                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
-                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard]]
+                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :pok3r-keyboard]]
+                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :pok3r-keyboard]]
+                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :pok3r-keyboard]]
+                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :pok3r-keyboard]]
+                 ]}
+
+        {:des "swap command and option on Pok3r keyboard"
+         :rules [[:left_command :left_option [:pok3r-keyboard]]
+                 [:left_option :left_command [:pok3r-keyboard]]
+                 [:right_command :right_option [:pok3r-keyboard]]
+                 [:right_option :right_command [:pok3r-keyboard]]
+
+                 [:!Sleft_command :!Sleft_option [:pok3r-keyboard]]
+                 [:!Sleft_option :!Sleft_command [:pok3r-keyboard]]
+                 [:!Sright_command :!Sright_option [:pok3r-keyboard]]
+                 [:!Sright_option :!Sright_command [:pok3r-keyboard]]
                  ]}
         ]}
+
