@@ -54,6 +54,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias please='sudo !!'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias qr="__rws__qr_code"
+alias rbenv-doctor="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
 alias rebm='git rebase master'
 alias reload="exec $SHELL -l"
 alias rspec='__rws__rspec'
