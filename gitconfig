@@ -22,7 +22,9 @@
 	st = status
 	type = cat-file -t
 	uncommit = reset --soft HEAD^
-  unstage = reset head
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	recent = "for-each-ref --sort=-committerdate refs/heads/ --format=\"%(authordate:short)%09%(objectname:short)%09%1B[0;33m%(refname:short)%1B[m%09\""
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
