@@ -119,6 +119,10 @@ export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 
+# --- NOTHS MySQL --------------------------------------------------------------
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
