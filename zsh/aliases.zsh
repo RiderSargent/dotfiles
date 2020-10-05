@@ -45,11 +45,13 @@ alias l="exa --long --all --header --sort=name --group-directories-first --time-
 alias lm="exa --long --all --header --sort=modified --reverse --time-style=long-iso"
 alias log="n ~/Dropbox/Notes/NOTHS/log.md"
 alias lt="exa --tree --level=2 --long --all --header --git --git-ignore"
+alias mono="cd ~/code/notonthehighstreet/notonthehighstreet"
 alias mss='mysql.server start'
 alias mst='mysql.server stop'
 alias mux="tmuxinator"
 alias n='nvim'
 alias notes='cd ~/Dropbox/Notes'
+alias noths='cd ~/code/notonthehighstreet'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias please='sudo !!'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
