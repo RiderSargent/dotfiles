@@ -41,12 +41,13 @@
 ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
 
 ;; Hardware:
-;; Unknown (BH Apple?):                  vendor_id: 1452, product_id: 34304
-;; Apple Internal Keyboard (US laptop):  vendor_id: 1452, product_id: 610
-;; Apple Internal Keyboard (16" laptop): vendor_id: 1452, product_id: 832
-;; Apple Internal Keyboard (UK laptop):  vendor_id: 1452, product_id: 636
-;; CTRL Keyboard:                        vendor_id: 1240, product_id: 61138
-;; Pok3r Keyboard:                       vender_id: 1241, product_id: 321
+;; Unknown (BH Apple?):                    vendor_id: 1452, product_id: 34304
+;; Apple Internal Keyboard (US laptop):    vendor_id: 1452, product_id: 610
+;; Apple Internal Keyboard (16" laptop):   vendor_id: 1452, product_id: 832
+;; Apple Internal Keyboard (UK laptop):    vendor_id: 1452, product_id: 636
+;; CTRL Keyboard:                          vendor_id: 1240, product_id: 61138
+;; Pok3r Keyboard:                         vender_id: 1241, product_id: 321
+;; Apple Internal Keyboard (NOThS laptop): vendor_id: 1452, product_id: 832
 
 ;; Run `goku` on CLI to generate karabiner.json file.
 ;; Run `gokuw` on CLI to generate karabiner.json file upon saving this file.
