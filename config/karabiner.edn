@@ -57,7 +57,8 @@
  :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 832}]
            :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]
-           :pok3r-keyboard [{:vendor_id 1241 :product_id 321}]}
+           :pok3r-keyboard [{:vendor_id 1241 :product_id 321}]
+           }
 
  ; :simlayers {:o-mode {:key :o}}
  ; :simlayer-threshold 500 ;; default is 250
@@ -74,19 +75,10 @@
                  ]}
 
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard :ctrl-keyboard :pok3r-keyboard]]
-                 [:!R3 :!O3 [:apple-us-builtin-keyboard]]
-                 ]}
-
-        ; {:des "o mode rules"
-        ;  :rules [:o-mode
-        ;          [:1 "open \"/Applications/1Password 7.app\""]
-        ;          [:b "open \"/Applications/Bear.app\""]
-        ;          [:f "open \"/System/Library/CoreServices/Finder.app\""]
-        ;          [:g "open https://google.com"]
-        ;          [:i "open \"/Applications/iTerm.app\""]
-        ;          [:s "open \"/Applications/Slack.app\""]
-        ;          ]}
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard
+                             :apple-us-builtin-keyboard
+                             :ctrl-keyboard :pok3r-keyboard
+                             ]]]}
 
         {:des "escape to hyper hack for 16 inch MBP"
          :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
@@ -186,11 +178,11 @@
         ;; UK laptop and Pok3r specific ----------------------------------------
         ;; Note: non_us_backslash is swapped with !Ospacebar in hyper_mode definition.
         {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
-         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard]]
-                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :pok3r-keyboard]]
-                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :pok3r-keyboard]]
-                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :pok3r-keyboard]]
-                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :pok3r-keyboard]]
+         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
+                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
+                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
+                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
                  ]}
 
         {:des "swap command and option on Pok3r keyboard"
