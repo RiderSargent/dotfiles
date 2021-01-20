@@ -1,62 +1,90 @@
-scan_timeout = 10
+# scan_timeout = 10
 
-prompt_order = [
-    "username",
-    "hostname",
-    "kubernetes",
-    "time",
-    "directory",
-    "package",
-    "dotnet",
-    "golang",
-    "java",
-    "nodejs",
-    "python",
-    "ruby",
-    "rust",
-    "git_branch",
-    "git_state",
-    "git_status",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "jobs",
-    "battery",
-    "line_break",
-    "character",
-]
+# format = "$all"
 
-[time]
-disabled = true
-format = "[%H:%M]"
-style = "blue"
+# this is what $all expands to:
+# format = """\
+#   $username\
+#   $hostname\
+#   $kubernetes\
+#   $time\
+#   $directory\
+#   $package\
+#   $dotnet\
+#   $golang\
+#   $java\
+#   $nodejs\
+#   $python\
+#   $ruby\
+#   $rust\
+#   $git_branch\
+#   $git_state\
+#   $git_status\
+#   $nix_shell\
+#   $conda\
+#   $memory_usage\
+#   $aws\
+#   $env_var\
+#   $cmd_duration\
+#   $jobs\
+#   $battery\
+#   $line_break\
+#   $character\
+# """
+
+format = """\
+  $time\
+  $directory\
+  $package\
+  $golang\
+  $java\
+  $nodejs\
+  $python\
+  $ruby\
+  $rust\
+  $git_branch\
+  $git_status\
+  $git_state\
+  $line_break\
+  $character\
+"""
 
 [directory]
 style = "bold blue"
-# truncation_length = 2
 truncate_to_repo = true
 
 [package]
 style = "red"
+symbol = " "
 
 [python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+symbol = " "
+
+[nodejs]
+format = "[$symbol$version]($style) "
 style = "green"
+symbol = " "
 
 [ruby]
+format = "[$symbol$version]($style) "
 style = "red"
+symbol = " "
 
 [rust]
-style = "red"
+format = "[$symbol$version]($style) "
+style = "bold red"
+symbol = " "
 
 [git_branch]
+format = "[$symbol$branch]($style) "
 style = "purple"
-symbol = "🌱 "
+symbol = " "
 
 [git_status]
-style = "red"
+style = "bold red"
 
 [cmd_duration]
 style = "yellow"
+
