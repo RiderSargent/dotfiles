@@ -45,6 +45,7 @@ format = """\
   $git_branch\
   $git_status\
   $git_state\
+  $cmd_duration\
   $line_break\
   $character\
 """
@@ -86,5 +87,5 @@ symbol = " "
 style = "bold red"
 
 [cmd_duration]
-style = "yellow"
+format = '[\[[$duration](yellow)\]](white) '
 
