@@ -113,6 +113,7 @@ export ENABLE_BOOTSNAP=true
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
