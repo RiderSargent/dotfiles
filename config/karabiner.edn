@@ -75,8 +75,8 @@
                  ]}
 
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard
-                             :apple-us-builtin-keyboard
+         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard 
+                             :apple-us-builtin-keyboard 
                              :ctrl-keyboard :pok3r-keyboard
                              ]]]}
 
