@@ -2,12 +2,15 @@
 # Reference and examples here:
 # https://github.com/koekeishiya/skhd
 
+shift + alt - 0 : yabai -m space --balance
+
+
 # --- Focus --------------------------------------------------------------------
-hyper - h : chunkc tiling::window --focus west
-hyper - j : chunkc tiling::window --focus south
-hyper - k : chunkc tiling::window --focus north
-hyper - l : chunkc tiling::window --focus east
-hyper - n : chunkc tiling::monitor -f next
+shift + cmd - h : yabai window --focus west
+hyper - j : yabai tiling::window --focus south
+hyper - k : yabai tiling::window --focus north
+hyper - l : yabai tiling::window --focus east
+hyper - n : yabai tiling::monitor -f next
 
 # --- Swap ---------------------------------------------------------------------
 hyper - y : chunkc tiling::window --swap west
@@ -67,7 +70,7 @@ hyper - f : chunkc tiling::window --toggle float
 hyper - m : chunkc tiling::desktop --toggle offset
 
 # restart services
-hyper - q : brew services restart chunkwm && brew services restart skhd
+hyper - q : brew services restart yabai && brew services restart skhd
 
 # rotate tree
 hyper - r : chunkc tiling::desktop --rotate 90
