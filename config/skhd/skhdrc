@@ -1,79 +1,50 @@
-# # ------------------------------------------------------------------------------
-# Reference and examples here:
-# https://github.com/koekeishiya/skhd
-
-shift + alt - 0 : yabai -m space --balance
+# ------------------------------------------------------------------------------
+# Reference and examples here: https://github.com/koekeishiya/skhd
 
 
-# --- Focus --------------------------------------------------------------------
-shift + cmd - h : yabai window --focus west
-hyper - j : yabai tiling::window --focus south
-hyper - k : yabai tiling::window --focus north
-hyper - l : yabai tiling::window --focus east
-hyper - n : yabai tiling::monitor -f next
+# --- Focus Displays -----------------------------------------------------------
+meh - 1 : yabai -m display --focus 1
+meh - 2 : yabai -m display --focus 2
+meh - 0x18 : yabai -m display --focus recent # '='
+
+
+# --- Focus Windows ------------------------------------------------------------
+hyper - h : yabai -m window --focus west
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - l : yabai -m window --focus east
+
 
 # --- Swap ---------------------------------------------------------------------
-hyper - y : chunkc tiling::window --swap west
-hyper - u : chunkc tiling::window --swap south
-hyper - i : chunkc tiling::window --swap north
-hyper - o : chunkc tiling::window --swap east
+hyper - y : yabai -m window --swap west
+hyper - u : yabai -m window --swap south
+hyper - i : yabai -m window --swap north
+hyper - o : yabai -m window --swap east
+
 
 # --- Move ---------------------------------------------------------------------
-hyper - up : chunkc tiling::window --warp north
-hyper - down : chunkc tiling::window --warp south
-hyper - left : chunkc tiling::window --warp west
-hyper - right : chunkc tiling::window --warp east
+hyper - up : yabai -m window --warp north
+hyper - down : yabai -m window --warp south
+hyper - left : yabai -m window --warp west
+hyper - right : yabai -m window --warp east
 
-# --- Mode ---------------------------------------------------------------------
-hyper - 8 : chunkc tiling::desktop --layout bsp
-hyper - 9 : chunkc tiling::desktop --layout monocle
-hyper - 0 : chunkc tiling::desktop --layout float
 
-# --- Layout -------------------------------------------------------------------
-hyper - 1 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_col
-hyper - 2 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/two_thirds
-hyper - 4 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/golden_two_col
+# # --- Sizing -------------------------------------------------------------------
+hyper - 0x18 : yabai -m space --balance # '='
 
-# This is a hack because when hyper + 3 is pressed, shift gets keyed up
-# ("unpressed") before the 3 gets keyed down. Not sure why.
-cmd + alt + ctrl - 3 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/three_col
-hyper - 3 : chunkc tiling::desktop --deserialize ~/.dotfiles/chunkwm_layouts/three_col
-
-# --- Sizing -------------------------------------------------------------------
-hyper - 0x18 : chunkc tiling::desktop --equalize # '='
-# hyper - up : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
-# hyper - down : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
-# hyper - left : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
-# hyper - right : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
 
 # --- Misc ---------------------------------------------------------------------
-# toggle fullscreen
-hyper - space : chunkc tiling::window --toggle fullscreen
+meh - f : yabai -m window --toggle float
 
-# Clear border
-hyper - b : chunkc border::clear
+meh - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+
+# toggle fullscreen
+# hyper - "space" : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window and center on screen
-hyper - c : chunkc tiling::window --toggle float;\
-            chunkc tiling::window --grid-layout 12:12:3:1:6:10
+# hyper - c : yabai -m window --toggle float
+# hyper - c : yabai -m window --grid 12:12:3:1:6:10
 
 # toggle window split type
-hyper - e : chunkc tiling::window --toggle split
-
-# mirror tree x-axis (flip vertically)
-# hyper - f : chunkc tiling::desktop --mirror horizontal
-
-# toggle fload
-hyper - f : chunkc tiling::window --toggle float
-
-# toggle desktop offset (margins)
-hyper - m : chunkc tiling::desktop --toggle offset
-
-# restart services
-hyper - q : brew services restart yabai && brew services restart skhd
-
-# rotate tree
-hyper - r : chunkc tiling::desktop --rotate 90
-
-# mirror tree y-axis (flip horizontally)
-hyper - s : chunkc tiling::desktop --mirror vertical
+# hyper - e : yabai -m window --toggle split
