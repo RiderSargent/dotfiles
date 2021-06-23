@@ -167,11 +167,6 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
 fi
 
 
-# --- Soho House Stuff ---------------------------------------------------------
-source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
-
-# hh
-
 # Needed for Postgresql server?
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 

@@ -1,8 +1,0 @@
-# use single thread locally
-export WEB_CONCURRENCY=1
-export MAX_THREADS=1
-
-export IDENTITY_CLIENT_ID=c5b656450b07b5cb9540b5b9de133c76249f71b737ec100d1989047568cbc7be
-export IDENTITY_CLIENT_SECRET=ea17035c3ed73d551b6322db7c3336e4433cba8f281ad5f88be50c103d681234
-
-export PATH="$HOME/code/sohohouse/scripts/labs/dan2552:$PATH"
