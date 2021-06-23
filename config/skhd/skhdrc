@@ -34,17 +34,17 @@ hyper - 0x18 : yabai -m space --balance # '='
 
 
 # --- Misc ---------------------------------------------------------------------
+# toggle window split type
+meh - d : yabai -m window --toggle split
+
 meh - f : yabai -m window --toggle float
 
 meh - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # toggle fullscreen
-# hyper - "space" : yabai -m window --toggle zoom-fullscreen
+hyper - "space" : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window and center on screen
 # hyper - c : yabai -m window --toggle float
 # hyper - c : yabai -m window --grid 12:12:3:1:6:10
-
-# toggle window split type
-# hyper - e : yabai -m window --toggle split
