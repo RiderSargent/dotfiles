@@ -27,47 +27,6 @@ source_if_exists "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source_if_exists "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 
-# --- Spaceship Prompt ---------------------------------------------------------
-# More info:
-# https://denysdovhan.com/spaceship-prompt/docs/Options.html#vi-mode-vi_mode
-if [ 1 -eq 0 ]; then
-  source_if_exists "$HOME/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
-
-  export SPACESHIP_PROMPT_ORDER=(
-      time          # Time stampts section
-      host          # Hostname section
-      user          # Username section
-      dir           # Current directory section
-      # package       # Package version
-      # node          # Node.js section
-      # elm           # Elm section
-      elixir        # Elixir section
-      # xcode         # Xcode section
-      # swift         # Swift section
-      # rust          # Rust section
-      # docker        # Docker section
-      ruby
-      pyenv         # Pyenv section
-      git           # Git section (git_branch + git_status)
-      exec_time     # Execution time
-      line_sep      # Line break
-      battery       # Battery level and status
-      # vi_mode       # Vi-mode indicator
-      jobs          # Background jobs indicator
-      exit_code     # Exit code section
-      char          # Prompt character
-    )
-
-  export SPACESHIP_CHAR_SYMBOL="❯ "
-  export SPACESHIP_TIME_SHOW=true
-  export SPACESHIP_TIME_FORMAT="%T"
-  export SPACESHIP_TIME_COLOR="blue"
-  export SPACESHIP_RUBY_SYMBOL=""
-
-  export ZSH_THEME="spaceship"
-fi
-
-
 # --- Zsh Completions ----------------------------------------------------------
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
