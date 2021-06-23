@@ -19,9 +19,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
 
+
+# --- Base Stuff ---------------------------------------------------------------
 source "$HOME/.dotfiles/zsh/functions"
 source_if_exists "$HOME/.dotfiles/zsh/aliases.zsh"
-source_if_exists "$HOME/.dotfiles/zsh/tmuxinator.zsh"
 # source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 source_if_exists "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source_if_exists "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -41,6 +42,7 @@ eval "$(starship init zsh)"
 
 
 # --- Z ------------------------------------------------------------------------
+# See: https://github.com/rupa/z/
 source_if_exists "/usr/local/etc/profile.d/z.sh"
 
 
@@ -116,8 +118,8 @@ export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 source_if_exists "$HOME/code/dan2552/gathering-of-scripts/source-gathering-zsh"
 source_if_exists "/usr/local/opt/nvm/nvm.sh"
-source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
-source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
+# source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
+# source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 
 
 # brewfile wrapping of brew command
