@@ -12,7 +12,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git rails)
+# plugins=(z git rails)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -23,14 +23,14 @@ source $ZSH/oh-my-zsh.sh
 # --- Base Stuff ---------------------------------------------------------------
 source "$HOME/.dotfiles/zsh/functions"
 source_if_exists "$HOME/.dotfiles/zsh/aliases.zsh"
-# source_if_exists "$HOME/.dotfiles/zsh/ridersargent.zsh-theme"
 source_if_exists "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source_if_exists "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 
 # --- Zsh Completions ----------------------------------------------------------
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  # FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=/usr/local/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
   compinit
@@ -41,9 +41,13 @@ fi
 eval "$(starship init zsh)"
 
 
+# --- Zoxide -------------------------------------------------------------------
+eval "$(zoxide init zsh)"
+
+
 # --- Z ------------------------------------------------------------------------
 # See: https://github.com/rupa/z/
-source_if_exists "/usr/local/etc/profile.d/z.sh"
+# source_if_exists "/usr/local/etc/profile.d/z.sh"
 
 
 # ------------------------------------------------------------------------------
@@ -65,7 +69,7 @@ export DISABLE_AUTO_TITLE="true"
 
 
 # --- Misc ---------------------------------------------------------------------
-# export MY_INITIALS="RS"
+export MY_INITIALS="RS"
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
 export GOPATH=$HOME/go
@@ -75,6 +79,7 @@ export ENABLE_BOOTSNAP=true
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH=”$HOME/.emacs.d/bin:$PATH”
 export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -83,9 +88,16 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
 
 
-# --- NOTHS MySQL --------------------------------------------------------------
+# --- NOTHS --------------------------------------------------------------------
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="$PATH:$HOME/aws-scripts"
+export AWS_PROFILE_ALIASES=true
+source $HOME/aws-scripts/aws-profile-function.sh
+eval "$(saml2aws --completion-script-zsh)"
 
+# --- Looper (NOTHS)
+# export GOOGLE_APPLICATION_CREDENTIALS=/Users/riders/code/notonthehighstreet/rust-feed-utils/credentials/prj-noths-d-retail-api-3313-62c370216629.json
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/riders/code/notonthehighstreet/rust-feed-utils/credentials/prj-noths-t-retail-api-3313-14f06fc648d1-retail-user-catalog-pipeline.json
 
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
@@ -104,8 +116,8 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 
 
 # --- asdf ---------------------------------------------------------------------
-source_if_exists /usr/local/opt/asdf/asdf.sh
-source_if_exists /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+# source_if_exists /usr/local/opt/asdf/asdf.sh
+# source_if_exists /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 
 # --- rbenv --------------------------------------------------------------------
@@ -117,26 +129,32 @@ export EXA_COLORS="hd=38;5;247:uu=38;5;242:da=38;5;250" # 256 color version
 
 
 source_if_exists "$HOME/code/dan2552/gathering-of-scripts/source-gathering-zsh"
-source_if_exists "/usr/local/opt/nvm/nvm.sh"
+# source_if_exists "/usr/local/opt/nvm/nvm.sh"
 # source_if_exists "/usr/local/opt/chruby/share/chruby/chruby.sh"
 # source_if_exists "/usr/local/opt/chruby/share/chruby/auto.sh"
 
 
 # brewfile wrapping of brew command
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
+# if [ -f $(brew --prefix)/etc/brew-wrap ];then
+#   source $(brew --prefix)/etc/brew-wrap
+# fi
 
 
 # Needed for Postgresql server?
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+# export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # Dan's habitat
 export PATH="$HOME/code/dan2552/habitat/bin:$PATH"
+
 # This fixes an error in puma servers
 # See: https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# Commented out as I've moved to fnm instead of nvm for speed
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+eval "$(fnm env --use-on-cd)"
+
+export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 

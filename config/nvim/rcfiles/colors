@@ -43,6 +43,7 @@
 
 " --- Iceberg ---------------------------------------------------------------- "
 colorscheme iceberg
+highlight Normal guibg=NONE
 
 " let g:terminal_color_0 = '#1e2132'
 " let g:terminal_color_1 = '#e27878'

@@ -5,7 +5,13 @@
 # --- Focus Displays -----------------------------------------------------------
 meh - 1 : yabai -m display --focus 1
 meh - 2 : yabai -m display --focus 2
-meh - 0x18 : yabai -m display --focus recent # '='
+# meh - 0x18 : yabai -m display --focus recent # '='
+
+
+# --- Focus Spaces -------------------------------------------------------------
+# Doesn't work - error with the scripting-addition
+meh - w : yabai -m space --focus prev || yabai -m space --focus last
+meh - e : yabai -m space --focus next || yabai -m space --focus first
 
 
 # --- Focus Windows ------------------------------------------------------------
@@ -30,7 +36,7 @@ hyper - right : yabai -m window --warp east
 
 
 # # --- Sizing -------------------------------------------------------------------
-hyper - 0x18 : yabai -m space --balance # '='
+meh - 0x18 : yabai -m space --balance # '='
 
 
 # --- Misc ---------------------------------------------------------------------
@@ -39,11 +45,11 @@ meh - d : yabai -m window --toggle split
 
 meh - f : yabai -m window --toggle float
 
-meh - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+# meh - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # toggle fullscreen
-hyper - "space" : yabai -m window --toggle zoom-fullscreen
+# hyper - "space" : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window and center on screen
 # hyper - c : yabai -m window --toggle float

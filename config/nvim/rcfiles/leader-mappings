@@ -88,6 +88,7 @@ nmap <LEADER>z :wincmd _<CR>:wincmd \|<CR>
 
 nmap <LEADER><SPACE> :nohlsearch<BAR>:echo<CR>
 
+xmap <LEADER>p "_dP"
 vmap <LEADER>y "*y
 
 " base 64 encode/decode selection

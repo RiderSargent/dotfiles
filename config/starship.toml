@@ -32,16 +32,27 @@
 #   $character\
 # """
 
+# format = """\
+#   $time\
+#   $directory\
+#   $package\
+#   $golang\
+#   $java\
+#   $nodejs\
+#   $python\
+#   $ruby\
+#   $rust\
+#   $git_branch\
+#   $git_status\
+#   $git_state\
+#   $cmd_duration\
+#   $line_break\
+#   $character\
+# """
+
 format = """\
   $time\
   $directory\
-  $package\
-  $golang\
-  $java\
-  $nodejs\
-  $python\
-  $ruby\
-  $rust\
   $git_branch\
   $git_status\
   $git_state\

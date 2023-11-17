@@ -10,7 +10,7 @@ alias bfu="brew bundle dump --force && cp ~/Brewfile ~/.dotfiles/Brewfile"
 alias bi='bundle install'
 alias burp='brew update && brew upgrade'
 alias c='clear'
-alias ctags="`brew --prefix`/bin/ctags"
+alias ctags="/usr/local/bin/ctags"
 alias ctags_all="ctags -R *"
 alias ctags_ruby="__rws__ctags_ruby"
 alias db_migrate='__rws__db_migrate'
@@ -22,13 +22,15 @@ alias edit_aliases='$EDITOR ~/.dotfiles/zsh/aliases.zsh'
 alias es='exercism submit'
 alias f="fzf --preview 'bat --color \"always\" {}'"
 alias fo="__rws__fuzzy_open"
+alias gaa='git add --all'
 alias gc='git commit'
+alias gco='git checkout'
 alias gcan='git commit --amend --no-edit'
 alias gcm='git commit -m'
 alias gcnm='git commit -m "Minor changes. Commit message skipped."'
+alias gd='git diff'
 alias gh='__md__gh'
 alias ghd='github .'
-alias git=hub
 alias glp='__md__glp'
 alias gmnf='git merge --no-ff --no-edit --log'
 alias grep='grep --color'
@@ -45,6 +47,7 @@ alias l="exa --long --all --header --sort=name --group-directories-first --time-
 alias lm="exa --long --all --header --sort=modified --reverse --time-style=long-iso"
 alias log="n ~/Dropbox/Notes/NOTHS/log.md"
 alias lt="exa --tree --level=2 --long --all --header --git --git-ignore"
+alias mathmania="~/code/ridersargent/mathmania/target/release/mathmania"
 alias mono="cd ~/code/notonthehighstreet/notonthehighstreet"
 alias mss='mysql.server start'
 alias mst='mysql.server stop'
@@ -65,6 +68,7 @@ alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias so='source'
 alias soa='source ~/.dotfiles/zsh/aliases.zsh'
 alias sod='~/.dotfiles/bin/startup.sh'
+alias sync_mononoth='bundle install && bundle exec rails db:migrate && bundle exec rails db:test:prepare && git checkout db/schema.rb'
 alias ta='tmux a -t'
 alias tc="__rws__tc"
 alias tk='tmux kill-session -t'
@@ -75,33 +79,7 @@ alias tt="__rws__set_tab_name"
 alias v='vim'
 alias vcr='VCR_RECORD=new_episodes rspec'
 alias vim_sessions='ls -al ~/.vim/sessions'
-alias weather='curl wttr.in'
+alias weather='curl wttr.in/London'
 
 # if rg is aliased, unalias it.
 (( ${+aliases[rg]} )) && unalias rg
-
-# Soho House stuff
-# alias acc='cd ~/code/sohohouse/account'
-# alias amb='cd ~/code/sohohouse/ambassador'
-# alias apf='cd ~/code/sohohouse/application-form'
-# alias apl='cd ~/code/sohohouse/application-service'
-# alias capi='cd ~/code/sohohouse/common_api'
-# alias cgen='cd ~/code/sohohouse/common_general'
-# alias cms='cd ~/code/sohohouse/cms-integration-service'
-# alias dih='cd ~/code/sohohouse/digital-house-web'
-# alias evt='cd ~/code/sohohouse/events'
-# alias idt='cd ~/code/sohohouse/identity'
-# alias mcis='cd ~/code/sohohouse/marketing-cloud-integration-service'
-# alias mol='cd ~/code/sohohouse/mollies'
-# alias ois='cd ~/code/sohohouse/opera-integration-service'
-# alias pen='cd ~/code/sohohouse/payments_engine'
-# alias pic='cd ~/code/sohohouse/payments_integration_client'
-# alias pig='cd ~/code/sohohouse/payments-integration-gateway'
-# alias pis='cd ~/code/sohohouse/payments-integration-service'
-# alias pro='cd ~/code/sohohouse/profile-service'
-# alias sff='cd ~/code/sohohouse/salesforce_factory'
-# alias sfic='cd ~/code/sohohouse/salesforce_integration_client'
-# alias sfis='cd ~/code/sohohouse/salesforce-integration-service'
-# alias soho='cd ~/code/sohohouse'
-# alias sup='cd ~/code/sohohouse/support-service'
-# alias ven='cd ~/code/sohohouse/venue-service'

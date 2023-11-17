@@ -47,7 +47,7 @@
 ;; Apple Internal Keyboard (UK laptop):    vendor_id: 1452, product_id: 636
 ;; CTRL Keyboard:                          vendor_id: 1240, product_id: 61138
 ;; Pok3r Keyboard:                         vender_id: 1241, product_id: 321
-;; Apple Internal Keyboard (NOThS laptop): vendor_id: 1452, product_id: 832
+;; Apple Internal Keyboard (NOTHS laptop): vendor_id: 1452, product_id: 832
 
 ;; Run `goku` on CLI to generate karabiner.json file.
 ;; Run `gokuw` on CLI to generate karabiner.json file upon saving this file.
@@ -56,145 +56,60 @@
 
  :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
            :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 832}]
-           :ctrl-keyboard [{:vendor_id 1240 :product_id 61138}]
-           :pok3r-keyboard [{:vendor_id 1241 :product_id 321}]
+           :ctrl-keyboard             [{:vendor_id 1240 :product_id 61138}]
+           :ergodoxez-keyboard        [{:vendor_id 12951 :product_id 18806}]
            }
 
  ; :simlayers {:o-mode {:key :o}}
  ; :simlayer-threshold 500 ;; default is 250
 
  :main [{:des "caps_lock to esc when pressed alone, to ctrl as modifier"
-         :rules [[:##caps_lock :left_control nil {:alone :escape}]
-                 ]}
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
 
         {:des "fn + hjkl to arrows"
          :rules [[:!Fh :left_arrow]
                  [:!Fj :down_arrow]
                  [:!Fk :up_arrow]
-                 [:!Fl :right_arrow]
-                 ]}
+                 [:!Fl :right_arrow]]}
 
         {:des "left_shift + 3 = #, right_shift + 3 = £"
-         :rules [[:!S3 :!O3 [:apple-uk-builtin-keyboard 
-                             :apple-us-builtin-keyboard 
-                             :ctrl-keyboard :pok3r-keyboard
-                             ]]]}
+         :rules [[:!S3 :!O3]]}
 
-        {:des "escape to hyper hack for 16 inch MBP"
-         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
-                 ]}
-
-        {:des "Hyper Mode"
-         :rules [[:escape ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
-                 [:non_us_backslash ["hyper_mode" 1] nil {:afterup ["hyper_mode" 0]}]
-                 [:0 :!!0 ["hyper_mode" 1]]
-                 [:1 :!!1 ["hyper_mode" 1]]
-                 [:2 :!!2 ["hyper_mode" 1]]
-                 [:3 :!!3 ["hyper_mode" 1]]
-                 [:4 :!!4 ["hyper_mode" 1]]
-                 [:5 :!!5 ["hyper_mode" 1]]
-                 [:6 :!!6 ["hyper_mode" 1]]
-                 [:7 :!!7 ["hyper_mode" 1]]
-                 [:8 :!!8 ["hyper_mode" 1]]
-                 [:9 :!!9 ["hyper_mode" 1]]
-                 [:a :!!a ["hyper_mode" 1]]
-                 [:b :!!b ["hyper_mode" 1]]
-                 [:c :!!c ["hyper_mode" 1]]
-                 [:d :!!d ["hyper_mode" 1]]
-                 [:e :!!e ["hyper_mode" 1]]
-                 [:f :!!f ["hyper_mode" 1]]
-                 [:g :!!g ["hyper_mode" 1]]
-                 [:h :!!h ["hyper_mode" 1]]
-                 [:i :!!i ["hyper_mode" 1]]
-                 [:j :!!j ["hyper_mode" 1]]
-                 [:k :!!k ["hyper_mode" 1]]
-                 [:l :!!l ["hyper_mode" 1]]
-                 [:m :!!m ["hyper_mode" 1]]
-                 [:n :!!n ["hyper_mode" 1]]
-                 [:o :!!o ["hyper_mode" 1]]
-                 [:p :!!p ["hyper_mode" 1]]
-                 [:q :!!q ["hyper_mode" 1]]
-                 [:r :!!r ["hyper_mode" 1]]
-                 [:s :!!s ["hyper_mode" 1]]
-                 [:t :!!t ["hyper_mode" 1]]
-                 [:u :!!u ["hyper_mode" 1]]
-                 [:v :!!v ["hyper_mode" 1]]
-                 [:w :!!w ["hyper_mode" 1]]
-                 [:x :!!x ["hyper_mode" 1]]
-                 [:y :!!y ["hyper_mode" 1]]
-                 [:z :!!z ["hyper_mode" 1]]
-                 [:spacebar :!!spacebar ["hyper_mode" 1]]
-                 [:up_arrow :!!up_arrow ["hyper_mode" 1]]
-                 [:down_arrow :!!down_arrow ["hyper_mode" 1]]
-                 [:left_arrow :!!left_arrow ["hyper_mode" 1]]
-                 [:right_arrow :!!right_arrow ["hyper_mode" 1]]
-                 [:equal_sign :!!equal_sign ["hyper_mode" 1]]
-                 [:tab :!!tab ["hyper_mode" 1]]
-                 [:delete_or_backspace :!!delete_or_backspace ["hyper_mode" 1]]
-                 ]}
-
-        {:des "Capslock mode"
-         :rules [[[:left_shift :right_shift] ["caps_lock_mode" 1] ["caps_lock_mode" 0]]
-                 [[:left_shift :right_shift] ["caps_lock_mode" 0] ["caps_lock_mode" 1]]
-                 [:a :!Sa ["caps_lock_mode" 1]]
-                 [:b :!Sb ["caps_lock_mode" 1]]
-                 [:c :!Sc ["caps_lock_mode" 1]]
-                 [:d :!Sd ["caps_lock_mode" 1]]
-                 [:e :!Se ["caps_lock_mode" 1]]
-                 [:f :!Sf ["caps_lock_mode" 1]]
-                 [:g :!Sg ["caps_lock_mode" 1]]
-                 [:h :!Sh ["caps_lock_mode" 1]]
-                 [:i :!Si ["caps_lock_mode" 1]]
-                 [:j :!Sj ["caps_lock_mode" 1]]
-                 [:k :!Sk ["caps_lock_mode" 1]]
-                 [:l :!Sl ["caps_lock_mode" 1]]
-                 [:m :!Sm ["caps_lock_mode" 1]]
-                 [:n :!Sn ["caps_lock_mode" 1]]
-                 [:o :!So ["caps_lock_mode" 1]]
-                 [:p :!Sp ["caps_lock_mode" 1]]
-                 [:q :!Sq ["caps_lock_mode" 1]]
-                 [:r :!Sr ["caps_lock_mode" 1]]
-                 [:s :!Ss ["caps_lock_mode" 1]]
-                 [:t :!St ["caps_lock_mode" 1]]
-                 [:u :!Su ["caps_lock_mode" 1]]
-                 [:v :!Sv ["caps_lock_mode" 1]]
-                 [:w :!Sw ["caps_lock_mode" 1]]
-                 [:x :!Sx ["caps_lock_mode" 1]]
-                 [:y :!Sy ["caps_lock_mode" 1]]
-                 [:z :!Sz ["caps_lock_mode" 1]]
-                 ]}
-
-        ;; CTRL and Pok3r specific ---------------------------------------------
-        {:des "left_control to fn"
-         :rules [[:left_control :fn [:ctrl-keyboard :pok3r-keyboard]]
-                 ]}
-
-        {:des "grave_accent_and_tilde to non_us_backslash for CTRL Keyboard"
-         :rules [[:grave_accent_and_tilde :non_us_backslash [:ctrl-keyboard]]
-                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:ctrl-keyboard]]
-                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:ctrl-keyboard]]
-                 ]}
-
-        ;; UK laptop and Pok3r specific ----------------------------------------
+        ;; UK laptop -----------------------------------------------------------
         ;; Note: non_us_backslash is swapped with !Ospacebar in hyper_mode definition.
-        {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
-         :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-                 [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
-                 [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
-                 [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
-                 [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard :pok3r-keyboard]]
-                 ]}
+        ;; {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
+        ;;  :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+        ;;          [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+        ;;          [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+        ;;          [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+        ;;          [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
+        ;;          ]}
 
-        {:des "swap command and option on Pok3r keyboard"
-         :rules [[:left_command :left_option [:pok3r-keyboard]]
-                 [:left_option :left_command [:pok3r-keyboard]]
-                 [:right_command :right_option [:pok3r-keyboard]]
-                 [:right_option :right_command [:pok3r-keyboard]]
+        {:des "non_us_backslash to Hyper"
+         :rules [[:non_us_backslash ["hyper-mode" 1] nil {:afterup ["hyper-mode" 0] :alone :non_us_backslash}]
+                 [:1 "open '/Applications/1Password.app'"          ["hyper-mode" 1]]
+                 [:b "open '/Applications/Brave Browser.app'"      ["hyper-mode" 1]]
+                 [:c "open '/Applications/Fantastical.app'"        ["hyper-mode" 1]]
+                 [:f "open '/Applications/Firefox.app'"            ["hyper-mode" 1]]
+                 [:g "open '/Applications/GitHub Desktop.app'"     ["hyper-mode" 1]]
+                 [:m "open '/Applications/Spotify.app'"            ["hyper-mode" 1]]
+                 [:n "open '/Applications/Notion.app'"             ["hyper-mode" 1]]
+                 [:s "open '/Applications/Slack.app'"              ["hyper-mode" 1]]
+                 [:t "open '/Applications/iTerm.app'"              ["hyper-mode" 1]]
+                 [:v "open '/Applications/Visual Studio Code.app'" ["hyper-mode" 1]]
+                 [:w "open '/Applications/WhatsApp.app'"           ["hyper-mode" 1]]]}
 
-                 [:!Sleft_command :!Sleft_option [:pok3r-keyboard]]
-                 [:!Sleft_option :!Sleft_command [:pok3r-keyboard]]
-                 [:!Sright_command :!Sright_option [:pok3r-keyboard]]
-                 [:!Sright_option :!Sright_command [:pok3r-keyboard]]
-                 ]}
+        ;; This needs to stay in sync with the hyper-mode stuff above for now.
+        {:des "open apps"
+         :rules [[:!!1 "open '/Applications/1Password.app'"]
+                 [:!!b "open '/Applications/Brave Browser.app'"]
+                 [:!!c "open '/Applications/Fantastical.app'"]
+                 [:!!f "open '/Applications/Firefox.app'"]
+                 [:!!g "open '/Applications/GitHub Desktop.app'"]
+                 [:!!m "open '/Applications/Spotify.app'"]
+                 [:!!n "open '/Applications/Notion.app'"]
+                 [:!!s "open '/Applications/Slack.app'"]
+                 [:!!t "open '/Applications/iTerm.app'"]
+                 [:!!v "open '/Applications/Visual Studio Code.app'"]
+                 [:!!w "open '/Applications/WhatsApp.app'"]]}
         ]}
-
