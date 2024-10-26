@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # --- Oh My Zsh ----------------------------------------------------------------
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -87,6 +94,9 @@ export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
 
+# Apparently Cargo needs this to auth the crates repo.
+# More here: https://doc.rust-lang.org/cargo/appendix/git-authentication.html
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 # --- NOTHS --------------------------------------------------------------------
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
@@ -116,12 +126,13 @@ source_if_exists "$HOME/.dotfiles/zsh/fzf.zsh"
 
 
 # --- asdf ---------------------------------------------------------------------
-# source_if_exists /usr/local/opt/asdf/asdf.sh
-# source_if_exists /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+source_if_exists /usr/local/opt/asdf/asdf.sh
+source_if_exists /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 
 # --- rbenv --------------------------------------------------------------------
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)" # personal laptop does not user rbenv (asdf)
 
 
 # --- EXA ----------------------------------------------------------------------
@@ -140,6 +151,14 @@ source_if_exists "$HOME/code/dan2552/gathering-of-scripts/source-gathering-zsh"
 # fi
 
 
+# --- Soho House Stuff ---------------------------------------------------------
+# source_if_exists "$HOME/.dotfiles/zsh/sohohouse.zsh"
+
+# hh
+
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+export PATH
+
 # Needed for Postgresql server?
 # export PATH="/usr/local/opt/libpq/bin:$PATH"
 
@@ -150,11 +169,11 @@ export PATH="$HOME/code/dan2552/habitat/bin:$PATH"
 # See: https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-# Commented out as I've moved to fnm instead of nvm for speed
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-eval "$(fnm env --use-on-cd)"
+eval "$(atuin init zsh)"
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
-export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
