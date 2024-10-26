@@ -13,6 +13,7 @@
 /config/configstore/
 /config/exercism/
 /config/fish/fishd.*
+/config/github-copilot/hosts.json
 /config/htop/
 /config/hub
 /config/joplin/
