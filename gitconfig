@@ -1,6 +1,8 @@
 [user]
 	name = Rider Sargent
 	email = rider.sargent@gmail.com
+[credential]
+	helper = store
 [alias]
 	a = add
 	aa = add --all
