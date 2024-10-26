@@ -18,6 +18,8 @@
 /config/joplin/
 /config/joplin-desktop/
 /config/karabiner/automatic_backups/
+/config/nvim.astro.bak
+/config/nvim.bak
 /config/nvim/plugged/
 /config/nvim/sessions/
 /config/nvim/undo-dir/
