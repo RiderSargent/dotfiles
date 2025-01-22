@@ -49,7 +49,7 @@ eval "$(starship init zsh)"
 
 
 # --- Zoxide -------------------------------------------------------------------
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 
 
 # --- Z ------------------------------------------------------------------------
@@ -102,12 +102,12 @@ export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="$PATH:$HOME/aws-scripts"
 export AWS_PROFILE_ALIASES=true
-source $HOME/aws-scripts/aws-profile-function.sh
-eval "$(saml2aws --completion-script-zsh)"
+# source $HOME/aws-scripts/aws-profile-function.sh
+# eval "$(saml2aws --completion-script-zsh)"
 
 # --- Looper (NOTHS)
 # export GOOGLE_APPLICATION_CREDENTIALS=/Users/riders/code/notonthehighstreet/rust-feed-utils/credentials/prj-noths-d-retail-api-3313-62c370216629.json
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/riders/code/notonthehighstreet/rust-feed-utils/credentials/prj-noths-t-retail-api-3313-14f06fc648d1-retail-user-catalog-pipeline.json
+# export GOOGLE_APPLICATION_CREDENTIALS=/Users/riders/code/notonthehighstreet/rust-feed-utils/credentials/prj-noths-t-retail-api-3313-14f06fc648d1-retail-user-catalog-pipeline.json
 
 # --- FZF ----------------------------------------------------------------------
 # --files: List files that would be searched but do not search
