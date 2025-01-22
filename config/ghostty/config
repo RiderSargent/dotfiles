@@ -1,0 +1,7 @@
+# to list themes: ghostty +list-themes
+theme = GruvBoxDarkHard
+
+# shell-integration-features = no-cursor
+cursor-style = block
+
+font-size = 18
