@@ -57,15 +57,12 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      0
 
 # 'main' binding mode declaration
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-# 'main' binding mode must be always presented
-# Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
 
 # All possible keys:
@@ -92,100 +89,87 @@ outer.right =      10
 # end tell'
 # '''
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-# cmd-alt-ctrl-shift-slash = 'layout tiles horizontal vertical'
-# cmd-alt-ctrl-shift-comma = 'layout accordion horizontal vertical'
-cmd-alt-ctrl-shift-right = 'layout horizontal vertical'
-cmd-alt-ctrl-shift-left = 'layout tiles accordion'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
+# Focus windows
 ctrl-h = 'focus left'
 ctrl-j = 'focus down'
 ctrl-k = 'focus up'
 ctrl-l = 'focus right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
+# Move windows
 ctrl-shift-h = 'move left'
 ctrl-shift-j = 'move down'
 ctrl-shift-k = 'move up'
 ctrl-shift-l = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-ctrl-shift-minus = 'resize smart -50'
-alt-ctrl-shift-equal = 'resize smart +50'
+# Meh key combos focus workspaces
+alt-ctrl-shift-1 = 'workspace 1'
+alt-ctrl-shift-2 = 'workspace 2'
+alt-ctrl-shift-3 = 'workspace 3'
+alt-ctrl-shift-4 = 'workspace 4'
+alt-ctrl-shift-5 = 'workspace 5'
+alt-ctrl-shift-6 = 'workspace 6'
+alt-ctrl-shift-7 = 'workspace 7'
+alt-ctrl-shift-8 = 'workspace 8'
+alt-ctrl-shift-9 = 'workspace 9'
+alt-ctrl-shift-0 = 'workspace 10'
+alt-ctrl-shift-a = 'workspace A'
+alt-ctrl-shift-b = 'workspace B' # Browser
+alt-ctrl-shift-c = 'workspace C' # Calendar
+alt-ctrl-shift-d = 'workspace D'
+alt-ctrl-shift-e = 'workspace E' # Editor
+alt-ctrl-shift-f = 'workspace F'
+alt-ctrl-shift-g = 'workspace G'
+alt-ctrl-shift-n = 'workspace N' # Notes
+alt-ctrl-shift-s = 'workspace S' # Signal
+alt-ctrl-shift-t = 'workspace T' # Terminal
+alt-ctrl-shift-w = 'workspace W' # WhatsApp
+alt-ctrl-shift-tab = 'workspace-back-and-forth'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-cmd-alt-ctrl-shift-1 = 'workspace 1'
-cmd-alt-ctrl-shift-2 = 'workspace 2'
-cmd-alt-ctrl-shift-3 = 'workspace 3'
-cmd-alt-ctrl-shift-4 = 'workspace 4'
-cmd-alt-ctrl-shift-5 = 'workspace 5'
-cmd-alt-ctrl-shift-6 = 'workspace 6'
-cmd-alt-ctrl-shift-7 = 'workspace 7'
-cmd-alt-ctrl-shift-8 = 'workspace 8'
-cmd-alt-ctrl-shift-9 = 'workspace 9'
-cmd-alt-ctrl-shift-0 = 'workspace 10'
-cmd-alt-ctrl-shift-a = 'workspace A'
-cmd-alt-ctrl-shift-b = 'workspace B' # Browser
-cmd-alt-ctrl-shift-c = 'workspace C' # Calendar
-cmd-alt-ctrl-shift-d = 'workspace D'
-cmd-alt-ctrl-shift-e = 'workspace E' # Editor
-cmd-alt-ctrl-shift-f = 'workspace F'
-cmd-alt-ctrl-shift-g = 'workspace G'
-cmd-alt-ctrl-shift-n = 'workspace N' # Notes
-cmd-alt-ctrl-shift-s = 'workspace S' # Signal
-cmd-alt-ctrl-shift-t = 'workspace T' # Terminal
-cmd-alt-ctrl-shift-w = 'workspace W' # WhatsApp
+# Hyper key combos change workspaces
+cmd-alt-ctrl-shift-1 = 'move-node-to-workspace 1'
+cmd-alt-ctrl-shift-2 = 'move-node-to-workspace 2'
+cmd-alt-ctrl-shift-3 = 'move-node-to-workspace 3'
+cmd-alt-ctrl-shift-4 = 'move-node-to-workspace 4'
+cmd-alt-ctrl-shift-5 = 'move-node-to-workspace 5'
+cmd-alt-ctrl-shift-6 = 'move-node-to-workspace 6'
+cmd-alt-ctrl-shift-7 = 'move-node-to-workspace 7'
+cmd-alt-ctrl-shift-8 = 'move-node-to-workspace 8'
+cmd-alt-ctrl-shift-9 = 'move-node-to-workspace 9'
+cmd-alt-ctrl-shift-0 = 'move-node-to-workspace 10'
+cmd-alt-ctrl-shift-a = 'move-node-to-workspace A'
+cmd-alt-ctrl-shift-b = 'move-node-to-workspace B'
+cmd-alt-ctrl-shift-c = 'move-node-to-workspace C'
+cmd-alt-ctrl-shift-d = 'move-node-to-workspace D'
+cmd-alt-ctrl-shift-e = 'move-node-to-workspace E'
+cmd-alt-ctrl-shift-f = 'move-node-to-workspace F'
+cmd-alt-ctrl-shift-g = 'move-node-to-workspace G'
+cmd-alt-ctrl-shift-n = 'move-node-to-workspace N'
+cmd-alt-ctrl-shift-s = 'move-node-to-workspace S'
+cmd-alt-ctrl-shift-t = 'move-node-to-workspace T'
+cmd-alt-ctrl-shift-w = 'move-node-to-workspace W'
+
+cmd-alt-ctrl-shift-h = ['join-with left', 'mode main']
+cmd-alt-ctrl-shift-j = ['join-with down', 'mode main']
+cmd-alt-ctrl-shift-k = ['join-with up', 'mode main']
+cmd-alt-ctrl-shift-l = ['join-with right', 'mode main']
 
 cmd-alt-ctrl-shift-m = 'fullscreen --no-outer-gaps' # mnemonic: maximize
 cmd-alt-ctrl-shift-equal = 'balance-sizes'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-ctrl-shift-1 = 'move-node-to-workspace 1'
-alt-ctrl-shift-2 = 'move-node-to-workspace 2'
-alt-ctrl-shift-3 = 'move-node-to-workspace 3'
-alt-ctrl-shift-4 = 'move-node-to-workspace 4'
-alt-ctrl-shift-5 = 'move-node-to-workspace 5'
-alt-ctrl-shift-6 = 'move-node-to-workspace 6'
-alt-ctrl-shift-7 = 'move-node-to-workspace 7'
-alt-ctrl-shift-8 = 'move-node-to-workspace 8'
-alt-ctrl-shift-9 = 'move-node-to-workspace 9'
-alt-ctrl-shift-0 = 'move-node-to-workspace 10'
-alt-ctrl-shift-a = 'move-node-to-workspace A'
-alt-ctrl-shift-b = 'move-node-to-workspace B'
-alt-ctrl-shift-c = 'move-node-to-workspace C'
-alt-ctrl-shift-d = 'move-node-to-workspace D'
-alt-ctrl-shift-e = 'move-node-to-workspace E'
-alt-ctrl-shift-f = 'move-node-to-workspace F'
-alt-ctrl-shift-g = 'move-node-to-workspace G'
-alt-ctrl-shift-n = 'move-node-to-workspace N'
-alt-ctrl-shift-s = 'move-node-to-workspace S'
-alt-ctrl-shift-t = 'move-node-to-workspace T'
-alt-ctrl-shift-w = 'move-node-to-workspace W'
+# Move workspace to other monitor
+cmd-alt-ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-# cmd-alt-ctrl-shift-tab = ['focus-back-and-forth', 'workspace-back-and-forth']
-cmd-alt-ctrl-shift-tab = 'exec-and-forget aerospace focus-back-and-forth || aerospace workspace-back-and-forth'
+# Toggle layouts
+cmd-alt-ctrl-shift-period = 'layout horizontal vertical'
+cmd-alt-ctrl-shift-comma = 'layout tiles accordion'
 
+# cmd-alt-ctrl-shift-minus = 'resize smart -50'
+# cmd-alt-ctrl-shift-equal = 'resize smart +50'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+# Service mode
+alt-ctrl-shift-semicolon = 'mode service'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-cmd-alt-ctrl-shift-semicolon = 'mode service'
-
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-# backspace = ['close-all-windows-but-current', 'mode main']
-
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-#s = ['layout sticky tiling', 'mode main']
-
-alt-ctrl-shift-h = ['join-with left', 'mode main']
-alt-ctrl-shift-j = ['join-with down', 'mode main']
-alt-ctrl-shift-k = ['join-with up', 'mode main']
-alt-ctrl-shift-l = ['join-with right', 'mode main']
