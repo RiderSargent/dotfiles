@@ -1,5 +1,5 @@
 ;; the rule [:!Ca :!T1]
-    ;; means from command a to control 1
+    ;; means from cmd+a to ctrl+1
     ;; :!Ca is keycode :a and prefix a with !C
 
     ;; here's the definition
@@ -54,12 +54,6 @@
 
 {:profiles {:Default {:default true}}
 
- :devices {:apple-uk-builtin-keyboard [{:vendor_id 1452 :product_id 636}]
-           :apple-us-builtin-keyboard [{:vendor_id 1452 :product_id 832}]
-           :ctrl-keyboard             [{:vendor_id 1240 :product_id 61138}]
-           :ergodoxez-keyboard        [{:vendor_id 12951 :product_id 18806}]
-           }
-
  ; :simlayers {:o-mode {:key :o}}
  ; :simlayer-threshold 500 ;; default is 250
 
@@ -75,41 +69,34 @@
         {:des "left_shift + 3 = #, right_shift + 3 = £"
          :rules [[:!S3 :!O3]]}
 
-        ;; UK laptop -----------------------------------------------------------
-        ;; Note: non_us_backslash is swapped with !Ospacebar in hyper_mode definition.
-        ;; {:des "swap non_us_backslash and grave_accent_and_tilde for UK laptop"
-        ;;  :rules [[:grave_accent_and_tilde :non_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-        ;;          [:!Sgrave_accent_and_tilde :!Snon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-        ;;          [:!Rgrave_accent_and_tilde :!Rnon_us_backslash [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-        ;;          [:!Snon_us_backslash :!Sgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-        ;;          [:!Rnon_us_backslash :!Rgrave_accent_and_tilde [:apple-uk-builtin-keyboard :apple-us-builtin-keyboard]]
-        ;;          ]}
+        {:des "esc to Meh"
+              :rules [[:escape :TOS]]}
 
-        {:des "non_us_backslash to Hyper"
-         :rules [[:non_us_backslash ["hyper-mode" 1] nil {:afterup ["hyper-mode" 0] :alone :non_us_backslash}]
-                 [:1 "open '/Applications/1Password.app'"          ["hyper-mode" 1]]
-                 [:b "open '/Applications/Brave Browser.app'"      ["hyper-mode" 1]]
-                 [:c "open '/Applications/Fantastical.app'"        ["hyper-mode" 1]]
-                 [:f "open '/Applications/Firefox.app'"            ["hyper-mode" 1]]
-                 [:g "open '/Applications/GitHub Desktop.app'"     ["hyper-mode" 1]]
-                 [:m "open '/Applications/Spotify.app'"            ["hyper-mode" 1]]
-                 [:n "open '/Applications/Notion.app'"             ["hyper-mode" 1]]
-                 [:s "open '/Applications/Slack.app'"              ["hyper-mode" 1]]
-                 [:t "open '/Applications/iTerm.app'"              ["hyper-mode" 1]]
-                 [:v "open '/Applications/Visual Studio Code.app'" ["hyper-mode" 1]]
-                 [:w "open '/Applications/WhatsApp.app'"           ["hyper-mode" 1]]]}
+        ;; {:des "non_us_backslash to Hyper"
+        ;;  :rules [[:non_us_backslash ["hyper-mode" 1] nil {:afterup ["hyper-mode" 0] :alone :non_us_backslash}]
+        ;;          [:1 "open '/Applications/1Password.app'"          ["hyper-mode" 1]]
+        ;;          [:b "open '/Applications/Brave Browser.app'"      ["hyper-mode" 1]]
+        ;;          [:c "open '/Applications/Fantastical.app'"        ["hyper-mode" 1]]
+        ;;          [:f "open '/Applications/Firefox.app'"            ["hyper-mode" 1]]
+        ;;          [:g "open '/Applications/GitHub Desktop.app'"     ["hyper-mode" 1]]
+        ;;          [:m "open '/Applications/Spotify.app'"            ["hyper-mode" 1]]
+        ;;          [:n "open '/Applications/Notion.app'"             ["hyper-mode" 1]]
+        ;;          [:s "open '/Applications/Slack.app'"              ["hyper-mode" 1]]
+        ;;          [:t "open '/Applications/iTerm.app'"              ["hyper-mode" 1]]
+        ;;          [:v "open '/Applications/Visual Studio Code.app'" ["hyper-mode" 1]]
+        ;;          [:w "open '/Applications/WhatsApp.app'"           ["hyper-mode" 1]]]}
 
-        ;; This needs to stay in sync with the hyper-mode stuff above for now.
-        {:des "open apps"
-         :rules [[:!!1 "open '/Applications/1Password.app'"]
-                 [:!!b "open '/Applications/Brave Browser.app'"]
-                 [:!!c "open '/Applications/Fantastical.app'"]
-                 [:!!f "open '/Applications/Firefox.app'"]
-                 [:!!g "open '/Applications/GitHub Desktop.app'"]
-                 [:!!m "open '/Applications/Spotify.app'"]
-                 [:!!n "open '/Applications/Notion.app'"]
-                 [:!!s "open '/Applications/Slack.app'"]
-                 [:!!t "open '/Applications/iTerm.app'"]
-                 [:!!v "open '/Applications/Visual Studio Code.app'"]
-                 [:!!w "open '/Applications/WhatsApp.app'"]]}
+        ;; ;; This needs to stay in sync with the hyper-mode stuff above for now.
+        ;; {:des "open apps"
+        ;;  :rules [[:!!1 "open '/Applications/1Password.app'"]
+        ;;          [:!!b "open '/Applications/Brave Browser.app'"]
+        ;;          [:!!c "open '/Applications/Fantastical.app'"]
+        ;;          [:!!f "open '/Applications/Firefox.app'"]
+        ;;          [:!!g "open '/Applications/GitHub Desktop.app'"]
+        ;;          [:!!m "open '/Applications/Spotify.app'"]
+        ;;          [:!!n "open '/Applications/Notion.app'"]
+        ;;          [:!!s "open '/Applications/Slack.app'"]
+        ;;          [:!!t "open '/Applications/iTerm.app'"]
+        ;;          [:!!v "open '/Applications/Visual Studio Code.app'"]
+        ;;          [:!!w "open '/Applications/WhatsApp.app'"]]}
         ]}
